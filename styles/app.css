@@ -513,3 +513,15 @@ details.acc .acc-body { padding: 0 14px 14px; }
 .seg-block { display: flex; width: 100%; }
 .seg-block button { flex: 1; }
 .variant-tag { font-size: 11px; padding: 1px 7px; border-radius: 999px; background: var(--info-soft); color: var(--info); font-weight: 600; }
+
+/* Day map on the Plan page */
+.daymap-head { width: 100%; display: flex; align-items: center; gap: 10px; padding: 12px 14px; border: 0; background: transparent; font-weight: 600; text-align: left; color: var(--text); }
+.daymap-head > span:nth-child(2) { flex: 1; font-weight: 400; }
+.daymap-canvas { height: 260px; background: var(--bg-sunken); }
+@media (min-width: 900px) { .daymap-canvas { height: 340px; } }
+.daymap-legend { list-style: none; margin: 0; padding: 8px 10px 10px; display: flex; flex-direction: column; gap: 4px; }
+.daymap-stop { display: flex; align-items: center; gap: 10px; width: 100%; border: 0; background: transparent; padding: 6px 4px; border-radius: 8px; text-align: left; font-size: 13px; color: var(--text); }
+.daymap-stop:hover { background: var(--bg-sunken); }
+.daymap-stop > span:nth-child(2) { flex: 1; }
+.pin-num { width: 26px; height: 26px; border-radius: 50%; background: var(--accent); color: var(--accent-ink); font-weight: 700; font-size: 13px; display: grid; place-items: center; border: 2px solid #fff; box-shadow: 0 1px 4px rgba(0,0,0,0.35); }
+.pin-num.small-pin { width: 22px; height: 22px; font-size: 12px; border-width: 1px; box-shadow: none; flex: none; }

@@ -243,6 +243,7 @@ places = [
   dict(id='p10', name='Tenma / Tenjinbashisuji', kind='food', town='Osaka', lat=34.7043, lng=135.5133, notes='Izakaya alleys and the long arcade.'),
   dict(id='p11', name='Nakazakicho', kind='town', town='Osaka', lat=34.7090, lng=135.5060, notes='Old lanes, small cafes, 10 min from Umeda.'),
   dict(id='p25', name='Nintendo OSAKA (Daimaru Umeda 13F)', kind='other', town='Osaka', lat=34.7020, lng=135.4980),
+  dict(id='p27', name='Osaka hotel area (Kitahama / Nakatsu)', kind='hotel', town='Osaka', lat=34.6930, lng=135.5060, notes='Wherever the Osaka hotel ends up; move this pin.'),
   dict(id='p19', name='Fukushima (Osaka) dining street', kind='food', town='Osaka', lat=34.6960, lng=135.4870, notes='Fukumaru-dori under the Loop Line tracks.'),
   dict(id='p20', name='Tsuruhashi (Korea Town) yakiniku', kind='food', town='Osaka', lat=34.6650, lng=135.5320, notes='Tsuruichi (1949), Aji Yoshi, Horumon Sora.'),
   dict(id='p21', name='Narai-juku', kind='town', town='Kiso valley', lat=35.9670, lng=137.8100, notes='Edo-period post town on the Nakasendo. Bag-minding at the station ¥300.'),
@@ -412,9 +413,37 @@ places += [
   dict(id='pb3', name='Takayama Sanmachi old town', kind='town', town='Takayama', lat=36.1420, lng=137.2590, variant='culture'),
   dict(id='pb4', name='Shirakawa-go (Ogimachi village)', kind='town', town='Shirakawa-go', lat=36.2570, lng=136.9060, variant='culture'),
   dict(id='pb5', name='Matsumoto Castle', kind='other', town='Matsumoto', lat=36.2384, lng=137.9690, variant='culture'),
+  dict(id='pb6', name='Nankai Namba Station', kind='station', town='Osaka', lat=34.6636, lng=135.5023, variant='culture', notes='Trains to Koyasan leave from here.'),
+  dict(id='pb7', name='Matsumoto old town (Nakamachi) and station', kind='town', town='Matsumoto', lat=36.2320, lng=137.9680, variant='culture'),
+  dict(id='pb8', name='Daio Wasabi Farm (Azumino)', kind='other', town='Azumino', lat=36.3390, lng=137.9060, variant='culture', notes='Option for the free day.'),
+  dict(id='pb9', name='Asama Onsen', kind='other', town='Matsumoto', lat=36.2570, lng=137.9980, variant='culture', notes='Local public bath, option for the free day.'),
+  dict(id='p26', name='Shinjuku Station', kind='station', town='Tokyo', lat=35.6896, lng=139.7006, notes='Azusa arrives here; N’EX to Narita leaves from here.'),
 ]
 
 questions.insert(0, dict(id='q12', question='Plan A (ski) or Plan B (no skiing)?', why='Both use the flights already booked and the same Osaka and USJ days; they split on Thursday 11 Feb. Plan A: Nozawa Onsen for five nights, three ski days plus a rural Sunday, hinges on finding a solo room in a sold-out week. Plan B: a temple night at Koyasan, a farmhouse night in Shirakawa-go, and Takayama and Matsumoto as bases with a free afternoon, a fully free day and a free morning built in (options listed, nothing scheduled). Four different beds, no dependence on Nozawa, and about A$500 cheaper because there are no lifts or rental. Lost workdays are identical. The plan switch at the top of the menu flips every page between them.', options=['Plan A: ski trip (Nozawa Onsen)', 'Plan B: countryside and culture (Koyasan, Takayama, Shirakawa-go, Matsumoto, Narai)', 'Hybrid: Plan B but swap Matsumoto’s two nights for two nights in Nozawa without skiing (onsen village, snow, food)'], recommendation='Decide by accommodation: if a Nozawa room lands by late October, Plan A. If not, Plan B is not a consolation prize; the Koyasan and Shirakawa-go nights are two of the best things you can do in Japan in winter, and every bed in it is easier to get.', answer='', resolved=False))
+
+# ---- link itinerary items to map places (placeId) ---------------------------
+PLACE_OF = {
+  'a1': 'p2', 'a2': 'p2', 'a2b': 'p4', 'a3': 'p4', 'a4': 'p4', 'a5': 'p5', 'a6': 'p5', 'a7': 'p5',
+  'b1': 'p6', 'b2': 'p6', 'b3': 'p7', 'b4': 'p7', 'b5': 'p8', 'b6': 'p27', 'b6b': 'p27', 'b6c': 'p25', 'b7': 'p11', 'b8': 'p10',
+  'c1': 'p9', 'c2': 'p9', 'c3': 'p9', 'c4': 'p9', 'c5': 'p9', 'c6': 'p9', 'c7': 'p27',
+  'e1': 'p8', 'e2': 'p12', 'e3': 'p22', 'e4': 'p21', 'e5': 'p21', 'e6': 'p21', 'e7': 'p21', 'e8': 'p13', 'e9': 'p14', 'e10': 'p15', 'e11': 'p15', 'e12': 'p15',
+  'f0': 'p15', 'f1': 'p16', 'f2': 'p16', 'f3': 'p15', 'f4': 'p15',
+  'g1': 'p16', 'g2': 'p16', 'g3': 'p15', 'g4': 'p15',
+  'h1': 'p13', 'h2': 'p23', 'h3': 'p23', 'h4': 'p23', 'h5': 'p23', 'h6': 'p24', 'h7': 'p24', 'h8': 'p15', 'h9': 'p15', 'h10': 'p15', 'h11': 'p16',
+  'i1': 'p16', 'i2': 'p16', 'i3': 'p15', 'i4': 'p15', 'i5': 'p15',
+  'j1': 'p16', 'j2': 'p15', 'j3': 'p15', 'j4': 'p14', 'j5': 'p7', 'j6': 'p6', 'j7': 'p6', 'j8': 'p6',
+  'k1': 'p5', 'k1b': 'p5', 'k2': 'p2',
+  'c11a': 'pb6', 'c11b': 'pb6', 'c11c': 'pb2', 'c11d': 'pb2', 'c11e': 'pb2', 'c11f': 'pb1', 'c11g': 'pb2', 'c11h': 'pb1',
+  'c12a': 'pb2', 'c12b': 'pb6', 'c12c': 'p12', 'c12d': 'p12', 'c12e': 'pb3', 'c12f': 'pb3', 'c12g': 'pb3', 'c12h': 'pb3',
+  'c13a': 'pb3', 'c13b': 'pb3', 'c13c': 'pb4', 'c13d': 'pb4', 'c13e': 'pb4', 'c13f': 'pb4', 'c13g': 'pb4',
+  'c14a': 'pb4', 'c14b': 'pb4', 'c14c': 'pb3', 'c14d': 'pb3', 'c14e': 'pb3', 'c14f': 'pb7', 'c14g': 'pb7',
+  'c15a': 'pb5', 'c15b': 'pb7', 'c15c': 'p21', 'c15d': 'pb8', 'c15e': 'pb7', 'c15f': 'pb9', 'c15h': 'pb7',
+  'c16a': 'pb7', 'c16b': 'pb7', 'c16c': 'p26',
+}
+for d in days:
+    for it in d['items']:
+        if it['id'] in PLACE_OF: it['placeId'] = PLACE_OF[it['id']]
 
 trip = dict(
   meta=dict(title='Japan 2027', start='2027-02-08', end='2027-02-17', homeCurrency='AUD', jpyPerAud=RATE, updatedAt=UPDATED, version=1,

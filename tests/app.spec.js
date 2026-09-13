@@ -221,3 +221,16 @@ test.describe('plan variants', () => {
     await expect(page.getByLabel('Applies to')).toHaveValue('ski');
   });
 });
+
+
+test.describe('day map', () => {
+  test('the plan page shows numbered pins for the day', async ({ page }) => {
+    await boot(page, '#/itinerary/2027-02-11');
+    await expect(page.locator('.daymap-head')).toContainText('stops');
+    await expect(page.locator('.daymap-legend li').first()).toBeVisible();
+    const pins = await page.locator('.leaflet-marker-icon').count();
+    expect(pins).toBeGreaterThan(2);
+    await page.locator('.daymap-head').click();
+    await expect(page.locator('.daymap-canvas')).toBeHidden();
+  });
+});

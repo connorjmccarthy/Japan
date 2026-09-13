@@ -5,7 +5,7 @@
     "end": "2027-02-17",
     "homeCurrency": "AUD",
     "jpyPerAud": 108,
-    "updatedAt": "2026-09-13T13:11:36Z",
+    "updatedAt": "2026-09-13T13:15:06Z",
     "version": 1,
     "about": "Solo ski trip. Confirmed: JQ815 BNE→SYD and the Business Classic Reward SYD→MEL→NRT on 8 Feb. Home Tue 16 Feb on QF80 + QF1256 (booked). Everything else is planned from research done 13 Sep 2026; prices marked est. need checking when booking."
   },
@@ -24,7 +24,8 @@
           "title": "Drive Gympie → Brisbane Airport",
           "status": "planned",
           "location": "Bruce Hwy, ~167 km, about 1h45",
-          "notes": "Book AIRPARK online beforehand (free shuttle every 10-15 min to the domestic terminal). Leaving at 6 puts you at the terminal by ~8:00. Jetstar check-in opens 2 h before and bag drop closes 40 min before departure (9:05), so 8:00-8:15 is the target."
+          "notes": "Book AIRPARK online beforehand (free shuttle every 10-15 min to the domestic terminal). Leaving at 6 puts you at the terminal by ~8:00. Jetstar check-in opens 2 h before and bag drop closes 40 min before departure (9:05), so 8:00-8:15 is the target.",
+          "placeId": "p2"
         },
         {
           "id": "a2",
@@ -34,7 +35,8 @@
           "status": "booked",
           "location": "BNE domestic → SYD T2",
           "endTime": "12:20",
-          "notes": "Jetstar, economy Classic Reward. Departs 9:45 Queensland time, lands 12:20 Sydney time (Sydney is an hour ahead in February). Six hours of buffer before QF481. Bags are NOT checked through to Narita on Jetstar: you collect them in Sydney. Reward bookings include a 20 kg bag but the confirmation sometimes shows 0 kg; check it."
+          "notes": "Jetstar, economy Classic Reward. Departs 9:45 Queensland time, lands 12:20 Sydney time (Sydney is an hour ahead in February). Six hours of buffer before QF481. Bags are NOT checked through to Narita on Jetstar: you collect them in Sydney. Reward bookings include a 20 kg bag but the confirmation sometimes shows 0 kg; check it.",
+          "placeId": "p2"
         },
         {
           "id": "a2b",
@@ -44,7 +46,8 @@
           "status": "planned",
           "location": "Sydney T2 baggage hall → covered walkway (7 min) → T3 Qantas bag drop",
           "endTime": "13:15",
-          "notes": "Qantas accepts domestic bags from about 6 hours before departure, so from 12:30 you are fine. Check in for QF481 online the day before (24 h out) so you only need the bag drop. Then security and up to the lounge. If the bag drop refuses the bag early, wait landside at the T3 cafes until it opens; the lounge is airside."
+          "notes": "Qantas accepts domestic bags from about 6 hours before departure, so from 12:30 you are fine. Check in for QF481 online the day before (24 h out) so you only need the bag drop. Then security and up to the lounge. If the bag drop refuses the bag early, wait landside at the T3 cafes until it opens; the lounge is airside.",
+          "placeId": "p4"
         },
         {
           "id": "a3",
@@ -53,7 +56,8 @@
           "title": "Qantas Domestic Business Lounge, Sydney T3",
           "status": "planned",
           "location": "Opposite gates 4-5, up the escalator, left door",
-          "notes": "Your Business ticket (QF481 boarding pass) gets you in. Five hours: shower, eat lightly (the Melbourne First Lounge dinner is better), charge everything, download offline maps."
+          "notes": "Your Business ticket (QF481 boarding pass) gets you in. Five hours: shower, eat lightly (the Melbourne First Lounge dinner is better), charge everything, download offline maps.",
+          "placeId": "p4"
         },
         {
           "id": "a4",
@@ -63,7 +67,8 @@
           "status": "booked",
           "location": "SYD T3 → MEL T1",
           "endTime": "20:05",
-          "notes": "Business, A321neo, 1h35. Confirmed."
+          "notes": "Business, A321neo, 1h35. Confirmed.",
+          "placeId": "p4"
         },
         {
           "id": "a5",
@@ -72,7 +77,8 @@
           "title": "Melbourne T1 → T2 walk, then immigration",
           "status": "planned",
           "location": "Covered walkway, one level up, 3-5 min",
-          "notes": "Bags transfer automatically on the one booking. Allow 30-40 min for security and outbound immigration."
+          "notes": "Bags transfer automatically on the one booking. Allow 30-40 min for security and outbound immigration.",
+          "placeId": "p5"
         },
         {
           "id": "a6",
@@ -81,7 +87,8 @@
           "title": "Qantas International First Lounge, Melbourne T2 (Titanium pass)",
           "status": "planned",
           "location": "Airside, level 3, escalator near gates 9-10",
-          "notes": "Use one of your two Titanium First Lounge invitations here (show it in the Qantas app). Proper restaurant dining, so skip the Sydney lounge food and eat here. Be at the gate by ~10:45pm. Fallback if anything goes wrong with the pass: the International Business Lounge on level 1 is covered by the ticket."
+          "notes": "Use one of your two Titanium First Lounge invitations here (show it in the Qantas app). Proper restaurant dining, so skip the Sydney lounge food and eat here. Be at the gate by ~10:45pm. Fallback if anything goes wrong with the pass: the International Business Lounge on level 1 is covered by the ticket.",
+          "placeId": "p5"
         },
         {
           "id": "a7",
@@ -91,7 +98,8 @@
           "status": "booked",
           "location": "MEL T2 → NRT T2",
           "endTime": "07:50",
-          "notes": "Business, A330-200, 10h20, lands 7:50am Tuesday. Sleep as much as you can: Japan is only 1 hour behind Queensland, so jet lag is minimal."
+          "notes": "Business, A330-200, 10h20, lands 7:50am Tuesday. Sleep as much as you can: Japan is only 1 hour behind Queensland, so jet lag is minimal.",
+          "placeId": "p5"
         }
       ]
     },
@@ -109,7 +117,8 @@
           "title": "Land Narita T2, immigration and customs",
           "status": "planned",
           "location": "Narita T2",
-          "notes": "Have the Visit Japan Web QR code ready (immigration + customs in one). Budget about an hour. Pick up your bag, switch on the eSIM, and withdraw ¥30,000-40,000 at the 7-Eleven ATM in the terminal (Nozawa is largely cash-only and has one foreign-card ATM, at the post office). Suica: Welcome Suica Mobile in Apple Wallet if you have an iPhone; on Android buy a physical Welcome Suica at the JR counter."
+          "notes": "Have the Visit Japan Web QR code ready (immigration + customs in one). Budget about an hour. Pick up your bag, switch on the eSIM, and withdraw ¥30,000-40,000 at the 7-Eleven ATM in the terminal (Nozawa is largely cash-only and has one foreign-card ATM, at the post office). Suica: Welcome Suica Mobile in Apple Wallet if you have an iPhone; on Android buy a physical Welcome Suica at the JR counter.",
+          "placeId": "p6"
         },
         {
           "id": "b2",
@@ -121,7 +130,8 @@
           "endTime": "10:45",
           "cost": 3070,
           "currency": "JPY",
-          "notes": "~55 min. Buy at the JR East ticket office or machine (the N’EX round-trip ticket for foreign passports, ¥5,200, is worth it because you come back this way on the 15th)."
+          "notes": "~55 min. Buy at the JR East ticket office or machine (the N’EX round-trip ticket for foreign passports, ¥5,200, is worth it because you come back this way on the 15th).",
+          "placeId": "p6"
         },
         {
           "id": "b3",
@@ -132,7 +142,8 @@
           "location": "Tokyo Station, central passage",
           "cost": 1500,
           "currency": "JPY",
-          "notes": "The most Japanese lunch there is. Grab one for the Shinkansen. Not a trendy place, just a shop with 200 regional bento."
+          "notes": "The most Japanese lunch there is. Grab one for the Shinkansen. Not a trendy place, just a shop with 200 regional bento.",
+          "placeId": "p7"
         },
         {
           "id": "b4",
@@ -144,7 +155,8 @@
           "endTime": "14:00",
           "cost": 14720,
           "currency": "JPY",
-          "notes": "~2h30, every 10 min. Reserve a seat (opens one month ahead on smart-EX). A normal suitcase under 160 cm total is fine; only bags over 160 cm need the oversized-baggage seat."
+          "notes": "~2h30, every 10 min. Reserve a seat (opens one month ahead on smart-EX). A normal suitcase under 160 cm total is fine; only bags over 160 cm need the oversized-baggage seat.",
+          "placeId": "p7"
         },
         {
           "id": "b5",
@@ -155,7 +167,8 @@
           "location": "JR local to Osaka / Fukushima, or Yumesaki line to Universal City",
           "endTime": "15:00",
           "cost": 300,
-          "currency": "JPY"
+          "currency": "JPY",
+          "placeId": "p8"
         },
         {
           "id": "b6",
@@ -164,7 +177,8 @@
           "title": "Check in, Osaka (2 nights)",
           "status": "planned",
           "location": "See Stays for the shortlist",
-          "notes": "Solo, private room. Business hotels around Fukushima or Tenma are quiet, cheap and 15-25 min from USJ by train."
+          "notes": "Solo, private room. Business hotels around Fukushima or Tenma are quiet, cheap and 15-25 min from USJ by train.",
+          "placeId": "p27"
         },
         {
           "id": "b6b",
@@ -175,7 +189,8 @@
           "location": "Hotel front desk",
           "cost": 3000,
           "currency": "JPY",
-          "notes": "Ask the desk for “takkyubin to this address” and show the destination’s name and address in Japanese. Plan A: to the Nozawa lodging, waiting when you arrive Thursday. Plan B: to the Matsumoto hotel for Sunday 14 (write “for guest arriving 14 Feb”; hotels hold parcels). Two days is the standard lead time. Travel in between with a daypack: two or three days of clothes, USJ tickets, and in Plan A Friday’s ski base layers. Confirm beforehand that the receiving place accepts parcels (most do)."
+          "notes": "Ask the desk for “takkyubin to this address” and show the destination’s name and address in Japanese. Plan A: to the Nozawa lodging, waiting when you arrive Thursday. Plan B: to the Matsumoto hotel for Sunday 14 (write “for guest arriving 14 Feb”; hotels hold parcels). Two days is the standard lead time. Travel in between with a daypack: two or three days of clothes, USJ tickets, and in Plan A Friday’s ski base layers. Confirm beforehand that the receiving place accepts parcels (most do).",
+          "placeId": "p27"
         },
         {
           "id": "b6c",
@@ -185,7 +200,8 @@
           "status": "idea",
           "location": "Daimaru Umeda 13F, 5 min walk from JR Osaka Station",
           "endTime": "17:00",
-          "notes": "The official Nintendo store, exclusive merchandise, quieter than the USJ shops on Wednesday. Open 10:00-20:00. Borrowed from your friend’s Tokyo list (theirs was the Shibuya Parco store)."
+          "notes": "The official Nintendo store, exclusive merchandise, quieter than the USJ shops on Wednesday. Open 10:00-20:00. Borrowed from your friend’s Tokyo list (theirs was the Shibuya Parco store).",
+          "placeId": "p25"
         },
         {
           "id": "b7",
@@ -194,7 +210,8 @@
           "title": "Walk Nakazakicho and Tenma",
           "status": "planned",
           "location": "Nakazakicho (old wooden lanes) → Tenjinbashisuji shopping arcade → Tenma",
-          "notes": "Low-key neighbourhoods a short train ride from Umeda. Tenjinbashisuji is 2.6 km of covered arcade where locals shop."
+          "notes": "Low-key neighbourhoods a short train ride from Umeda. Tenjinbashisuji is 2.6 km of covered arcade where locals shop.",
+          "placeId": "p11"
         },
         {
           "id": "b8",
@@ -205,7 +222,8 @@
           "location": "Around Tenma station, under the tracks",
           "cost": 3500,
           "currency": "JPY",
-          "notes": "Standing bars and tiny izakaya, mostly Japanese customers. Order doteyaki (beef tendon simmered in miso) and kushikatsu. Early night; tomorrow starts at 7."
+          "notes": "Standing bars and tiny izakaya, mostly Japanese customers. Order doteyaki (beef tendon simmered in miso) and kushikatsu. Early night; tomorrow starts at 7.",
+          "placeId": "p10"
         }
       ]
     },
@@ -224,7 +242,8 @@
           "status": "planned",
           "location": "Osaka Station platform 1 → Universal City (JR Yumesaki line, ~12 min direct)",
           "cost": 200,
-          "currency": "JPY"
+          "currency": "JPY",
+          "placeId": "p9"
         },
         {
           "id": "c2",
@@ -233,7 +252,8 @@
           "title": "Be at the gates before official opening",
           "status": "planned",
           "location": "USJ main entrance",
-          "notes": "Posted opening is usually 9:00-9:30 in February but the park regularly opens 30-60 min early. Being there by 7:45 matters if you are relying on the free timed-entry ticket. Log into the USJ app the night before and make sure the eSIM has data: the timed-entry ticket is app-only (since Jan 2026) and needs signal at the gate."
+          "notes": "Posted opening is usually 9:00-9:30 in February but the park regularly opens 30-60 min early. Being there by 7:45 matters if you are relying on the free timed-entry ticket. Log into the USJ app the night before and make sure the eSIM has data: the timed-entry ticket is app-only (since Jan 2026) and needs signal at the gate.",
+          "placeId": "p9"
         },
         {
           "id": "c3",
@@ -244,7 +264,8 @@
           "location": "USJ",
           "cost": 10900,
           "currency": "JPY",
-          "notes": "1-Day Studio Pass, date-priced (¥8,900 low season up to ¥11,800 peak in 2026; Feb 2027 not published yet). If you bought an Express Pass with area entry you already have a slot and can skip the scramble."
+          "notes": "1-Day Studio Pass, date-priced (¥8,900 low season up to ¥11,800 peak in 2026; Feb 2027 not published yet). If you bought an Express Pass with area entry you already have a slot and can skip the scramble.",
+          "placeId": "p9"
         },
         {
           "id": "c4",
@@ -255,7 +276,8 @@
           "location": "Super Nintendo World",
           "cost": 4800,
           "currency": "JPY",
-          "notes": "The ¥4,800 is the Power-Up Band (optional but it is the whole point of the key challenges and Bowser Jr boss fight). Ride Mario Kart first, then Donkey Kong’s Mine Cart, then wander."
+          "notes": "The ¥4,800 is the Power-Up Band (optional but it is the whole point of the key challenges and Bowser Jr boss fight). Ride Mario Kart first, then Donkey Kong’s Mine Cart, then wander.",
+          "placeId": "p9"
         },
         {
           "id": "c5",
@@ -266,7 +288,8 @@
           "location": "Super Nintendo World",
           "cost": 2500,
           "currency": "JPY",
-          "notes": "Reserve in the app on the day if slots show. Otherwise Yoshi’s Snack Island for a quick bite."
+          "notes": "Reserve in the app on the day if slots show. Otherwise Yoshi’s Snack Island for a quick bite.",
+          "placeId": "p9"
         },
         {
           "id": "c6",
@@ -276,7 +299,8 @@
           "status": "planned",
           "location": "USJ",
           "endTime": "19:00",
-          "notes": "Single Rider lines are the solo traveller’s cheat code and are free. February weekdays historically close around 7pm, so the day is shorter than summer: front-load Nintendo World."
+          "notes": "Single Rider lines are the solo traveller’s cheat code and are free. February weekdays historically close around 7pm, so the day is shorter than summer: front-load Nintendo World.",
+          "placeId": "p9"
         },
         {
           "id": "c7",
@@ -286,7 +310,8 @@
           "status": "planned",
           "location": "A neighbourhood okonomiyaki counter near the hotel (see Food)",
           "cost": 1800,
-          "currency": "JPY"
+          "currency": "JPY",
+          "placeId": "p27"
         }
       ]
     },
@@ -306,7 +331,8 @@
           "location": "Shin-Osaka",
           "cost": 300,
           "currency": "JPY",
-          "variant": "ski"
+          "variant": "ski",
+          "placeId": "p8"
         },
         {
           "id": "e2",
@@ -319,7 +345,8 @@
           "cost": 6880,
           "currency": "JPY",
           "notes": "~50 min, reserved seat.",
-          "variant": "ski"
+          "variant": "ski",
+          "placeId": "p12"
         },
         {
           "id": "e3",
@@ -332,7 +359,8 @@
           "cost": 6000,
           "currency": "JPY",
           "notes": "Reserved seat on the holiday. Sit on the left for the Kiso river. Buy the ticket through to Nagano with a break at Kiso-Fukushima, or two tickets; either is fine.",
-          "variant": "ski"
+          "variant": "ski",
+          "placeId": "p22"
         },
         {
           "id": "e4",
@@ -345,7 +373,8 @@
           "cost": 330,
           "currency": "JPY",
           "notes": "20 minutes. Check the local timetable when you reserve the Shinano so the connection is short.",
-          "variant": "ski"
+          "variant": "ski",
+          "placeId": "p21"
         },
         {
           "id": "e5",
@@ -358,7 +387,8 @@
           "cost": 0,
           "currency": "JPY",
           "notes": "A working village, not a theme park: lacquerware workshops, a sake shop, temples up the side lanes, snow on the eaves. Narai station has no lockers but a ¥300 bag-minding desk (8:30-16:00) if you are carrying anything. Lunch here: soba or gohei-mochi (grilled rice cake with walnut-miso), the Kiso valley specialty. The Kiso Ohashi bridge and Kamidonya museum are worth 20 minutes.",
-          "variant": "ski"
+          "variant": "ski",
+          "placeId": "p21"
         },
         {
           "id": "e6",
@@ -369,7 +399,8 @@
           "location": "Any shop on the main street with a menu outside",
           "cost": 1500,
           "currency": "JPY",
-          "variant": "ski"
+          "variant": "ski",
+          "placeId": "p21"
         },
         {
           "id": "e7",
@@ -382,7 +413,8 @@
           "cost": 4500,
           "currency": "JPY",
           "notes": "Local 25 min to Shiojiri, change to the Shinano (about hourly) for ~65 min to Nagano. Reserve the Shiojiri → Nagano seat too.",
-          "variant": "ski"
+          "variant": "ski",
+          "placeId": "p21"
         },
         {
           "id": "e8",
@@ -395,7 +427,8 @@
           "cost": 1500,
           "currency": "JPY",
           "notes": "12 minutes. The Nozawa Onsen Liner leaves about 10 min after each Shinkansen.",
-          "variant": "ski"
+          "variant": "ski",
+          "placeId": "p13"
         },
         {
           "id": "e9",
@@ -408,7 +441,8 @@
           "cost": 600,
           "currency": "JPY",
           "notes": "25 min. Taxi is the fallback (¥6,000-7,000). Tell the lodging you arrive about 6pm so dinner is held.",
-          "variant": "ski"
+          "variant": "ski",
+          "placeId": "p14"
         },
         {
           "id": "e10",
@@ -418,7 +452,8 @@
           "status": "planned",
           "location": "See Stays for the shortlist and how to book",
           "notes": "Your suitcase should be waiting (sent by courier on Tuesday). If it is not, the daypack has tomorrow’s ski layers.",
-          "variant": "ski"
+          "variant": "ski",
+          "placeId": "p15"
         },
         {
           "id": "e11",
@@ -430,7 +465,8 @@
           "cost": 3000,
           "currency": "JPY",
           "notes": "Ryokan dinners are served at a fixed time; say so at check-in. If you are eating out, Wakagiri is the local favourite for a home-style set meal.",
-          "variant": "ski"
+          "variant": "ski",
+          "placeId": "p15"
         },
         {
           "id": "e12",
@@ -442,7 +478,8 @@
           "cost": 0,
           "currency": "JPY",
           "notes": "13 free soto-yu bathhouses run by the village. Wash first, no towel in the water, keep it quiet, no photos. Bring a small towel; expect it hot.",
-          "variant": "ski"
+          "variant": "ski",
+          "placeId": "p15"
         },
         {
           "id": "c11a",
@@ -453,7 +490,8 @@
           "location": "Osaka → Nankai Namba station",
           "cost": 300,
           "currency": "JPY",
-          "variant": "culture"
+          "variant": "culture",
+          "placeId": "pb6"
         },
         {
           "id": "c11b",
@@ -466,7 +504,8 @@
           "cost": 3980,
           "currency": "JPY",
           "notes": "Buy the Koyasan World Heritage Ticket at Namba (~¥3,980): return train, cable car and unlimited Koyasan buses for two days. Reserve the limited express seat for the holiday.",
-          "variant": "culture"
+          "variant": "culture",
+          "placeId": "pb6"
         },
         {
           "id": "c11c",
@@ -477,7 +516,8 @@
           "location": "Main street, Koyasan",
           "cost": 1300,
           "currency": "JPY",
-          "variant": "culture"
+          "variant": "culture",
+          "placeId": "pb2"
         },
         {
           "id": "c11d",
@@ -490,7 +530,8 @@
           "cost": 1700,
           "currency": "JPY",
           "notes": "Kongobuji has the largest rock garden in Japan and painted sliding doors; Konpon Daito is the vermilion pagoda. Bus or 15 min walk between them.",
-          "variant": "culture"
+          "variant": "culture",
+          "placeId": "pb2"
         },
         {
           "id": "c11e",
@@ -500,7 +541,8 @@
           "status": "planned",
           "location": "See Stays: Ekoin, Fukuchiin or Shojoshin-in",
           "notes": "Tatami room, shared baths, dinner served in your room by monks-in-training. Curfew around 9pm. Solo guests are normal here.",
-          "variant": "culture"
+          "variant": "culture",
+          "placeId": "pb2"
         },
         {
           "id": "c11f",
@@ -513,7 +555,8 @@
           "cost": 0,
           "currency": "JPY",
           "notes": "200,000 graves under thousand-year cedars, lanterns, snow. The single most atmospheric walk in Japan. Photography stops at the last bridge; go quiet there.",
-          "variant": "culture"
+          "variant": "culture",
+          "placeId": "pb1"
         },
         {
           "id": "c11g",
@@ -525,7 +568,8 @@
           "cost": 0,
           "currency": "JPY",
           "notes": "Vegetarian Buddhist cuisine: sesame tofu (goma-dofu, the Koyasan speciality), mountain vegetables, tempura. Included in the lodging price.",
-          "variant": "culture"
+          "variant": "culture",
+          "placeId": "pb2"
         },
         {
           "id": "c11h",
@@ -538,7 +582,8 @@
           "cost": 3000,
           "currency": "JPY",
           "notes": "Ekoin runs an English-language night walk most evenings; other temples can book you on it.",
-          "variant": "culture"
+          "variant": "culture",
+          "placeId": "pb1"
         }
       ],
       "variants": {
@@ -566,7 +611,8 @@
           "cost": 17800,
           "currency": "JPY",
           "notes": "4 days x ¥4,450 standard set (skis, boots, poles) at a village shop; the resort shop is ¥5,500/day. Book online in January with your boot size in cm: big sizes (29 cm+) run out in peak weeks. Ski wear can be rented too.",
-          "variant": "ski"
+          "variant": "ski",
+          "placeId": "p15"
         },
         {
           "id": "f1",
@@ -579,7 +625,8 @@
           "cost": 8000,
           "currency": "JPY",
           "notes": "Special Pack: 1-day lift pass + ¥1,000 lunch voucher (2025-26 price; expect +5-10%). 297 ha, 1,085 m vertical, 10 km longest run (Skyline). Yamabiko for tree runs, Uenotaira for cruising.",
-          "variant": "ski"
+          "variant": "ski",
+          "placeId": "p16"
         },
         {
           "id": "f2",
@@ -591,7 +638,8 @@
           "cost": 500,
           "currency": "JPY",
           "notes": "Curry rice or ramen; the voucher covers most of it.",
-          "variant": "ski"
+          "variant": "ski",
+          "placeId": "p16"
         },
         {
           "id": "f3",
@@ -602,7 +650,8 @@
           "location": "Village",
           "cost": 0,
           "currency": "JPY",
-          "variant": "ski"
+          "variant": "ski",
+          "placeId": "p15"
         },
         {
           "id": "f4",
@@ -614,7 +663,8 @@
           "cost": 1800,
           "currency": "JPY",
           "notes": "Hand-cut Shinshu soba. Order it zaru (cold) even in winter; it is how locals judge a soba shop.",
-          "variant": "ski"
+          "variant": "ski",
+          "placeId": "p15"
         },
         {
           "id": "c12a",
@@ -627,7 +677,8 @@
           "cost": 0,
           "currency": "JPY",
           "notes": "Guests sit at the back. Breakfast in your room straight after.",
-          "variant": "culture"
+          "variant": "culture",
+          "placeId": "pb2"
         },
         {
           "id": "c12b",
@@ -640,7 +691,8 @@
           "cost": 300,
           "currency": "JPY",
           "notes": "Return leg is covered by the World Heritage Ticket; the subway hop is ¥300.",
-          "variant": "culture"
+          "variant": "culture",
+          "placeId": "pb6"
         },
         {
           "id": "c12c",
@@ -652,7 +704,8 @@
           "endTime": "11:35",
           "cost": 6880,
           "currency": "JPY",
-          "variant": "culture"
+          "variant": "culture",
+          "placeId": "p12"
         },
         {
           "id": "c12d",
@@ -664,7 +717,8 @@
           "cost": 800,
           "currency": "JPY",
           "notes": "Five-minute stand-up lunch, the Nagoya thing.",
-          "variant": "culture"
+          "variant": "culture",
+          "placeId": "p12"
         },
         {
           "id": "c12e",
@@ -677,7 +731,8 @@
           "cost": 6500,
           "currency": "JPY",
           "notes": "~2h30 up the Hida river gorge; reserved seat. Hida trains run about hourly, so the exact one depends on the connection.",
-          "variant": "culture"
+          "variant": "culture",
+          "placeId": "pb3"
         },
         {
           "id": "c12f",
@@ -686,7 +741,8 @@
           "title": "Check in, Takayama (1 night)",
           "status": "planned",
           "location": "See Stays",
-          "variant": "culture"
+          "variant": "culture",
+          "placeId": "pb3"
         },
         {
           "id": "c12g",
@@ -696,7 +752,8 @@
           "status": "planned",
           "location": "Takayama",
           "notes": "No plan. If you want prompts: Sanmachi old town and the sake breweries with cedar balls outside (tastings for a few hundred yen), the Higashiyama temple walk above town, a bath at the hotel, Hida beef with hoba-miso whenever you get hungry.",
-          "variant": "culture"
+          "variant": "culture",
+          "placeId": "pb3"
         },
         {
           "id": "c12h",
@@ -708,7 +765,8 @@
           "cost": 4000,
           "currency": "JPY",
           "notes": "Hida beef on a magnolia leaf with miso is the dish. Skip the ones with touts.",
-          "variant": "culture"
+          "variant": "culture",
+          "placeId": "pb3"
         }
       ],
       "variants": {
@@ -737,7 +795,8 @@
           "cost": 8000,
           "currency": "JPY",
           "notes": "Special Pack again. Explore Karasawa and Paradise; the Skyline run top to bottom late afternoon when it empties.",
-          "variant": "ski"
+          "variant": "ski",
+          "placeId": "p16"
         },
         {
           "id": "g2",
@@ -748,7 +807,8 @@
           "location": "On mountain",
           "cost": 500,
           "currency": "JPY",
-          "variant": "ski"
+          "variant": "ski",
+          "placeId": "p16"
         },
         {
           "id": "g3",
@@ -759,7 +819,8 @@
           "location": "Ogama (the village’s boiling cooking spring, locals only in the water but you can watch and buy eggs nearby)",
           "cost": 300,
           "currency": "JPY",
-          "variant": "ski"
+          "variant": "ski",
+          "placeId": "p15"
         },
         {
           "id": "g4",
@@ -770,7 +831,8 @@
           "location": "A village izakaya (see Food)",
           "cost": 3500,
           "currency": "JPY",
-          "variant": "ski"
+          "variant": "ski",
+          "placeId": "p15"
         },
         {
           "id": "c13a",
@@ -782,7 +844,8 @@
           "cost": 800,
           "currency": "JPY",
           "notes": "Farmers, pickles, mitarashi dango (soy-glazed rice dumplings) for breakfast.",
-          "variant": "culture"
+          "variant": "culture",
+          "placeId": "pb3"
         },
         {
           "id": "c13b",
@@ -795,7 +858,8 @@
           "cost": 1800,
           "currency": "JPY",
           "notes": "50 min. Reserve the seat; the reserved services sell out on weekends. Some services are non-reserved and first come first served.",
-          "variant": "culture"
+          "variant": "culture",
+          "placeId": "pb3"
         },
         {
           "id": "c13c",
@@ -808,7 +872,8 @@
           "cost": 1000,
           "currency": "JPY",
           "notes": "Viewpoint shuttle or a 20 min walk up. Wada House (¥400) is the big one you can go inside. The open-air museum across the river is quieter. Snow boots and crampons: the paths are icy.",
-          "variant": "culture"
+          "variant": "culture",
+          "placeId": "pb4"
         },
         {
           "id": "c13d",
@@ -819,7 +884,8 @@
           "location": "Village",
           "cost": 1300,
           "currency": "JPY",
-          "variant": "culture"
+          "variant": "culture",
+          "placeId": "pb4"
         },
         {
           "id": "c13e",
@@ -829,7 +895,8 @@
           "status": "planned",
           "location": "See Stays; book via the Shirakawa-go Tourist Association site",
           "notes": "Day-trippers leave on the last buses around 5; then the village is yours. Dinner is around the irori hearth with the family.",
-          "variant": "culture"
+          "variant": "culture",
+          "placeId": "pb4"
         },
         {
           "id": "c13f",
@@ -840,7 +907,8 @@
           "location": "Village",
           "cost": 700,
           "currency": "JPY",
-          "variant": "culture"
+          "variant": "culture",
+          "placeId": "pb4"
         },
         {
           "id": "c13g",
@@ -852,7 +920,8 @@
           "cost": 0,
           "currency": "JPY",
           "notes": "Grilled river fish, mountain vegetables, local tofu, included in the price. Bring a small gift or just good manners.",
-          "variant": "culture"
+          "variant": "culture",
+          "placeId": "pb4"
         }
       ],
       "variants": {
@@ -881,7 +950,8 @@
           "cost": 2100,
           "currency": "JPY",
           "notes": "Check the Liner and Shinkansen times the night before; Sunday services are the same as weekdays.",
-          "variant": "ski"
+          "variant": "ski",
+          "placeId": "p13"
         },
         {
           "id": "h2",
@@ -894,7 +964,8 @@
           "cost": 1450,
           "currency": "JPY",
           "notes": "About 60 min to Chusha (middle shrine). In winter a separate winter service stops at the Okusha entrance; if the bus you are on does not, get off at Chusha and walk up the road ~30 min or take a taxi. The Zenko-ji & Togakushi 1-day bus ticket (Alpico) covers the whole day’s buses and is cheaper than singles.",
-          "variant": "ski"
+          "variant": "ski",
+          "placeId": "p23"
         },
         {
           "id": "h3",
@@ -907,7 +978,8 @@
           "cost": 0,
           "currency": "JPY",
           "notes": "20 min flat walk through the cedars to the red Zuishinmon gate, then a steeper 20-30 min to the inner shrine, all on packed snow. Bring or buy simple crampons (Workman or Don Quijote sell them for ~¥1,500) and waterproof boots; ski gloves and shell are perfect. Quiet, no ropes, no gates: this is the rural Japan you asked for.",
-          "variant": "ski"
+          "variant": "ski",
+          "placeId": "p23"
         },
         {
           "id": "h4",
@@ -919,7 +991,8 @@
           "cost": 1600,
           "currency": "JPY",
           "notes": "Togakushi soba is served in small “bocchi” bundles on a bamboo tray. Order zaru, add the local wasabi. Cash.",
-          "variant": "ski"
+          "variant": "ski",
+          "placeId": "p23"
         },
         {
           "id": "h5",
@@ -932,7 +1005,8 @@
           "cost": 0,
           "currency": "JPY",
           "notes": "Chusha has an 800-year-old triple cedar at its gate. Skip the ninja stuff unless it amuses you.",
-          "variant": "ski"
+          "variant": "ski",
+          "placeId": "p23"
         },
         {
           "id": "h6",
@@ -945,7 +1019,8 @@
           "cost": 1300,
           "currency": "JPY",
           "notes": "Get off at Zenkoji Daimon, not the station. Last buses back down are around 17:00-18:00; check the winter timetable.",
-          "variant": "ski"
+          "variant": "ski",
+          "placeId": "p24"
         },
         {
           "id": "h7",
@@ -958,7 +1033,8 @@
           "cost": 600,
           "currency": "JPY",
           "notes": "1,400-year-old temple, the reason Nagano exists. Walk the main hall, do the pitch-black “kaidan meguri” tunnel under the altar to touch the key to paradise (¥600). The approach street (Nakamise) has oyaki and miso shops.",
-          "variant": "ski"
+          "variant": "ski",
+          "placeId": "p24"
         },
         {
           "id": "h8",
@@ -970,7 +1046,8 @@
           "endTime": "18:40",
           "cost": 2100,
           "currency": "JPY",
-          "variant": "ski"
+          "variant": "ski",
+          "placeId": "p15"
         },
         {
           "id": "h9",
@@ -981,7 +1058,8 @@
           "location": "Village",
           "cost": 3000,
           "currency": "JPY",
-          "variant": "ski"
+          "variant": "ski",
+          "placeId": "p15"
         },
         {
           "id": "h10",
@@ -990,7 +1068,8 @@
           "title": "Pack; return rental gear tonight if the shop allows, or first thing tomorrow",
           "status": "planned",
           "location": "Lodging",
-          "variant": "ski"
+          "variant": "ski",
+          "placeId": "p15"
         },
         {
           "id": "h11",
@@ -1003,7 +1082,8 @@
           "cost": 8000,
           "currency": "JPY",
           "notes": "Marked as skipped so it stays out of the budget. Flip the status to Planned and set the Togakushi items to Skipped if you choose to ski. Sunday lift lines ease after 2pm.",
-          "variant": "ski"
+          "variant": "ski",
+          "placeId": "p16"
         },
         {
           "id": "c14a",
@@ -1015,7 +1095,8 @@
           "endTime": "08:00",
           "cost": 0,
           "currency": "JPY",
-          "variant": "culture"
+          "variant": "culture",
+          "placeId": "pb4"
         },
         {
           "id": "c14b",
@@ -1027,7 +1108,8 @@
           "endTime": "10:40",
           "cost": 1800,
           "currency": "JPY",
-          "variant": "culture"
+          "variant": "culture",
+          "placeId": "pb4"
         },
         {
           "id": "c14c",
@@ -1037,7 +1119,8 @@
           "status": "planned",
           "location": "Takayama",
           "notes": "Options, not a schedule: Takayama Jinya (the only surviving Edo provincial government office, ¥440), the Hida Folk Village of relocated farmhouses, or just coffee and the riverbank. Leave bags at the bus centre lockers.",
-          "variant": "culture"
+          "variant": "culture",
+          "placeId": "pb3"
         },
         {
           "id": "c14d",
@@ -1049,7 +1132,8 @@
           "cost": 1000,
           "currency": "JPY",
           "notes": "Thin curly noodles in a soy-shoyu broth; the town’s everyday lunch.",
-          "variant": "culture"
+          "variant": "culture",
+          "placeId": "pb3"
         },
         {
           "id": "c14e",
@@ -1062,7 +1146,8 @@
           "cost": 3800,
           "currency": "JPY",
           "notes": "Winter timetable, about 2h30, seat reservations mandatory (Alpico/Nohi, opens a month ahead). Sit on the left for the Alps.",
-          "variant": "culture"
+          "variant": "culture",
+          "placeId": "pb3"
         },
         {
           "id": "c14f",
@@ -1071,7 +1156,8 @@
           "title": "Check in, Matsumoto (2 nights); collect the suitcase",
           "status": "planned",
           "location": "See Stays",
-          "variant": "culture"
+          "variant": "culture",
+          "placeId": "pb7"
         },
         {
           "id": "c14g",
@@ -1082,7 +1168,8 @@
           "location": "Nakamachi street",
           "cost": 3000,
           "currency": "JPY",
-          "variant": "culture"
+          "variant": "culture",
+          "placeId": "pb7"
         }
       ],
       "variants": {
@@ -1111,7 +1198,8 @@
           "cost": 8000,
           "currency": "JPY",
           "notes": "Special Pack again. Skyline top to bottom with nobody on it; Yamabiko trees if it snowed overnight.",
-          "variant": "ski"
+          "variant": "ski",
+          "placeId": "p16"
         },
         {
           "id": "i2",
@@ -1122,7 +1210,8 @@
           "location": "On mountain",
           "cost": 500,
           "currency": "JPY",
-          "variant": "ski"
+          "variant": "ski",
+          "placeId": "p16"
         },
         {
           "id": "i3",
@@ -1133,7 +1222,8 @@
           "location": "Village",
           "cost": 0,
           "currency": "JPY",
-          "variant": "ski"
+          "variant": "ski",
+          "placeId": "p15"
         },
         {
           "id": "i4",
@@ -1144,7 +1234,8 @@
           "location": "Village izakaya",
           "cost": 3500,
           "currency": "JPY",
-          "variant": "ski"
+          "variant": "ski",
+          "placeId": "p15"
         },
         {
           "id": "i5",
@@ -1153,7 +1244,8 @@
           "title": "Confirm tomorrow: Liner time, Shinkansen reservation, rental return, cash to settle the bill",
           "status": "planned",
           "location": "Lodging",
-          "variant": "ski"
+          "variant": "ski",
+          "placeId": "p15"
         },
         {
           "id": "c15a",
@@ -1166,7 +1258,8 @@
           "cost": 700,
           "currency": "JPY",
           "notes": "1590s original black keep, steep ladders inside, Alps behind it. Go at 8:30 and you climb it alone. The only fixed thing today.",
-          "variant": "culture"
+          "variant": "culture",
+          "placeId": "pb5"
         },
         {
           "id": "c15b",
@@ -1176,7 +1269,8 @@
           "status": "planned",
           "location": "Matsumoto",
           "notes": "Ideas below are all optional and all easy from the station. Or do nothing: Nakamachi has good coffee, the hotel has a bath, and you have been moving for a week.",
-          "variant": "culture"
+          "variant": "culture",
+          "placeId": "pb7"
         },
         {
           "id": "c15c",
@@ -1186,7 +1280,8 @@
           "status": "idea",
           "location": "Local trains via Shiojiri, ~1 h each way, roughly hourly",
           "notes": "Lacquerware workshops, sake shop, gohei-mochi lunch, snow on the eaves. The most “rural architecture” thing within reach. About ¥1,500 in fares.",
-          "variant": "culture"
+          "variant": "culture",
+          "placeId": "p21"
         },
         {
           "id": "c15d",
@@ -1196,7 +1291,8 @@
           "status": "idea",
           "location": "Train to Hotaka (30 min) then taxi or a 40 min walk",
           "notes": "Japan’s largest wasabi farm, spring water, the Alps as a backdrop. Free entry; wasabi ice cream is compulsory.",
-          "variant": "culture"
+          "variant": "culture",
+          "placeId": "pb8"
         },
         {
           "id": "c15e",
@@ -1206,7 +1302,8 @@
           "status": "idea",
           "location": "Old town, all walkable",
           "notes": "Whitewashed storehouses, the frog street by the river, the City Museum of Art with Yayoi Kusama’s permanent rooms (she is from Matsumoto).",
-          "variant": "culture"
+          "variant": "culture",
+          "placeId": "pb7"
         },
         {
           "id": "c15f",
@@ -1216,7 +1313,8 @@
           "status": "idea",
           "location": "Bus 20 min from Matsumoto Station",
           "notes": "Hot Plaza Asama, the local onsen rather than a resort one. About ¥700.",
-          "variant": "culture"
+          "variant": "culture",
+          "placeId": "pb9"
         },
         {
           "id": "c15h",
@@ -1227,7 +1325,8 @@
           "location": "Around the station",
           "cost": 2000,
           "currency": "JPY",
-          "variant": "culture"
+          "variant": "culture",
+          "placeId": "pb7"
         }
       ],
       "variants": {
@@ -1256,7 +1355,8 @@
           "cost": 6000,
           "currency": "JPY",
           "notes": "Only if the lodging allows a late checkout and the rental shop opens early. Otherwise a slow breakfast and one last bathhouse.",
-          "variant": "ski"
+          "variant": "ski",
+          "placeId": "p16"
         },
         {
           "id": "j2",
@@ -1265,7 +1365,8 @@
           "title": "Return rental gear, check out, settle in cash",
           "status": "planned",
           "location": "Village",
-          "variant": "ski"
+          "variant": "ski",
+          "placeId": "p15"
         },
         {
           "id": "j3",
@@ -1277,7 +1378,8 @@
           "endTime": "12:25",
           "cost": 600,
           "currency": "JPY",
-          "variant": "ski"
+          "variant": "ski",
+          "placeId": "p15"
         },
         {
           "id": "j4",
@@ -1290,7 +1392,8 @@
           "cost": 8500,
           "currency": "JPY",
           "notes": "~1h50, reserve the seat (Hakutaka services stop at Iiyama roughly hourly).",
-          "variant": "ski"
+          "variant": "ski",
+          "placeId": "p14"
         },
         {
           "id": "j5",
@@ -1303,7 +1406,8 @@
           "cost": 0,
           "currency": "JPY",
           "notes": "Covered by the N’EX round trip ticket bought on day 1 (valid 14 days).",
-          "variant": "ski"
+          "variant": "ski",
+          "placeId": "p7"
         },
         {
           "id": "j6",
@@ -1312,7 +1416,8 @@
           "title": "Narita T2: check in, drop bag, tax-free refund counter if you shopped",
           "status": "planned",
           "location": "NRT T2",
-          "notes": "QF80 check-in closes 18:20. Check in online 24 h before and pick a seat."
+          "notes": "QF80 check-in closes 18:20. Check in online 24 h before and pick a seat.",
+          "placeId": "p6"
         },
         {
           "id": "j7",
@@ -1323,7 +1428,8 @@
           "location": "NRT T2, 4F",
           "cost": 1500,
           "currency": "JPY",
-          "notes": "Tonkatsu or ramen; last Japanese meal."
+          "notes": "Tonkatsu or ramen; last Japanese meal.",
+          "placeId": "p6"
         },
         {
           "id": "j8",
@@ -1333,7 +1439,8 @@
           "status": "booked",
           "location": "NRT T2 → MEL T2",
           "endTime": "07:45",
-          "notes": "Confirmed. Overnight A330, 10h25, Economy Sale fare. Try adding Economy Plus in Manage Booking. Lands Melbourne 07:45 Wed."
+          "notes": "Confirmed. Overnight A330, 10h25, Economy Sale fare. Try adding Economy Plus in Manage Booking. Lands Melbourne 07:45 Wed.",
+          "placeId": "p6"
         },
         {
           "id": "c16a",
@@ -1343,7 +1450,8 @@
           "status": "planned",
           "location": "Matsumoto",
           "notes": "Breakfast, a last walk to the castle moat, coffee on Nakamachi. Nothing to catch until 10:40.",
-          "variant": "culture"
+          "variant": "culture",
+          "placeId": "pb7"
         },
         {
           "id": "c16b",
@@ -1356,7 +1464,8 @@
           "cost": 6620,
           "currency": "JPY",
           "notes": "~2h30, all seats reserved.",
-          "variant": "culture"
+          "variant": "culture",
+          "placeId": "pb7"
         },
         {
           "id": "c16c",
@@ -1369,7 +1478,8 @@
           "cost": 0,
           "currency": "JPY",
           "notes": "~80 min. Covered by the N’EX round-trip ticket bought on day 1 (it is valid from Shinjuku too).",
-          "variant": "culture"
+          "variant": "culture",
+          "placeId": "p26"
         }
       ],
       "variants": {
@@ -1395,7 +1505,8 @@
           "status": "planned",
           "location": "MEL T2 → T1",
           "endTime": "08:50",
-          "notes": "1h35 connection, protected because both flights are on the one booking; if QF80 is late Qantas rebooks you on a later Melbourne → Brisbane flight. No duty-free browsing: immigration, bag belt, customs, transfer desk, T1, gate. No time for a lounge."
+          "notes": "1h35 connection, protected because both flights are on the one booking; if QF80 is late Qantas rebooks you on a later Melbourne → Brisbane flight. No duty-free browsing: immigration, bag belt, customs, transfer desk, T1, gate. No time for a lounge.",
+          "placeId": "p5"
         },
         {
           "id": "k1b",
@@ -1405,7 +1516,8 @@
           "status": "booked",
           "location": "MEL T1 → BNE Terminal D",
           "endTime": "10:35",
-          "notes": "QantasLink A220, 2h15. Confirmed."
+          "notes": "QantasLink A220, 2h15. Confirmed.",
+          "placeId": "p5"
         },
         {
           "id": "k2",
@@ -1414,7 +1526,8 @@
           "title": "AIRPARK shuttle to the car, lunch, drive to Gympie",
           "status": "planned",
           "location": "BNE → Gympie, ~1h45",
-          "notes": "Two flights and a red-eye behind you: eat and have a proper coffee before the Bruce Highway. Home about 1:30pm."
+          "notes": "Two flights and a red-eye behind you: eat and have a proper coffee before the Bruce Highway. Home about 1:30pm.",
+          "placeId": "p2"
         }
       ]
     }
@@ -2725,6 +2838,15 @@
       "lng": 135.498
     },
     {
+      "id": "p27",
+      "name": "Osaka hotel area (Kitahama / Nakatsu)",
+      "kind": "hotel",
+      "town": "Osaka",
+      "lat": 34.693,
+      "lng": 135.506,
+      "notes": "Wherever the Osaka hotel ends up; move this pin."
+    },
+    {
       "id": "p19",
       "name": "Fukushima (Osaka) dining street",
       "kind": "food",
@@ -2894,6 +3016,54 @@
       "lat": 36.2384,
       "lng": 137.969,
       "variant": "culture"
+    },
+    {
+      "id": "pb6",
+      "name": "Nankai Namba Station",
+      "kind": "station",
+      "town": "Osaka",
+      "lat": 34.6636,
+      "lng": 135.5023,
+      "variant": "culture",
+      "notes": "Trains to Koyasan leave from here."
+    },
+    {
+      "id": "pb7",
+      "name": "Matsumoto old town (Nakamachi) and station",
+      "kind": "town",
+      "town": "Matsumoto",
+      "lat": 36.232,
+      "lng": 137.968,
+      "variant": "culture"
+    },
+    {
+      "id": "pb8",
+      "name": "Daio Wasabi Farm (Azumino)",
+      "kind": "other",
+      "town": "Azumino",
+      "lat": 36.339,
+      "lng": 137.906,
+      "variant": "culture",
+      "notes": "Option for the free day."
+    },
+    {
+      "id": "pb9",
+      "name": "Asama Onsen",
+      "kind": "other",
+      "town": "Matsumoto",
+      "lat": 36.257,
+      "lng": 137.998,
+      "variant": "culture",
+      "notes": "Local public bath, option for the free day."
+    },
+    {
+      "id": "p26",
+      "name": "Shinjuku Station",
+      "kind": "station",
+      "town": "Tokyo",
+      "lat": 35.6896,
+      "lng": 139.7006,
+      "notes": "Azusa arrives here; N’EX to Narita leaves from here."
     }
   ],
   "questions": [
