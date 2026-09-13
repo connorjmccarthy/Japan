@@ -200,6 +200,8 @@ test.describe('sync safety', () => {
 test.describe('plan variants', () => {
   test('switching plans changes the itinerary, stays and budget', async ({ page, isMobile }) => {
     await boot(page, '#/itinerary/2027-02-13');
+    if (isMobile) await page.getByRole('button', { name: 'More' }).click();
+    await page.locator('#variant-switch').getByRole('button', { name: 'A: Ski' }).click();
     await expect(page.locator('.day-title')).toContainText('Ski Nozawa');
     if (isMobile) await page.getByRole('button', { name: 'More' }).click();
     await page.locator('#variant-switch').getByRole('button', { name: 'B: Culture' }).click();
@@ -215,7 +217,7 @@ test.describe('plan variants', () => {
     await expect(page.locator('.stat-value').first()).not.toHaveText(totalB);
     const totalA = await page.locator('.stat-value').first().textContent();
     expect(totalA).not.toEqual(totalB);
-    // a new item defaults to the plan you are looking at
+    // a new item defaults to the plan you are looking at (A is active now)
     await page.goto('/#/itinerary/2027-02-12');
     await page.getByRole('button', { name: '+ Add', exact: true }).click();
     await expect(page.getByLabel('Applies to')).toHaveValue('ski');
