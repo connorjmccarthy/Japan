@@ -5,7 +5,7 @@
     "end": "2027-02-17",
     "homeCurrency": "AUD",
     "jpyPerAud": 108,
-    "updatedAt": "2026-09-13T11:41:40Z",
+    "updatedAt": "2026-09-13T11:43:00Z",
     "version": 1,
     "about": "Solo ski trip. Confirmed: JQ815 BNE→SYD and the Business Classic Reward SYD→MEL→NRT on 8 Feb. Home Tue 16 Feb (QF62 preferred, QF80 + QF1258 fallback). Everything else is planned from research done 13 Sep 2026; prices marked est. need checking when booking."
   },
@@ -827,11 +827,11 @@
           "id": "j8",
           "time": "19:20",
           "type": "flight",
-          "title": "Flight home: QF62 Narita → Brisbane 21:45 (preferred) or QF80 Narita → Melbourne 19:20 + QF1258 → Brisbane",
-          "status": "idea",
-          "location": "NRT T2",
+          "title": "QF80 Narita → Melbourne",
+          "status": "planned",
+          "location": "NRT T2 → MEL T2",
           "endTime": "07:45",
-          "notes": "See Flights & points. Both are two-class A330s (no Premium Economy). QF62 is direct, later, cheaper in points and lands 07:45 Wed. QF80 + QF1258 lands Brisbane 11:35 Wed with a protected 2h35 change in Melbourne."
+          "notes": "Overnight A330, 10h25. Two-class, so Economy or Business only; add Economy Plus if it is offered at booking. Lands Melbourne 07:45 Wed."
         }
       ]
     },
@@ -845,19 +845,31 @@
         {
           "id": "k1",
           "time": "07:45",
-          "type": "note",
-          "title": "Land Brisbane (QF62) or Melbourne (QF80: immigration, bag, domestic transfer desk, walk T2 → T1 for QF1258 at 10:20)",
+          "type": "transfer",
+          "title": "Land Melbourne T2: SmartGate, collect bag, customs, domestic transfer desk, walk to T1",
           "status": "planned",
-          "location": "BNE or MEL"
+          "location": "MEL T2 → T1",
+          "endTime": "09:15",
+          "notes": "Protected connection on the one booking. Hand the bag to the Qantas domestic transfer desk after customs. One of the Titanium card’s Qantas Club invitations opens the T1 Qantas Club for the wait."
+        },
+        {
+          "id": "k1b",
+          "time": "10:20",
+          "type": "flight",
+          "title": "QF1258 Melbourne → Brisbane",
+          "status": "planned",
+          "location": "MEL T1 → BNE domestic",
+          "endTime": "11:35",
+          "notes": "2h15."
         },
         {
           "id": "k2",
-          "time": "09:00",
+          "time": "12:00",
           "type": "transfer",
-          "title": "AIRPARK shuttle to the car, coffee, drive to Gympie",
+          "title": "AIRPARK shuttle to the car, lunch, drive to Gympie",
           "status": "planned",
           "location": "BNE → Gympie, ~1h45",
-          "notes": "If on QF1258 this becomes 12:00. Either way: proper coffee and food first; do not drive tired."
+          "notes": "Two flights and a red-eye behind you: eat and have a proper coffee before the Bruce Highway. Home about 2:30pm."
         }
       ]
     }
@@ -998,7 +1010,7 @@
       {
         "id": "leg-home",
         "name": "Japan to home, Tue 16 Feb",
-        "chosenOptionId": "opt-qf62-econ",
+        "chosenOptionId": "opt-qf80",
         "notes": "Big finding: the Brisbane flight (QF62) has no Premium Economy cabin at all, so “book economy and upgrade to PE” does not exist on it. The only Qantas Tokyo flight with PE is the 6:55am Haneda → Sydney. Realistic comfort upgrades: Economy Plus extra-legroom seats on the A330 (new from Sep 2026), or a Business Classic Reward if a seat appears. Points numbers marked “est.” are inferred from the Aug 2025 price rise; confirm on qantas.com when booking.",
         "options": [
           {
@@ -1014,8 +1026,8 @@
             "priceNote": "cash from ~A$720",
             "points": 29000,
             "pointsTaxAud": 150,
-            "status": "planned",
-            "notes": "Recommended if a reward seat shows for Tue 16 Feb (try 17 too). ~29,000 pts (est.) + ~A$120-170 taxes (Japan’s departure tax tripled to ¥3,000 from July 2026, so ex-Japan taxes are a little higher than older guides say). Add Economy Plus (extra legroom, ~19,500 pts or ~A$100-150 cash on similar routes) for comfort. Lands straight into Brisbane where the car is."
+            "status": "skip",
+            "notes": "No reward seats on 16 Feb when checked (Sep 2026). Keep an AwardFares alert running in case a batch is released; changing a booked reward costs a fee, so only switch for a Business seat. ~29,000 pts (est.) + ~A$120-170 taxes (Japan’s departure tax tripled to ¥3,000 from July 2026, so ex-Japan taxes are a little higher than older guides say). Add Economy Plus (extra legroom, ~19,500 pts or ~A$100-150 cash on similar routes) for comfort. Lands straight into Brisbane where the car is."
           },
           {
             "id": "opt-qf62-bus",
@@ -1079,7 +1091,7 @@
             "points": 42000,
             "pointsTaxAud": 170,
             "status": "planned",
-            "notes": "The fallback if QF62 has no reward seat on the 16th. Priced on total distance, which tips into the next zone up, so more points than the direct flight (figure here is an estimate; Qantas shows the real one). 2h35 in Melbourne: immigration, bag, domestic transfer desk, T2 → T1 walk. Protected connection if on one booking. Lands Brisbane 11:35 Wed. One of the Titanium card’s Qantas Club invitations opens the T1 lounge for the wait."
+            "notes": "CHOSEN: QF62 had no reward seats on the 16th. Priced on total distance, which tips into the next zone up, so more points than the direct flight (figure here is an estimate; Qantas shows the real one). 2h35 in Melbourne: immigration, bag, domestic transfer desk, T2 → T1 walk. Protected connection if on one booking. Lands Brisbane 11:35 Wed. One of the Titanium card’s Qantas Club invitations opens the T1 lounge for the wait."
           },
           {
             "id": "opt-qf26",
@@ -1502,9 +1514,9 @@
     {
       "id": "ck2",
       "group": "Points and bookings",
-      "text": "Set free reward-seat alerts for QF62 NRT→BNE (and QF80, QF26) for 14-16 Feb 2027 on AwardFares; also try Qantas Flight Reward Finder (no login needed)",
+      "text": "Keep a free AwardFares alert on QF62 NRT→BNE and QF80 NRT→MEL for 16 Feb 2027 (Business especially)",
       "due": "2026-09-20",
-      "notes": "Peak February: seats come and go. Alerts do the watching for you."
+      "notes": "Seats are released in batches. Only switch a booked reward if a Business seat appears; changes carry a fee."
     },
     {
       "id": "ck3",
@@ -1523,9 +1535,9 @@
     {
       "id": "ck5",
       "group": "Points and bookings",
-      "text": "Points land: book the homeward Classic Reward for Tue 16 Feb (QF62 NRT→BNE first; QF80 + QF1258 via Melbourne as the fallback)",
+      "text": "Book QF80 + QF1258 (NRT → MEL → BNE, Tue 16 Feb) as one Classic Reward booking",
       "due": "2026-10-16",
-      "notes": "Log in, search Use Points, one-way NRT→BNE 16 Feb. If Business shows at 82,100 and you want it, take it; otherwise Economy Classic and add Economy Plus. Only fall back to the Melbourne routing if QF62 has nothing."
+      "notes": "QF62 had no seats. On the booking screen: (1) check whether Business shows on QF80; a lie-flat overnight before a same-day connection and drive is the upgrade that actually exists, and you have the points; (2) if staying Economy, add Economy Plus extra legroom if offered; (3) confirm both flights are on the ONE booking reference so the Melbourne connection is protected."
     },
     {
       "id": "ck6",
