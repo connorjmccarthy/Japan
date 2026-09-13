@@ -5,7 +5,7 @@
     "end": "2027-02-17",
     "homeCurrency": "AUD",
     "jpyPerAud": 108,
-    "updatedAt": "2026-09-13T12:16:05Z",
+    "updatedAt": "2026-09-13T12:24:04Z",
     "version": 1,
     "about": "Solo ski trip. Confirmed: JQ815 BNE→SYD and the Business Classic Reward SYD→MEL→NRT on 8 Feb. Home Tue 16 Feb on QF80 + QF1256 (booked). Everything else is planned from research done 13 Sep 2026; prices marked est. need checking when booking."
   },
@@ -1989,8 +1989,8 @@
         "Ski Wed-Fri, Osaka Sat-Mon, USJ Mon 15, Jetstar JQ24 Osaka → Brisbane Mon 15 night"
       ],
       "recommendation": "Keep USJ on the Wednesday. Super Nintendo World on a crowded day is the thing most likely to spoil the trip, and Nozawa is big enough to absorb a weekend if you start at 8:30. Monday morning skiing is the bonus.",
-      "answer": "",
-      "resolved": false
+      "answer": "USJ first on Wed 10. The flight home is booked out of Narita, so ending in Osaka is no longer possible.",
+      "resolved": true
     },
     {
       "id": "q3",
@@ -2036,8 +2036,8 @@
         "Bring skis and boots"
       ],
       "recommendation": "Rent. This trip has too many trains for a ski bag. Bring your own boots only if fit is a problem for you.",
-      "answer": "",
-      "resolved": false
+      "answer": "Rent in the village. The suitcase goes by courier and the itinerary has no room for a ski bag.",
+      "resolved": true
     },
     {
       "id": "q7",
@@ -2072,8 +2072,8 @@
         "Keep skiing Sunday; rural Japan is just the Narai stop on Thursday"
       ],
       "recommendation": "As planned, with the powder-day escape hatch: if Sunday dawns dumping, ski and skip Togakushi.",
-      "answer": "",
-      "resolved": false
+      "answer": "Tue 16 is booked, so Monday is a full ski day and Sunday is the rural day, with the powder-day swap written into Sunday’s notes.",
+      "resolved": true
     },
     {
       "id": "q11",
@@ -2085,8 +2085,8 @@
         "Nothing beyond Narai"
       ],
       "recommendation": "Togakushi, with Obuse as the bad-weather substitute.",
-      "answer": "",
-      "resolved": false
+      "answer": "Togakushi and Zenko-ji, with Obuse as the foul-weather substitute. Decide on the Saturday night.",
+      "resolved": true
     },
     {
       "id": "q9",
