@@ -1,10 +1,10 @@
-import { el, fmtDate, uid, groupBy, sortBy, todayIso, linkify } from '../util.js';
+import { el, fmtDate, uid, groupBy, sortBy, todayIso, linkify, activeVariant, variantList, variantOptions, forVariant } from '../util.js';
 import { sheet, form, toast, confirmDialog, section, empty } from '../ui.js';
 
 let filter = 'open';
 
 export function render(root, { store }) {
-  const items = store.trip.checklist || [];
+  const items = forVariant(store.trip.checklist, activeVariant(store.trip));
   const today = todayIso();
   const done = items.filter((i) => i.done).length;
   root.append(el('div', { class: 'page-head' }, el('div', {}, el('h2', { class: 'page-title' }, 'Checklists'), el('p', { class: 'page-sub' }, `${done} of ${items.length} done`)), el('div', { class: 'page-actions' }, el('button', { class: 'btn btn-primary btn-sm', type: 'button', onClick: () => editItem(store, null) }, '+ Add'))));
@@ -34,11 +34,12 @@ function editItem(store, i) {
     { name: 'text', label: 'To do', value: v0.text || '' },
     { name: 'group', label: 'Group', type: 'select', options: groups, value: v0.group || groups[0], half: true },
     { name: 'due', label: 'Due', type: 'date', value: v0.due || '', half: true },
+    ...(variantList(store.trip).length > 1 ? [{ name: 'variant', label: 'Applies to', type: 'select', options: variantOptions(store.trip), value: v0.variant || (isNew ? (activeVariant(store.trip) || '') : '') }] : []),
     { name: 'notes', label: 'Notes', type: 'textarea', value: v0.notes || '' },
     { name: 'done', label: 'Done', type: 'checkbox', value: !!v0.done },
   ]);
   const actions = [];
   if (!isNew) actions.push({ label: 'Delete', class: 'btn-danger', keepOpen: true, onClick: async () => { if (await confirmDialog('Delete this to-do?')) { store.update((t) => { t.checklist = t.checklist.filter((x) => x.id !== v0.id); }); return true; } return false; } });
-  actions.push('spacer', { label: 'Cancel', class: 'btn-ghost' }, { label: 'Save', class: 'btn-primary', onClick: () => { const v = fm.values(); if (!v.text) { toast('Write the to-do', { kind: 'error' }); return false; } store.update((t) => { t.checklist ||= []; const k = t.checklist.findIndex((x) => x.id === v0.id); const next = { ...v0, ...v }; if (k >= 0) t.checklist[k] = next; else t.checklist.push(next); }); toast('Saved', { kind: 'ok' }); } });
+  actions.push('spacer', { label: 'Cancel', class: 'btn-ghost' }, { label: 'Save', class: 'btn-primary', onClick: () => { const v = fm.values(); if (!v.text) { toast('Write the to-do', { kind: 'error' }); return false; } store.update((t) => { t.checklist ||= []; const k = t.checklist.findIndex((x) => x.id === v0.id); const next = { ...v0, ...v }; if ('variant' in v && !v.variant) delete next.variant; if (k >= 0) t.checklist[k] = next; else t.checklist.push(next); }); toast('Saved', { kind: 'ok' }); } });
   sheet({ title: isNew ? 'Add to-do' : 'Edit to-do', body: fm.node, actions });
 }

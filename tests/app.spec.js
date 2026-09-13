@@ -161,7 +161,7 @@ test.describe('calendar export', () => {
     await boot(page, '#/settings');
     const ics = await page.evaluate(async () => { const m = await import('../src/ics.js'); const s = JSON.parse(localStorage.getItem('jp27:trip')); return m.buildIcs(s); });
     expect(ics.startsWith('BEGIN:VCALENDAR')).toBe(true);
-    const items = await page.evaluate(() => JSON.parse(localStorage.getItem('jp27:trip')).days.flatMap((d) => d.items.filter((i) => i.status !== 'skip')).length);
+    const items = await page.evaluate(() => { const t = JSON.parse(localStorage.getItem('jp27:trip')); const v = t.variants?.active; return t.days.flatMap((d) => d.items.filter((i) => i.status !== 'skip' && (!v || !i.variant || i.variant === v))).length; });
     expect((ics.match(/BEGIN:VEVENT/g) || []).length).toBe(items);
     expect(ics).toContain('SUMMARY:QF481 Sydney → Melbourne');
     const [download] = await Promise.all([page.waitForEvent('download'), page.getByRole('button', { name: 'Download calendar (.ics)' }).click()]);
@@ -194,5 +194,30 @@ test.describe('sync safety', () => {
     // choosing GitHub's version replaces the local plan
     await page.getByRole('button', { name: 'Use GitHub version' }).click();
     await expect(page.locator('#topbar-kicker')).toHaveText('Remote plan');
+  });
+});
+
+test.describe('plan variants', () => {
+  test('switching plans changes the itinerary, stays and budget', async ({ page, isMobile }) => {
+    await boot(page, '#/itinerary/2027-02-13');
+    await expect(page.locator('.day-title')).toContainText('Ski Nozawa');
+    if (isMobile) await page.getByRole('button', { name: 'More' }).click();
+    await page.locator('#variant-switch').getByRole('button', { name: 'B: Culture' }).click();
+    await expect(page.locator('.day-title')).toContainText('Shirakawa-go');
+    await expect(page.locator('.tl-title', { hasText: 'Nozawa Onsen Snow Resort' })).toHaveCount(0);
+    await page.goto('/#/stays');
+    await expect(page.locator('.row-title', { hasText: 'gassho' })).toBeVisible();
+    await expect(page.locator('.row-title', { hasText: 'Nozawa Peaks' })).toHaveCount(0);
+    await page.goto('/#/budget');
+    const totalB = await page.locator('.stat-value').first().textContent();
+    if (isMobile) await page.getByRole('button', { name: 'More' }).click();
+    await page.locator('#variant-switch').getByRole('button', { name: 'A: Ski' }).click();
+    await expect(page.locator('.stat-value').first()).not.toHaveText(totalB);
+    const totalA = await page.locator('.stat-value').first().textContent();
+    expect(totalA).not.toEqual(totalB);
+    // a new item defaults to the plan you are looking at
+    await page.goto('/#/itinerary/2027-02-12');
+    await page.getByRole('button', { name: '+ Add', exact: true }).click();
+    await expect(page.getByLabel('Applies to')).toHaveValue('ski');
   });
 });

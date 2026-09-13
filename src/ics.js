@@ -1,5 +1,5 @@
 // Build an iCalendar (.ics) file from the plan so it can be imported into Google/Apple Calendar.
-import { sortBy } from './util.js';
+import { sortBy, activeVariant, dayView } from './util.js';
 
 const pad = (n) => String(n).padStart(2, '0');
 const esc = (s) => String(s ?? '').replace(/\\/g, '\\\\').replace(/\n/g, '\\n').replace(/,/g, '\\,').replace(/;/g, '\;');
@@ -9,7 +9,9 @@ const fold = (line) => { const out = []; while (line.length > 72) { out.push(lin
 export function buildIcs(trip) {
   const lines = ['BEGIN:VCALENDAR', 'VERSION:2.0', 'PRODID:-//Japan 2027 planner//EN', 'CALSCALE:GREGORIAN', `X-WR-CALNAME:${esc(trip.meta.title || 'Trip')}`];
   const now = new Date().toISOString().replace(/[-:]/g, '').slice(0, 15) + 'Z';
-  for (const d of sortBy(trip.days || [], (x) => x.date)) {
+  const av = activeVariant(trip);
+  for (const d0 of sortBy(trip.days || [], (x) => x.date)) {
+    const d = dayView(d0, av);
     for (const it of d.items || []) {
       if (it.status === 'skip') continue;
       const start = stamp(d.date, it.time);

@@ -1,4 +1,4 @@
-import { el, fmtDate, fmtDow, fmtDayNum, fmtTime, fmtMoney, todayIso, TYPES, STATUSES, CATEGORIES, uid, sortBy, linkify, dateRange } from '../util.js';
+import { el, fmtDate, fmtDow, fmtDayNum, fmtTime, fmtMoney, todayIso, TYPES, STATUSES, CATEGORIES, uid, sortBy, linkify, dateRange, activeVariant, variantList, variantOptions, dayView } from '../util.js';
 import { sheet, form, toast, confirmDialog, pill, empty } from '../ui.js';
 
 const typeCategory = { flight: 'Flights', train: 'Transport', bus: 'Transport', transfer: 'Transport', stay: 'Accommodation', ski: 'Ski', food: 'Food', activity: 'Activities', note: 'Other' };
@@ -6,13 +6,16 @@ const typeCategory = { flight: 'Flights', train: 'Transport', bus: 'Transport', 
 export function render(root, { store, params, navigate }) {
   const trip = store.trip;
   ensureDays(store);
-  const days = sortBy(store.trip.days, (d) => d.date);
+  const v = activeVariant(store.trip);
+  const rawDays = sortBy(store.trip.days, (d) => d.date);
+  const days = rawDays.map((d) => dayView(d, v));
   const today = todayIso();
   const wanted = params[0] || (days.find((d) => d.date === today)?.date) || days[0]?.date;
   const day = days.find((d) => d.date === wanted) || days[0];
+  const vName = variantList(store.trip).find((x) => x.id === v)?.name;
 
   const head = el('div', { class: 'page-head' },
-    el('div', {}, el('h2', { class: 'page-title' }, 'Day by day'), el('p', { class: 'page-sub' }, `${days.length} days · tap a card to edit, drag nothing, just tap`)),
+    el('div', {}, el('h2', { class: 'page-title' }, 'Day by day'), el('p', { class: 'page-sub' }, vName ? `${vName} · ${days.length} days · tap a card to edit` : `${days.length} days · tap a card to edit`)),
     el('div', { class: 'page-actions' },
       el('button', { class: 'btn btn-sm', type: 'button', onClick: () => editDay(store, day, navigate) }, 'Edit day'),
       el('button', { class: 'btn btn-primary btn-sm', type: 'button', onClick: () => editItem(store, day, null) }, '+ Add'),
@@ -63,7 +66,7 @@ function renderItem(store, day, it, rate) {
   if (secret) foot.push(el('span', { class: 'pill' }, '🔒 ' + secret));
   if (it.url) foot.push(el('a', { href: it.url, target: '_blank', rel: 'noopener', onClick: (e) => e.stopPropagation() }, 'Link ↗'));
   const body = el('div', { class: 'tl-body', role: 'button', tabindex: '0', onClick: () => editItem(store, day, it), onKeydown: (e) => { if (e.key === 'Enter') editItem(store, day, it); } },
-    el('div', { class: 'tl-title' }, it.title || t.label, it.status === 'skip' ? pill('skip', 'Skipped') : null),
+    el('div', { class: 'tl-title' }, it.title || t.label, it.status === 'skip' ? pill('skip', 'Skipped') : null, it.variant ? el('span', { class: 'variant-tag' }, (variantList(store.trip).find((x) => x.id === it.variant)?.short) || it.variant) : null),
     it.location ? el('div', { class: 'tl-sub' }, '📍 ' + it.location) : null,
     it.notes ? el('div', { class: 'tl-notes', html: linkify(it.notes) }) : null,
     foot.length ? el('div', { class: 'tl-foot' }, ...foot) : null,
@@ -88,6 +91,7 @@ export function editItem(store, day, item) {
   const f = form([
     { name: 'title', label: 'Title', value: it.title || '', placeholder: 'e.g. Shinkansen to Nagano' },
     { name: 'day', label: 'Day', type: 'select', options: days.map((d) => [d.id, `${fmtDate(d.date)} · ${d.title || ''}`]), value: day.id, half: true },
+    ...(variantList(store.trip).length > 1 ? [{ name: 'variant', label: 'Applies to', type: 'select', options: variantOptions(store.trip), value: it.variant || (isNew ? (activeVariant(store.trip) || '') : ''), half: true }] : []),
     { name: 'status', label: 'Status', type: 'select', options: Object.entries(STATUSES), value: it.status || 'planned', half: true },
     { name: 'time', label: 'Start time', type: 'time', value: it.time || '', half: true },
     { name: 'endTime', label: 'End time', type: 'time', value: it.endTime || '', half: true },
@@ -107,6 +111,7 @@ export function editItem(store, day, item) {
       const v = f.values();
       if (!v.title) { toast('Give it a title', { kind: 'error' }); f.inputs.title.focus(); return false; }
       const next = { ...it, type, title: v.title, status: v.status, time: v.time, endTime: v.endTime, location: v.location, cost: v.cost, currency: v.currency, url: v.url, notes: v.notes, done: v.done, category: it.category || typeCategory[type] };
+      if ('variant' in v) { if (v.variant) next.variant = v.variant; else delete next.variant; }
       store.update((t) => {
         for (const d of t.days) d.items = (d.items || []).filter((x) => x.id !== next.id);
         const target = t.days.find((d) => d.id === v.day) || t.days[0];
@@ -125,7 +130,8 @@ function editDay(store, day, navigate) {
     { name: 'base', label: 'Where you sleep tonight', value: day.base || '', placeholder: 'e.g. Nozawa Onsen' },
     { name: 'notes', label: 'Day notes', type: 'textarea', value: day.notes || '' },
   ]);
-  sheet({ title: fmtDate(day.date, { year: true }), body: f.node, actions: ['spacer', { label: 'Cancel', class: 'btn-ghost' }, { label: 'Save', class: 'btn-primary', onClick: () => { const v = f.values(); store.update((t) => { const d = t.days.find((x) => x.id === day.id); Object.assign(d, v); }); toast('Saved', { kind: 'ok' }); } }] });
+  const av = activeVariant(store.trip);
+  sheet({ title: fmtDate(day.date, { year: true }), body: f.node, actions: ['spacer', { label: 'Cancel', class: 'btn-ghost' }, { label: 'Save', class: 'btn-primary', onClick: () => { const v = f.values(); store.update((t) => { const d = t.days.find((x) => x.id === day.id); if (av && d.variants && d.variants[av]) Object.assign(d.variants[av], v); else Object.assign(d, v); }); toast('Saved', { kind: 'ok' }); } }] });
 }
 
 // Make sure every date between start and end has a day record.

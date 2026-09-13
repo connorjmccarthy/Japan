@@ -101,3 +101,17 @@ export const STATUSES = {
   skip: 'Skipped',
 };
 export const CATEGORIES = ['Flights', 'Transport', 'Accommodation', 'Ski', 'Food', 'Activities', 'Parking', 'Insurance', 'Connectivity', 'Other'];
+
+// ---- Plan variants ----------------------------------------------------------
+// A trip can hold alternative plans (e.g. "ski" vs "no skiing"). Items, stays,
+// food, budget lines, checklist entries and places may carry `variant: '<id>'`;
+// anything without one belongs to every plan.
+export const activeVariant = (t) => t?.variants?.active || null;
+export const variantList = (t) => t?.variants?.list || [];
+export const inVariant = (x, v) => !v || !x?.variant || x.variant === v;
+export const forVariant = (arr, v) => (arr || []).filter((x) => inVariant(x, v));
+export const dayView = (d, v) => {
+  const o = (v && d.variants && d.variants[v]) || {};
+  return { ...d, title: o.title ?? d.title, base: o.base ?? d.base, notes: o.notes ?? d.notes, items: forVariant(d.items, v) };
+};
+export const variantOptions = (t) => [['', 'Both plans'], ...variantList(t).map((x) => [x.id, x.name])];

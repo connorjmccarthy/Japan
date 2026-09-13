@@ -506,3 +506,10 @@ details.acc .acc-body { padding: 0 14px 14px; }
   .card, .tl-body, .row { box-shadow: none; break-inside: avoid; }
   body { background: #fff; color: #000; }
 }
+
+/* Plan variant switcher */
+.variant-switch { padding: 4px 18px 6px; }
+.variant-label { font-size: 11px; text-transform: uppercase; letter-spacing: 0.08em; color: var(--text-3); font-weight: 700; margin-bottom: 6px; }
+.seg-block { display: flex; width: 100%; }
+.seg-block button { flex: 1; }
+.variant-tag { font-size: 11px; padding: 1px 7px; border-radius: 999px; background: var(--info-soft); color: var(--info); font-weight: 600; }

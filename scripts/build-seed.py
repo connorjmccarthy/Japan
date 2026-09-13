@@ -28,7 +28,7 @@ days = [
     item('b4', '11:30', 'train', 'Nozomi Shinkansen Tokyo → Shin-Osaka', location='Tokyo Station, platforms 14-19', endTime='14:00', cost=14720, currency='JPY', notes='~2h30, every 10 min. Reserve a seat (opens one month ahead on smart-EX). A normal suitcase under 160 cm total is fine; only bags over 160 cm need the oversized-baggage seat.'),
     item('b5', '14:15', 'transfer', 'Shin-Osaka → hotel', location='JR local to Osaka / Fukushima, or Yumesaki line to Universal City', endTime='15:00', cost=300, currency='JPY'),
     item('b6', '15:00', 'stay', 'Check in, Osaka (2 nights)', location='See Stays for the shortlist', notes='Solo, private room. Business hotels around Fukushima or Tenma are quiet, cheap and 15-25 min from USJ by train.'),
-    item('b6b', '15:20', 'transfer', 'Send the suitcase ahead to Nozawa by Yamato courier (takkyubin)', location='Hotel front desk', cost=3000, currency='JPY', notes='Ask the desk for “takkyubin to this address” (show the Nozawa lodging’s name and address in Japanese, kept in Notes). Two days is the standard lead time, so sending Tuesday means it is waiting Thursday. Keep a daypack with two days of clothes, USJ tickets and Friday’s ski base layers. Confirm beforehand that the lodging accepts parcels (most do).'),
+    item('b6b', '15:20', 'transfer', 'Send the suitcase ahead by Yamato courier (takkyubin)', location='Hotel front desk', cost=3000, currency='JPY', notes='Ask the desk for “takkyubin to this address” and show the destination’s name and address in Japanese. Plan A: to the Nozawa lodging, waiting when you arrive Thursday. Plan B: to the Matsumoto hotel for Sunday 14 (write “for guest arriving 14 Feb”; hotels hold parcels). Two days is the standard lead time. Travel in between with a daypack: two or three days of clothes, USJ tickets, and in Plan A Friday’s ski base layers. Confirm beforehand that the receiving place accepts parcels (most do).'),
     item('b6c', '16:15', 'activity', 'Nintendo OSAKA store (optional, 45 min)', location='Daimaru Umeda 13F, 5 min walk from JR Osaka Station', endTime='17:00', status='idea', notes='The official Nintendo store, exclusive merchandise, quieter than the USJ shops on Wednesday. Open 10:00-20:00. Borrowed from your friend’s Tokyo list (theirs was the Shibuya Parco store).'),
     item('b7', '17:00', 'activity', 'Walk Nakazakicho and Tenma', location='Nakazakicho (old wooden lanes) → Tenjinbashisuji shopping arcade → Tenma', notes='Low-key neighbourhoods a short train ride from Umeda. Tenjinbashisuji is 2.6 km of covered arcade where locals shop.'),
     item('b8', '18:30', 'food', 'Dinner in the Tenma izakaya alleys', location='Around Tenma station, under the tracks', cost=3500, currency='JPY', notes='Standing bars and tiny izakaya, mostly Japanese customers. Order doteyaki (beef tendon simmered in miso) and kushikatsu. Early night; tomorrow starts at 7.'),
@@ -186,7 +186,8 @@ food = [
 budget = [
   dict(id='bg1', category='Parking', label='Brisbane Airport AIRPARK, 9 days', amount=119, currency='AUD', status='estimate', notes='A$99/week + A$10/day. Book online; sometimes cheaper than drive-up. MCY would be ~A$90 but needs a A$55-85 shuttle back from Brisbane on the way home.'),
   dict(id='bg2', category='Transport', label='Fuel Gympie ↔ Brisbane Airport', amount=65, currency='AUD', status='estimate', notes='~167 km each way.'),
-  dict(id='bg3', category='Insurance', label='Travel insurance with snow-sports cover, 9 days', amount=130, currency='AUD', status='estimate', notes='Must include skiing. Medicare does not cover Japan.'),
+  dict(id='bg3', category='Insurance', label='Travel insurance with snow-sports cover, 10 days', amount=130, currency='AUD', status='estimate', variant='ski', notes='Must include skiing. Medicare does not cover Japan.'),
+  dict(id='bg3b', category='Insurance', label='Travel insurance, 10 days (no snow sports needed)', amount=90, currency='AUD', status='estimate', variant='culture', notes='Medicare does not cover Japan.'),
   dict(id='bg4', category='Connectivity', label='eSIM, 10 days data', amount=30, currency='AUD', status='estimate', notes='Ubigi or Airalo; install before you leave.'),
   dict(id='bg5', category='Food', label='Breakfasts, snacks, drinks, incidentals (¥3,000/day x 8)', amount=24000, currency='JPY', status='estimate'),
   dict(id='bg6', category='Other', label='Onsen towels, ski socks, souvenirs, contingency', amount=200, currency='AUD', status='estimate'),
@@ -285,6 +286,137 @@ STAYS_GUIDE = [
   dict(title='If it is truly full', body='Togari Onsen is 20 minutes by bus across the valley and much quieter and cheaper; sleep there and bus to Nozawa for skiing. Or switch base to Akakura Onsen (Myoko), where several ryokan take single bookings on Rakuten; only the Nagano end of the plan changes. Iiyama Station has very little lodging, so do not count on it.'),
 ]
 
+
+# =============================================================================
+# PLAN B: no skiing. Same flights, same Osaka/USJ days; then Koyasan, Takayama,
+# Shirakawa-go, Matsumoto and Narai. Tag everything ski-specific as 'ski' and
+# everything below as 'culture'; untagged content belongs to both.
+# =============================================================================
+SKI_DAYS = {'2027-02-11', '2027-02-12', '2027-02-13', '2027-02-14', '2027-02-15', '2027-02-16'}
+SHARED_16 = {'j6', 'j7', 'j8'}
+for d in days:
+    if d['date'] in SKI_DAYS:
+        for it in d['items']:
+            if not (d['date'] == '2027-02-16' and it['id'] in SHARED_16):
+                it['variant'] = 'ski'
+
+B_DAYS = {
+  '2027-02-11': dict(title='Osaka → Koyasan (temple lodging)', base='Koyasan shukubo', notes='National Foundation Day. Koyasan is a 1,200-year-old monastery town on a forested plateau, 2 hours from Namba: 117 temples, a 2 km cemetery walk through giant cedars, and a night in a temple with the monks’ vegetarian dinner. In February it is cold and often snowy, which is exactly when it is at its best and quietest. Travel with a daypack; the suitcase went ahead on Tuesday.'),
+  '2027-02-12': dict(title='Morning prayers, then Koyasan → Takayama', base='Takayama', notes='Long travel day through three regions: down the mountain, Shinkansen to Nagoya, then the Hida express up the gorge to Takayama, an old merchant town in the mountains with sake breweries and morning markets.'),
+  '2027-02-13': dict(title='Takayama → Shirakawa-go farmhouse night', base='Shirakawa-go gassho farmhouse', notes='Shirakawa-go’s thatched gassho-zukuri farmhouses under two metres of snow are the picture everyone has in their head of rural Japan. It is heavily visited from 10 to 3; sleeping in one of the farmhouses means you have the village to yourself at dusk and dawn. No light-up event in Feb 2027 (they were in January), so normal bookings apply.'),
+  '2027-02-14': dict(title='Shirakawa-go → Takayama → over the Alps to Matsumoto', base='Matsumoto', notes='Quiet dawn in the village, a last look at Takayama, then the winter express bus over the Northern Alps via Hirayu Onsen (reservations mandatory) to Matsumoto, home of Japan’s finest original castle.'),
+  '2027-02-15': dict(title='Matsumoto Castle and the Narai post town', base='Matsumoto', notes='Castle first thing before the tour buses, then an hour on local trains to Narai-juku, the best-preserved Edo post town on the old Nakasendo road, and back for a soba dinner. Optional onsen at Asama in the evening.'),
+  '2027-02-16': dict(title='Matsumoto → Tokyo → home', base='Overnight flight', notes='The Azusa express runs straight to Shinjuku in about 2h30; the Narita Express leaves from Shinjuku too, so there is no fiddling around in Tokyo. QF80 check-in closes 18:20.'),
+}
+B_ITEMS = {
+  '2027-02-11': [
+    item('c11a', '08:30', 'transfer', 'Check out (daypack only), subway to Namba', location='Osaka → Nankai Namba station', cost=300, currency='JPY'),
+    item('c11b', '09:10', 'train', 'Nankai to Gokurakubashi, cable car, bus into town', location='Nankai Namba → Gokurakubashi (Limited Express Koya ~80 min, or express with a change at Hashimoto ~100 min) → cable car 5 min → bus 10 min to Senjuinbashi', endTime='11:15', cost=3980, currency='JPY', notes='Buy the Koyasan World Heritage Ticket at Namba (~¥3,980): return train, cable car and unlimited Koyasan buses for two days. Reserve the limited express seat for the holiday.'),
+    item('c11c', '11:30', 'food', 'Lunch near Senjuinbashi: soba, udon or a shojin set', location='Main street, Koyasan', cost=1300, currency='JPY'),
+    item('c11d', '12:30', 'activity', 'Danjo Garan (the great pagoda) and Kongobuji head temple', location='Central Koyasan', endTime='14:30', cost=1700, currency='JPY', notes='Kongobuji has the largest rock garden in Japan and painted sliding doors; Konpon Daito is the vermilion pagoda. Bus or 15 min walk between them.'),
+    item('c11e', '14:30', 'stay', 'Check in at the shukubo (temple lodging)', location='See Stays: Ekoin, Fukuchiin or Shojoshin-in', notes='Tatami room, shared baths, dinner served in your room by monks-in-training. Curfew around 9pm. Solo guests are normal here.'),
+    item('c11f', '15:30', 'activity', 'Okunoin cemetery walk to Kobo Daishi’s mausoleum', location='Ichinohashi bridge → Okunoin (2 km, flat)', endTime='17:00', cost=0, currency='JPY', notes='200,000 graves under thousand-year cedars, lanterns, snow. The single most atmospheric walk in Japan. Photography stops at the last bridge; go quiet there.'),
+    item('c11g', '17:30', 'food', 'Shojin ryori dinner at the temple', location='Your room', cost=0, currency='JPY', notes='Vegetarian Buddhist cuisine: sesame tofu (goma-dofu, the Koyasan speciality), mountain vegetables, tempura. Included in the lodging price.'),
+    item('c11h', '19:00', 'activity', 'Okunoin night tour with a monk (optional)', location='Departs Ekoin', endTime='20:30', cost=3000, currency='JPY', status='idea', notes='Ekoin runs an English-language night walk most evenings; other temples can book you on it.'),
+  ],
+  '2027-02-12': [
+    item('c12a', '06:30', 'activity', 'Morning prayers and the goma fire ritual', location='Temple main hall', endTime='07:30', cost=0, currency='JPY', notes='Guests sit at the back. Then breakfast in your room.'),
+    item('c12b', '09:00', 'transfer', 'Bus, cable car and Nankai back to Namba, subway to Shin-Osaka', location='Koyasan → Nankai Namba → Shin-Osaka', endTime='11:45', cost=300, currency='JPY', notes='Return leg is covered by the World Heritage Ticket; the subway hop is ¥300.'),
+    item('c12c', '12:10', 'train', 'Nozomi Shin-Osaka → Nagoya', location='Shin-Osaka', endTime='13:00', cost=6880, currency='JPY'),
+    item('c12d', '13:15', 'food', 'Quick lunch at Nagoya Station', location='Nagoya', cost=1200, currency='JPY', notes='Miso-katsu or a kishimen noodle stand on the platform, the Nagoya things.'),
+    item('c12e', '13:45', 'train', 'Limited Express Hida Nagoya → Takayama', location='Nagoya', endTime='16:15', cost=6500, currency='JPY', notes='~2h30 up the Hida river gorge; reserved seat. One of the scenic rides.'),
+    item('c12f', '16:30', 'stay', 'Check in, Takayama (1 night)', location='See Stays'),
+    item('c12g', '17:15', 'activity', 'Sanmachi old town at dusk, sake breweries', location='Sanmachi Suji, 10 min walk from the station', endTime='18:30', cost=0, currency='JPY', notes='Edo-period merchant streets. The breweries with cedar balls hanging outside do tastings for a few hundred yen.'),
+    item('c12h', '19:00', 'food', 'Hida beef dinner', location='A local grill or hoba-miso restaurant off the main drag', cost=4000, currency='JPY', notes='Hida beef on a magnolia leaf with miso (hoba-miso) is the dish. Skip the ones with touts.'),
+  ],
+  '2027-02-13': [
+    item('c13a', '07:30', 'food', 'Miyagawa morning market', location='Riverbank, Takayama', cost=800, currency='JPY', notes='Farmers, pickles, mitarashi dango (soy-glazed rice dumplings) for breakfast.'),
+    item('c13b', '08:50', 'bus', 'Nohi bus Takayama → Shirakawa-go', location='Takayama Nohi Bus Center (next to the station)', endTime='09:40', cost=1800, currency='JPY', notes='50 min. Reserve the seat; the reserved services sell out on weekends. Some services are non-reserved and first come first served.'),
+    item('c13c', '10:00', 'activity', 'Shirakawa-go: Shiroyama viewpoint, Wada House, the walk between the farmhouses', location='Ogimachi village', endTime='15:00', cost=1000, currency='JPY', notes='Viewpoint shuttle or a 20 min walk up. Wada House (¥400) is the big one you can go inside. The open-air museum across the river is quieter. Snow boots and crampons: the paths are icy.'),
+    item('c13d', '12:30', 'food', 'Lunch: soba or Hida beef croquette from a stand', location='Village', cost=1300, currency='JPY'),
+    item('c13e', '15:00', 'stay', 'Check in at a gassho-zukuri farmhouse minshuku', location='See Stays; book via the Shirakawa-go Tourist Association site', notes='Day-trippers leave on the last buses around 5; then the village is yours. Dinner is around the irori hearth with the family.'),
+    item('c13f', '17:00', 'activity', 'Blue hour in the empty village; Shirakawa-go no Yu onsen (optional)', location='Village', cost=700, currency='JPY'),
+    item('c13g', '18:00', 'food', 'Irori hearth dinner at the farmhouse', location='Your minshuku', cost=0, currency='JPY', notes='Grilled river fish, mountain vegetables, local tofu, included in the price. Bring a small gift or just good manners.'),
+  ],
+  '2027-02-14': [
+    item('c14a', '07:00', 'activity', 'Dawn walk before the buses arrive', location='Village', endTime='08:00', cost=0, currency='JPY'),
+    item('c14b', '09:50', 'bus', 'Nohi bus Shirakawa-go → Takayama', location='Shirakawa-go bus terminal', endTime='10:40', cost=1800, currency='JPY'),
+    item('c14c', '11:00', 'activity', 'Takayama Jinya (Edo government house) or Hida Folk Village', location='Takayama', endTime='13:00', cost=700, currency='JPY', notes='Jinya is the only surviving Edo-period provincial government office; the Folk Village is a hillside of relocated farmhouses if you want more of yesterday.'),
+    item('c14d', '13:00', 'food', 'Takayama ramen', location='An old shop in the centre', cost=1000, currency='JPY', notes='Thin curly noodles in a soy-shoyu broth; the town’s everyday lunch.'),
+    item('c14e', '14:40', 'bus', 'Express bus Takayama → Matsumoto over the Northern Alps (via Hirayu Onsen)', location='Takayama Nohi Bus Center', endTime='17:15', cost=3800, currency='JPY', notes='Winter timetable, about 2h30, seat reservations mandatory (Alpico/Nohi, opens a month ahead). Sit on the left for the Alps.'),
+    item('c14f', '17:30', 'stay', 'Check in, Matsumoto (2 nights); collect the suitcase', location='See Stays'),
+    item('c14g', '19:00', 'food', 'Dinner on Nakamachi: Shinshu soba, sansai (mountain vegetables), basashi if you dare', location='Nakamachi street', cost=3000, currency='JPY'),
+  ],
+  '2027-02-15': [
+    item('c15a', '08:30', 'activity', 'Matsumoto Castle at opening', location='10 min walk from the station', endTime='10:00', cost=700, currency='JPY', notes='1590s original black keep, steep ladders inside, Alps behind it. Go at 8:30 and you climb it alone.'),
+    item('c15b', '10:00', 'activity', 'Nakamachi kura street and Nawate street', location='Old town', endTime='11:00', cost=0, currency='JPY', notes='Whitewashed storehouses, frog-themed shopping street by the river.'),
+    item('c15c', '11:10', 'train', 'Local trains Matsumoto → Shiojiri → Narai', location='Matsumoto Station', endTime='12:20', cost=770, currency='JPY', notes='Change at Shiojiri; about an hour with the change. Roughly hourly, so check the timetable the night before.'),
+    item('c15d', '12:30', 'activity', 'Narai-juku, Edo post town on the Nakasendo', location='1 km street from the station', endTime='15:00', cost=0, currency='JPY', notes='Lacquerware workshops, sake shop, temples up the side lanes, snow on the eaves. A working village, not a theme park.'),
+    item('c15e', '13:00', 'food', 'Gohei-mochi and Kiso soba', location='Any shop with a menu outside', cost=1500, currency='JPY'),
+    item('c15f', '15:20', 'train', 'Local trains Narai → Matsumoto', location='Narai Station', endTime='16:30', cost=770, currency='JPY'),
+    item('c15g', '17:00', 'activity', 'Asama Onsen public bath (optional)', location='Bus 20 min from Matsumoto Station', cost=700, currency='JPY', status='idea', notes='Hot Plaza Asama; the local onsen rather than a resort one.'),
+    item('c15h', '19:00', 'food', 'Sanzoku-yaki (Matsumoto’s giant fried chicken) or a soba dinner', location='Around the station', cost=2000, currency='JPY'),
+  ],
+  '2027-02-16': [
+    item('c16a', '09:00', 'activity', 'Coffee, and the Matsumoto City Museum of Art if you like Yayoi Kusama (she is from here)', location='Matsumoto', endTime='10:15', cost=410, currency='JPY', status='idea'),
+    item('c16b', '10:40', 'train', 'Limited Express Azusa Matsumoto → Shinjuku', location='Matsumoto Station', endTime='13:10', cost=6620, currency='JPY', notes='~2h30, all seats reserved.'),
+    item('c16c', '13:35', 'train', 'Narita Express Shinjuku → Narita T2', location='Shinjuku, N’EX platforms', endTime='15:00', cost=0, currency='JPY', notes='~80 min. Covered by the N’EX round-trip ticket bought on day 1 (it is valid from Shinjuku too).'),
+  ],
+}
+for d in days:
+    if d['date'] in B_DAYS:
+        d['variants'] = {'culture': B_DAYS[d['date']]}
+        for it in B_ITEMS.get(d['date'], []):
+            it['variant'] = 'culture'; d['items'].append(it)
+
+for st in stays:
+    if st['town'] in ('Nozawa Onsen', 'Togari Onsen (fallback)', 'Myoko Kogen (alternative base)'):
+        st['variant'] = 'ski'
+stays += [
+  dict(id='s-b1', name='Koyasan shukubo: Ekoin, Fukuchiin or Shojoshin-in', town='Koyasan', type='Temple lodging, tatami room, 2 meals', status='planned', variant='culture', pricePerNightAud=175, nights=1, priceNote='¥15,000-22,000 pp with meals est.', checkIn='2027-02-11', checkOut='2027-02-12', distance='Central Koyasan, walk to Okunoin', url='https://koyasan-shukubo.net/en/', notes='Book on the official Shukubo Association site (English). Ekoin is the most foreigner-friendly and runs the night tour; Fukuchiin has an onsen; Shojoshin-in sits right at the Okunoin entrance. Solo is normal.'),
+  dict(id='s-b2', name='Takayama: Tabino Hotel Hida Takayama or Country Hotel Takayama', town='Takayama', type='Business hotel with a big bath', status='planned', variant='culture', pricePerNightAud=130, nights=1, priceNote='est.; verify', checkIn='2027-02-12', checkOut='2027-02-13', distance='Next to the station and the Nohi bus centre', url='https://travel.rakuten.com/', notes='Being at the station matters here: two bus departures in two days.'),
+  dict(id='s-b3', name='Shirakawa-go gassho-zukuri farmhouse minshuku', town='Shirakawa-go', type='Thatched farmhouse, irori dinner and breakfast', status='planned', variant='culture', pricePerNightAud=190, nights=1, priceNote='¥15,000-25,000 pp with 2 meals', checkIn='2027-02-13', checkOut='2027-02-14', distance='In the village', url='https://www.travelclassroom.net/eng/shirakawa-stay.html', notes='Book through the Shirakawa-go Tourist Association reservation system (that guide explains it step by step). Around 40 places; ask for single occupancy. Not every house takes solo guests, so start early. No light-up event in Feb 2027, so no lottery.'),
+  dict(id='s-b4', name='Matsumoto: Hotel Buena Vista or a Dormy Inn', town='Matsumoto', type='City hotel or business hotel with bath', status='planned', variant='culture', pricePerNightAud=110, nights=2, priceNote='est.; verify', checkIn='2027-02-14', checkOut='2027-02-16', distance='Walk to the station and the castle', url='https://travel.rakuten.com/', notes='Send the suitcase here from Osaka. Tell them a parcel arrives on the 13th for a guest checking in on the 14th.'),
+]
+
+for f in food:
+    if f['town'] in ('Nozawa Onsen', 'Nagano'):
+        f['variant'] = 'ski'
+food += [
+  dict(id='fb1', town='Koyasan', dish='Shojin ryori and goma-dofu', where='Your temple, dinner and breakfast', why='Buddhist vegetarian cooking at its source. The sesame tofu is Koyasan’s own; buy a block from Hamadaya to take on the train.', priceBand='¥¥', variant='culture'),
+  dict(id='fb2', town='Takayama', dish='Hida beef with hoba-miso', where='A small grill off Sanmachi', why='Local beef cooked on a magnolia leaf over miso. The regional dish, not a tourist invention.', priceBand='¥¥¥', variant='culture'),
+  dict(id='fb3', town='Takayama', dish='Takayama ramen', where='An old shop in the centre', why='Soy broth, thin curly noodles, what locals eat for lunch.', priceBand='¥', variant='culture'),
+  dict(id='fb4', town='Takayama', dish='Mitarashi dango at the morning market', where='Miyagawa market stalls', why='Soy-glazed, savoury not sweet here. Breakfast while you browse.', priceBand='¥', variant='culture'),
+  dict(id='fb5', town='Shirakawa-go', dish='Irori hearth dinner', where='Your farmhouse', why='Char-grilled river fish, mountain vegetables, tofu, cooked over the sunken hearth. This is why you stay the night.', priceBand='¥¥', variant='culture'),
+  dict(id='fb6', town='Matsumoto', dish='Shinshu soba and sansai', where='Nakamachi street shops', why='Nagano’s buckwheat noodles with foraged mountain vegetables; Matsumoto is the soba capital.', priceBand='¥', variant='culture'),
+  dict(id='fb7', town='Matsumoto', dish='Sanzoku-yaki', where='Izakaya near the station', why='A whole marinated chicken thigh, deep fried. Matsumoto’s comfort food.', priceBand='¥', variant='culture'),
+]
+
+for c in checklist:
+    if c['id'] in ('ck3', 'ck15', 'ck16', 'ck21', 'ck25', 'ck26', 'ck28'):
+        c['variant'] = 'ski'
+checklist += [
+  dict(id='ckb1', group='Points and bookings', text='Plan B: book the Koyasan temple night on the Shukubo Association site (koyasan-shukubo.net), 11 Feb, 1 person with dinner and breakfast', due='2026-10-15', variant='culture'),
+  dict(id='ckb2', group='Points and bookings', text='Plan B: book a Shirakawa-go gassho farmhouse for 13 Feb through the Tourist Association reservation system (solo)', due='2026-10-31', variant='culture', notes='The TravelClassroom guide walks through the form. Not all houses take single guests; try several.'),
+  dict(id='ckb3', group='Points and bookings', text='Plan B: book Takayama (12 Feb) and Matsumoto (14-16 Feb) hotels', due='2026-11-30', variant='culture'),
+  dict(id='ckb4', group='Points and bookings', text='Plan B: reserve the Nohi buses Takayama ↔ Shirakawa-go (13 and 14 Feb) and the Takayama → Matsumoto winter express (14 Feb, reservation mandatory)', due='2027-01-14', variant='culture', notes='Both open about a month ahead on nouhibus.co.jp and the Alpico site.'),
+  dict(id='ckb5', group='Points and bookings', text='Plan B: reserve the Nankai Limited Express Koya (11 Feb), Hida express Nagoya → Takayama (12 Feb) and Azusa Matsumoto → Shinjuku (16 Feb)', due='2027-01-16', variant='culture'),
+  dict(id='ckb6', group='In Japan', text='Plan B: buy the Koyasan World Heritage Ticket at Nankai Namba on the morning of 11 Feb', due='2027-02-11', variant='culture'),
+]
+
+for pl in places:
+    if pl['id'] in ('p13', 'p14', 'p15', 'p16', 'p17', 'p18', 'p22', 'p23', 'p24'):
+        pl['variant'] = 'ski'
+places += [
+  dict(id='pb1', name='Koyasan: Okunoin cemetery and mausoleum', kind='other', town='Koyasan', lat=34.2160, lng=135.6060, variant='culture'),
+  dict(id='pb2', name='Koyasan: Danjo Garan and Kongobuji', kind='other', town='Koyasan', lat=34.2130, lng=135.5810, variant='culture'),
+  dict(id='pb3', name='Takayama Sanmachi old town', kind='town', town='Takayama', lat=36.1420, lng=137.2590, variant='culture'),
+  dict(id='pb4', name='Shirakawa-go (Ogimachi village)', kind='town', town='Shirakawa-go', lat=36.2570, lng=136.9060, variant='culture'),
+  dict(id='pb5', name='Matsumoto Castle', kind='other', town='Matsumoto', lat=36.2384, lng=137.9690, variant='culture'),
+]
+
+questions.insert(0, dict(id='q12', question='Plan A (ski) or Plan B (no skiing)?', why='Both use the flights already booked and the same Osaka and USJ days; they split on Thursday 11 Feb. Plan A: Nozawa Onsen for five nights, three ski days plus a rural Sunday, hinges on finding a solo room in a sold-out week. Plan B: a temple night at Koyasan, Takayama, a farmhouse night in Shirakawa-go, Matsumoto castle and the Narai post town: more moving about, four different beds, no dependence on Nozawa, and about A$400-500 cheaper because there are no lifts or rental. Lost workdays are identical. The plan switch at the top of the menu flips every page between them.', options=['Plan A: ski trip (Nozawa Onsen)', 'Plan B: countryside and culture (Koyasan, Takayama, Shirakawa-go, Matsumoto, Narai)', 'Hybrid: Plan B but swap Matsumoto’s two nights for two nights in Nozawa without skiing (onsen village, snow, food)'], recommendation='Decide by accommodation: if a Nozawa room lands by late October, Plan A. If not, Plan B is not a consolation prize; the Koyasan and Shirakawa-go nights are two of the best things you can do in Japan in winter, and every bed in it is easier to get.', answer='', resolved=False))
+
 trip = dict(
   meta=dict(title='Japan 2027', start='2027-02-08', end='2027-02-17', homeCurrency='AUD', jpyPerAud=RATE, updatedAt=UPDATED, version=1,
             about='Solo ski trip. Confirmed: JQ815 BNE→SYD and the Business Classic Reward SYD→MEL→NRT on 8 Feb. Home Tue 16 Feb on QF80 + QF1256 (booked). Everything else is planned from research done 13 Sep 2026; prices marked est. need checking when booking.'),
@@ -294,6 +426,7 @@ trip = dict(
     legs=flights['legs'],
     lounges=flights['lounges'],
   ),
+  variants=dict(active='ski', list=[dict(id='ski', name='Plan A: Ski trip (Nozawa)', short='A: Ski'), dict(id='culture', name='Plan B: No skiing, countryside and culture', short='B: Culture')]),
   foodGuide=FOOD_GUIDE, staysGuide=STAYS_GUIDE, points=points, stays=stays, food=food, budget=budget, checklist=checklist, places=places, questions=questions,
 )
 with open('data/trip.json', 'w') as f:

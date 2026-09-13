@@ -1,10 +1,10 @@
-import { el, uid, esc, linkify } from '../util.js';
+import { el, uid, esc, linkify, activeVariant, forVariant } from '../util.js';
 import { sheet, form, toast, confirmDialog, section, empty } from '../ui.js';
 
 const KINDS = { airport: ['✈️', 'Airport'], station: ['🚉', 'Station'], town: ['🏘️', 'Town'], resort: ['⛷️', 'Ski area'], hotel: ['🏨', 'Stay'], park: ['🎡', 'Attraction'], food: ['🍜', 'Food'], other: ['📍', 'Place'] };
 
 export function render(root, { store }) {
-  const places = store.trip.places || [];
+  const places = forVariant(store.trip.places, activeVariant(store.trip));
   root.append(el('div', { class: 'page-head' }, el('div', {}, el('h2', { class: 'page-title' }, 'Map'), el('p', { class: 'page-sub' }, 'Every place in the plan. Tap a pin for details.')), el('div', { class: 'page-actions' }, el('button', { class: 'btn btn-primary btn-sm', type: 'button', onClick: () => editPlace(store, null) }, '+ Add place'))));
   const mapEl = el('div', { class: 'map', id: 'map' });
   root.append(mapEl);

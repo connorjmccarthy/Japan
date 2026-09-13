@@ -1,4 +1,4 @@
-import { el, fmtDate, fmtMoney, todayIso, daysBetween, sortBy, plural, TYPES, fmtTime } from '../util.js';
+import { el, fmtDate, fmtMoney, todayIso, daysBetween, sortBy, plural, TYPES, fmtTime, activeVariant, variantList, dayView, forVariant } from '../util.js';
 import { section, pill, empty } from '../ui.js';
 import { budgetSummary } from './budget.js';
 import { neededPoints } from './flights.js';
@@ -13,18 +13,20 @@ export function render(root, { store, navigate }) {
   else if (toEnd >= 0) { phase = 'during'; big = `Day ${daysBetween(t.meta.start, today) + 1}`; sub = `of ${daysBetween(t.meta.start, t.meta.end) + 1} · home ${fmtDate(t.meta.end)}`; }
   else { phase = 'after'; big = 'Home'; sub = `trip finished ${fmtDate(t.meta.end, { year: true })}`; }
 
-  const days = sortBy(t.days || [], (d) => d.date);
+  const av = activeVariant(t);
+  const vName = variantList(t).find((x) => x.id === av)?.name;
+  const days = sortBy(t.days || [], (d) => d.date).map((d) => dayView(d, av));
   const allItems = days.flatMap((d) => (d.items || []).map((i) => ({ ...i, date: d.date })));
   const skiDays = allItems.filter((i) => i.type === 'ski' && i.status !== 'skip').length;
-  const booked = allItems.filter((i) => i.status === 'booked').length + (t.stays || []).filter((s) => s.status === 'booked').length + (t.flights?.confirmed || []).length;
+  const booked = allItems.filter((i) => i.status === 'booked').length + forVariant(t.stays, av).filter((s) => s.status === 'booked').length + (t.flights?.confirmed || []).length;
   const openQ = (t.questions || []).filter((q) => !q.resolved).length;
   const bs = budgetSummary(t);
-  const checklist = t.checklist || [];
+  const checklist = forVariant(t.checklist, av);
   const openTodos = checklist.filter((c) => !c.done);
   const soon = sortBy(openTodos.filter((c) => c.due), (c) => c.due).slice(0, 5);
 
   root.append(el('div', { class: 'card accent', style: { padding: '22px' } },
-    el('div', { class: 'stat-label' }, t.meta.title || 'Japan 2027'),
+    el('div', { class: 'stat-label' }, vName ? `${t.meta.title || 'Japan 2027'} · ${vName}` : (t.meta.title || 'Japan 2027')),
     el('div', { class: 'display', style: { fontSize: '44px', lineHeight: '1', margin: '6px 0 4px' } }, big),
     el('div', { class: 'muted' }, sub),
   ));

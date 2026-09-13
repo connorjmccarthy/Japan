@@ -1,4 +1,4 @@
-import { el, fmtMoney, fmtDate, uid, sortBy, CATEGORIES, toAud } from '../util.js';
+import { el, fmtMoney, fmtDate, uid, sortBy, CATEGORIES, toAud, activeVariant, variantList, variantOptions, inVariant } from '../util.js';
 import { sheet, form, toast, confirmDialog, section, pill, empty } from '../ui.js';
 import { chosenCash, neededPoints } from './flights.js';
 
@@ -7,6 +7,7 @@ const typeCategory = { flight: 'Flights', train: 'Transport', bus: 'Transport', 
 // Everything in the plan that costs money, normalised to AUD.
 export function budgetLines(t) {
   const rate = t.meta?.jpyPerAud || 100;
+  const av = activeVariant(t);
   const lines = [];
   for (const leg of t.flights?.legs || []) {
     const o = (leg.options || []).find((x) => x.id === leg.chosenOptionId);
@@ -16,14 +17,14 @@ export function budgetLines(t) {
   }
   for (const f of t.flights?.confirmed || []) if (f.cashAud) lines.push({ id: `conf-${f.id}`, category: 'Flights', label: `${f.flight} ${f.from} → ${f.to}`, aud: Number(f.cashAud) || 0, status: 'booked', source: 'flights' });
   for (const s of t.stays || []) {
-    if (!['planned', 'booked'].includes(s.status)) continue;
+    if (!['planned', 'booked'].includes(s.status) || !inVariant(s, av)) continue;
     lines.push({ id: `stay-${s.id}`, category: 'Accommodation', label: `${s.name} (${s.nights || 0} nt)`, aud: (Number(s.pricePerNightAud) || 0) * (Number(s.nights) || 0), status: s.status === 'booked' ? 'booked' : 'estimate', source: 'stays' });
   }
   for (const d of t.days || []) for (const i of d.items || []) {
-    if (!i.cost || i.status === 'skip') continue;
+    if (!i.cost || i.status === 'skip' || !inVariant(i, av)) continue;
     lines.push({ id: `item-${i.id}`, category: i.category || typeCategory[i.type] || 'Other', label: `${i.title} · ${fmtDate(d.date)}`, aud: toAud(i.cost, i.currency || 'AUD', rate), status: i.status === 'booked' ? 'booked' : 'estimate', source: 'itinerary', date: d.date });
   }
-  for (const b of t.budget || []) lines.push({ id: `manual-${b.id}`, category: b.category || 'Other', label: b.label, aud: toAud(b.amount, b.currency || 'AUD', rate), status: b.status || 'estimate', source: 'manual', manual: b });
+  for (const b of t.budget || []) if (inVariant(b, av)) lines.push({ id: `manual-${b.id}`, category: b.category || 'Other', label: b.label, aud: toAud(b.amount, b.currency || 'AUD', rate), status: b.status || 'estimate', source: 'manual', manual: b });
   return lines;
 }
 
@@ -38,7 +39,7 @@ export function render(root, { store, navigate }) {
   const t = store.trip;
   const { total, booked, lines } = budgetSummary(t);
   const nights = Math.max(1, (t.days || []).length - 1);
-  root.append(el('div', { class: 'page-head' }, el('div', {}, el('h2', { class: 'page-title' }, 'Budget'), el('p', { class: 'page-sub' }, 'Pulled automatically from chosen flights, planned stays and itinerary costs, plus anything you add here.')), el('div', { class: 'page-actions' }, el('button', { class: 'btn btn-primary btn-sm', type: 'button', onClick: () => editLine(store, null) }, '+ Add line'))));
+  root.append(el('div', { class: 'page-head' }, el('div', {}, el('h2', { class: 'page-title' }, 'Budget'), el('p', { class: 'page-sub' }, (variantList(t).find((x) => x.id === activeVariant(t))?.name ? `${variantList(t).find((x) => x.id === activeVariant(t)).name}. ` : '') + 'Pulled automatically from chosen flights, planned stays and itinerary costs, plus anything you add here.')), el('div', { class: 'page-actions' }, el('button', { class: 'btn btn-primary btn-sm', type: 'button', onClick: () => editLine(store, null) }, '+ Add line'))));
 
   root.append(el('div', { class: 'grid grid-stats' },
     stat('Total plan', fmtMoney(total, 'AUD', { compact: true }), 'AUD, excluding points'),
@@ -85,12 +86,13 @@ function editLine(store, b) {
     { name: 'label', label: 'What', value: v0.label || '', placeholder: 'e.g. Travel insurance (snow cover)' },
     { name: 'category', label: 'Category', type: 'select', options: CATEGORIES, value: v0.category || 'Other', half: true },
     { name: 'status', label: 'Status', type: 'select', options: [['estimate', 'Estimate'], ['booked', 'Booked / paid']], value: v0.status || 'estimate', half: true },
+    ...(variantList(store.trip).length > 1 ? [{ name: 'variant', label: 'Applies to', type: 'select', options: variantOptions(store.trip), value: v0.variant || (isNew ? (activeVariant(store.trip) || '') : ''), half: true }] : []),
     { name: 'amount', label: 'Amount', type: 'number', value: v0.amount ?? '', half: true },
     { name: 'currency', label: 'Currency', type: 'select', options: ['AUD', 'JPY'], value: v0.currency || 'AUD', half: true },
     { name: 'notes', label: 'Notes', type: 'textarea', value: v0.notes || '' },
   ]);
   const actions = [];
   if (!isNew) actions.push({ label: 'Delete', class: 'btn-danger', keepOpen: true, onClick: async () => { if (await confirmDialog('Delete this budget line?')) { store.update((t) => { t.budget = t.budget.filter((x) => x.id !== v0.id); }); return true; } return false; } });
-  actions.push('spacer', { label: 'Cancel', class: 'btn-ghost' }, { label: 'Save', class: 'btn-primary', onClick: () => { const v = fm.values(); if (!v.label) { toast('Describe the line', { kind: 'error' }); return false; } store.update((t) => { t.budget ||= []; const i = t.budget.findIndex((x) => x.id === v0.id); const next = { ...v0, ...v }; if (i >= 0) t.budget[i] = next; else t.budget.push(next); }); toast('Saved', { kind: 'ok' }); } });
+  actions.push('spacer', { label: 'Cancel', class: 'btn-ghost' }, { label: 'Save', class: 'btn-primary', onClick: () => { const v = fm.values(); if (!v.label) { toast('Describe the line', { kind: 'error' }); return false; } store.update((t) => { t.budget ||= []; const i = t.budget.findIndex((x) => x.id === v0.id); const next = { ...v0, ...v }; if ('variant' in v && !v.variant) delete next.variant; if (i >= 0) t.budget[i] = next; else t.budget.push(next); }); toast('Saved', { kind: 'ok' }); } });
   sheet({ title: isNew ? 'Add budget line' : 'Edit budget line', body: fm.node, actions });
 }

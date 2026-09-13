@@ -1,5 +1,5 @@
 import { store } from './store.js';
-import { el, fmtDate } from './util.js';
+import { el, fmtDate, activeVariant, variantList } from './util.js';
 import { toast } from './ui.js';
 import * as overview from './views/overview.js';
 import * as itinerary from './views/itinerary.js';
@@ -58,6 +58,18 @@ function buildNav() {
     tabs.append(el('button', { class: 'tab', type: 'button', dataset: { view: id }, onClick: () => navigate(id) }, el('span', { class: 'tab-ico', 'aria-hidden': 'true' }, v.ico), el('span', {}, v.label)));
   }
   tabs.append(el('button', { class: 'tab', type: 'button', dataset: { view: 'more' }, onClick: () => openSidebar() }, el('span', { class: 'tab-ico', 'aria-hidden': 'true' }, '☰'), el('span', {}, 'More')));
+}
+
+function renderVariantSwitch(trip) {
+  const host = $('variant-switch');
+  if (!host) return;
+  const list = variantList(trip);
+  host.innerHTML = '';
+  if (list.length < 2) { host.hidden = true; return; }
+  host.hidden = false;
+  const seg = el('div', { class: 'seg seg-block', role: 'group', 'aria-label': 'Plan variant' });
+  for (const v of list) seg.append(el('button', { type: 'button', class: v.id === activeVariant(trip) ? 'active' : '', dataset: { variant: v.id }, onClick: () => { if (activeVariant(store.trip) !== v.id) store.update((t) => { t.variants.active = v.id; }); closeSidebar(); } }, v.short || v.name));
+  host.append(el('div', { class: 'variant-label' }, 'Plan'), seg);
 }
 
 function openSidebar() { $('sidebar').classList.add('open'); $('scrim').hidden = false; $('menu-btn').setAttribute('aria-expanded', 'true'); }
@@ -126,7 +138,9 @@ async function boot() {
     if (status !== lastStatus) { lastStatus = status; renderSync(status); if (status.state === 'conflict') toast('GitHub has a newer version of the plan.', { action: 'Resolve', onAction: () => navigate('settings'), ms: 10000 }); if (status.state === 'error') toast(status.message, { kind: 'error', ms: 6000 }); }
     if (trip?.meta) {
       $('brand-dates').textContent = `${fmtDate(trip.meta.start)} to ${fmtDate(trip.meta.end)}`;
-      $('topbar-kicker').textContent = trip.meta.title || 'Japan 2027';
+      const v = variantList(trip).find((x) => x.id === activeVariant(trip));
+      $('topbar-kicker').textContent = v ? `${trip.meta.title || 'Japan 2027'} · ${v.short || v.name}` : (trip.meta.title || 'Japan 2027');
+      renderVariantSwitch(trip);
     }
   });
   await store.init();
