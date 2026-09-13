@@ -7,6 +7,8 @@ export function render(root, { store }) {
   const t = store.trip;
   const stays = t.stays || [];
   root.append(el('div', { class: 'page-head' }, el('div', {}, el('h2', { class: 'page-title' }, 'Stays'), el('p', { class: 'page-sub' }, 'Private rooms only. Prices are per night in AUD unless noted. Planned or booked stays count in the budget.')), el('div', { class: 'page-actions' }, el('button', { class: 'btn btn-primary btn-sm', type: 'button', onClick: () => editStay(store, null) }, '+ Add stay'))));
+  const guide = store.trip.staysGuide || [];
+  if (guide.length) root.append(section('How to actually get a room', ...guide.map((g) => el('details', { class: 'acc' }, el('summary', {}, g.title), el('div', { class: 'acc-body prose' }, el('p', {}, g.body))))));
   if (!stays.length) { root.append(empty('No stays yet')); return; }
   const groups = groupBy(stays, (s) => s.town || 'Other');
   for (const [town, list] of Object.entries(groups)) {

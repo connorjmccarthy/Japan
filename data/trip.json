@@ -5,7 +5,7 @@
     "end": "2027-02-17",
     "homeCurrency": "AUD",
     "jpyPerAud": 108,
-    "updatedAt": "2026-09-13T12:25:52Z",
+    "updatedAt": "2026-09-13T12:35:48Z",
     "version": 1,
     "about": "Solo ski trip. Confirmed: JQ815 BNE→SYD and the Business Classic Reward SYD→MEL→NRT on 8 Feb. Home Tue 16 Feb on QF80 + QF1256 (booked). Everything else is planned from research done 13 Sep 2026; prices marked est. need checking when booking."
   },
@@ -407,7 +407,7 @@
           "type": "stay",
           "title": "Check in, Nozawa Onsen (5 nights)",
           "status": "planned",
-          "location": "See Stays",
+          "location": "See Stays for the shortlist and how to book",
           "notes": "Your suitcase should be waiting (sent by courier on Tuesday). If it is not, the daypack has tomorrow’s ski layers."
         },
         {
@@ -1202,6 +1202,24 @@
       "body": "Shoes off at the genkan, slippers off on tatami. Ryokan dinner is at a set time; be there. In the bathhouses: wash sitting down before you get in, no towel in the water, no swimwear, quiet, no phones. Tattoos: Nozawa’s village bathhouses are relaxed but cover-up stickers are cheap insurance if you have visible ink."
     }
   ],
+  "staysGuide": [
+    {
+      "title": "Why Booking.com looks empty",
+      "body": "Booking.com carries maybe a third of Nozawa’s beds, and Japanese inns often list only twin rooms at a 2-person price, which makes a solo search show “sold out” or silly prices. Peak weeks (this is one) also get released to Japanese sites first."
+    },
+    {
+      "title": "Where the rooms actually are",
+      "body": "1. Rakuten Travel (travel.rakuten.com, English) and Jalan: search with 1 adult; they show single-occupancy plans with meals. 2. Email the inn directly in short simple English: dates, one person, one room, ask the price with breakfast. Most reply within a day. 3. Nozawa Holidays (nozawaholidays.com) manages a dozen lodges and will answer one email with everything that still has a solo room. 4. Stay Nozawa and nozawaonsen.ski run request forms that go to several properties at once."
+    },
+    {
+      "title": "What to ask for",
+      "body": "“1 person, single occupancy, 11-16 Feb, private room, breakfast included if possible.” Expect a supplement of 20-30% over the per-person twin rate. Shared bathrooms are normal and fine: you will be in the village bathhouses anyway."
+    },
+    {
+      "title": "If it is truly full",
+      "body": "Togari Onsen is 20 minutes by bus across the valley and much quieter and cheaper; sleep there and bus to Nozawa for skiing. Or switch base to Akakura Onsen (Myoko), where several ryokan take single bookings on Rakuten; only the Nagano end of the plan changes. Iiyama Station has very little lodging, so do not count on it."
+    }
+  ],
   "points": {
     "balance": 170000,
     "availableFrom": "2026-10-15",
@@ -1255,6 +1273,81 @@
     },
     {
       "id": "s-nz1",
+      "name": "Nozawa Peaks (guesthouse, book direct)",
+      "town": "Nozawa Onsen",
+      "type": "Japanese-style guesthouse, private rooms, shared bath",
+      "status": "shortlist",
+      "pricePerNightAud": 150,
+      "nights": 5,
+      "priceNote": "est. Feb; verify",
+      "checkIn": "2027-02-11",
+      "checkOut": "2027-02-16",
+      "distance": "4 min walk to the lifts",
+      "url": "https://nozawapeaks.com/",
+      "notes": "Books direct for 2026-27 on its own site, English, used to solo guests. Ask for a single room rate."
+    },
+    {
+      "id": "s-nz2",
+      "name": "Lodge Nagano (Aussie-run lodge)",
+      "town": "Nozawa Onsen",
+      "type": "Lodge, private room, shared bath",
+      "status": "shortlist",
+      "pricePerNightAud": 140,
+      "nights": 5,
+      "priceNote": "est. Feb; verify",
+      "checkIn": "2027-02-11",
+      "checkOut": "2027-02-16",
+      "distance": "~100 m from the slopes, short walk to the village centre",
+      "url": "https://www.lodgenagano.com/",
+      "notes": "Affordable, easy English, solo-friendly. Also listed by Nozawa Holidays. You will be surrounded by Australians, which is the trade-off."
+    },
+    {
+      "id": "s-nz3",
+      "name": "Haus St. Anton (family-run pension hotel)",
+      "town": "Nozawa Onsen",
+      "type": "15-room boutique pension, private rooms with bath",
+      "status": "shortlist",
+      "pricePerNightAud": 280,
+      "nights": 5,
+      "priceNote": "Classic room from ~US$184; verify solo rate",
+      "checkIn": "2027-02-11",
+      "checkOut": "2027-02-16",
+      "distance": "Village, near the Nagasaka side",
+      "url": "https://st-anton.jp/en/stay/",
+      "notes": "Japanese family-run, European style, non-smoking, famous jam factory downstairs. Book direct on their English page. Top of the budget but the most Banff-like small hotel in the village."
+    },
+    {
+      "id": "s-nz4",
+      "name": "Nozawa Onsen Hotel",
+      "town": "Nozawa Onsen",
+      "type": "Hotel, single rooms exist",
+      "status": "shortlist",
+      "pricePerNightAud": 300,
+      "nights": 5,
+      "priceNote": "US$177-241 typical; verify",
+      "checkIn": "2027-02-11",
+      "checkOut": "2027-02-16",
+      "distance": "Village centre",
+      "url": "https://www.kayak.com/Nozawa-Onsen-Hotels-Nozawa-Onsen-Hotel.2312608.ksp",
+      "notes": "One of the few places with proper single rooms and its own onsen. Check Rakuten Travel and Jalan for single-occupancy plans; often cheaper than Booking.com."
+    },
+    {
+      "id": "s-nz5",
+      "name": "Lodge Matsuya / Lodge Nakajima (local family lodges)",
+      "town": "Nozawa Onsen",
+      "type": "Minshuku-style lodge, private room, shared bath",
+      "status": "shortlist",
+      "pricePerNightAud": 110,
+      "nights": 5,
+      "priceNote": "est.; verify",
+      "checkIn": "2027-02-11",
+      "checkOut": "2027-02-16",
+      "distance": "Village",
+      "url": "https://www.tripadvisor.com/Hotel_Review-g1120620-d1137257-Reviews-Lodge_Matsuya-Nozawaonsen_mura_Shimotakai_gun_Nagano_Prefecture_Koshinetsu_Chubu.html",
+      "notes": "Japanese-run, simple, warm, cheap. These are the ones that rarely show on Booking.com: use Rakuten/Jalan or email in simple English."
+    },
+    {
+      "id": "s-nz6",
       "name": "Seisenso Inn (minshuku)",
       "town": "Nozawa Onsen",
       "type": "Family-run minshuku, private room, shared bath",
@@ -1266,41 +1359,11 @@
       "checkOut": "2027-02-16",
       "distance": "In the village, 5-10 min walk to Nagasaka gondola",
       "url": "https://nozawa-onsen.com/nozawa-accommodation/nozawa-onsen-ryokan-accommodation/",
-      "notes": "Closest to the Banff-motel price point. Ask for a single tatami room with breakfast. The long-weekend dates fill first."
+      "notes": "Closest to the Banff-motel price point. Ask for a single tatami room with breakfast."
     },
     {
-      "id": "s-nz2",
-      "name": "Minshuku Kojima",
-      "town": "Nozawa Onsen",
-      "type": "Minshuku, private room",
-      "status": "shortlist",
-      "pricePerNightAud": 95,
-      "nights": 5,
-      "priceNote": "from ~US$56; verify single rate",
-      "checkIn": "2027-02-11",
-      "checkOut": "2027-02-16",
-      "distance": "Village centre",
-      "url": "https://www.kayak.com/Nozawa-Onsen-Hotels-Minshuku-Kojima.2959745.ksp",
-      "notes": "Simple, local-run, warm. Book by phone/email or via Booking.com."
-    },
-    {
-      "id": "s-nz3",
-      "name": "Mid-range ryokan with dinner and breakfast (e.g. Kawamotoya, Nozawa View Hotel Shimataka)",
-      "town": "Nozawa Onsen",
-      "type": "Ryokan, half board",
-      "status": "planned",
-      "pricePerNightAud": 165,
-      "nights": 5,
-      "priceNote": "¥15,000-19,000 pp half board est.; verify",
-      "checkIn": "2027-02-11",
-      "checkOut": "2027-02-16",
-      "distance": "5-8 min to the gondola",
-      "url": "https://www.booking.com/",
-      "notes": "Planned as the budget placeholder (about the Banff rate once dinner and breakfast are counted). A ryokan dinner is the local-cuisine experience you asked for, and it solves the solo-dinner question three nights out of four."
-    },
-    {
-      "id": "s-nz4",
-      "name": "Lodge Nagano / Villa Nozawa (Aussie-run lodges)",
+      "id": "s-nz7",
+      "name": "Ginrei Lodge or Nozawa Springs Lodge (via Nozawa Holidays)",
       "town": "Nozawa Onsen",
       "type": "Lodge, private room",
       "status": "idea",
@@ -1310,23 +1373,68 @@
       "checkIn": "2027-02-11",
       "checkOut": "2027-02-16",
       "distance": "Village",
-      "url": "https://www.nozawaholidays.com/",
-      "notes": "Easy English, good beds, but you will be surrounded by Australians. Fallback if the Japanese-run places are full."
+      "url": "https://www.nozawaholidays.com/properties/",
+      "notes": "Nozawa Holidays manages a dozen lodges and will tell you in one email which ones still have a solo room for 11-16 Feb. Easiest single point of contact."
+    },
+    {
+      "id": "s-nz8",
+      "name": "Nozawa Dream Central (budget)",
+      "town": "Nozawa Onsen",
+      "type": "2-star, cheapest in the village",
+      "status": "idea",
+      "pricePerNightAud": 95,
+      "nights": 5,
+      "priceNote": "from ~US$84",
+      "checkIn": "2027-02-11",
+      "checkOut": "2027-02-16",
+      "distance": "Central",
+      "url": "https://www.momondo.com/hotels/nozawaonsen",
+      "notes": "Confirm it is a private room, not a dorm, before booking."
+    },
+    {
+      "id": "s-nz9",
+      "name": "Mid-range ryokan with dinner and breakfast (Kawamotoya, Nozawa View Hotel Shimataka)",
+      "town": "Nozawa Onsen",
+      "type": "Ryokan, half board",
+      "status": "planned",
+      "pricePerNightAud": 165,
+      "nights": 5,
+      "priceNote": "¥15,000-19,000 pp half board est.; verify",
+      "checkIn": "2027-02-11",
+      "checkOut": "2027-02-16",
+      "distance": "5-8 min to the gondola",
+      "url": "https://travel.rakuten.com/",
+      "notes": "Planned as the budget placeholder until something is booked. A ryokan dinner is the local-cuisine experience you asked for and solves the solo-dinner question. Search these on Rakuten Travel with 1 adult."
+    },
+    {
+      "id": "s-tg1",
+      "name": "Togari Onsen pension (fallback, 20 min bus from Nozawa)",
+      "town": "Togari Onsen (fallback)",
+      "type": "Small pensions and minshuku",
+      "status": "idea",
+      "pricePerNightAud": 100,
+      "nights": 5,
+      "priceNote": "cheaper than Nozawa; verify",
+      "checkIn": "2027-02-11",
+      "checkOut": "2027-02-16",
+      "distance": "Across the valley from Nozawa; direct bus to Nozawa 20 min, Iiyama Station 30 min",
+      "url": "https://togari-onsen.com/",
+      "notes": "Quiet little ski village with its own small resort. If Nozawa is truly full, sleep here and bus over for the Nozawa ski days. Fewer restaurants; more Japanese."
     },
     {
       "id": "s-my1",
-      "name": "Akakura Onsen ryokan (Myoko), if you swap bases",
-      "town": "Myoko Kogen (alternative)",
-      "type": "Onsen ryokan, per-person twin basis",
+      "name": "Akakura Hotel (Myoko, accepts solo bookings)",
+      "town": "Myoko Kogen (alternative base)",
+      "type": "Onsen hotel",
       "status": "idea",
-      "pricePerNightAud": 80,
+      "pricePerNightAud": 120,
       "nights": 5,
-      "priceNote": "¥8,400-9,200 pp twin basis; single rate unknown",
+      "priceNote": "verify on Rakuten",
       "checkIn": "2027-02-11",
       "checkOut": "2027-02-16",
-      "distance": "Ski-in walk to Akakura Onsen lifts",
-      "url": "https://joetsu-myoko.com/joetsu-myoko-accommodation/akakura-onsen-accommodation-hotels/",
-      "notes": "Quieter and cheaper than Nozawa, more Japanese, 13-16 m of snow, smaller mountain. See Decisions."
+      "distance": "Akakura Onsen village, walk to lifts",
+      "url": "https://travel.rakuten.com/usa/en-us/hotel_info_item/cnt_japan/sub_niigata_prefecture/cty_myoko_city/10123456871361",
+      "notes": "Explicitly takes reservations from one person. Also on Rakuten: Kounkaku (grand old ryokan), Kotobukiro, Hotel Takeda. Switching base changes only the Nagano end of the plan."
     }
   ],
   "food": [
