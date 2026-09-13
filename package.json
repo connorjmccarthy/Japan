@@ -1,0 +1,15 @@
+{
+  "name": "japan-2027-trip-planner",
+  "private": true,
+  "version": "1.0.0",
+  "description": "Personal trip planner for a February 2027 Japan ski trip. Static site, no build step.",
+  "type": "module",
+  "scripts": {
+    "start": "python3 -m http.server 8123",
+    "test": "playwright test",
+    "check": "node scripts/check-syntax.mjs"
+  },
+  "devDependencies": {
+    "@playwright/test": "1.56.1"
+  }
+}

@@ -1,0 +1,1654 @@
+{
+  "meta": {
+    "title": "Japan 2027",
+    "start": "2027-02-08",
+    "end": "2027-02-16",
+    "homeCurrency": "AUD",
+    "jpyPerAud": 108,
+    "updatedAt": "2026-09-13T04:21:37Z",
+    "version": 1,
+    "about": "Solo ski trip. Confirmed: Business Classic Reward SYD→MEL→NRT on 8 Feb. Everything else is planned from research done 13 Sep 2026; prices marked est. need checking when booking."
+  },
+  "days": [
+    {
+      "id": "d0208",
+      "date": "2027-02-08",
+      "title": "Fly out via Sydney and Melbourne",
+      "base": "Overnight flight",
+      "notes": "Times on this day are shown in local time at each airport. Sydney and Melbourne are one hour ahead of Queensland in February (daylight saving).",
+      "items": [
+        {
+          "id": "a1",
+          "time": "08:00",
+          "type": "transfer",
+          "title": "Drive Gympie → Brisbane Airport",
+          "status": "planned",
+          "location": "Bruce Hwy, ~167 km, about 1h45",
+          "notes": "Book AIRPARK online beforehand (free shuttle every 10-15 min to the domestic terminal). Leaving at 8 puts you at the terminal by ~10:15, an hour and a bit before an 11:30 flight even with Bruce Highway delays."
+        },
+        {
+          "id": "a2",
+          "time": "11:30",
+          "type": "flight",
+          "title": "Qantas Brisbane → Sydney (to be booked)",
+          "status": "idea",
+          "location": "BNE domestic → SYD T3",
+          "endTime": "13:30",
+          "notes": "Book on a QF flight number so bags through-check to Narita and you land at T3, the same terminal as QF481. Aim to land in Sydney by 3pm AEDT at the latest. Cost lives in Flights & points."
+        },
+        {
+          "id": "a3",
+          "time": "14:00",
+          "type": "activity",
+          "title": "Qantas Domestic Business Lounge, Sydney T3",
+          "status": "planned",
+          "location": "Opposite gates 4-5, up the escalator, left door",
+          "notes": "Your Business ticket gets you in. Bags should already be checked through, so you stay airside. Shower, eat, charge everything."
+        },
+        {
+          "id": "a4",
+          "time": "18:30",
+          "type": "flight",
+          "title": "QF481 Sydney → Melbourne",
+          "status": "booked",
+          "location": "SYD T3 → MEL T1",
+          "endTime": "20:05",
+          "notes": "Business, A321neo, 1h35. Confirmed."
+        },
+        {
+          "id": "a5",
+          "time": "20:15",
+          "type": "transfer",
+          "title": "Melbourne T1 → T2 walk, then immigration",
+          "status": "planned",
+          "location": "Covered walkway, one level up, 3-5 min",
+          "notes": "Bags transfer automatically on the one booking. Allow 30-40 min for security and outbound immigration."
+        },
+        {
+          "id": "a6",
+          "time": "21:00",
+          "type": "activity",
+          "title": "Qantas International Business Lounge, Melbourne T2",
+          "status": "planned",
+          "location": "Airside, level 1",
+          "notes": "Business ticket covers this. The First Lounge (level 3) is NOT covered by a Business ticket; only use it if your passes show as Titanium or Platinum One in the Qantas app. Be at the gate by ~10:45pm."
+        },
+        {
+          "id": "a7",
+          "time": "23:30",
+          "type": "flight",
+          "title": "QF49 Melbourne → Tokyo Narita",
+          "status": "booked",
+          "location": "MEL T2 → NRT T2",
+          "endTime": "07:50",
+          "notes": "Business, A330-200, 10h20, lands 7:50am Tuesday. Sleep as much as you can: Japan is only 1 hour behind Queensland, so jet lag is minimal."
+        }
+      ]
+    },
+    {
+      "id": "d0209",
+      "date": "2027-02-09",
+      "title": "Land, straight down to Osaka",
+      "base": "Osaka",
+      "notes": "Long travel day on purpose: it puts you in Osaka the night before the calmest weekday to do Universal Studios.",
+      "items": [
+        {
+          "id": "b1",
+          "time": "07:50",
+          "type": "note",
+          "title": "Land Narita T2, immigration and customs",
+          "status": "planned",
+          "location": "Narita T2",
+          "notes": "Have the Visit Japan Web QR code ready (immigration + customs in one). Budget about an hour. Pick up your bag, switch on the eSIM, and withdraw ¥30,000-40,000 at the 7-Eleven ATM in the terminal (Nozawa is largely cash-only and has one foreign-card ATM, at the post office). Suica: Welcome Suica Mobile in Apple Wallet if you have an iPhone; on Android buy a physical Welcome Suica at the JR counter."
+        },
+        {
+          "id": "b2",
+          "time": "09:45",
+          "type": "train",
+          "title": "Narita Express → Tokyo Station",
+          "status": "planned",
+          "location": "NRT T2 station, B1",
+          "endTime": "10:45",
+          "cost": 3070,
+          "currency": "JPY",
+          "notes": "~55 min. Buy at the JR East ticket office or machine (the N’EX round-trip ticket for foreign passports, ¥5,200, is worth it because you come back this way on the 15th)."
+        },
+        {
+          "id": "b3",
+          "time": "11:00",
+          "type": "food",
+          "title": "Ekiben (station bento) from Ekibenya Matsuri",
+          "status": "planned",
+          "location": "Tokyo Station, central passage",
+          "cost": 1500,
+          "currency": "JPY",
+          "notes": "The most Japanese lunch there is. Grab one for the Shinkansen. Not a trendy place, just a shop with 200 regional bento."
+        },
+        {
+          "id": "b4",
+          "time": "11:30",
+          "type": "train",
+          "title": "Nozomi Shinkansen Tokyo → Shin-Osaka",
+          "status": "planned",
+          "location": "Tokyo Station, platforms 14-19",
+          "endTime": "14:00",
+          "cost": 14720,
+          "currency": "JPY",
+          "notes": "~2h30, every 10 min. Reserve a seat (opens one month ahead on smart-EX). A normal suitcase under 160 cm total is fine; only bags over 160 cm need the oversized-baggage seat."
+        },
+        {
+          "id": "b5",
+          "time": "14:15",
+          "type": "transfer",
+          "title": "Shin-Osaka → hotel",
+          "status": "planned",
+          "location": "JR local to Osaka / Fukushima, or Yumesaki line to Universal City",
+          "endTime": "15:00",
+          "cost": 300,
+          "currency": "JPY"
+        },
+        {
+          "id": "b6",
+          "time": "15:00",
+          "type": "stay",
+          "title": "Check in, Osaka (2 nights)",
+          "status": "planned",
+          "location": "See Stays for the shortlist",
+          "notes": "Solo, private room. Business hotels around Fukushima or Tenma are quiet, cheap and 15-25 min from USJ by train."
+        },
+        {
+          "id": "b7",
+          "time": "17:00",
+          "type": "activity",
+          "title": "Walk Nakazakicho and Tenma",
+          "status": "planned",
+          "location": "Nakazakicho (old wooden lanes) → Tenjinbashisuji shopping arcade → Tenma",
+          "notes": "Low-key neighbourhoods a short train ride from Umeda. Tenjinbashisuji is 2.6 km of covered arcade where locals shop."
+        },
+        {
+          "id": "b8",
+          "time": "18:30",
+          "type": "food",
+          "title": "Dinner in the Tenma izakaya alleys",
+          "status": "planned",
+          "location": "Around Tenma station, under the tracks",
+          "cost": 3500,
+          "currency": "JPY",
+          "notes": "Standing bars and tiny izakaya, mostly Japanese customers. Order doteyaki (beef tendon simmered in miso) and kushikatsu. Early night; tomorrow starts at 7."
+        }
+      ]
+    },
+    {
+      "id": "d0210",
+      "date": "2027-02-10",
+      "title": "Universal Studios Japan and Super Nintendo World",
+      "base": "Osaka",
+      "notes": "Wednesday is the calmest weekday in the window (Thursday is a public holiday, and the weekend follows). Buy the Studio Pass and an Express Pass that includes Super Nintendo World entry as soon as they go on sale for this date.",
+      "items": [
+        {
+          "id": "c1",
+          "time": "07:00",
+          "type": "train",
+          "title": "Train to Universal City",
+          "status": "planned",
+          "location": "Osaka Station platform 1 → Universal City (JR Yumesaki line, ~12 min direct)",
+          "cost": 200,
+          "currency": "JPY"
+        },
+        {
+          "id": "c2",
+          "time": "07:45",
+          "type": "note",
+          "title": "Be at the gates before official opening",
+          "status": "planned",
+          "location": "USJ main entrance",
+          "notes": "Posted opening is usually 9:00 in February but the park regularly opens 30-60 min early. Being there by 7:45 matters if you are relying on the free timed-entry ticket."
+        },
+        {
+          "id": "c3",
+          "time": "08:30",
+          "type": "activity",
+          "title": "Enter USJ; claim Super Nintendo World timed entry in the app the second you are through the gate",
+          "status": "planned",
+          "location": "USJ",
+          "cost": 10900,
+          "currency": "JPY",
+          "notes": "1-Day Studio Pass, date-priced (¥8,900 low season up to ¥11,800 peak in 2026; Feb 2027 not published yet). If you bought an Express Pass with area entry you already have a slot and can skip the scramble."
+        },
+        {
+          "id": "c4",
+          "time": "09:30",
+          "type": "activity",
+          "title": "Super Nintendo World: Mario Kart, Yoshi’s Adventure, Donkey Kong Country",
+          "status": "planned",
+          "location": "Super Nintendo World",
+          "cost": 4800,
+          "currency": "JPY",
+          "notes": "The ¥4,800 is the Power-Up Band (optional but it is the whole point of the key challenges and Bowser Jr boss fight). Ride Mario Kart first, then Donkey Kong’s Mine Cart, then wander."
+        },
+        {
+          "id": "c5",
+          "time": "12:30",
+          "type": "food",
+          "title": "Kinopio’s Cafe (Toad’s cafe)",
+          "status": "planned",
+          "location": "Super Nintendo World",
+          "cost": 2500,
+          "currency": "JPY",
+          "notes": "Reserve in the app on the day if slots show. Otherwise Yoshi’s Snack Island for a quick bite."
+        },
+        {
+          "id": "c6",
+          "time": "14:00",
+          "type": "activity",
+          "title": "Rest of the park: Jurassic Park, Harry Potter area, Jaws",
+          "status": "planned",
+          "location": "USJ",
+          "notes": "Single Rider lines are the solo traveller’s cheat code and are free."
+        },
+        {
+          "id": "c7",
+          "time": "19:00",
+          "type": "food",
+          "title": "Okonomiyaki dinner back in town",
+          "status": "planned",
+          "location": "A neighbourhood okonomiyaki counter near the hotel (see Food)",
+          "cost": 1800,
+          "currency": "JPY"
+        }
+      ]
+    },
+    {
+      "id": "d0211",
+      "date": "2027-02-11",
+      "title": "Osaka → Nozawa Onsen (public holiday)",
+      "base": "Nozawa Onsen",
+      "notes": "National Foundation Day. Trains are busy, so reserve seats a month ahead. Route avoids Tokyo: Osaka → Nagoya by Shinkansen, then the Shinano limited express through the mountains to Nagano.",
+      "items": [
+        {
+          "id": "e1",
+          "time": "08:00",
+          "type": "transfer",
+          "title": "Check out, to Shin-Osaka",
+          "status": "planned",
+          "location": "Shin-Osaka",
+          "cost": 300,
+          "currency": "JPY"
+        },
+        {
+          "id": "e2",
+          "time": "08:40",
+          "type": "train",
+          "title": "Nozomi Shin-Osaka → Nagoya",
+          "status": "planned",
+          "location": "Shin-Osaka",
+          "endTime": "09:30",
+          "cost": 6880,
+          "currency": "JPY",
+          "notes": "~50 min, reserved seat."
+        },
+        {
+          "id": "e3",
+          "time": "10:00",
+          "type": "train",
+          "title": "Limited Express Shinano Nagoya → Nagano",
+          "status": "planned",
+          "location": "Nagoya, Chuo line platforms",
+          "endTime": "13:00",
+          "cost": 7660,
+          "currency": "JPY",
+          "notes": "~2h55, hourly, reserved seat. Through the Kiso valley, one of the prettiest train rides in Japan. Sit on the left for the river."
+        },
+        {
+          "id": "e4",
+          "time": "13:10",
+          "type": "food",
+          "title": "Shinshu soba and oyaki at Nagano Station",
+          "status": "planned",
+          "location": "Nagano Station, MIDORI building",
+          "cost": 1400,
+          "currency": "JPY",
+          "notes": "Nagano’s two staples in one stop. Oyaki are the grilled buns filled with nozawana or pumpkin."
+        },
+        {
+          "id": "e5",
+          "time": "14:10",
+          "type": "train",
+          "title": "Hokuriku Shinkansen Nagano → Iiyama",
+          "status": "planned",
+          "location": "Nagano Station",
+          "endTime": "14:25",
+          "cost": 1500,
+          "currency": "JPY",
+          "notes": "12 minutes. The Nozawa Onsen Liner bus leaves about 10 min after each Shinkansen arrival."
+        },
+        {
+          "id": "e6",
+          "time": "14:40",
+          "type": "bus",
+          "title": "Nozawa Onsen Liner → Nozawa Onsen",
+          "status": "planned",
+          "location": "Iiyama Station, bus stop out the front",
+          "endTime": "15:05",
+          "cost": 600,
+          "currency": "JPY",
+          "notes": "25 min. Taxi is the fallback (¥6,000-7,000)."
+        },
+        {
+          "id": "e7",
+          "time": "15:15",
+          "type": "stay",
+          "title": "Check in, Nozawa Onsen (4 nights)",
+          "status": "planned",
+          "location": "See Stays",
+          "notes": "Then straight to a rental shop to get fitted so the morning is not wasted."
+        },
+        {
+          "id": "e8",
+          "time": "16:00",
+          "type": "activity",
+          "title": "Ski rental fitting",
+          "status": "planned",
+          "location": "Village rental shop (see Notes)",
+          "cost": 17800,
+          "currency": "JPY",
+          "notes": "4 days x ¥4,450 standard set (skis, boots, poles) at a village shop; the resort’s own shop is ¥5,500/day. Rental ski wear is available if you want to travel light."
+        },
+        {
+          "id": "e9",
+          "time": "17:00",
+          "type": "activity",
+          "title": "Oyu, the main public bathhouse",
+          "status": "planned",
+          "location": "Centre of the village",
+          "cost": 0,
+          "currency": "JPY",
+          "notes": "13 free soto-yu bathhouses run by the village. Oyu is the famous wooden one. Bring a small towel, wash first, and expect it hot."
+        },
+        {
+          "id": "e10",
+          "time": "18:30",
+          "type": "food",
+          "title": "Dinner at Wakagiri or the ryokan",
+          "status": "planned",
+          "location": "Main street",
+          "cost": 3000,
+          "currency": "JPY",
+          "notes": "Wakagiri is the local favourite for a home-style set meal. If the ryokan includes dinner, take it: that is the ryokan experience."
+        }
+      ]
+    },
+    {
+      "id": "d0212",
+      "date": "2027-02-12",
+      "title": "Ski Nozawa, day 1",
+      "base": "Nozawa Onsen",
+      "notes": "Friday of the long weekend. Be on the Nagasaka gondola at opening (8:30) and head to Yamabiko at the top; crowds build from 10.",
+      "items": [
+        {
+          "id": "f1",
+          "time": "08:15",
+          "type": "ski",
+          "title": "Nozawa Onsen Snow Resort, full day",
+          "status": "planned",
+          "location": "Nagasaka gondola",
+          "endTime": "16:00",
+          "cost": 8000,
+          "currency": "JPY",
+          "notes": "Special Pack: 1-day lift pass + ¥1,000 lunch voucher (2025-26 price; expect +5-10%). 297 ha, 1,085 m vertical, 10 km longest run (Skyline). Yamabiko for tree runs, Uenotaira for cruising."
+        },
+        {
+          "id": "f2",
+          "time": "12:30",
+          "type": "food",
+          "title": "Lunch on the mountain with the voucher",
+          "status": "planned",
+          "location": "Yamabiko or Uenotaira restaurants",
+          "cost": 500,
+          "currency": "JPY",
+          "notes": "Curry rice or ramen; the voucher covers most of it."
+        },
+        {
+          "id": "f3",
+          "time": "16:30",
+          "type": "activity",
+          "title": "Onsen: try a different soto-yu (Kuma no Tearai or Shinyu)",
+          "status": "planned",
+          "location": "Village",
+          "cost": 0,
+          "currency": "JPY"
+        },
+        {
+          "id": "f4",
+          "time": "18:30",
+          "type": "food",
+          "title": "Soba at Sobadokoro Daimon",
+          "status": "planned",
+          "location": "Main street, 100-year-old family shop",
+          "cost": 1800,
+          "currency": "JPY",
+          "notes": "Hand-cut Shinshu soba. Order it zaru (cold) even in winter; it is how locals judge a soba shop."
+        }
+      ]
+    },
+    {
+      "id": "d0213",
+      "date": "2027-02-13",
+      "title": "Ski Nozawa, day 2",
+      "base": "Nozawa Onsen",
+      "notes": "Busiest day of the weekend. Early start again, or skin/hike the quieter Karasawa side. Night skiing on Hikage runs on selected nights; check the board.",
+      "items": [
+        {
+          "id": "g1",
+          "time": "08:15",
+          "type": "ski",
+          "title": "Nozawa Onsen Snow Resort, full day",
+          "status": "planned",
+          "location": "Hikage gondola",
+          "endTime": "16:00",
+          "cost": 8000,
+          "currency": "JPY",
+          "notes": "Special Pack again. Explore Karasawa and Paradise; the Skyline run top to bottom late afternoon when it empties."
+        },
+        {
+          "id": "g2",
+          "time": "12:30",
+          "type": "food",
+          "title": "Mountain lunch",
+          "status": "planned",
+          "location": "On mountain",
+          "cost": 500,
+          "currency": "JPY"
+        },
+        {
+          "id": "g3",
+          "time": "17:00",
+          "type": "activity",
+          "title": "Onsen eggs at the Ogama",
+          "status": "planned",
+          "location": "Ogama (the village’s boiling cooking spring, locals only in the water but you can watch and buy eggs nearby)",
+          "cost": 300,
+          "currency": "JPY"
+        },
+        {
+          "id": "g4",
+          "time": "18:30",
+          "type": "food",
+          "title": "Izakaya dinner: basashi (horse sashimi) and nozawana",
+          "status": "planned",
+          "location": "A village izakaya (see Food)",
+          "cost": 3500,
+          "currency": "JPY"
+        }
+      ]
+    },
+    {
+      "id": "d0214",
+      "date": "2027-02-14",
+      "title": "Ski Nozawa, day 3",
+      "base": "Nozawa Onsen",
+      "notes": "Sunday. Lift lines ease after 2pm as the Tokyo crowd heads home.",
+      "items": [
+        {
+          "id": "h1",
+          "time": "08:15",
+          "type": "ski",
+          "title": "Nozawa Onsen Snow Resort, full day",
+          "status": "planned",
+          "location": "Nagasaka gondola",
+          "endTime": "16:00",
+          "cost": 8000,
+          "currency": "JPY"
+        },
+        {
+          "id": "h2",
+          "time": "12:30",
+          "type": "food",
+          "title": "Mountain lunch",
+          "status": "planned",
+          "location": "On mountain",
+          "cost": 500,
+          "currency": "JPY"
+        },
+        {
+          "id": "h3",
+          "time": "16:30",
+          "type": "activity",
+          "title": "Onsen, then stroll the temple (Kenmeiji) and the fire festival site",
+          "status": "planned",
+          "location": "Village",
+          "cost": 0,
+          "currency": "JPY"
+        },
+        {
+          "id": "h4",
+          "time": "18:30",
+          "type": "food",
+          "title": "Last dinner: oyaki and a nabe hotpot",
+          "status": "planned",
+          "location": "Village",
+          "cost": 3000,
+          "currency": "JPY"
+        },
+        {
+          "id": "h5",
+          "time": "20:00",
+          "type": "note",
+          "title": "Pack; return rental gear tonight if the shop allows, or first thing tomorrow",
+          "status": "planned",
+          "location": "Lodging"
+        }
+      ]
+    },
+    {
+      "id": "d0215",
+      "date": "2027-02-15",
+      "title": "Quiet Monday morning ski, then home via Tokyo",
+      "base": "Overnight flight",
+      "notes": "Monday morning is the emptiest the mountain will be all trip. Two hours of skiing, then a comfortable run to Narita for a 9:45pm departure.",
+      "items": [
+        {
+          "id": "i1",
+          "time": "08:30",
+          "type": "ski",
+          "title": "Short morning ski (optional)",
+          "status": "idea",
+          "location": "Nagasaka gondola",
+          "endTime": "10:45",
+          "cost": 6000,
+          "currency": "JPY",
+          "notes": "Only if the lodging lets you check out late and the rental shop opens early. A half-day/morning pass if offered, else skip and have a slow breakfast and one last onsen."
+        },
+        {
+          "id": "i2",
+          "time": "11:30",
+          "type": "bus",
+          "title": "Nozawa Onsen Liner → Iiyama Station",
+          "status": "planned",
+          "location": "Village bus stop",
+          "endTime": "11:55",
+          "cost": 600,
+          "currency": "JPY"
+        },
+        {
+          "id": "i3",
+          "time": "12:15",
+          "type": "train",
+          "title": "Hokuriku Shinkansen Iiyama → Tokyo",
+          "status": "planned",
+          "location": "Iiyama Station",
+          "endTime": "14:10",
+          "cost": 8500,
+          "currency": "JPY",
+          "notes": "~1h50."
+        },
+        {
+          "id": "i4",
+          "time": "14:30",
+          "type": "train",
+          "title": "Narita Express Tokyo → Narita T2",
+          "status": "planned",
+          "location": "Tokyo Station",
+          "endTime": "15:30",
+          "cost": 0,
+          "currency": "JPY",
+          "notes": "Covered by the N’EX round trip ticket bought on day 1."
+        },
+        {
+          "id": "i5",
+          "time": "16:00",
+          "type": "note",
+          "title": "Narita T2: check in (Qantas counters), drop bag",
+          "status": "planned",
+          "location": "NRT T2",
+          "notes": "Check-in closes 60 min before departure. Plenty of buffer."
+        },
+        {
+          "id": "i6",
+          "time": "18:00",
+          "type": "food",
+          "title": "Dinner at Narita T2 food court",
+          "status": "planned",
+          "location": "NRT T2, 4F",
+          "cost": 1500,
+          "currency": "JPY",
+          "notes": "Tonkatsu or ramen; last Japanese meal."
+        },
+        {
+          "id": "i7",
+          "time": "21:45",
+          "type": "flight",
+          "title": "QF62 Narita → Brisbane (to be booked)",
+          "status": "idea",
+          "location": "NRT T2 → BNE international",
+          "endTime": "07:45",
+          "notes": "A330-300, ~9 h, lands 7:45am Tuesday. Two-class aircraft: there is no Premium Economy on this route. See Flights & points for the options."
+        }
+      ]
+    },
+    {
+      "id": "d0216",
+      "date": "2027-02-16",
+      "title": "Land Brisbane, drive home",
+      "base": "Home",
+      "notes": "",
+      "items": [
+        {
+          "id": "j1",
+          "time": "07:45",
+          "type": "note",
+          "title": "Land Brisbane, immigration, bag",
+          "status": "planned",
+          "location": "BNE international"
+        },
+        {
+          "id": "j2",
+          "time": "09:00",
+          "type": "transfer",
+          "title": "AIRPARK shuttle to the car, coffee, drive to Gympie",
+          "status": "planned",
+          "location": "BNE → Gympie, ~1h45",
+          "notes": "Do not drive tired. Get a proper coffee and breakfast at the airport first; the Bruce Highway is not the place to nod off."
+        }
+      ]
+    }
+  ],
+  "flights": {
+    "confirmed": [
+      {
+        "id": "qf481",
+        "flight": "QF481",
+        "from": "Sydney T3",
+        "to": "Melbourne T1",
+        "date": "2027-02-08",
+        "arrDate": "2027-02-08",
+        "dep": "18:30",
+        "arr": "20:05",
+        "cabin": "Business",
+        "aircraft": "A321neo",
+        "duration": "1h35",
+        "notes": "Business Classic Reward. Domestic leg; check-in at Sydney T3. Same booking as QF49, so the connection is protected."
+      },
+      {
+        "id": "qf49",
+        "flight": "QF49",
+        "from": "Melbourne T2",
+        "to": "Tokyo Narita T2",
+        "date": "2027-02-08",
+        "arrDate": "2027-02-09",
+        "dep": "23:30",
+        "arr": "07:50",
+        "cabin": "Business",
+        "aircraft": "A330-200",
+        "duration": "10h20",
+        "notes": "Business Classic Reward. Seasonal Monday service (runs Sun/Mon/Wed/Fri, 2 Dec 2026 to late Mar 2027). Taxes paid: A$450.",
+        "cashAud": 450
+      }
+    ],
+    "legs": [
+      {
+        "id": "leg-feeder",
+        "name": "Home to Sydney, Mon 8 Feb",
+        "chosenOptionId": "opt-qf-bne",
+        "notes": "This is a separate ticket from the Business reward, so it is not protected if it runs late. Pick a Qantas (QF) flight so bags check through and you arrive at T3, and land by 3pm Sydney time. Brisbane has ~18 Qantas departures a day as fallback; Sunshine Coast has 3.",
+        "options": [
+          {
+            "id": "opt-qf-bne",
+            "rank": 1,
+            "label": "Qantas Brisbane → Sydney, late morning",
+            "route": "BNE → SYD T3",
+            "date": "2027-02-08",
+            "dep": "11:30",
+            "arr": "13:30",
+            "duration": "1h30",
+            "cashAud": 140,
+            "priceNote": "A$95-365 range; est. mid",
+            "points": 9200,
+            "pointsTaxAud": 58,
+            "status": "planned",
+            "notes": "Recommended. Park at BNE AIRPARK (A$109 for 8 days). With QF62 landing at BNE on the way home, this is the cheapest and simplest overall. Lands Sydney 13:30 AEDT: 5 hours of buffer and lounge."
+          },
+          {
+            "id": "opt-qf-mcy",
+            "rank": 2,
+            "label": "Qantas QF903 Sunshine Coast → Sydney",
+            "route": "MCY → SYD T3",
+            "date": "2027-02-08",
+            "dep": "12:15",
+            "arr": "15:05",
+            "duration": "1h40",
+            "cashAud": 160,
+            "priceNote": "from ~A$130",
+            "points": 9200,
+            "pointsTaxAud": 58,
+            "status": "idea",
+            "notes": "1 h from Gympie, parking ~A$90 for 8 days, no tolls. But if QF903 is cancelled the next Qantas flight lands after QF481 has gone, and the homeward flight lands at Brisbane, so you would need a A$55-85 shuttle back to the car. Times shown in Sydney time (AEDT)."
+          },
+          {
+            "id": "opt-jq-mcy",
+            "rank": 3,
+            "label": "Jetstar JQ787 Sunshine Coast → Sydney",
+            "route": "MCY → SYD T2",
+            "date": "2027-02-08",
+            "dep": "11:30",
+            "arr": "14:15",
+            "duration": "1h45",
+            "cashAud": 90,
+            "priceNote": "from ~A$67 + bag",
+            "status": "idea",
+            "notes": "Cheapest fare, but arrives T2: collect bags, walk 7 min to T3, re-check, re-screen. No through-checking to Narita."
+          },
+          {
+            "id": "opt-qf905",
+            "rank": 4,
+            "label": "Qantas QF905 Sunshine Coast → Sydney, 7am (safest from MCY)",
+            "route": "MCY → SYD T3",
+            "date": "2027-02-08",
+            "dep": "07:00",
+            "arr": "09:50",
+            "duration": "1h40",
+            "cashAud": 150,
+            "points": 9200,
+            "pointsTaxAud": 58,
+            "status": "idea",
+            "notes": "Lowest risk if you insist on MCY: a whole day of fallback options. Long day in Sydney though (8+ hours in the lounge)."
+          }
+        ]
+      },
+      {
+        "id": "leg-home",
+        "name": "Japan to home, Mon 15 Feb",
+        "chosenOptionId": "opt-qf62-econ",
+        "notes": "Big finding: the Brisbane flight (QF62) has no Premium Economy cabin at all, so “book economy and upgrade to PE” does not exist on it. The only Qantas Tokyo flight with PE is the 6:55am Haneda → Sydney. Realistic comfort upgrades: Economy Plus extra-legroom seats on the A330 (new from Sep 2026), or a Business Classic Reward if a seat appears. Points numbers marked “est.” are inferred from the Aug 2025 price rise; confirm on qantas.com when booking.",
+        "options": [
+          {
+            "id": "opt-qf62-econ",
+            "rank": 1,
+            "label": "QF62 Narita → Brisbane, Economy Classic Reward",
+            "route": "NRT → BNE",
+            "date": "2027-02-15",
+            "dep": "21:45",
+            "arr": "07:45",
+            "duration": "~9h",
+            "cashAud": 720,
+            "priceNote": "cash from ~A$720",
+            "points": 29000,
+            "pointsTaxAud": 150,
+            "status": "planned",
+            "notes": "Recommended if a reward seat shows for 15 or 16 Feb. ~29,000 pts (est.) + ~A$120-170 taxes (Japan’s departure tax tripled to ¥3,000 from July 2026, so ex-Japan taxes are a little higher than older guides say). Add Economy Plus (extra legroom, ~19,500 pts or ~A$100-150 cash on similar routes) for comfort. Lands straight into Brisbane where the car is."
+          },
+          {
+            "id": "opt-qf62-bus",
+            "rank": 2,
+            "label": "QF62 Narita → Brisbane, Business Classic Reward",
+            "route": "NRT → BNE",
+            "date": "2027-02-15",
+            "dep": "21:45",
+            "arr": "07:45",
+            "duration": "~9h",
+            "cashAud": 3500,
+            "priceNote": "cash ~A$3,000+",
+            "points": 82100,
+            "pointsTaxAud": 320,
+            "status": "idea",
+            "notes": "82,100 pts (confirmed post-Aug-2025 price) + ~A$250-350 taxes. You have the points. Availability at Bronze in peak February is the only question; set alerts."
+          },
+          {
+            "id": "opt-jq10",
+            "rank": 3,
+            "label": "Jetstar JQ10 Narita → Brisbane, economy",
+            "route": "NRT → BNE",
+            "date": "2027-02-15",
+            "dep": "20:50",
+            "arr": "06:45",
+            "duration": "8h55",
+            "cashAud": 409,
+            "priceNote": "from ~A$409 + bag/meal",
+            "points": 24000,
+            "pointsTaxAud": 110,
+            "status": "idea",
+            "notes": "Cheapest points option (Jetstar table, ~24,000 pts est.; includes 20 kg bag). 787, no PE; you can bid for Jetstar Business with points + cash."
+          },
+          {
+            "id": "opt-jq24",
+            "rank": 4,
+            "label": "Jetstar JQ24 Osaka KIX → Brisbane (only if the trip is flipped to end in Osaka)",
+            "route": "KIX → BNE",
+            "date": "2027-02-15",
+            "dep": "21:45",
+            "arr": "07:25",
+            "duration": "8h45",
+            "cashAud": 420,
+            "priceNote": "from ~A$400",
+            "points": 24000,
+            "pointsTaxAud": 110,
+            "status": "idea",
+            "notes": "Runs ~4x weekly; confirm Monday operates. Would let you do USJ on the last day and skip the Tokyo backtrack, at the cost of USJ on a Monday instead of Wednesday."
+          },
+          {
+            "id": "opt-qf26",
+            "rank": 5,
+            "label": "QF26 Haneda → Sydney, the only flight with Premium Economy",
+            "route": "HND → SYD",
+            "date": "2027-02-16",
+            "dep": "06:55",
+            "arr": "18:55",
+            "duration": "~10h",
+            "cashAud": 900,
+            "priceNote": "economy cash est.",
+            "points": 36200,
+            "pointsTaxAud": 140,
+            "status": "idea",
+            "notes": "3-class A330 from Oct 2026. Economy ~36,200 pts est., PE ~74,000 pts est. Departs 6:55am (check-in from 4am, before trains run), so you would sleep at a Haneda hotel on the 15th and then still need SYD → Brisbane/Sunshine Coast. Only worth it if PE is the priority over everything else."
+          }
+        ]
+      }
+    ],
+    "lounges": [
+      {
+        "airport": "Sydney T3 (Mon 8 Feb, ~2pm-6pm)",
+        "lounge": "Qantas Domestic Business Lounge",
+        "access": "yes",
+        "notes": "Access comes from the Business cabin on your Classic Reward, not from status or passes. Entry opposite gates 4-5, up the escalator; Business Lounge is the left-hand door. Open until the last Qantas departure. Sydney’s First Lounge is in the international terminal (T1) and is not reachable from T3."
+      },
+      {
+        "airport": "Melbourne T2 (Mon 8 Feb, ~9pm-10:45pm)",
+        "lounge": "Qantas International Business Lounge",
+        "access": "yes",
+        "notes": "Airside, level 1. Covered by the Business ticket. Melbourne Airport lists a 10:15pm Monday close, but Qantas says lounges stay open until the last departure and Monday QF49 is a new service from Dec 2026: re-check the hours in January and be at the gate by 10:45pm regardless."
+      },
+      {
+        "airport": "Melbourne T2, First Lounge (level 3)",
+        "lounge": "Qantas International First Lounge",
+        "access": "maybe",
+        "notes": "NOT included with a Business ticket. Only First Class passengers, Platinum/Platinum One, oneworld Emerald and holders of “Titanium” (Qantas Money Titanium card) or “Platinum One” lounge invitations get in. Open the Qantas app → Complimentary Lounge Invitations and check the type of your two passes. If they say Domestic or General they are Qantas Club / Business Lounge passes, which add nothing on this trip (keep them for another time). Third-party listings put closing at 10:15-11:15pm."
+      },
+      {
+        "airport": "Brisbane domestic (Mon 8 Feb morning)",
+        "lounge": "Qantas Domestic Business Lounge",
+        "access": "maybe",
+        "notes": "Qantas/oneworld rule: Business passengers connecting the same day to a long-haul oneworld flight can use the lounge before the domestic sector regardless of that sector’s cabin. On a separate ticket this is at the agent’s discretion; show the QF49 itinerary and ask nicely."
+      },
+      {
+        "airport": "Sunshine Coast (MCY)",
+        "lounge": "No lounges at all",
+        "access": "no",
+        "notes": "Small terminal, four eateries, free wifi."
+      },
+      {
+        "airport": "Narita T2 (Mon 15 Feb)",
+        "lounge": "Economy: none. Business reward: JAL Sakura Lounge",
+        "access": "no",
+        "notes": "If you end up on the Business reward home, Qantas uses the JAL Sakura Lounge at Narita. In economy there is no lounge access; the 4F food court is good."
+      }
+    ]
+  },
+  "points": {
+    "balance": 170000,
+    "availableFrom": "2026-10-15",
+    "notes": "Prices confirmed post-5 Aug 2025: NRT→BNE Business 82,100; HND/NRT→SYD/MEL Business 98,400; short domestic (Zone 1) economy 9,200 + ~A$58. Economy Tokyo→Brisbane is estimated at ~29,000 (Zone 5) and Tokyo→Sydney/Melbourne ~36,200 (Zone 6); the exact cells were not visible from here, confirm on qantas.com. Bronze members are last in the upgrade queue and are typically only considered inside 24 h of departure, so treat any upgrade as a bonus, not a plan. Qantas’ Flight Reward Finder can be searched without logging in; AwardFares has a free Qantas search with alerts."
+  },
+  "stays": [
+    {
+      "id": "s-os1",
+      "name": "Dormy Inn Premium Osaka Kitahama",
+      "town": "Osaka",
+      "type": "Business hotel with rooftop onsen bath",
+      "status": "shortlist",
+      "pricePerNightAud": 140,
+      "nights": 2,
+      "priceNote": "est. Feb; verify",
+      "checkIn": "2027-02-09",
+      "checkOut": "2027-02-11",
+      "distance": "Kitahama: 20 min to Universal City by train; quiet business district by the river",
+      "url": "https://www.booking.com/",
+      "notes": "Dormy Inns are the solo traveller’s friend: free late-night ramen, big bath, small clean rooms. Kitahama is calm and central."
+    },
+    {
+      "id": "s-os2",
+      "name": "Toyoko Inn Osaka Umeda Nakatsu No.1",
+      "town": "Osaka",
+      "type": "Budget business hotel",
+      "status": "shortlist",
+      "pricePerNightAud": 100,
+      "nights": 2,
+      "priceNote": "est. Feb; verify",
+      "checkIn": "2027-02-09",
+      "checkOut": "2027-02-11",
+      "distance": "Nakatsu: 10 min walk to Nakazakicho, 20 min to USJ",
+      "url": "https://www.toyoko-inn.com/eng/",
+      "notes": "Cheapest reliable option. Free breakfast (onigiri, miso soup). Book direct; the chain often has Feb availability when others are full."
+    },
+    {
+      "id": "s-os3",
+      "name": "Hotel Universal Port Vita",
+      "town": "Osaka",
+      "type": "Official partner hotel, 10 min walk to USJ",
+      "status": "idea",
+      "pricePerNightAud": 200,
+      "nights": 2,
+      "priceNote": "est. Feb; verify",
+      "checkIn": "2027-02-09",
+      "checkOut": "2027-02-11",
+      "distance": "Universal City: walk to the park gates, early-entry perks on some plans",
+      "url": "https://www.hoteluniversalportvita.com/",
+      "notes": "Pay for convenience on USJ day only if the price is close. The Universal City area is a theme-park precinct, not a neighbourhood."
+    },
+    {
+      "id": "s-nz1",
+      "name": "Seisenso Inn (minshuku)",
+      "town": "Nozawa Onsen",
+      "type": "Family-run minshuku, private room, shared bath",
+      "status": "shortlist",
+      "pricePerNightAud": 90,
+      "nights": 4,
+      "priceNote": "from ~¥5,000 pp; single surcharge likely",
+      "checkIn": "2027-02-11",
+      "checkOut": "2027-02-15",
+      "distance": "In the village, 5-10 min walk to Nagasaka gondola",
+      "url": "https://nozawa-onsen.com/nozawa-accommodation/nozawa-onsen-ryokan-accommodation/",
+      "notes": "Closest to the Banff-motel price point. Ask for a single tatami room with breakfast. The long-weekend dates fill first."
+    },
+    {
+      "id": "s-nz2",
+      "name": "Minshuku Kojima",
+      "town": "Nozawa Onsen",
+      "type": "Minshuku, private room",
+      "status": "shortlist",
+      "pricePerNightAud": 95,
+      "nights": 4,
+      "priceNote": "from ~US$56; verify single rate",
+      "checkIn": "2027-02-11",
+      "checkOut": "2027-02-15",
+      "distance": "Village centre",
+      "url": "https://www.kayak.com/Nozawa-Onsen-Hotels-Minshuku-Kojima.2959745.ksp",
+      "notes": "Simple, local-run, warm. Book by phone/email or via Booking.com."
+    },
+    {
+      "id": "s-nz3",
+      "name": "Mid-range ryokan with dinner and breakfast (e.g. Kawamotoya, Nozawa View Hotel Shimataka)",
+      "town": "Nozawa Onsen",
+      "type": "Ryokan, half board",
+      "status": "planned",
+      "pricePerNightAud": 165,
+      "nights": 4,
+      "priceNote": "¥15,000-19,000 pp half board est.; verify",
+      "checkIn": "2027-02-11",
+      "checkOut": "2027-02-15",
+      "distance": "5-8 min to the gondola",
+      "url": "https://www.booking.com/",
+      "notes": "Planned as the budget placeholder (about the Banff rate once dinner and breakfast are counted). A ryokan dinner is the local-cuisine experience you asked for, and it solves the solo-dinner question three nights out of four."
+    },
+    {
+      "id": "s-nz4",
+      "name": "Lodge Nagano / Villa Nozawa (Aussie-run lodges)",
+      "town": "Nozawa Onsen",
+      "type": "Lodge, private room",
+      "status": "idea",
+      "pricePerNightAud": 150,
+      "nights": 4,
+      "priceNote": "est.; verify",
+      "checkIn": "2027-02-11",
+      "checkOut": "2027-02-15",
+      "distance": "Village",
+      "url": "https://www.nozawaholidays.com/",
+      "notes": "Easy English, good beds, but you will be surrounded by Australians. Fallback if the Japanese-run places are full."
+    },
+    {
+      "id": "s-my1",
+      "name": "Akakura Onsen ryokan (Myoko), if you swap bases",
+      "town": "Myoko Kogen (alternative)",
+      "type": "Onsen ryokan, per-person twin basis",
+      "status": "idea",
+      "pricePerNightAud": 80,
+      "nights": 4,
+      "priceNote": "¥8,400-9,200 pp twin basis; single rate unknown",
+      "checkIn": "2027-02-11",
+      "checkOut": "2027-02-15",
+      "distance": "Ski-in walk to Akakura Onsen lifts",
+      "url": "https://joetsu-myoko.com/joetsu-myoko-accommodation/akakura-onsen-accommodation-hotels/",
+      "notes": "Quieter and cheaper than Nozawa, more Japanese, 13-16 m of snow, smaller mountain. See Decisions."
+    }
+  ],
+  "food": [
+    {
+      "id": "fd1",
+      "town": "Nozawa Onsen",
+      "dish": "Nozawana (pickled turnip greens)",
+      "where": "Every meal; buy a bag from a village grandma’s shop to take home",
+      "why": "The village’s signature food. Every family pickles its own; you will be offered it constantly.",
+      "priceBand": "¥"
+    },
+    {
+      "id": "fd2",
+      "town": "Nozawa Onsen",
+      "dish": "Oyaki",
+      "where": "Street stalls near Oyu and at Nagano Station",
+      "why": "Grilled-then-steamed buns filled with nozawana, pumpkin or bean paste. The Nagano snack.",
+      "priceBand": "¥"
+    },
+    {
+      "id": "fd3",
+      "town": "Nozawa Onsen",
+      "dish": "Shinshu soba at Sobadokoro Daimon",
+      "where": "Main street, 100+ years in the Katagiri family",
+      "why": "Hand-cut buckwheat noodles, cold zaru style with dipping sauce. Old shop, no fuss.",
+      "priceBand": "¥¥"
+    },
+    {
+      "id": "fd4",
+      "town": "Nozawa Onsen",
+      "dish": "Basashi (horse sashimi)",
+      "where": "Any village izakaya",
+      "why": "Nagano speciality, served with ginger and soy. Try it once.",
+      "priceBand": "¥¥"
+    },
+    {
+      "id": "fd5",
+      "town": "Nozawa Onsen",
+      "dish": "Onsen tamago from the Ogama",
+      "where": "Ogama, top of the village",
+      "why": "Eggs slow-cooked in the 90°C spring. Locals cook their vegetables there too; it is the village kitchen.",
+      "priceBand": "¥"
+    },
+    {
+      "id": "fd6",
+      "town": "Nozawa Onsen",
+      "dish": "Set dinner at Wakagiri",
+      "where": "Main street",
+      "why": "Home-style teishoku that locals actually eat. Not a ski-bar.",
+      "priceBand": "¥¥"
+    },
+    {
+      "id": "fd7",
+      "town": "Osaka",
+      "dish": "Okonomiyaki at a neighbourhood counter",
+      "where": "Any counter with a hotplate in Fukushima or Tenma (avoid the Dotonbori queues)",
+      "why": "Osaka’s home cooking. Sit at the teppan, order “buta-tama”, watch it made.",
+      "priceBand": "¥"
+    },
+    {
+      "id": "fd8",
+      "town": "Osaka",
+      "dish": "Doteyaki and kushikatsu in Tenma",
+      "where": "Izakaya alleys under the tracks at Tenma station",
+      "why": "Beef tendon simmered in miso, and the deep-fried skewers Osaka is known for, in the part of town where office workers drink. No double dipping.",
+      "priceBand": "¥"
+    },
+    {
+      "id": "fd9",
+      "town": "Osaka",
+      "dish": "Takoyaki from a street stand",
+      "where": "A stand with a queue of locals, not the ones with English menus",
+      "why": "Octopus balls, Osaka’s thing. Eat them standing up, straight away.",
+      "priceBand": "¥"
+    },
+    {
+      "id": "fd10",
+      "town": "Osaka",
+      "dish": "Kitsune udon",
+      "where": "Usami-tei Matsubaya (the shop that claims to have invented it, near Minami-Semba)",
+      "why": "Udon in dashi with sweet fried tofu, Osaka’s soul food. Old shop, cheap.",
+      "priceBand": "¥"
+    },
+    {
+      "id": "fd11",
+      "town": "Osaka",
+      "dish": "Yakiniku in Tsuruhashi (Korea Town)",
+      "where": "Tsuruhashi station area",
+      "why": "Osaka’s Korean neighbourhood; smoky yakiniku joints, nothing trendy about it. Good for a solo counter seat.",
+      "priceBand": "¥¥"
+    },
+    {
+      "id": "fd15",
+      "town": "Osaka",
+      "dish": "Kushikatsu at Yaekatsu (Shinsekai)",
+      "where": "Shinsekai, a few doors from the famous Daruma",
+      "why": "If you do go to Shinsekai, this is the locals’ pick over the tourist-famous Daruma. About ¥2,000 a head.",
+      "priceBand": "¥"
+    },
+    {
+      "id": "fd16",
+      "town": "Osaka",
+      "dish": "Fukushima izakaya under the tracks",
+      "where": "Fukumaru-dori, one Loop Line stop from Osaka Station",
+      "why": "A workers’ dining street lined with small izakaya and bars; a good alternative base for dinner if the hotel is around Fukushima.",
+      "priceBand": "¥¥"
+    },
+    {
+      "id": "fd12",
+      "town": "On the way",
+      "dish": "Ekiben (station bento)",
+      "where": "Ekibenya Matsuri, Tokyo Station",
+      "why": "Regional lunch boxes to eat on the Shinkansen. Pick one from Nagano or Niigata.",
+      "priceBand": "¥"
+    },
+    {
+      "id": "fd13",
+      "town": "Nagano",
+      "dish": "Shinshu miso ramen",
+      "where": "Nagano Station area",
+      "why": "Nagano is miso country. Warm you up after the Shinano train.",
+      "priceBand": "¥"
+    },
+    {
+      "id": "fd14",
+      "town": "USJ",
+      "dish": "Kinopio’s Cafe",
+      "where": "Super Nintendo World",
+      "why": "The one touristy meal that is worth it: themed, and you are already inside.",
+      "priceBand": "¥¥"
+    }
+  ],
+  "budget": [
+    {
+      "id": "bg1",
+      "category": "Parking",
+      "label": "Brisbane Airport AIRPARK, 8 days",
+      "amount": 109,
+      "currency": "AUD",
+      "status": "estimate",
+      "notes": "A$99/week + A$10/day. Book online; sometimes cheaper than drive-up. MCY would be ~A$90 but needs a A$55-85 shuttle back from Brisbane on the way home."
+    },
+    {
+      "id": "bg2",
+      "category": "Transport",
+      "label": "Fuel Gympie ↔ Brisbane Airport",
+      "amount": 65,
+      "currency": "AUD",
+      "status": "estimate",
+      "notes": "~167 km each way."
+    },
+    {
+      "id": "bg3",
+      "category": "Insurance",
+      "label": "Travel insurance with snow-sports cover, 9 days",
+      "amount": 130,
+      "currency": "AUD",
+      "status": "estimate",
+      "notes": "Must include skiing. Medicare does not cover Japan."
+    },
+    {
+      "id": "bg4",
+      "category": "Connectivity",
+      "label": "eSIM, 10 days data",
+      "amount": 30,
+      "currency": "AUD",
+      "status": "estimate",
+      "notes": "Ubigi or Airalo; install before you leave."
+    },
+    {
+      "id": "bg5",
+      "category": "Food",
+      "label": "Breakfasts, snacks, drinks, incidentals (¥3,000/day x 7)",
+      "amount": 21000,
+      "currency": "JPY",
+      "status": "estimate"
+    },
+    {
+      "id": "bg6",
+      "category": "Other",
+      "label": "Onsen towels, ski socks, souvenirs, contingency",
+      "amount": 200,
+      "currency": "AUD",
+      "status": "estimate"
+    },
+    {
+      "id": "bg7",
+      "category": "Transport",
+      "label": "Suica top-ups (local trains, buses, vending machines)",
+      "amount": 5000,
+      "currency": "JPY",
+      "status": "estimate"
+    },
+    {
+      "id": "bg8",
+      "category": "Activities",
+      "label": "USJ Express Pass 4 with Super Nintendo World entry (optional but recommended)",
+      "amount": 12800,
+      "currency": "JPY",
+      "status": "estimate",
+      "notes": "Nintendo-inclusive Express Pass 4 variants (e.g. “Mine Cart & Jaws”) were ~¥12,800 in 2026; Express Pass 7 ¥17,800-21,800. Guarantees area entry plus Mario Kart and the Donkey Kong mine cart without the timed-entry scramble. Sells out on popular dates."
+    }
+  ],
+  "checklist": [
+    {
+      "id": "ck1",
+      "group": "Before you go",
+      "text": "Check what your two lounge passes actually are: Qantas app → Complimentary Lounge Invitations → type (Titanium / Platinum One / General / Domestic) and expiry",
+      "due": "2026-09-30",
+      "notes": "Only Titanium or Platinum One invitations open the Melbourne First Lounge. General/Domestic ones add nothing on this trip because the Business ticket already covers the Business lounges."
+    },
+    {
+      "id": "ck2",
+      "group": "Points and bookings",
+      "text": "Set free reward-seat alerts for QF62 NRT→BNE (and QF80, QF26) for 14-16 Feb 2027 on AwardFares; also try Qantas Flight Reward Finder (no login needed)",
+      "due": "2026-09-20",
+      "notes": "Peak February: seats come and go. Alerts do the watching for you."
+    },
+    {
+      "id": "ck3",
+      "group": "Points and bookings",
+      "text": "Book Nozawa Onsen accommodation for 11-15 Feb (long weekend; the village sells out)",
+      "due": "2026-09-30",
+      "notes": "Email the minshuku directly for a single room, or Booking.com. Ask about single-occupancy pricing and whether dinner is included."
+    },
+    {
+      "id": "ck4",
+      "group": "Points and bookings",
+      "text": "Book Osaka hotel for 9-11 Feb",
+      "due": "2026-10-31",
+      "notes": "Toyoko Inn / Dormy Inn open bookings ~3-6 months ahead. Free cancellation where possible."
+    },
+    {
+      "id": "ck5",
+      "group": "Points and bookings",
+      "text": "Points land: book the homeward Classic Reward (QF62 NRT→BNE, or the best available option) as soon as the balance shows",
+      "due": "2026-10-16",
+      "notes": "Log in, search Use Points, one-way NRT→BNE 15 Feb (try 16 Feb too). If Business shows at 82,100 and you want it, take it; otherwise Economy Classic and add Economy Plus."
+    },
+    {
+      "id": "ck6",
+      "group": "Points and bookings",
+      "text": "Book the Brisbane → Sydney feeder on a QF flight landing by 3pm AEDT (cash ~A$140 or 9,200 pts + A$58)",
+      "due": "2026-10-20",
+      "notes": "Same day, separate ticket. Consider the 9,200-point reward if you still have plenty left after the homeward booking."
+    },
+    {
+      "id": "ck7",
+      "group": "Points and bookings",
+      "text": "Book Brisbane AIRPARK online for 8-16 Feb",
+      "due": "2026-11-30"
+    },
+    {
+      "id": "ck8",
+      "group": "Points and bookings",
+      "text": "Buy USJ 1-Day Studio Pass + Express Pass 4 with Super Nintendo World entry for Wed 10 Feb (dates open 60 days ahead, so ~12 Dec 2026)",
+      "due": "2026-12-12",
+      "notes": "Official USJ site or Klook (official partner; Klook lets you move the date within 90 days in the same price tier). Buy the day it opens. Create the USJ app account now: since Jan 2026 the app is mandatory for timed-entry tickets."
+    },
+    {
+      "id": "ck9",
+      "group": "Points and bookings",
+      "text": "Travel insurance with the snow-sports add-on (and off-piste cover if you plan to ski Nozawa’s tree runs)",
+      "due": "2026-11-30",
+      "notes": "Standard Australian policies exclude skiing. About A$80 for a week before the add-on. Buy it when you book the first non-refundable thing so cancellation cover starts. Medicare does not cover Japan."
+    },
+    {
+      "id": "ck10",
+      "group": "Points and bookings",
+      "text": "Reserve Shinkansen and Shinano seats (smart-EX for Tokyo↔Osaka, JR East site for Hokuriku), opens 1 month before each travel date",
+      "due": "2027-01-09",
+      "notes": "9 Jan for the 9 Feb trains; 11 Jan for the 11 Feb trains; 15 Jan for the 15 Feb trains. Holiday Thursday trains fill."
+    },
+    {
+      "id": "ck11",
+      "group": "Before you go",
+      "text": "Register on Visit Japan Web (immigration + customs QR)",
+      "due": "2027-01-20",
+      "notes": "Australians get 90 days visa-free. Passport just needs to be valid for the stay, but check the expiry anyway."
+    },
+    {
+      "id": "ck12",
+      "group": "Before you go",
+      "text": "Install eSIM (Ubigi ~US$14 for 10 GB/7 days, or Airalo) and set up Welcome Suica Mobile (iPhone) or plan to buy a physical Welcome Suica at Narita (Android)",
+      "due": "2027-01-31",
+      "notes": "Suica works in Osaka (ICOCA area) and Nagano too. Google Wallet on non-Japanese Android phones generally cannot hold Suica. Top up with Mastercard/Amex in Apple Wallet; some Visa cards fail."
+    },
+    {
+      "id": "ck13",
+      "group": "Before you go",
+      "text": "Re-check Melbourne T2 lounge hours for Monday nights (Business Lounge and, if your passes qualify, First Lounge)",
+      "due": "2027-01-31"
+    },
+    {
+      "id": "ck14",
+      "group": "Before you go",
+      "text": "Tell your bank you are travelling; get ¥30,000-50,000 cash (or plan to withdraw at 7-Eleven ATMs on arrival)",
+      "due": "2027-02-01",
+      "notes": "Ski villages and small restaurants are still cash-heavy."
+    },
+    {
+      "id": "ck15",
+      "group": "Before you go",
+      "text": "Book ski rental online (village shop) for 12-15 Feb, include ski wear if you are travelling light",
+      "due": "2027-01-15"
+    },
+    {
+      "id": "ck16",
+      "group": "Packing",
+      "text": "Ski: thermals, mid-layer, gloves, goggles, beanie, buff, ski socks x3 (rent jacket/pants/skis/boots/helmet)",
+      "due": "2027-02-06"
+    },
+    {
+      "id": "ck17",
+      "group": "Packing",
+      "text": "Onsen kit: small towel, plus a sense of humour about being naked with strangers",
+      "due": "2027-02-06"
+    },
+    {
+      "id": "ck18",
+      "group": "Packing",
+      "text": "Carry-on for the plane: passport, printed e-ticket, USJ tickets, chargers, Type-A power adapter (Japan is 100 V, US-style plugs), snacks",
+      "due": "2027-02-07"
+    },
+    {
+      "id": "ck19",
+      "group": "In Japan",
+      "text": "USJ: through the gate, open the app, claim Super Nintendo World timed entry within seconds (or use the Express Pass slot)",
+      "due": "2027-02-10"
+    },
+    {
+      "id": "ck20",
+      "group": "In Japan",
+      "text": "Keep the N’EX round-trip ticket somewhere safe for the trip back to Narita",
+      "due": "2027-02-09"
+    },
+    {
+      "id": "ck21",
+      "group": "Coming home",
+      "text": "Return rental gear; settle the lodging bill in cash if they do not take cards",
+      "due": "2027-02-15"
+    },
+    {
+      "id": "ck22",
+      "group": "Coming home",
+      "text": "QF62 check-in closes 8:45pm at Narita T2",
+      "due": "2027-02-15"
+    }
+  ],
+  "places": [
+    {
+      "id": "p1",
+      "name": "Gympie (home)",
+      "kind": "town",
+      "town": "Queensland",
+      "lat": -26.19,
+      "lng": 152.665
+    },
+    {
+      "id": "p2",
+      "name": "Brisbane Airport (BNE)",
+      "kind": "airport",
+      "town": "Brisbane",
+      "lat": -27.3842,
+      "lng": 153.1175,
+      "notes": "AIRPARK long stay, free shuttle."
+    },
+    {
+      "id": "p3",
+      "name": "Sunshine Coast Airport (MCY)",
+      "kind": "airport",
+      "town": "Marcoola",
+      "lat": -26.6033,
+      "lng": 153.091,
+      "notes": "Alternative departure airport. No lounge."
+    },
+    {
+      "id": "p4",
+      "name": "Sydney Airport T3",
+      "kind": "airport",
+      "town": "Sydney",
+      "lat": -33.9399,
+      "lng": 151.1753,
+      "notes": "Qantas domestic. Business Lounge opposite gates 4-5."
+    },
+    {
+      "id": "p5",
+      "name": "Melbourne Airport T2",
+      "kind": "airport",
+      "town": "Melbourne",
+      "lat": -37.669,
+      "lng": 144.841,
+      "notes": "International. Business Lounge level 1, First Lounge level 3."
+    },
+    {
+      "id": "p6",
+      "name": "Narita Airport T2",
+      "kind": "airport",
+      "town": "Narita",
+      "lat": 35.772,
+      "lng": 140.3929,
+      "notes": "Arrive 9 Feb, depart 15 Feb."
+    },
+    {
+      "id": "p7",
+      "name": "Tokyo Station",
+      "kind": "station",
+      "town": "Tokyo",
+      "lat": 35.6812,
+      "lng": 139.7671,
+      "notes": "N’EX arrives here; Shinkansen to Osaka and Nagano."
+    },
+    {
+      "id": "p8",
+      "name": "Shin-Osaka Station",
+      "kind": "station",
+      "town": "Osaka",
+      "lat": 34.7335,
+      "lng": 135.5002
+    },
+    {
+      "id": "p9",
+      "name": "Universal Studios Japan",
+      "kind": "park",
+      "town": "Osaka",
+      "lat": 34.6654,
+      "lng": 135.4323,
+      "notes": "Super Nintendo World. Universal City station is 5 min walk."
+    },
+    {
+      "id": "p10",
+      "name": "Tenma / Tenjinbashisuji",
+      "kind": "food",
+      "town": "Osaka",
+      "lat": 34.7043,
+      "lng": 135.5133,
+      "notes": "Izakaya alleys and the long arcade."
+    },
+    {
+      "id": "p11",
+      "name": "Nakazakicho",
+      "kind": "town",
+      "town": "Osaka",
+      "lat": 34.709,
+      "lng": 135.506,
+      "notes": "Old lanes, small cafes, 10 min from Umeda."
+    },
+    {
+      "id": "p19",
+      "name": "Fukushima (Osaka) dining street",
+      "kind": "food",
+      "town": "Osaka",
+      "lat": 34.696,
+      "lng": 135.487,
+      "notes": "Fukumaru-dori under the Loop Line tracks."
+    },
+    {
+      "id": "p20",
+      "name": "Tsuruhashi (Korea Town) yakiniku",
+      "kind": "food",
+      "town": "Osaka",
+      "lat": 34.665,
+      "lng": 135.532,
+      "notes": "Tsuruichi (1949), Aji Yoshi, Horumon Sora."
+    },
+    {
+      "id": "p12",
+      "name": "Nagoya Station",
+      "kind": "station",
+      "town": "Nagoya",
+      "lat": 35.1709,
+      "lng": 136.8815,
+      "notes": "Change from Nozomi to the Shinano limited express."
+    },
+    {
+      "id": "p13",
+      "name": "Nagano Station",
+      "kind": "station",
+      "town": "Nagano",
+      "lat": 36.6431,
+      "lng": 138.1887,
+      "notes": "Soba and oyaki in the station."
+    },
+    {
+      "id": "p14",
+      "name": "Iiyama Station",
+      "kind": "station",
+      "town": "Iiyama",
+      "lat": 36.85,
+      "lng": 138.36,
+      "notes": "Nozawa Onsen Liner bus leaves from here."
+    },
+    {
+      "id": "p15",
+      "name": "Nozawa Onsen village",
+      "kind": "town",
+      "town": "Nozawa Onsen",
+      "lat": 36.923,
+      "lng": 138.442,
+      "notes": "13 free bathhouses; Oyu in the centre."
+    },
+    {
+      "id": "p16",
+      "name": "Nozawa Onsen Snow Resort (Nagasaka gondola)",
+      "kind": "resort",
+      "town": "Nozawa Onsen",
+      "lat": 36.919,
+      "lng": 138.447,
+      "notes": "297 ha, 1,085 m vertical."
+    },
+    {
+      "id": "p17",
+      "name": "Akakura Onsen (Myoko), alternative base",
+      "kind": "resort",
+      "town": "Myoko",
+      "lat": 36.883,
+      "lng": 138.16,
+      "notes": "Runner-up option: quieter, cheaper, deeper snow, smaller mountain."
+    },
+    {
+      "id": "p18",
+      "name": "Hakuba Happo-One, alternative",
+      "kind": "resort",
+      "town": "Hakuba",
+      "lat": 36.698,
+      "lng": 137.832,
+      "notes": "Biggest terrain, most international."
+    }
+  ],
+  "questions": [
+    {
+      "id": "q1",
+      "question": "Ski base: Nozawa Onsen, Myoko (Akakura Onsen) or Hakuba?",
+      "why": "You said “south island”, which does not exist for skiing (Japan’s ski areas are on Hokkaido in the north and in the Nagano/Niigata mountains on the main island). Given Narita arrival + Osaka + a week, Nagano/Niigata is the only sensible region. Nozawa is the closest thing to Banff: a real village, walkable, hot springs, mountain rising straight off it, local food. It is also the most Australian of the villages and the busiest over the 11-14 Feb long weekend.",
+      "options": [
+        "Nozawa Onsen (planned): Banff-like village, big mountain, local food, busiest and priciest of the three that weekend",
+        "Myoko / Akakura Onsen: quieter, cheaper, more Japanese, 13-16 m of snow, smaller mountain, fiddlier buses",
+        "Hakuba: biggest terrain and most Banff-like scale, but a sprawl of villages linked by buses and very international"
+      ],
+      "recommendation": "Nozawa Onsen. If you decide “not hyped” matters more than terrain, switch to Myoko: the plan only changes at the Nagano end (Shinkansen to Joetsu-Myoko instead of Iiyama).",
+      "answer": "",
+      "resolved": false
+    },
+    {
+      "id": "q2",
+      "question": "Trip shape: Universal Studios first (Wednesday) or ski first and fly home from Osaka?",
+      "why": "Wed 10 Feb is the only calm weekday for USJ in the window (Thu 11 is a public holiday and the weekend follows, plus the tail of Lunar New Year travel). That forces the skiing onto the long weekend. The alternative is ski Wed-Fri (quieter slopes on Wed), then USJ on Mon 15 and fly Jetstar Osaka → Brisbane at 9:45pm that night, no Tokyo backtrack.",
+      "options": [
+        "USJ Wed 10, ski Fri-Mon, fly QF62 Narita → Brisbane Mon 15 (planned)",
+        "Ski Wed-Fri, Osaka Sat-Mon, USJ Mon 15, Jetstar JQ24 Osaka → Brisbane Mon 15 night"
+      ],
+      "recommendation": "Keep USJ on the Wednesday. Super Nintendo World on a crowded day is the thing most likely to spoil the trip, and Nozawa is big enough to absorb a weekend if you start at 8:30. Monday morning skiing is the bonus.",
+      "answer": "",
+      "resolved": false
+    },
+    {
+      "id": "q3",
+      "question": "Park at Brisbane or Sunshine Coast?",
+      "why": "Sunshine Coast is closer (1 h vs 1h45) and parking is ~A$20 cheaper, but it has only 3 Qantas flights a day (a cancellation of the midday one leaves nothing that beats your 6:30pm departure) and the flight home lands at Brisbane, so you would pay A$55-85 and 2 hours for a shuttle back to the car. Brisbane wins once the return is counted.",
+      "options": [
+        "Brisbane: AIRPARK ~A$109, QF feeder with ~18 daily fallbacks, land straight at the car on 16 Feb (planned)",
+        "Sunshine Coast: ~A$90 parking, QF903 at 12:15 or the 7am QF905, then shuttle from Brisbane on the way home"
+      ],
+      "recommendation": "Brisbane. It is cheaper overall and it protects the Business reward ticket, which is the most valuable thing in this trip.",
+      "answer": "",
+      "resolved": false
+    },
+    {
+      "id": "q4",
+      "question": "How to use the points for the flight home?",
+      "why": "The upgrade-to-Premium-Economy idea does not work on the Brisbane flight: QF62 is a two-class A330 with no PE cabin. The only Qantas Tokyo flight with PE leaves Haneda at 6:55am for Sydney. You have 170k points; Business on QF62 is 82,100 (confirmed price), Economy about 29,000 (estimate).",
+      "options": [
+        "Economy Classic Reward on QF62 (~29k est.) + Economy Plus extra legroom (~19.5k pts or ~A$100-150) (planned)",
+        "Business Classic Reward on QF62 (82,100 + ~A$300 taxes) if a seat shows",
+        "Jetstar JQ10 Narita → Brisbane on points (~24k est.) or cash (~A$409), bid for Jetstar Business",
+        "Cash economy on QF62 (~A$720) in an upgradeable fare class and hope: PE does not exist on this flight, so no"
+      ],
+      "recommendation": "Search both Economy and Business Classic on 15 and 16 Feb the day the points land. Take Business if it is there; otherwise Economy Classic plus Economy Plus. Keep alerts running until departure because seats get released in batches.",
+      "answer": "",
+      "resolved": false
+    },
+    {
+      "id": "q5",
+      "question": "What are the two “first class lounge passes”, exactly?",
+      "why": "On a Business ticket you already get the Sydney T3 Business Lounge and the Melbourne International Business Lounge. The Melbourne First Lounge only opens to Titanium (Qantas Money Titanium card) or Platinum One invitations. Ordinary lounge invitations from a credit card or Points Club are Qantas Club / Business Lounge passes and would be wasted on this trip.",
+      "options": [
+        "Titanium or Platinum One invitations: use one at Melbourne T2 First Lounge on 8 Feb (level 3, escalator near gates 9-10)",
+        "General or Domestic invitations: keep them for a future economy trip"
+      ],
+      "recommendation": "Check the type in the Qantas app under Complimentary Lounge Invitations and note the expiry.",
+      "answer": "",
+      "resolved": false
+    },
+    {
+      "id": "q6",
+      "question": "Rent ski gear or bring your own?",
+      "why": "Rental in Nozawa is ~¥4,450-5,500 a day for skis, boots and poles, so 4 days is about A$165-200. Bringing skis means a 32 kg-allowance bag on the outbound (fine in Business) but hauling it through Tokyo Station, Osaka and two bus changes, plus the Shinkansen oversized-baggage rule.",
+      "options": [
+        "Rent everything in the village, bring only boots if you love yours (planned)",
+        "Bring skis and boots"
+      ],
+      "recommendation": "Rent. This trip has too many trains for a ski bag. Bring your own boots only if fit is a problem for you.",
+      "answer": "",
+      "resolved": false
+    },
+    {
+      "id": "q7",
+      "question": "Fly home Monday 15 or Tuesday 16 Feb?",
+      "why": "Monday keeps to “about a week” and lands you home Tuesday morning. Tuesday gives a full quiet Monday on the slopes (the emptiest day) and a relaxed trip to Narita, one more night of lodging (~A$150) and a day of leave.",
+      "options": [
+        "Mon 15 Feb, QF62 21:45 (planned)",
+        "Tue 16 Feb, same flight, with a Monday ski day and a Narita airport hotel"
+      ],
+      "recommendation": "Monday, unless the Business reward only shows on Tuesday, in which case take Tuesday and enjoy the extra ski day.",
+      "answer": "",
+      "resolved": false
+    },
+    {
+      "id": "q8",
+      "question": "Keep this repo public?",
+      "why": "The repo is public right now. That is why the app never writes booking references, ticket numbers or passport details to the repo (they live in the Private vault on your device). It is still safer to make the repo private since GitHub Pages works on private repos with a paid plan, or you can simply keep the rule: nothing sensitive in the plan text.",
+      "options": [
+        "Keep public, keep sensitive details in the vault only (current)",
+        "Make the repo private (Settings → General → Danger zone). Pages on private repos needs GitHub Pro."
+      ],
+      "recommendation": "Keep public for now and use the vault; revisit if you want to store confirmation emails in the repo.",
+      "answer": "",
+      "resolved": false
+    },
+    {
+      "id": "q9",
+      "question": "Rough budget ceiling?",
+      "why": "The plan currently totals roughly A$2,700-3,300 in cash on top of points, depending on Osaka hotel and the Express Pass. Knowing your ceiling decides whether to trade the ryokan half-board for a minshuku, and whether the Express Pass stays in.",
+      "options": [
+        "Under A$2,500: minshuku, skip Express Pass, Jetstar home",
+        "A$2,500-3,500: as planned",
+        "Over A$3,500: ryokan with dinner every night, Business home if available"
+      ],
+      "recommendation": "As planned. The Express Pass is the one “splurge” that buys back a whole day.",
+      "answer": "",
+      "resolved": false
+    }
+  ]
+}

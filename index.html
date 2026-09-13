@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Japan 2027</title>
+  <meta name="description" content="Personal trip planner for a February 2027 Japan ski trip: itinerary, flights, points, stays, food, budget and checklists.">
+  <meta name="theme-color" content="#f6f5f2" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#121419" media="(prefers-color-scheme: dark)">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="apple-mobile-web-app-title" content="Japan 2027">
+  <link rel="manifest" href="./manifest.webmanifest">
+  <link rel="icon" href="./icons/icon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="./icons/icon-192.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Fraunces:opsz,wght@9..144,600;9..144,700&display=swap">
+  <link rel="stylesheet" href="./vendor/leaflet/leaflet.css">
+  <link rel="stylesheet" href="./styles/app.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <div id="app" class="app">
+    <header class="topbar" id="topbar">
+      <button class="icon-btn menu-btn" id="menu-btn" aria-label="Open menu" aria-expanded="false">☰</button>
+      <div class="topbar-title">
+        <span class="topbar-kicker" id="topbar-kicker">Japan 2027</span>
+        <h1 class="topbar-heading" id="topbar-heading">Overview</h1>
+      </div>
+      <button class="sync-pill" id="sync-pill" type="button" title="Sync status" aria-live="polite">
+        <span class="sync-dot" aria-hidden="true"></span><span class="sync-text">Loading</span>
+      </button>
+    </header>
+
+    <nav class="sidebar" id="sidebar" aria-label="Sections">
+      <div class="sidebar-brand">
+        <div class="brand-mark" aria-hidden="true">雪</div>
+        <div>
+          <div class="brand-title">Japan 2027</div>
+          <div class="brand-sub" id="brand-dates">8 Feb to 16 Feb</div>
+        </div>
+      </div>
+      <ul class="nav-list" id="nav-list"></ul>
+      <div class="sidebar-foot">
+        <button class="btn btn-ghost btn-sm" id="sidebar-sync-btn" type="button">Sync now</button>
+        <div class="sidebar-sync" id="sidebar-sync">Local only</div>
+      </div>
+    </nav>
+    <div class="scrim" id="scrim" hidden></div>
+
+    <main class="main" id="main" tabindex="-1"></main>
+
+    <nav class="tabbar" id="tabbar" aria-label="Primary"></nav>
+  </div>
+
+  <div id="sheet-root"></div>
+  <div id="toast-root" class="toast-root" aria-live="polite"></div>
+
+  <script src="./vendor/leaflet/leaflet.js" defer></script>
+  <script type="module" src="./src/main.js"></script>
+</body>
+</html>
