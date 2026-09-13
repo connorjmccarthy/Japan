@@ -22,6 +22,10 @@ export function render(root, { store, navigate }) {
         el('button', { class: 'btn btn-primary', type: 'button', onClick: () => { store.resolveConflict('remote'); toast('Using the GitHub version', { kind: 'ok' }); } }, 'Use GitHub version'),
         el('button', { class: 'btn', type: 'button', onClick: async () => { try { await store.resolveConflict('local'); toast('Your version was pushed', { kind: 'ok' }); } catch (e) { toast(e.message, { kind: 'error' }); } } }, 'Keep this device’s version')));
   }
+  if (store.newerSeed && !store.settings.token) {
+    statusCard.append(el('p', { class: 'small', style: { marginTop: '10px' } }, 'A newer published version of the plan exists, but this device has unsynced edits so it was not replaced automatically.'),
+      el('div', { class: 'btn-row', style: { marginTop: '8px' } }, el('button', { class: 'btn btn-primary', type: 'button', onClick: async () => { await store.resetToSeed(); store.newerSeed = null; toast('Loaded the published plan', { kind: 'ok' }); } }, 'Use the published version'), el('button', { class: 'btn', type: 'button', onClick: () => { store.newerSeed = null; toast('Keeping this device’s edits'); root.innerHTML = ''; render(root, { store, navigate }); } }, 'Keep my edits')));
+  }
   root.append(statusCard);
 
   // Sync settings

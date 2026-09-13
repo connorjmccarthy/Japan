@@ -34,6 +34,9 @@ class Store {
       this.trip = local;
       // A newer published seed replaces an unedited local copy (this is how a fresh
       // version of the plan reaches a device that has never been edited).
+      if (seed && this.meta.dirty && seed.meta?.updatedAt && seed.meta.updatedAt > (local.meta?.updatedAt || '')) {
+        this.newerSeed = seed;
+      }
       if (seed && !this.meta.dirty && seed.meta?.updatedAt && seed.meta.updatedAt > (local.meta?.updatedAt || '')) {
         this.trip = seed;
         this.meta.seedUpdatedAt = seed.meta.updatedAt;
@@ -123,7 +126,12 @@ class Store {
       this.conflict = { remote };
       return { conflict: true, remote };
     }
-    // Remote unchanged (or we never synced before): push our edits.
+    // First sync on this device with local edits: never assume ours is newer.
+    if (!this.meta.remoteSha && this.differsFrom(remote.data)) {
+      this.conflict = { remote };
+      this.setStatus('conflict', 'GitHub already has a different version. Choose one in Settings.');
+      return { conflict: true, remote };
+    }
     if (!this.meta.remoteSha) this.meta.remoteSha = remote.sha;
     if (!silent || this.settings.autoSync) await this.push();
     return { pushed: true };
@@ -143,6 +151,15 @@ class Store {
         this.setStatus('conflict', 'GitHub has a newer version. Resolve in Settings.');
         return { conflict: true };
       }
+      if (currentSha && !this.meta.remoteSha) {
+        // Never synced from this device: refuse to overwrite a version we have not seen.
+        const remote = await getFile(this.cfg());
+        if (this.differsFrom(remote.data)) {
+          this.conflict = { remote };
+          this.setStatus('conflict', 'GitHub already has a different version. Choose one in Settings.');
+          return { conflict: true };
+        }
+      }
       const text = JSON.stringify(this.trip, null, 2) + '\n';
       const res = await putFile({ ...this.cfg(), sha: currentSha || undefined, text, message: `Update trip plan (${new Date().toISOString().slice(0, 16).replace('T', ' ')})` });
       this.meta.remoteSha = res.sha; this.meta.dirty = false; this.meta.lastSyncAt = new Date().toISOString();
@@ -154,6 +171,13 @@ class Store {
       this.setStatus('error', e.message || 'Sync failed');
       throw e;
     }
+  }
+
+  // True when the remote plan is not simply an older copy of what this device has.
+  differsFrom(remoteTrip) {
+    const a = JSON.stringify({ ...this.trip, meta: { ...this.trip.meta, updatedAt: null } });
+    const b = JSON.stringify({ ...remoteTrip, meta: { ...(remoteTrip.meta || {}), updatedAt: null } });
+    return a !== b;
   }
 
   resolveConflict(choice) {

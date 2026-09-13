@@ -168,3 +168,31 @@ test.describe('calendar export', () => {
     expect(download.suggestedFilename()).toBe('japan-2027.ics');
   });
 });
+
+test.describe('sync safety', () => {
+  test('first sync with local edits never overwrites a different GitHub version', async ({ page }) => {
+    await boot(page, '#/checklist');
+    // make a local edit so the device copy is "dirty"
+    await page.getByRole('button', { name: '+ Add', exact: true }).click();
+    await page.getByLabel('To do').fill('Local-only edit');
+    await page.getByRole('button', { name: 'Save', exact: true }).click();
+    // fake GitHub: the repo already holds a different plan
+    const remote = { meta: { title: 'Remote plan', start: '2027-02-08', end: '2027-02-17', jpyPerAud: 108, updatedAt: '2030-01-01T00:00:00Z' }, days: [], flights: { confirmed: [], legs: [], lounges: [] }, points: {}, stays: [], food: [], budget: [], checklist: [], places: [], questions: [] };
+    const b64 = Buffer.from(JSON.stringify(remote)).toString('base64');
+    let putCalls = 0;
+    await page.route(/api\.github\.com\/repos\/.*\/contents\//, (route) => {
+      if (route.request().method() === 'PUT') { putCalls++; return route.fulfill({ status: 200, contentType: 'application/json', body: JSON.stringify({ content: { sha: 'newsha' } }) }); }
+      return route.fulfill({ status: 200, contentType: 'application/json', body: JSON.stringify({ sha: 'remotesha', content: b64 }) });
+    });
+    await page.route(/api\.github\.com\/repos\/[^/]+\/[^/]+$/, (route) => route.fulfill({ status: 200, contentType: 'application/json', body: JSON.stringify({ private: false, default_branch: 'main', permissions: { push: true } }) }));
+    await page.goto('/#/settings');
+    await page.getByLabel('GitHub token').fill('ghp_test');
+    await page.getByRole('button', { name: 'Save & test' }).click();
+    await expect(page.locator('#sync-pill')).toHaveAttribute('data-state', 'error'); // conflict shows as the red state
+    await expect(page.getByRole('button', { name: 'Use GitHub version' })).toBeVisible();
+    expect(putCalls).toBe(0);
+    // choosing GitHub's version replaces the local plan
+    await page.getByRole('button', { name: 'Use GitHub version' }).click();
+    await expect(page.locator('#topbar-kicker')).toHaveText('Remote plan');
+  });
+});

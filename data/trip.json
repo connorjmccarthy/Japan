@@ -5,7 +5,7 @@
     "end": "2027-02-17",
     "homeCurrency": "AUD",
     "jpyPerAud": 108,
-    "updatedAt": "2026-09-13T12:24:04Z",
+    "updatedAt": "2026-09-13T12:25:52Z",
     "version": 1,
     "about": "Solo ski trip. Confirmed: JQ815 BNE→SYD and the Business Classic Reward SYD→MEL→NRT on 8 Feb. Home Tue 16 Feb on QF80 + QF1256 (booked). Everything else is planned from research done 13 Sep 2026; prices marked est. need checking when booking."
   },
@@ -1536,6 +1536,7 @@
       "group": "Before you go",
       "text": "Check what your two lounge passes actually are: Qantas app → Complimentary Lounge Invitations → type (Titanium / Platinum One / General / Domestic) and expiry",
       "due": "2026-09-30",
+      "done": true,
       "notes": "Only Titanium or Platinum One invitations open the Melbourne First Lounge. General/Domestic ones add nothing on this trip because the Business ticket already covers the Business lounges."
     },
     {
@@ -1977,8 +1978,8 @@
         "Hakuba: biggest terrain and most Banff-like scale, but a sprawl of villages linked by buses and very international"
       ],
       "recommendation": "Nozawa Onsen. If you decide “not hyped” matters more than terrain, switch to Myoko: the plan only changes at the Nagano end (Shinkansen to Joetsu-Myoko instead of Iiyama).",
-      "answer": "",
-      "resolved": false
+      "answer": "Nozawa sounds good",
+      "resolved": true
     },
     {
       "id": "q2",
@@ -1989,7 +1990,7 @@
         "Ski Wed-Fri, Osaka Sat-Mon, USJ Mon 15, Jetstar JQ24 Osaka → Brisbane Mon 15 night"
       ],
       "recommendation": "Keep USJ on the Wednesday. Super Nintendo World on a crowded day is the thing most likely to spoil the trip, and Nozawa is big enough to absorb a weekend if you start at 8:30. Monday morning skiing is the bonus.",
-      "answer": "USJ first on Wed 10. The flight home is booked out of Narita, so ending in Osaka is no longer possible.",
+      "answer": "Ok sounds good. (And the flight home is now booked out of Narita, so ending in Osaka is no longer possible.)",
       "resolved": true
     },
     {
@@ -2000,7 +2001,7 @@
         "Brisbane (booked)"
       ],
       "recommendation": "Brisbane.",
-      "answer": "Brisbane. JQ815 booked 8 Feb 09:45.",
+      "answer": "Ok sounds good. JQ815 booked 8 Feb 09:45.",
       "resolved": true
     },
     {
