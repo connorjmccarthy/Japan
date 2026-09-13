@@ -5,7 +5,7 @@
     "end": "2027-02-17",
     "homeCurrency": "AUD",
     "jpyPerAud": 108,
-    "updatedAt": "2026-09-13T13:15:06Z",
+    "updatedAt": "2026-09-13T13:23:03Z",
     "version": 1,
     "about": "Solo ski trip. Confirmed: JQ815 BNE→SYD and the Business Classic Reward SYD→MEL→NRT on 8 Feb. Home Tue 16 Feb on QF80 + QF1256 (booked). Everything else is planned from research done 13 Sep 2026; prices marked est. need checking when booking."
   },
@@ -189,7 +189,7 @@
           "location": "Hotel front desk",
           "cost": 3000,
           "currency": "JPY",
-          "notes": "Ask the desk for “takkyubin to this address” and show the destination’s name and address in Japanese. Plan A: to the Nozawa lodging, waiting when you arrive Thursday. Plan B: to the Matsumoto hotel for Sunday 14 (write “for guest arriving 14 Feb”; hotels hold parcels). Two days is the standard lead time. Travel in between with a daypack: two or three days of clothes, USJ tickets, and in Plan A Friday’s ski base layers. Confirm beforehand that the receiving place accepts parcels (most do).",
+          "notes": "Ask the desk for “takkyubin to this address” and show the destination’s name and address in Japanese. Plan A: to the Nozawa lodging, waiting when you arrive Thursday. Plan B: to the Takayama hub hotel (write “for guest arriving 12 Feb”; hotels hold parcels). Two days is the standard lead time. Travel in between with a daypack: two or three days of clothes, USJ tickets, and in Plan A Friday’s ski base layers. Confirm beforehand that the receiving place accepts parcels (most do).",
           "placeId": "p27"
         },
         {
@@ -313,7 +313,14 @@
           "currency": "JPY",
           "placeId": "p27"
         }
-      ]
+      ],
+      "variants": {
+        "culture": {
+          "title": "Universal Studios Japan and Super Nintendo World",
+          "base": "Osaka",
+          "notes": "The one early-ish start in this plan, and only if you want it: without an Express Pass the free Super Nintendo World timed-entry ticket is gone minutes after opening, so the 7:00 train matters. With an Express Pass that includes area entry (recommended, ~¥12,800) you can take the 8:30 train, be at the gate by 9:15 and lose nothing. Buy the pass when the date opens (~12 Dec) and sleep in."
+        }
+      }
     },
     {
       "id": "d0211",
@@ -483,7 +490,7 @@
         },
         {
           "id": "c11a",
-          "time": "08:30",
+          "time": "09:15",
           "type": "transfer",
           "title": "Check out (daypack only), subway to Namba",
           "status": "planned",
@@ -495,12 +502,12 @@
         },
         {
           "id": "c11b",
-          "time": "09:10",
+          "time": "10:00",
           "type": "train",
           "title": "Nankai to Gokurakubashi, cable car, bus into town",
           "status": "planned",
           "location": "Nankai Namba → Gokurakubashi (Limited Express Koya ~80 min, or express with a change at Hashimoto ~100 min) → cable car 5 min → bus 10 min to Senjuinbashi",
-          "endTime": "11:15",
+          "endTime": "12:15",
           "cost": 3980,
           "currency": "JPY",
           "notes": "Buy the Koyasan World Heritage Ticket at Namba (~¥3,980): return train, cable car and unlimited Koyasan buses for two days. Reserve the limited express seat for the holiday.",
@@ -509,7 +516,7 @@
         },
         {
           "id": "c11c",
-          "time": "11:30",
+          "time": "12:30",
           "type": "food",
           "title": "Lunch near Senjuinbashi: soba, udon or a shojin set",
           "status": "planned",
@@ -521,12 +528,12 @@
         },
         {
           "id": "c11d",
-          "time": "12:30",
+          "time": "13:30",
           "type": "activity",
           "title": "Danjo Garan (the great pagoda) and Kongobuji head temple",
           "status": "planned",
           "location": "Central Koyasan",
-          "endTime": "14:30",
+          "endTime": "15:00",
           "cost": 1700,
           "currency": "JPY",
           "notes": "Kongobuji has the largest rock garden in Japan and painted sliding doors; Konpon Daito is the vermilion pagoda. Bus or 15 min walk between them.",
@@ -535,7 +542,7 @@
         },
         {
           "id": "c11e",
-          "time": "14:30",
+          "time": "15:00",
           "type": "stay",
           "title": "Check in at the shukubo (temple lodging)",
           "status": "planned",
@@ -589,8 +596,8 @@
       "variants": {
         "culture": {
           "title": "Osaka → Koyasan (temple lodging)",
-          "base": "Koyasan shukubo",
-          "notes": "National Foundation Day. Koyasan is a 1,200-year-old monastery town on a forested plateau, 2 hours from Namba: 117 temples, a 2 km cemetery walk through giant cedars, and a night in a temple with the monks’ vegetarian dinner. In February it is cold and often snowy, which is exactly when it is at its best and quietest. Travel with a daypack; the suitcase went ahead on Tuesday."
+          "base": "Koyasan shukubo (night out no. 1)",
+          "notes": "National Foundation Day. Koyasan is a 1,200-year-old monastery town on a forested plateau, two hours from Namba: 117 temples, a 2 km cemetery walk through giant cedars, and a night in a temple with the monks’ vegetarian dinner. Late-morning start; the suitcase went ahead to the Takayama hub on Tuesday, so this is daypack only."
         }
       }
     },
@@ -670,24 +677,36 @@
           "id": "c12a",
           "time": "06:30",
           "type": "activity",
-          "title": "Morning prayers and the goma fire ritual, then breakfast",
-          "status": "planned",
+          "title": "Morning prayers and the goma fire ritual (optional)",
+          "status": "idea",
           "location": "Temple main hall",
-          "endTime": "07:45",
+          "endTime": "07:15",
           "cost": 0,
           "currency": "JPY",
-          "notes": "Guests sit at the back. Breakfast in your room straight after.",
+          "notes": "Worth it once in a lifetime, but nobody checks. Breakfast is served around 7:30 regardless.",
+          "variant": "culture",
+          "placeId": "pb2"
+        },
+        {
+          "id": "c12a2",
+          "time": "07:30",
+          "type": "food",
+          "title": "Temple breakfast in your room",
+          "status": "planned",
+          "location": "Shukubo",
+          "cost": 0,
+          "currency": "JPY",
           "variant": "culture",
           "placeId": "pb2"
         },
         {
           "id": "c12b",
-          "time": "08:15",
+          "time": "09:30",
           "type": "transfer",
           "title": "Bus, cable car and Nankai back to Namba, subway to Shin-Osaka",
           "status": "planned",
           "location": "Koyasan → Nankai Namba → Shin-Osaka",
-          "endTime": "10:30",
+          "endTime": "11:50",
           "cost": 300,
           "currency": "JPY",
           "notes": "Return leg is covered by the World Heritage Ticket; the subway hop is ¥300.",
@@ -696,12 +715,12 @@
         },
         {
           "id": "c12c",
-          "time": "10:45",
+          "time": "12:10",
           "type": "train",
           "title": "Nozomi Shin-Osaka → Nagoya",
           "status": "planned",
           "location": "Shin-Osaka",
-          "endTime": "11:35",
+          "endTime": "13:00",
           "cost": 6880,
           "currency": "JPY",
           "variant": "culture",
@@ -709,7 +728,7 @@
         },
         {
           "id": "c12d",
-          "time": "11:40",
+          "time": "13:05",
           "type": "food",
           "title": "Kishimen noodles on the Nagoya platform",
           "status": "planned",
@@ -722,36 +741,37 @@
         },
         {
           "id": "c12e",
-          "time": "12:00",
+          "time": "13:45",
           "type": "train",
           "title": "Limited Express Hida Nagoya → Takayama",
           "status": "planned",
           "location": "Nagoya",
-          "endTime": "14:30",
+          "endTime": "16:15",
           "cost": 6500,
           "currency": "JPY",
           "notes": "~2h30 up the Hida river gorge; reserved seat. Hida trains run about hourly, so the exact one depends on the connection.",
           "variant": "culture",
-          "placeId": "pb3"
+          "placeId": "pb10"
         },
         {
           "id": "c12f",
-          "time": "14:45",
+          "time": "16:30",
           "type": "stay",
-          "title": "Check in, Takayama (1 night)",
+          "title": "Check in to the hub, Takayama (4 nights); the suitcase is waiting",
           "status": "planned",
           "location": "See Stays",
+          "notes": "Unpack. This room is home until Tuesday; Saturday night you simply do not sleep in it.",
           "variant": "culture",
-          "placeId": "pb3"
+          "placeId": "pb10"
         },
         {
           "id": "c12g",
-          "time": "15:00",
+          "time": "17:00",
           "type": "note",
-          "title": "Free afternoon and evening",
+          "title": "Evening free",
           "status": "planned",
           "location": "Takayama",
-          "notes": "No plan. If you want prompts: Sanmachi old town and the sake breweries with cedar balls outside (tastings for a few hundred yen), the Higashiyama temple walk above town, a bath at the hotel, Hida beef with hoba-miso whenever you get hungry.",
+          "notes": "Sanmachi old town is 10 minutes away: sake breweries with cedar balls outside (tastings for a few hundred yen), the river, Hida beef whenever you are hungry.",
           "variant": "culture",
           "placeId": "pb3"
         },
@@ -771,9 +791,9 @@
       ],
       "variants": {
         "culture": {
-          "title": "Morning prayers, Koyasan → Takayama, free afternoon",
-          "base": "Takayama",
-          "notes": "Leave straight after the fire ritual and you are in Takayama by early afternoon. From then on nothing is scheduled: the old town is 10 minutes from the hotel and small enough to wander without a plan."
+          "title": "Koyasan → Takayama, the hub for four nights",
+          "base": "Takayama (hub)",
+          "notes": "The 6:30 prayers are optional; breakfast is at a fixed time around 7:30, then a leisurely trip: down the mountain, Shinkansen to Nagoya, the Hida express up the gorge. Check into one room for four nights and unpack properly. Evening free."
         }
       }
     },
@@ -836,50 +856,36 @@
         },
         {
           "id": "c13a",
-          "time": "07:30",
+          "time": "09:00",
           "type": "food",
-          "title": "Miyagawa morning market",
+          "title": "Miyagawa morning market (runs until noon)",
           "status": "planned",
           "location": "Riverbank, Takayama",
           "cost": 800,
           "currency": "JPY",
-          "notes": "Farmers, pickles, mitarashi dango (soy-glazed rice dumplings) for breakfast.",
+          "notes": "Farmers, pickles, mitarashi dango (soy-glazed rice dumplings) for a second breakfast.",
           "variant": "culture",
           "placeId": "pb3"
         },
         {
           "id": "c13b",
-          "time": "08:50",
+          "time": "10:50",
           "type": "bus",
           "title": "Nohi bus Takayama → Shirakawa-go",
           "status": "planned",
           "location": "Takayama Nohi Bus Center (next to the station)",
-          "endTime": "09:40",
+          "endTime": "11:40",
           "cost": 1800,
           "currency": "JPY",
-          "notes": "50 min. Reserve the seat; the reserved services sell out on weekends. Some services are non-reserved and first come first served.",
+          "notes": "50 min. Reserve the seat; reserved services sell out on weekends. Daypack only; the suitcase stays in the hub room.",
           "variant": "culture",
-          "placeId": "pb3"
+          "placeId": "pb10"
         },
         {
           "id": "c13c",
-          "time": "10:00",
-          "type": "activity",
-          "title": "Shirakawa-go: Shiroyama viewpoint, Wada House, the walk between the farmhouses",
-          "status": "planned",
-          "location": "Ogimachi village",
-          "endTime": "15:00",
-          "cost": 1000,
-          "currency": "JPY",
-          "notes": "Viewpoint shuttle or a 20 min walk up. Wada House (¥400) is the big one you can go inside. The open-air museum across the river is quieter. Snow boots and crampons: the paths are icy.",
-          "variant": "culture",
-          "placeId": "pb4"
-        },
-        {
-          "id": "c13d",
-          "time": "12:30",
+          "time": "12:00",
           "type": "food",
-          "title": "Lunch: soba or Hida beef croquette from a stand",
+          "title": "Lunch: soba or a Hida beef croquette from a stand",
           "status": "planned",
           "location": "Village",
           "cost": 1300,
@@ -888,8 +894,22 @@
           "placeId": "pb4"
         },
         {
+          "id": "c13d",
+          "time": "13:00",
+          "type": "activity",
+          "title": "Shirakawa-go: Shiroyama viewpoint, Wada House, the walk between the farmhouses",
+          "status": "planned",
+          "location": "Ogimachi village",
+          "endTime": "16:00",
+          "cost": 1000,
+          "currency": "JPY",
+          "notes": "Viewpoint shuttle or a 20 min walk up. Wada House (¥400) is the big one you can go inside. Snow boots and crampons: the paths are icy.",
+          "variant": "culture",
+          "placeId": "pb4"
+        },
+        {
           "id": "c13e",
-          "time": "15:00",
+          "time": "16:00",
           "type": "stay",
           "title": "Check in at a gassho-zukuri farmhouse minshuku",
           "status": "planned",
@@ -919,16 +939,16 @@
           "location": "Your minshuku",
           "cost": 0,
           "currency": "JPY",
-          "notes": "Grilled river fish, mountain vegetables, local tofu, included in the price. Bring a small gift or just good manners.",
+          "notes": "Grilled river fish, mountain vegetables, local tofu, included in the price.",
           "variant": "culture",
           "placeId": "pb4"
         }
       ],
       "variants": {
         "culture": {
-          "title": "Takayama → Shirakawa-go farmhouse night",
+          "title": "Shirakawa-go farmhouse night (night out no. 2)",
           "base": "Shirakawa-go gassho farmhouse",
-          "notes": "Shirakawa-go’s thatched gassho-zukuri farmhouses under two metres of snow are the picture everyone has in their head of rural Japan. It is heavily visited from 10 to 3; sleeping in one of the farmhouses means you have the village to yourself at dusk and dawn. No light-up event in Feb 2027 (they were in January), so normal bookings apply."
+          "notes": "Leave the suitcase in the Takayama room and go with a daypack. Shirakawa-go’s thatched farmhouses under two metres of snow are the picture everyone has of rural Japan; it is busy from 10 to 3, and sleeping in one of the houses means you get it at dusk and dawn. Late-morning bus; no light-up event in Feb 2027."
         }
       }
     },
@@ -1087,25 +1107,26 @@
         },
         {
           "id": "c14a",
-          "time": "07:00",
-          "type": "activity",
-          "title": "Dawn walk before the buses arrive",
+          "time": "08:00",
+          "type": "food",
+          "title": "Breakfast at the hearth, then a slow walk while the village is still empty",
           "status": "planned",
           "location": "Village",
-          "endTime": "08:00",
+          "endTime": "10:00",
           "cost": 0,
           "currency": "JPY",
+          "notes": "Farmhouse breakfast is at a set time, usually 7:30-8:00. The walk after it is optional.",
           "variant": "culture",
           "placeId": "pb4"
         },
         {
           "id": "c14b",
-          "time": "09:50",
+          "time": "11:10",
           "type": "bus",
           "title": "Nohi bus Shirakawa-go → Takayama",
           "status": "planned",
           "location": "Shirakawa-go bus terminal",
-          "endTime": "10:40",
+          "endTime": "12:00",
           "cost": 1800,
           "currency": "JPY",
           "variant": "culture",
@@ -1113,18 +1134,7 @@
         },
         {
           "id": "c14c",
-          "time": "11:00",
-          "type": "note",
-          "title": "Loose hours in Takayama until the 14:40 bus",
-          "status": "planned",
-          "location": "Takayama",
-          "notes": "Options, not a schedule: Takayama Jinya (the only surviving Edo provincial government office, ¥440), the Hida Folk Village of relocated farmhouses, or just coffee and the riverbank. Leave bags at the bus centre lockers.",
-          "variant": "culture",
-          "placeId": "pb3"
-        },
-        {
-          "id": "c14d",
-          "time": "13:00",
+          "time": "12:15",
           "type": "food",
           "title": "Takayama ramen",
           "status": "planned",
@@ -1136,47 +1146,34 @@
           "placeId": "pb3"
         },
         {
-          "id": "c14e",
-          "time": "14:40",
-          "type": "bus",
-          "title": "Express bus Takayama → Matsumoto over the Northern Alps (via Hirayu Onsen)",
+          "id": "c14d",
+          "time": "13:30",
+          "type": "note",
+          "title": "Free afternoon",
           "status": "planned",
-          "location": "Takayama Nohi Bus Center",
-          "endTime": "17:15",
-          "cost": 3800,
-          "currency": "JPY",
-          "notes": "Winter timetable, about 2h30, seat reservations mandatory (Alpico/Nohi, opens a month ahead). Sit on the left for the Alps.",
-          "variant": "culture",
-          "placeId": "pb3"
-        },
-        {
-          "id": "c14f",
-          "time": "17:30",
-          "type": "stay",
-          "title": "Check in, Matsumoto (2 nights); collect the suitcase",
-          "status": "planned",
-          "location": "See Stays",
+          "location": "Takayama hub",
+          "notes": "Option: Hida Furukawa, 15 minutes by train, a small canal town with carp, white storehouses and two sake breweries, almost no tourists. Or the hotel bath and a nap.",
           "variant": "culture",
           "placeId": "pb7"
         },
         {
-          "id": "c14g",
+          "id": "c14e",
           "time": "19:00",
           "type": "food",
-          "title": "Dinner on Nakamachi: Shinshu soba, sansai (mountain vegetables), basashi if you dare",
+          "title": "Dinner: hoba-miso set or an izakaya near the station",
           "status": "planned",
-          "location": "Nakamachi street",
-          "cost": 3000,
+          "location": "Takayama",
+          "cost": 2500,
           "currency": "JPY",
           "variant": "culture",
-          "placeId": "pb7"
+          "placeId": "pb3"
         }
       ],
       "variants": {
         "culture": {
-          "title": "Shirakawa-go → Takayama → over the Alps to Matsumoto",
-          "base": "Matsumoto",
-          "notes": "Quiet dawn in the village, a loose few hours in Takayama (ideas below, none required), then the winter express bus over the Northern Alps via Hirayu Onsen (reservations mandatory) to Matsumoto."
+          "title": "Back to the hub, free afternoon",
+          "base": "Takayama (hub)",
+          "notes": "Sleep in, breakfast at the hearth, a late-morning bus back. The afternoon is open: the quiet canal town of Hida Furukawa is 15 minutes by train, or do nothing at all."
         }
       }
     },
@@ -1249,91 +1246,66 @@
         },
         {
           "id": "c15a",
-          "time": "08:30",
-          "type": "activity",
-          "title": "Matsumoto Castle at opening",
+          "time": "09:30",
+          "type": "note",
+          "title": "Free-roam day; the options are all optional",
           "status": "planned",
-          "location": "10 min walk from the station",
-          "endTime": "10:00",
-          "cost": 700,
-          "currency": "JPY",
-          "notes": "1590s original black keep, steep ladders inside, Alps behind it. Go at 8:30 and you climb it alone. The only fixed thing today.",
+          "location": "Takayama hub",
+          "notes": "Nothing booked, nothing before 9:30.",
           "variant": "culture",
-          "placeId": "pb5"
+          "placeId": "pb10"
         },
         {
           "id": "c15b",
-          "time": "10:00",
-          "type": "note",
-          "title": "The rest of the day is yours",
-          "status": "planned",
-          "location": "Matsumoto",
-          "notes": "Ideas below are all optional and all easy from the station. Or do nothing: Nakamachi has good coffee, the hotel has a bath, and you have been moving for a week.",
-          "variant": "culture",
-          "placeId": "pb7"
-        },
-        {
-          "id": "c15c",
-          "time": "10:30",
+          "time": "09:45",
           "type": "activity",
-          "title": "Option: Narai-juku, the Edo post town (half day)",
+          "title": "Option: Okuhida onsen villages (Hirayu Onsen, 1 h by bus)",
           "status": "idea",
-          "location": "Local trains via Shiojiri, ~1 h each way, roughly hourly",
-          "notes": "Lacquerware workshops, sake shop, gohei-mochi lunch, snow on the eaves. The most “rural architecture” thing within reach. About ¥1,500 in fares.",
-          "variant": "culture",
-          "placeId": "p21"
-        },
-        {
-          "id": "c15d",
-          "time": "10:30",
-          "type": "activity",
-          "title": "Option: Daio Wasabi Farm and the Azumino plain (half day)",
-          "status": "idea",
-          "location": "Train to Hotaka (30 min) then taxi or a 40 min walk",
-          "notes": "Japan’s largest wasabi farm, spring water, the Alps as a backdrop. Free entry; wasabi ice cream is compulsory.",
+          "location": "Nohi bus from Takayama Bus Center",
+          "notes": "Open-air hot spring baths in the snow (Hirayu no Mori, ¥700), and the Shinhotaka Ropeway another 40 min on for a snow panorama of the Northern Alps. Back by dinner. About ¥5,000 in buses and baths.",
           "variant": "culture",
           "placeId": "pb8"
         },
         {
-          "id": "c15e",
-          "time": "10:30",
+          "id": "c15c",
+          "time": "09:45",
           "type": "activity",
-          "title": "Option: Nakamachi and Nawate streets, craft shops, the Kusama museum",
+          "title": "Option: Gero Onsen (1 h by train)",
           "status": "idea",
-          "location": "Old town, all walkable",
-          "notes": "Whitewashed storehouses, the frog street by the river, the City Museum of Art with Yayoi Kusama’s permanent rooms (she is from Matsumoto).",
-          "variant": "culture",
-          "placeId": "pb7"
-        },
-        {
-          "id": "c15f",
-          "time": "16:00",
-          "type": "activity",
-          "title": "Option: Asama Onsen public bath",
-          "status": "idea",
-          "location": "Bus 20 min from Matsumoto Station",
-          "notes": "Hot Plaza Asama, the local onsen rather than a resort one. About ¥700.",
+          "location": "Hida express south",
+          "notes": "One of Japan’s “three great onsen”; a bathhouse pass (Yumeguri Tegata, ¥1,500) gets you into three of the ryokan baths. Riverside foot baths are free.",
           "variant": "culture",
           "placeId": "pb9"
         },
         {
-          "id": "c15h",
+          "id": "c15d",
+          "time": "10:00",
+          "type": "activity",
+          "title": "Option: Takayama Jinya, Hida Folk Village, the Higashiyama temple walk",
+          "status": "idea",
+          "location": "All in town",
+          "notes": "The only surviving Edo provincial government office (¥440); a hillside of relocated farmhouses (¥700); a quiet 3.5 km walk past a dozen temples above town.",
+          "variant": "culture",
+          "placeId": "pb3"
+        },
+        {
+          "id": "c15e",
           "time": "19:00",
           "type": "food",
-          "title": "Sanzoku-yaki or a soba dinner",
+          "title": "Last Takayama dinner: Hida beef properly, or sushi at a counter",
           "status": "planned",
-          "location": "Around the station",
-          "cost": 2000,
+          "location": "Takayama",
+          "cost": 4000,
           "currency": "JPY",
           "variant": "culture",
-          "placeId": "pb7"
+          "placeId": "pb3"
         }
       ],
       "variants": {
         "culture": {
-          "title": "Free-roam day, Matsumoto",
-          "base": "Matsumoto",
-          "notes": "The castle at opening is the one thing worth setting an alarm for (90 minutes). After that the day is deliberately empty. The ideas listed are options, not a schedule: pick one, or none."
+          "title": "Free-roam day from the hub",
+          "base": "Takayama (hub)",
+          "notes": "Deliberately empty. The options below are all easy from Takayama station and none starts before 9:30. Pick one, or none."
         }
       }
     },
@@ -1446,47 +1418,61 @@
           "id": "c16a",
           "time": "08:30",
           "type": "note",
-          "title": "Free morning",
+          "title": "Free morning, pack, check out",
           "status": "planned",
-          "location": "Matsumoto",
-          "notes": "Breakfast, a last walk to the castle moat, coffee on Nakamachi. Nothing to catch until 10:40.",
+          "location": "Takayama hub",
+          "notes": "Breakfast at the hotel, a last walk to the river. Nothing to catch until 9:40.",
           "variant": "culture",
-          "placeId": "pb7"
+          "placeId": "pb10"
         },
         {
           "id": "c16b",
-          "time": "10:40",
+          "time": "09:40",
           "type": "train",
-          "title": "Limited Express Azusa Matsumoto → Shinjuku",
+          "title": "Limited Express Hida Takayama → Nagoya",
           "status": "planned",
-          "location": "Matsumoto Station",
-          "endTime": "13:10",
-          "cost": 6620,
+          "location": "Takayama Station",
+          "endTime": "12:10",
+          "cost": 6500,
           "currency": "JPY",
-          "notes": "~2h30, all seats reserved.",
+          "notes": "~2h30, reserved seat.",
           "variant": "culture",
-          "placeId": "pb7"
+          "placeId": "pb10"
         },
         {
           "id": "c16c",
-          "time": "13:35",
+          "time": "12:30",
           "type": "train",
-          "title": "Narita Express Shinjuku → Narita T2",
+          "title": "Nozomi Nagoya → Tokyo",
           "status": "planned",
-          "location": "Shinjuku, N’EX platforms",
-          "endTime": "15:00",
+          "location": "Nagoya",
+          "endTime": "14:10",
+          "cost": 11300,
+          "currency": "JPY",
+          "notes": "~1h40, every 10 minutes.",
+          "variant": "culture",
+          "placeId": "p12"
+        },
+        {
+          "id": "c16d",
+          "time": "14:30",
+          "type": "train",
+          "title": "Narita Express Tokyo → Narita T2",
+          "status": "planned",
+          "location": "Tokyo Station",
+          "endTime": "15:30",
           "cost": 0,
           "currency": "JPY",
-          "notes": "~80 min. Covered by the N’EX round-trip ticket bought on day 1 (it is valid from Shinjuku too).",
+          "notes": "Covered by the N’EX round-trip ticket bought on day 1.",
           "variant": "culture",
-          "placeId": "p26"
+          "placeId": "p7"
         }
       ],
       "variants": {
         "culture": {
-          "title": "Slow morning, Matsumoto → Tokyo → home",
+          "title": "Takayama → Nagoya → Tokyo → home",
           "base": "Overnight flight",
-          "notes": "Free until the 10:40 train. The Azusa express runs straight to Shinjuku in about 2h30; the Narita Express leaves from Shinjuku too, so there is no fiddling around in Tokyo. QF80 check-in closes 18:20."
+          "notes": "No early start: the 9:40 Hida express, Shinkansen from Nagoya, Narita Express from Tokyo, at Narita by 3:30pm for the 7:20pm flight. QF80 check-in closes 18:20."
         }
       }
     },
@@ -1852,7 +1838,7 @@
       },
       {
         "id": "culture",
-        "name": "Plan B: No skiing, countryside, culture and free days",
+        "name": "Plan B: No skiing, Takayama hub, two nights out, free days",
         "short": "B: Culture"
       }
     ]
@@ -2134,23 +2120,23 @@
       "checkOut": "2027-02-12",
       "distance": "Central Koyasan, walk to Okunoin",
       "url": "https://koyasan-shukubo.net/en/",
-      "notes": "Book on the official Shukubo Association site (English). Ekoin is the most foreigner-friendly and runs the night tour; Fukuchiin has an onsen; Shojoshin-in sits right at the Okunoin entrance. Solo is normal."
+      "notes": "Book on the official Shukubo Association site (English). Ekoin is the most foreigner-friendly and runs the night tour; Fukuchiin has an onsen; Shojoshin-in sits right at the Okunoin entrance. Solo is normal. Night out no. 1."
     },
     {
       "id": "s-b2",
-      "name": "Takayama: Tabino Hotel Hida Takayama or Country Hotel Takayama",
+      "name": "Takayama hub, 4 nights: Hotel Around Takayama, Tabino Hotel Hida Takayama or Hida Plaza Hotel",
       "town": "Takayama",
-      "type": "Business hotel with a big bath",
+      "type": "Hotel with a big bath, by the station",
       "status": "planned",
       "variant": "culture",
-      "pricePerNightAud": 130,
-      "nights": 1,
-      "priceNote": "est.; verify",
+      "pricePerNightAud": 150,
+      "nights": 4,
+      "priceNote": "est.; verify on Rakuten",
       "checkIn": "2027-02-12",
-      "checkOut": "2027-02-13",
+      "checkOut": "2027-02-16",
       "distance": "Next to the station and the Nohi bus centre",
       "url": "https://travel.rakuten.com/",
-      "notes": "Being at the station matters here: two bus departures in two days."
+      "notes": "One room for the whole second half: check in Friday, out Tuesday, and just don’t sleep here on Saturday night (Shirakawa-go). Send the suitcase here from Osaka (“for guest arriving 12 Feb”). Hotel Around Takayama is the newer stylish one; Tabino and Hida Plaza have proper onsen-style baths."
     },
     {
       "id": "s-b3",
@@ -2166,23 +2152,7 @@
       "checkOut": "2027-02-14",
       "distance": "In the village",
       "url": "https://www.travelclassroom.net/eng/shirakawa-stay.html",
-      "notes": "Book through the Shirakawa-go Tourist Association reservation system (that guide explains it step by step). Around 40 places; ask for single occupancy. Not every house takes solo guests, so start early. No light-up event in Feb 2027, so no lottery."
-    },
-    {
-      "id": "s-b4",
-      "name": "Matsumoto: Hotel Buena Vista or a Dormy Inn",
-      "town": "Matsumoto",
-      "type": "City hotel or business hotel with bath",
-      "status": "planned",
-      "variant": "culture",
-      "pricePerNightAud": 110,
-      "nights": 2,
-      "priceNote": "est.; verify",
-      "checkIn": "2027-02-14",
-      "checkOut": "2027-02-16",
-      "distance": "Walk to the station and the castle",
-      "url": "https://travel.rakuten.com/",
-      "notes": "Send the suitcase here from Osaka. Tell them a parcel arrives on the 13th for a guest checking in on the 14th."
+      "notes": "Night out no. 2. Book through the Shirakawa-go Tourist Association reservation system (that guide explains it step by step). Around 40 places; ask for single occupancy. Not every house takes solo guests, so start early. No light-up event in Feb 2027, so no lottery."
     }
   ],
   "food": [
@@ -2368,20 +2338,20 @@
     },
     {
       "id": "fb6",
-      "town": "Matsumoto",
-      "dish": "Shinshu soba and sansai",
-      "where": "Nakamachi street shops",
-      "why": "Nagano’s buckwheat noodles with foraged mountain vegetables; Matsumoto is the soba capital.",
+      "town": "Takayama",
+      "dish": "Hida Furukawa sake tasting",
+      "where": "Watanabe or Kaba breweries, Hida Furukawa (15 min by train)",
+      "why": "Two old breweries in a canal town nobody visits; ¥300 tastings, no queue.",
       "priceBand": "¥",
       "variant": "culture"
     },
     {
       "id": "fb7",
-      "town": "Matsumoto",
-      "dish": "Sanzoku-yaki",
-      "where": "Izakaya near the station",
-      "why": "A whole marinated chicken thigh, deep fried. Matsumoto’s comfort food.",
-      "priceBand": "¥",
+      "town": "Takayama",
+      "dish": "Sushi at a counter",
+      "where": "A small sushi-ya near the station (ask the hotel)",
+      "why": "Takayama is far from the sea, so the good places fly fish in daily and the locals know which ones; a counter seat is the solo traveller’s best dinner.",
+      "priceBand": "¥¥",
       "variant": "culture"
     }
   ],
@@ -2704,22 +2674,23 @@
     {
       "id": "ckb3",
       "group": "Points and bookings",
-      "text": "Plan B: book Takayama (12 Feb) and Matsumoto (14-16 Feb) hotels",
+      "text": "Plan B: book the Takayama hub hotel for 4 nights, 12-16 Feb (one booking; you skip Saturday night there)",
       "due": "2026-11-30",
-      "variant": "culture"
+      "variant": "culture",
+      "notes": "Tell them a parcel arrives on the 11th for a guest checking in on the 12th."
     },
     {
       "id": "ckb4",
       "group": "Points and bookings",
-      "text": "Plan B: reserve the Nohi buses Takayama ↔ Shirakawa-go (13 and 14 Feb) and the Takayama → Matsumoto winter express (14 Feb, reservation mandatory)",
-      "due": "2027-01-14",
+      "text": "Plan B: reserve the Nohi buses Takayama ↔ Shirakawa-go (13 and 14 Feb, late-morning services)",
+      "due": "2027-01-13",
       "variant": "culture",
-      "notes": "Both open about a month ahead on nouhibus.co.jp and the Alpico site."
+      "notes": "Opens about a month ahead on nouhibus.co.jp."
     },
     {
       "id": "ckb5",
       "group": "Points and bookings",
-      "text": "Plan B: reserve the Nankai Limited Express Koya (11 Feb), Hida express Nagoya → Takayama (12 Feb) and Azusa Matsumoto → Shinjuku (16 Feb)",
+      "text": "Plan B: reserve the Nankai Limited Express Koya (11 Feb), Hida express Nagoya → Takayama (12 Feb) and Takayama → Nagoya (16 Feb, 9:40), and the Nozomi Nagoya → Tokyo (16 Feb)",
       "due": "2027-01-16",
       "variant": "culture"
     },
@@ -2836,6 +2807,15 @@
       "town": "Osaka",
       "lat": 34.702,
       "lng": 135.498
+    },
+    {
+      "id": "pb10",
+      "name": "Takayama Station and bus centre (hub hotel)",
+      "kind": "hotel",
+      "town": "Takayama",
+      "lat": 36.141,
+      "lng": 137.252,
+      "variant": "culture"
     },
     {
       "id": "p27",
@@ -3009,15 +2989,6 @@
       "variant": "culture"
     },
     {
-      "id": "pb5",
-      "name": "Matsumoto Castle",
-      "kind": "other",
-      "town": "Matsumoto",
-      "lat": 36.2384,
-      "lng": 137.969,
-      "variant": "culture"
-    },
-    {
       "id": "pb6",
       "name": "Nankai Namba Station",
       "kind": "station",
@@ -3029,52 +3000,44 @@
     },
     {
       "id": "pb7",
-      "name": "Matsumoto old town (Nakamachi) and station",
+      "name": "Hida Furukawa",
       "kind": "town",
-      "town": "Matsumoto",
-      "lat": 36.232,
-      "lng": 137.968,
-      "variant": "culture"
+      "town": "Hida",
+      "lat": 36.238,
+      "lng": 137.187,
+      "variant": "culture",
+      "notes": "Canal town 15 min from Takayama; option for a free afternoon."
     },
     {
       "id": "pb8",
-      "name": "Daio Wasabi Farm (Azumino)",
+      "name": "Hirayu Onsen (Okuhida)",
       "kind": "other",
-      "town": "Azumino",
-      "lat": 36.339,
-      "lng": 137.906,
+      "town": "Okuhida",
+      "lat": 36.192,
+      "lng": 137.559,
       "variant": "culture",
-      "notes": "Option for the free day."
+      "notes": "Open-air baths in the snow; 1 h by bus. Free-day option."
     },
     {
       "id": "pb9",
-      "name": "Asama Onsen",
+      "name": "Gero Onsen",
       "kind": "other",
-      "town": "Matsumoto",
-      "lat": 36.257,
-      "lng": 137.998,
+      "town": "Gero",
+      "lat": 35.805,
+      "lng": 137.244,
       "variant": "culture",
-      "notes": "Local public bath, option for the free day."
-    },
-    {
-      "id": "p26",
-      "name": "Shinjuku Station",
-      "kind": "station",
-      "town": "Tokyo",
-      "lat": 35.6896,
-      "lng": 139.7006,
-      "notes": "Azusa arrives here; N’EX to Narita leaves from here."
+      "notes": "1 h by train; free-day option."
     }
   ],
   "questions": [
     {
       "id": "q12",
       "question": "Plan A (ski) or Plan B (no skiing)?",
-      "why": "Both use the flights already booked and the same Osaka and USJ days; they split on Thursday 11 Feb. Plan A: Nozawa Onsen for five nights, three ski days plus a rural Sunday, hinges on finding a solo room in a sold-out week. Plan B: a temple night at Koyasan, a farmhouse night in Shirakawa-go, and Takayama and Matsumoto as bases with a free afternoon, a fully free day and a free morning built in (options listed, nothing scheduled). Four different beds, no dependence on Nozawa, and about A$500 cheaper because there are no lifts or rental. Lost workdays are identical. The plan switch at the top of the menu flips every page between them.",
+      "why": "Both use the flights already booked and the same Osaka and USJ days; they split on Thursday 11 Feb. Plan A: Nozawa Onsen for five nights, three ski days plus a rural Sunday, hinges on finding a solo room in a sold-out week. Plan B: Takayama as a four-night hub (one room, unpack once), with two nights out in great places (a temple at Koyasan, a farmhouse at Shirakawa-go), free afternoons and a free day, and no start before 9:30 except USJ, which the Express Pass makes optional. No dependence on Nozawa, and about A$500 cheaper because there are no lifts or rental. Lost workdays are identical. The plan switch at the top of the menu flips every page between them.",
       "options": [
         "Plan A: ski trip (Nozawa Onsen)",
-        "Plan B: countryside and culture (Koyasan, Takayama, Shirakawa-go, Matsumoto, Narai)",
-        "Hybrid: Plan B but swap Matsumoto’s two nights for two nights in Nozawa without skiing (onsen village, snow, food)"
+        "Plan B: Takayama hub with Koyasan and Shirakawa-go nights out",
+        "Hybrid: Plan B with two of the Takayama nights swapped for Nozawa without skiing (onsen village, snow, food)"
       ],
       "recommendation": "Decide by accommodation: if a Nozawa room lands by late October, Plan A. If not, Plan B is not a consolation prize; the Koyasan and Shirakawa-go nights are two of the best things you can do in Japan in winter, and every bed in it is easier to get.",
       "answer": "",
