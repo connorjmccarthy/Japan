@@ -451,7 +451,7 @@ trip = dict(
     legs=flights['legs'],
     lounges=flights['lounges'],
   ),
-  variants=dict(active='ski', list=[dict(id='ski', name='Plan A: Ski trip (Nozawa)', short='A: Ski'), dict(id='culture', name='Plan B: No skiing, Takayama hub, two nights out, free days', short='B: Culture')]),
+  variants=dict(active='culture', list=[dict(id='ski', name='Plan A: Ski trip (Nozawa)', short='A: Ski'), dict(id='culture', name='Plan B: No skiing, Takayama hub, two nights out, free days', short='B: Culture')]),
   foodGuide=FOOD_GUIDE, staysGuide=STAYS_GUIDE, points=points, stays=stays, food=food, budget=budget, checklist=checklist, places=places, questions=questions,
 )
 with open('data/trip.json', 'w') as f:
