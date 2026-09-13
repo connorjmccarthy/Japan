@@ -5,7 +5,7 @@
     "end": "2027-02-17",
     "homeCurrency": "AUD",
     "jpyPerAud": 108,
-    "updatedAt": "2026-09-13T23:27:42.839Z",
+    "updatedAt": "2026-09-13T23:27:59.013Z",
     "version": 1,
     "about": "Solo ski trip. Confirmed: JQ815 BNE→SYD and the Business Classic Reward SYD→MEL→NRT on 8 Feb. Home Tue 16 Feb on QF80 + QF1256 (booked). Everything else is planned from research done 13 Sep 2026; prices marked est. need checking when booking."
   },
@@ -2561,9 +2561,10 @@
     {
       "id": "ck14",
       "group": "Before you go",
-      "text": "Tell your bank you are travelling; get ¥30,000-50,000 cash (or plan to withdraw at 7-Eleven ATMs on arrival)",
+      "text": "Get ¥30,000-50,000 cash (or plan to withdraw at 7-Eleven ATMs on arrival)",
       "due": "2027-02-01",
-      "notes": "Ski villages and small restaurants are still cash-heavy."
+      "notes": "Ski villages and small restaurants are still cash-heavy.",
+      "done": false
     },
     {
       "id": "ck15",
