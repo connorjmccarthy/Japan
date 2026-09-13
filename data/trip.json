@@ -5,7 +5,7 @@
     "end": "2027-02-17",
     "homeCurrency": "AUD",
     "jpyPerAud": 108,
-    "updatedAt": "2026-09-13T23:33:18.444Z",
+    "updatedAt": "2026-09-13T23:33:22.048Z",
     "version": 1,
     "about": "Solo ski trip. Confirmed: JQ815 BNE→SYD and the Business Classic Reward SYD→MEL→NRT on 8 Feb. Home Tue 16 Feb on QF80 + QF1256 (booked). Everything else is planned from research done 13 Sep 2026; prices marked est. need checking when booking."
   },
@@ -2490,7 +2490,8 @@
       "group": "Points and bookings",
       "text": "Open Manage Booking for QF80 and try to add Economy Plus (extra legroom) with cash or points; pick seats on both flights",
       "due": "2026-09-30",
-      "notes": "Sale fares cannot be upgraded to Business with points, but the Economy Plus seat product is separate. If it is not offered on this fare, that is that."
+      "notes": "Sale fares cannot be upgraded to Business with points, but the Economy Plus seat product is separate. If it is not offered on this fare, that is that.",
+      "done": true
     },
     {
       "id": "ck5c",
