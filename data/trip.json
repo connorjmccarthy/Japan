@@ -5,7 +5,7 @@
     "end": "2027-02-16",
     "homeCurrency": "AUD",
     "jpyPerAud": 108,
-    "updatedAt": "2026-09-13T07:38:41Z",
+    "updatedAt": "2026-09-13T11:30:56Z",
     "version": 1,
     "about": "Solo ski trip. Confirmed: Business Classic Reward SYD→MEL→NRT on 8 Feb. Everything else is planned from research done 13 Sep 2026; prices marked est. need checking when booking."
   },
@@ -19,31 +19,41 @@
       "items": [
         {
           "id": "a1",
-          "time": "08:00",
+          "time": "06:00",
           "type": "transfer",
           "title": "Drive Gympie → Brisbane Airport",
           "status": "planned",
           "location": "Bruce Hwy, ~167 km, about 1h45",
-          "notes": "Book AIRPARK online beforehand (free shuttle every 10-15 min to the domestic terminal). Leaving at 8 puts you at the terminal by ~10:15, an hour and a bit before an 11:30 flight even with Bruce Highway delays."
+          "notes": "Book AIRPARK online beforehand (free shuttle every 10-15 min to the domestic terminal). Leaving at 6 puts you at the terminal by ~8:00. Jetstar check-in opens 2 h before and bag drop closes 40 min before departure (9:05), so 8:00-8:15 is the target."
         },
         {
           "id": "a2",
-          "time": "11:30",
+          "time": "09:45",
           "type": "flight",
-          "title": "Qantas Brisbane → Sydney (to be booked)",
-          "status": "idea",
-          "location": "BNE domestic → SYD T3",
-          "endTime": "14:05",
-          "notes": "Departs 11:30 Queensland time, lands about 2:05pm Sydney time (Sydney is an hour ahead in February). Book on a QF flight number so bags through-check to Narita and you land at T3, the same terminal as QF481. Aim to land by 3pm Sydney time at the latest. Tip: check in online for QF481 the day before; its Business boarding pass gets you into the T3 Business Lounge the moment you land. Cost lives in Flights & points."
+          "title": "JQ815 Brisbane → Sydney (booked, Classic Reward)",
+          "status": "booked",
+          "location": "BNE domestic → SYD T2",
+          "endTime": "12:20",
+          "notes": "Jetstar, economy Classic Reward. Departs 9:45 Queensland time, lands 12:20 Sydney time (Sydney is an hour ahead in February). Six hours of buffer before QF481. Bags are NOT checked through to Narita on Jetstar: you collect them in Sydney. Reward bookings include a 20 kg bag but the confirmation sometimes shows 0 kg; check it."
+        },
+        {
+          "id": "a2b",
+          "time": "12:35",
+          "type": "transfer",
+          "title": "Collect bag, walk T2 → T3, re-check bag with Qantas for QF481",
+          "status": "planned",
+          "location": "Sydney T2 baggage hall → covered walkway (7 min) → T3 Qantas bag drop",
+          "endTime": "13:15",
+          "notes": "Qantas accepts domestic bags from about 6 hours before departure, so from 12:30 you are fine. Check in for QF481 online the day before (24 h out) so you only need the bag drop. Then security and up to the lounge. If the bag drop refuses the bag early, wait landside at the T3 cafes until it opens; the lounge is airside."
         },
         {
           "id": "a3",
-          "time": "14:00",
+          "time": "13:20",
           "type": "activity",
           "title": "Qantas Domestic Business Lounge, Sydney T3",
           "status": "planned",
           "location": "Opposite gates 4-5, up the escalator, left door",
-          "notes": "Your Business ticket gets you in. Bags should already be checked through, so you stay airside. Shower, eat, charge everything."
+          "notes": "Your Business ticket (QF481 boarding pass) gets you in. Five hours: shower, eat lightly (the Melbourne First Lounge dinner is better), charge everything, download offline maps."
         },
         {
           "id": "a4",
@@ -166,6 +176,16 @@
           "cost": 3000,
           "currency": "JPY",
           "notes": "Ask the desk for “takkyubin to this address” (show the Nozawa lodging’s name and address in Japanese, kept in Notes). Two days is the standard lead time, so sending Tuesday means it is waiting Thursday. Keep a daypack with two days of clothes, USJ tickets and Friday’s ski base layers. Confirm beforehand that the lodging accepts parcels (most do)."
+        },
+        {
+          "id": "b6c",
+          "time": "16:15",
+          "type": "activity",
+          "title": "Nintendo OSAKA store (optional, 45 min)",
+          "status": "idea",
+          "location": "Daimaru Umeda 13F, 5 min walk from JR Osaka Station",
+          "endTime": "17:00",
+          "notes": "The official Nintendo store, exclusive merchandise, quieter than the USJ shops on Wednesday. Open 10:00-20:00. Borrowed from your friend’s Tokyo list (theirs was the Shibuya Parco store)."
         },
         {
           "id": "b7",
@@ -778,6 +798,21 @@
   "flights": {
     "confirmed": [
       {
+        "id": "jq815",
+        "flight": "JQ815",
+        "from": "Brisbane domestic",
+        "to": "Sydney T2",
+        "date": "2027-02-08",
+        "arrDate": "2027-02-08",
+        "dep": "09:45",
+        "arr": "12:20",
+        "cabin": "Economy",
+        "aircraft": "A320/A321",
+        "duration": "1h35",
+        "notes": "Jetstar, Economy Classic Reward (about 5,700 pts + taxes). Separate booking from the Business reward, so not protected, but 6 hours of buffer. Bags not through-checked: collect at T2, re-check at T3.",
+        "cashAud": 27
+      },
+      {
         "id": "qf481",
         "flight": "QF481",
         "from": "Sydney T3",
@@ -811,9 +846,25 @@
       {
         "id": "leg-feeder",
         "name": "Home to Sydney, Mon 8 Feb",
-        "chosenOptionId": "opt-qf-bne",
-        "notes": "This is a separate ticket from the Business reward, so it is not protected if it runs late. Pick a Qantas (QF) flight so bags check through and you arrive at T3, and land by 3pm Sydney time. Brisbane has ~18 Qantas departures a day as fallback; Sunshine Coast has 3.",
+        "chosenOptionId": "opt-jq815",
+        "notes": "BOOKED: Jetstar JQ815 as a Classic Reward, landing 12:20 with six hours to spare. Being Jetstar it lands at T2 and the bag has to be collected and re-checked at T3, which the 6-hour buffer absorbs easily. Other options are kept below for the record.",
         "options": [
+          {
+            "id": "opt-jq815",
+            "rank": 0,
+            "label": "Jetstar JQ815 Brisbane → Sydney (BOOKED)",
+            "route": "BNE → SYD T2",
+            "date": "2027-02-08",
+            "dep": "09:45",
+            "arr": "12:20",
+            "duration": "1h35",
+            "cashAud": 0,
+            "priceNote": "booked on points",
+            "points": 5700,
+            "pointsTaxAud": 27,
+            "status": "booked",
+            "notes": "Economy Classic Reward. 20 kg bag should be included; confirm on the booking. Lands T2; walk 7 min to T3 and re-check the bag with Qantas."
+          },
           {
             "id": "opt-qf-bne",
             "rank": 1,
@@ -827,7 +878,7 @@
             "priceNote": "A$95-365 range; est. mid",
             "points": 9200,
             "pointsTaxAud": 58,
-            "status": "planned",
+            "status": "skip",
             "notes": "Recommended. Park at BNE AIRPARK (A$109 for 8 days). With QF62 landing at BNE on the way home, this is the cheapest and simplest overall. 11:30 Queensland time → ~2:05pm Sydney time (AEDT): 4+ hours of buffer and lounge. Any QF flight landing before 3pm Sydney time works."
           },
           {
@@ -843,7 +894,7 @@
             "priceNote": "from ~A$130",
             "points": 9200,
             "pointsTaxAud": 58,
-            "status": "idea",
+            "status": "skip",
             "notes": "1 h from Gympie, parking ~A$90 for 8 days, no tolls. But if QF903 is cancelled the next Qantas flight lands after QF481 has gone, and the homeward flight lands at Brisbane, so you would need a A$55-85 shuttle back to the car. Times shown in Sydney time (AEDT)."
           },
           {
@@ -857,7 +908,7 @@
             "duration": "1h45",
             "cashAud": 90,
             "priceNote": "from ~A$67 + bag",
-            "status": "idea",
+            "status": "skip",
             "notes": "Cheapest fare, but arrives T2: collect bags, walk 7 min to T3, re-check, re-screen. No through-checking to Narita."
           },
           {
@@ -872,7 +923,7 @@
             "cashAud": 150,
             "points": 9200,
             "pointsTaxAud": 58,
-            "status": "idea",
+            "status": "skip",
             "notes": "Lowest risk if you insist on MCY: a whole day of fallback options. Long day in Sydney though (8+ hours in the lounge)."
           }
         ]
@@ -986,10 +1037,10 @@
         "notes": "Confirmed: your two passes are Qantas Money Titanium First Lounge invitations, which are valid at the Sydney, Melbourne and Los Angeles First Lounges when you are flying on a QF or JQ flight number. Use ONE here: escalator near gates 9-10 up to level 3, show the invitation in the Qantas app. Sit-down dining (the Neil Perry menu), spa if you book on arrival, showers. The second pass cannot be used on this trip (Narita has no Qantas First Lounge and you leave Sydney from the domestic terminal), so keep it for a later international departure. Third-party listings put closing at 10:15-11:15pm; be at the gate by 10:45pm. Invitations are cardholder-only and expire, so check the expiry date in the app now."
       },
       {
-        "airport": "Brisbane domestic (Mon 8 Feb morning)",
-        "lounge": "Qantas Club or Domestic Business Lounge",
+        "airport": "Brisbane domestic (Mon 8 Feb, ~8:15-9:15am)",
+        "lounge": "Qantas Club (via a Titanium card Qantas Club invitation)",
         "access": "maybe",
-        "notes": "Two routes in. (1) If your two passes turn out to be ordinary General/Domestic invitations, this is the one place on the trip they are useful: they open the Qantas Club here before an economy feeder. (2) Qantas/oneworld rule: Business passengers connecting the same day to a long-haul oneworld flight can use the Business Lounge before the domestic sector regardless of cabin; on a separate ticket that is at the agent’s discretion, so show the QF49 itinerary and ask nicely."
+        "notes": "The Titanium card also gives two Qantas Club / International Business Lounge invitations a year, separate from the First Lounge ones. Qantas Club access is normally allowed when flying a Jetstar (JQ) domestic flight, so one of those invitations should open the Brisbane Qantas Club for an hour before JQ815. Check the invitation type in the app; it is a nice-to-have, not a plan."
       },
       {
         "airport": "Sunshine Coast (MCY)",
@@ -1390,9 +1441,22 @@
     {
       "id": "ck6",
       "group": "Points and bookings",
-      "text": "Book the Brisbane → Sydney feeder on a QF flight landing by 3pm AEDT (cash ~A$140 or 9,200 pts + A$58)",
-      "due": "2026-10-20",
-      "notes": "Same day, separate ticket. Consider the 9,200-point reward if you still have plenty left after the homeward booking."
+      "text": "Book the Brisbane → Sydney feeder",
+      "due": "2026-09-13",
+      "done": true,
+      "notes": "Done: JQ815, 8 Feb, 09:45-12:20, Classic Reward."
+    },
+    {
+      "id": "ck6b",
+      "group": "Points and bookings",
+      "text": "Check the JQ815 booking shows a 20 kg checked bag (reward bookings include one, but the confirmation sometimes shows 0 kg); add a bag if not",
+      "due": "2026-09-30"
+    },
+    {
+      "id": "ck6c",
+      "group": "Before you go",
+      "text": "Check in online for QF481 the day before (24 h out) so Sydney is bag-drop only",
+      "due": "2027-02-07"
     },
     {
       "id": "ck7",
@@ -1635,6 +1699,14 @@
       "notes": "Old lanes, small cafes, 10 min from Umeda."
     },
     {
+      "id": "p25",
+      "name": "Nintendo OSAKA (Daimaru Umeda 13F)",
+      "kind": "other",
+      "town": "Osaka",
+      "lat": 34.702,
+      "lng": 135.498
+    },
+    {
       "id": "p19",
       "name": "Fukushima (Osaka) dining street",
       "kind": "food",
@@ -1781,14 +1853,13 @@
     {
       "id": "q3",
       "question": "Park at Brisbane or Sunshine Coast?",
-      "why": "Sunshine Coast is closer (1 h vs 1h45) and parking is ~A$20 cheaper, but it has only 3 Qantas flights a day (a cancellation of the midday one leaves nothing that beats your 6:30pm departure) and the flight home lands at Brisbane, so you would pay A$55-85 and 2 hours for a shuttle back to the car. Brisbane wins once the return is counted.",
+      "why": "Decided by the booking: JQ815 departs Brisbane, and QF62 lands there. AIRPARK for 8-16 Feb.",
       "options": [
-        "Brisbane: AIRPARK ~A$109, QF feeder with ~18 daily fallbacks, land straight at the car on 16 Feb (planned)",
-        "Sunshine Coast: ~A$90 parking, QF903 at 12:15 or the 7am QF905, then shuttle from Brisbane on the way home"
+        "Brisbane (booked)"
       ],
-      "recommendation": "Brisbane. It is cheaper overall and it protects the Business reward ticket, which is the most valuable thing in this trip.",
-      "answer": "",
-      "resolved": false
+      "recommendation": "Brisbane.",
+      "answer": "Brisbane. JQ815 booked 8 Feb 09:45.",
+      "resolved": true
     },
     {
       "id": "q4",
@@ -1830,13 +1901,14 @@
     },
     {
       "id": "q7",
-      "question": "Fly home Monday 15 or Tuesday 16 Feb?",
-      "why": "Monday keeps to “about a week” and lands you home Tuesday morning. Tuesday gives a full quiet Monday on the slopes (the emptiest day) and a relaxed trip to Narita, one more night of lodging (~A$150) and a day of leave.",
+      "question": "Fly home Monday 15 or Tuesday 16 Feb? (each extra day costs about A$660 in lost income plus ~A$250 on the ground)",
+      "why": "The trip is transit-heavy: of the 9 calendar days from Mon 8 to Tue 16, four are mostly travel (8, 9, 15, 16). Flying Monday leaves USJ, Narai, two full ski days, Togakushi and a Monday morning ski: about A$3,400 cash plus 7 lost workdays (~A$4,600) for 5 real days, roughly A$1,600 per real day. Each added day costs ~A$900 all-in and buys a full quiet ski day, so it lowers the average. Two extra days is where it stops making sense for a one-week trip.",
       "options": [
-        "Mon 15 Feb, QF62 21:45 (planned)",
-        "Tue 16 Feb, same flight, with a Monday ski day and a Narita airport hotel"
+        "Mon 15 Feb, QF62 21:45: 7 workdays lost, 2 full ski days + Monday morning (planned)",
+        "Tue 16 Feb: 8 workdays lost, +A$900, adds a full quiet Monday on the slopes (recommended if the reward seat shows on the 16th, and worth it either way)",
+        "Wed 17 Feb: 9 workdays lost, +A$1,800, adds Monday and Tuesday skiing"
       ],
-      "recommendation": "Monday, unless the Business reward only shows on Tuesday, in which case take Tuesday and enjoy the extra ski day.",
+      "recommendation": "Tuesday 16. It fixes the one weak spot in the plan (only two full ski days) for less than the trip’s average daily cost. Search the reward seat for both dates when the points land and let availability break the tie.",
       "answer": "",
       "resolved": false
     },
