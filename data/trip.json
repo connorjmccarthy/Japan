@@ -5,7 +5,7 @@
     "end": "2027-02-17",
     "homeCurrency": "AUD",
     "jpyPerAud": 108,
-    "updatedAt": "2026-09-13T23:32:31.401Z",
+    "updatedAt": "2026-09-13T23:32:32.853Z",
     "version": 1,
     "about": "Solo ski trip. Confirmed: JQ815 BNE→SYD and the Business Classic Reward SYD→MEL→NRT on 8 Feb. Home Tue 16 Feb on QF80 + QF1256 (booked). Everything else is planned from research done 13 Sep 2026; prices marked est. need checking when booking."
   },
@@ -1829,7 +1829,7 @@
     ]
   },
   "variants": {
-    "active": "ski",
+    "active": "culture",
     "list": [
       {
         "id": "ski",
