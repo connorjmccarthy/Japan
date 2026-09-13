@@ -4,6 +4,8 @@ import { sheet, form, toast, confirmDialog, section, empty } from '../ui.js';
 export function render(root, { store }) {
   const food = store.trip.food || [];
   root.append(el('div', { class: 'page-head' }, el('div', {}, el('h2', { class: 'page-title' }, 'Food'), el('p', { class: 'page-sub' }, 'Local, everyday, unfussy. Tick things off as you eat them.')), el('div', { class: 'page-actions' }, el('button', { class: 'btn btn-primary btn-sm', type: 'button', onClick: () => editFood(store, null) }, '+ Add'))));
+  const guide = store.trip.foodGuide || [];
+  if (guide.length) root.append(section('Eating well without overstepping', ...guide.map((g) => el('details', { class: 'acc' }, el('summary', {}, g.title), el('div', { class: 'acc-body prose' }, el('p', {}, g.body))))));
   if (!food.length) { root.append(empty('Nothing here yet')); return; }
   const groups = groupBy(food, (f) => f.town || 'Anywhere');
   for (const [town, list] of Object.entries(groups)) {

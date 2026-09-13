@@ -5,7 +5,7 @@
     "end": "2027-02-16",
     "homeCurrency": "AUD",
     "jpyPerAud": 108,
-    "updatedAt": "2026-09-13T04:30:36Z",
+    "updatedAt": "2026-09-13T07:38:41Z",
     "version": 1,
     "about": "Solo ski trip. Confirmed: Business Classic Reward SYD→MEL→NRT on 8 Feb. Everything else is planned from research done 13 Sep 2026; prices marked est. need checking when booking."
   },
@@ -68,10 +68,10 @@
           "id": "a6",
           "time": "21:00",
           "type": "activity",
-          "title": "Qantas International Business Lounge, Melbourne T2",
+          "title": "Qantas International First Lounge, Melbourne T2 (Titanium pass)",
           "status": "planned",
-          "location": "Airside, level 1",
-          "notes": "Business ticket covers this. The First Lounge (level 3) is NOT covered by a Business ticket; only use it if your passes show as Titanium or Platinum One in the Qantas app. Be at the gate by ~10:45pm."
+          "location": "Airside, level 3, escalator near gates 9-10",
+          "notes": "Use one of your two Titanium First Lounge invitations here (show it in the Qantas app). Proper restaurant dining, so skip the Sydney lounge food and eat here. Be at the gate by ~10:45pm. Fallback if anything goes wrong with the pass: the International Business Lounge on level 1 is covered by the ticket."
         },
         {
           "id": "a7",
@@ -155,6 +155,17 @@
           "status": "planned",
           "location": "See Stays for the shortlist",
           "notes": "Solo, private room. Business hotels around Fukushima or Tenma are quiet, cheap and 15-25 min from USJ by train."
+        },
+        {
+          "id": "b6b",
+          "time": "15:20",
+          "type": "transfer",
+          "title": "Send the suitcase ahead to Nozawa by Yamato courier (takkyubin)",
+          "status": "planned",
+          "location": "Hotel front desk",
+          "cost": 3000,
+          "currency": "JPY",
+          "notes": "Ask the desk for “takkyubin to this address” (show the Nozawa lodging’s name and address in Japanese, kept in Notes). Two days is the standard lead time, so sending Tuesday means it is waiting Thursday. Keep a daypack with two days of clothes, USJ tickets and Friday’s ski base layers. Confirm beforehand that the lodging accepts parcels (most do)."
         },
         {
           "id": "b7",
@@ -262,15 +273,15 @@
     {
       "id": "d0211",
       "date": "2027-02-11",
-      "title": "Osaka → Nozawa Onsen (public holiday)",
+      "title": "Osaka → Narai-juku (Edo post town) → Nozawa Onsen",
       "base": "Nozawa Onsen",
-      "notes": "National Foundation Day. Trains are busy, so reserve seats a month ahead. Route avoids Tokyo: Osaka → Nagoya by Shinkansen, then the Shinano limited express through the mountains to Nagano.",
+      "notes": "National Foundation Day, so reserve every seat a month ahead. The Shinano express runs straight through the Kiso valley, so this is the day to see rural Japan for free: hop off at Kiso-Fukushima, ride one local stop to Narai-juku, walk the 1 km Edo-period street in the snow, then carry on to Nagano. Travel hands-free: the suitcase goes ahead by courier from Osaka (see Tuesday).",
       "items": [
         {
           "id": "e1",
           "time": "08:00",
           "type": "transfer",
-          "title": "Check out, to Shin-Osaka",
+          "title": "Check out (daypack only), to Shin-Osaka",
           "status": "planned",
           "location": "Shin-Osaka",
           "cost": 300,
@@ -292,90 +303,114 @@
           "id": "e3",
           "time": "10:00",
           "type": "train",
-          "title": "Limited Express Shinano Nagoya → Nagano",
+          "title": "Limited Express Shinano Nagoya → Kiso-Fukushima",
           "status": "planned",
           "location": "Nagoya, Chuo line platforms",
-          "endTime": "13:00",
-          "cost": 7660,
+          "endTime": "11:25",
+          "cost": 6000,
           "currency": "JPY",
-          "notes": "~2h55, hourly, reserved seat. Through the Kiso valley, one of the prettiest train rides in Japan. Sit on the left for the river."
+          "notes": "Reserved seat on the holiday. Sit on the left for the Kiso river. Buy the ticket through to Nagano with a break at Kiso-Fukushima, or two tickets; either is fine."
         },
         {
           "id": "e4",
-          "time": "13:10",
-          "type": "food",
-          "title": "Shinshu soba and oyaki at Nagano Station",
+          "time": "11:45",
+          "type": "train",
+          "title": "Local train Kiso-Fukushima → Narai",
           "status": "planned",
-          "location": "Nagano Station, MIDORI building",
-          "cost": 1400,
+          "location": "Kiso-Fukushima, Chuo line local (about every hour)",
+          "endTime": "12:05",
+          "cost": 330,
           "currency": "JPY",
-          "notes": "Nagano’s two staples in one stop. Oyaki are the grilled buns filled with nozawana or pumpkin."
+          "notes": "20 minutes. Check the local timetable when you reserve the Shinano so the connection is short."
         },
         {
           "id": "e5",
-          "time": "14:10",
+          "time": "12:10",
+          "type": "activity",
+          "title": "Narai-juku: the best-preserved post town on the old Nakasendo road",
+          "status": "planned",
+          "location": "Narai station → 1 km of Edo-period wooden inns and shops",
+          "endTime": "14:30",
+          "cost": 0,
+          "currency": "JPY",
+          "notes": "A working village, not a theme park: lacquerware workshops, a sake shop, temples up the side lanes, snow on the eaves. Narai station has no lockers but a ¥300 bag-minding desk (8:30-16:00) if you are carrying anything. Lunch here: soba or gohei-mochi (grilled rice cake with walnut-miso), the Kiso valley specialty. The Kiso Ohashi bridge and Kamidonya museum are worth 20 minutes."
+        },
+        {
+          "id": "e6",
+          "time": "13:00",
+          "type": "food",
+          "title": "Gohei-mochi and Kiso soba in Narai",
+          "status": "planned",
+          "location": "Any shop on the main street with a menu outside",
+          "cost": 1500,
+          "currency": "JPY"
+        },
+        {
+          "id": "e7",
+          "time": "14:40",
+          "type": "train",
+          "title": "Local train Narai → Shiojiri, then Shinano Shiojiri → Nagano",
+          "status": "planned",
+          "location": "Narai station",
+          "endTime": "16:35",
+          "cost": 4500,
+          "currency": "JPY",
+          "notes": "Local 25 min to Shiojiri, change to the Shinano (about hourly) for ~65 min to Nagano. Reserve the Shiojiri → Nagano seat too."
+        },
+        {
+          "id": "e8",
+          "time": "17:00",
           "type": "train",
           "title": "Hokuriku Shinkansen Nagano → Iiyama",
           "status": "planned",
           "location": "Nagano Station",
-          "endTime": "14:25",
+          "endTime": "17:12",
           "cost": 1500,
           "currency": "JPY",
-          "notes": "12 minutes. The Nozawa Onsen Liner bus leaves about 10 min after each Shinkansen arrival."
+          "notes": "12 minutes. The Nozawa Onsen Liner leaves about 10 min after each Shinkansen."
         },
         {
-          "id": "e6",
-          "time": "14:40",
+          "id": "e9",
+          "time": "17:25",
           "type": "bus",
           "title": "Nozawa Onsen Liner → Nozawa Onsen",
           "status": "planned",
           "location": "Iiyama Station, bus stop out the front",
-          "endTime": "15:05",
+          "endTime": "17:50",
           "cost": 600,
           "currency": "JPY",
-          "notes": "25 min. Taxi is the fallback (¥6,000-7,000)."
+          "notes": "25 min. Taxi is the fallback (¥6,000-7,000). Tell the lodging you arrive about 6pm so dinner is held."
         },
         {
-          "id": "e7",
-          "time": "15:15",
+          "id": "e10",
+          "time": "18:00",
           "type": "stay",
           "title": "Check in, Nozawa Onsen (4 nights)",
           "status": "planned",
           "location": "See Stays",
-          "notes": "Then straight to a rental shop to get fitted so the morning is not wasted."
+          "notes": "Your suitcase should be waiting (sent by courier on Tuesday). If it is not, the daypack has tomorrow’s ski layers."
         },
         {
-          "id": "e8",
-          "time": "16:00",
-          "type": "activity",
-          "title": "Ski rental fitting",
+          "id": "e11",
+          "time": "18:30",
+          "type": "food",
+          "title": "Ryokan dinner (or Wakagiri if no meals booked)",
           "status": "planned",
-          "location": "Village rental shop (see Notes)",
-          "cost": 17800,
+          "location": "Lodging / main street",
+          "cost": 3000,
           "currency": "JPY",
-          "notes": "4 days x ¥4,450 standard set (skis, boots, poles) at a village shop; the resort’s own shop is ¥5,500/day. Rental ski wear is available if you want to travel light."
+          "notes": "Ryokan dinners are served at a fixed time; say so at check-in. If you are eating out, Wakagiri is the local favourite for a home-style set meal."
         },
         {
-          "id": "e9",
-          "time": "17:00",
+          "id": "e12",
+          "time": "20:00",
           "type": "activity",
           "title": "Oyu, the main public bathhouse",
           "status": "planned",
           "location": "Centre of the village",
           "cost": 0,
           "currency": "JPY",
-          "notes": "13 free soto-yu bathhouses run by the village. Oyu is the famous wooden one. Bring a small towel, wash first, and expect it hot."
-        },
-        {
-          "id": "e10",
-          "time": "18:30",
-          "type": "food",
-          "title": "Dinner at Wakagiri or the ryokan",
-          "status": "planned",
-          "location": "Main street",
-          "cost": 3000,
-          "currency": "JPY",
-          "notes": "Wakagiri is the local favourite for a home-style set meal. If the ryokan includes dinner, take it: that is the ryokan experience."
+          "notes": "13 free soto-yu bathhouses run by the village. Wash first, no towel in the water, keep it quiet, no photos. Bring a small towel; expect it hot."
         }
       ]
     },
@@ -386,6 +421,17 @@
       "base": "Nozawa Onsen",
       "notes": "Thursday was a stand-alone public holiday, so Friday is the comparatively quiet day before the weekend crowd arrives. Be on the Nagasaka gondola at opening (8:30) and head to Yamabiko at the top.",
       "items": [
+        {
+          "id": "f0",
+          "time": "07:45",
+          "type": "activity",
+          "title": "Ski rental fitting (pre-booked, 4 days)",
+          "status": "planned",
+          "location": "Village rental shop",
+          "cost": 17800,
+          "currency": "JPY",
+          "notes": "4 days x ¥4,450 standard set (skis, boots, poles) at a village shop; the resort shop is ¥5,500/day. Book online in January with your boot size in cm: big sizes (29 cm+) run out in peak weeks. Ski wear can be rented too."
+        },
         {
           "id": "f1",
           "time": "08:15",
@@ -437,7 +483,7 @@
       "date": "2027-02-13",
       "title": "Ski Nozawa, day 2",
       "base": "Nozawa Onsen",
-      "notes": "Busiest day of the weekend. Early start again, or skin/hike the quieter Karasawa side. Night skiing on Hikage runs on selected nights; check the board.",
+      "notes": "Saturday of the long weekend: busy, so early start. Karasawa and Paradise are quieter than the gondola-top runs. Night skiing on Hikage runs on selected nights; check the board. Rental gear is easiest to fit first thing Friday, so plan on being at the shop when it opens.",
       "items": [
         {
           "id": "g1",
@@ -486,58 +532,133 @@
     {
       "id": "d0214",
       "date": "2027-02-14",
-      "title": "Ski Nozawa, day 3",
+      "title": "Rural day: Togakushi shrine in the snow, then Zenko-ji",
       "base": "Nozawa Onsen",
-      "notes": "Sunday. Lift lines ease after 2pm as the Tokyo crowd heads home.",
+      "notes": "Sunday is the most crowded ski day of the trip (long-weekend Tokyo crowd), so it is the cheapest day to give up. Togakushi is a mountain shrine village above Nagano: a 2 km avenue of 400-year-old cedars leading to the inner shrine, all under deep snow in February, plus the soba the village is famous for. Back via Zenko-ji, one of Japan’s great temples. If it is dumping powder on Sunday morning, swap this for skiing and call the day a rest instead; the ski item below is kept as the alternative.",
       "items": [
         {
           "id": "h1",
-          "time": "08:15",
-          "type": "ski",
-          "title": "Nozawa Onsen Snow Resort, full day",
+          "time": "08:05",
+          "type": "bus",
+          "title": "Nozawa Onsen Liner → Iiyama, Shinkansen → Nagano",
           "status": "planned",
-          "location": "Nagasaka gondola",
-          "endTime": "16:00",
-          "cost": 8000,
-          "currency": "JPY"
+          "location": "Village bus stop → Iiyama → Nagano",
+          "endTime": "09:05",
+          "cost": 2100,
+          "currency": "JPY",
+          "notes": "Check the Liner and Shinkansen times the night before; Sunday services are the same as weekdays."
         },
         {
           "id": "h2",
-          "time": "12:30",
-          "type": "food",
-          "title": "Mountain lunch",
+          "time": "09:30",
+          "type": "bus",
+          "title": "Alpico bus 70 Nagano Station → Togakushi",
           "status": "planned",
-          "location": "On mountain",
-          "cost": 500,
-          "currency": "JPY"
+          "location": "Nagano Station east side, bus stop 7",
+          "endTime": "10:35",
+          "cost": 1450,
+          "currency": "JPY",
+          "notes": "About 60 min to Chusha (middle shrine). In winter a separate winter service stops at the Okusha entrance; if the bus you are on does not, get off at Chusha and walk up the road ~30 min or take a taxi. The Zenko-ji & Togakushi 1-day bus ticket (Alpico) covers the whole day’s buses and is cheaper than singles."
         },
         {
           "id": "h3",
-          "time": "16:30",
+          "time": "10:40",
           "type": "activity",
-          "title": "Onsen, then stroll the temple (Kenmeiji) and the fire festival site",
+          "title": "Okusha cedar avenue and inner shrine",
           "status": "planned",
-          "location": "Village",
+          "location": "Okusha entrance → Zuishinmon gate → Okusha",
+          "endTime": "13:00",
           "cost": 0,
-          "currency": "JPY"
+          "currency": "JPY",
+          "notes": "20 min flat walk through the cedars to the red Zuishinmon gate, then a steeper 20-30 min to the inner shrine, all on packed snow. Bring or buy simple crampons (Workman or Don Quijote sell them for ~¥1,500) and waterproof boots; ski gloves and shell are perfect. Quiet, no ropes, no gates: this is the rural Japan you asked for."
         },
         {
           "id": "h4",
-          "time": "18:30",
+          "time": "13:15",
           "type": "food",
-          "title": "Last dinner: oyaki and a nabe hotpot",
+          "title": "Togakushi soba at Chusha",
+          "status": "planned",
+          "location": "Around Chusha (middle shrine): Uzuraya is the famous one, several quieter shops nearby",
+          "cost": 1600,
+          "currency": "JPY",
+          "notes": "Togakushi soba is served in small “bocchi” bundles on a bamboo tray. Order zaru, add the local wasabi. Cash."
+        },
+        {
+          "id": "h5",
+          "time": "14:10",
+          "type": "activity",
+          "title": "Chusha shrine and the ninja museum village (optional)",
+          "status": "planned",
+          "location": "Chusha",
+          "endTime": "15:00",
+          "cost": 0,
+          "currency": "JPY",
+          "notes": "Chusha has an 800-year-old triple cedar at its gate. Skip the ninja stuff unless it amuses you."
+        },
+        {
+          "id": "h6",
+          "time": "15:10",
+          "type": "bus",
+          "title": "Bus 70 Togakushi → Zenko-ji (Daimon stop)",
+          "status": "planned",
+          "location": "Chusha bus stop",
+          "endTime": "16:05",
+          "cost": 1300,
+          "currency": "JPY",
+          "notes": "Get off at Zenkoji Daimon, not the station. Last buses back down are around 17:00-18:00; check the winter timetable."
+        },
+        {
+          "id": "h7",
+          "time": "16:10",
+          "type": "activity",
+          "title": "Zenko-ji temple at dusk",
+          "status": "planned",
+          "location": "Zenko-ji, Nagano",
+          "endTime": "17:00",
+          "cost": 600,
+          "currency": "JPY",
+          "notes": "1,400-year-old temple, the reason Nagano exists. Walk the main hall, do the pitch-black “kaidan meguri” tunnel under the altar to touch the key to paradise (¥600). The approach street (Nakamise) has oyaki and miso shops."
+        },
+        {
+          "id": "h8",
+          "time": "17:15",
+          "type": "train",
+          "title": "Nagano → Iiyama → Nozawa Onsen",
+          "status": "planned",
+          "location": "Nagano Station (15 min walk or bus from Zenko-ji)",
+          "endTime": "18:40",
+          "cost": 2100,
+          "currency": "JPY"
+        },
+        {
+          "id": "h9",
+          "time": "19:00",
+          "type": "food",
+          "title": "Last Nozawa dinner: oyaki, nozawana and a nabe hotpot",
           "status": "planned",
           "location": "Village",
           "cost": 3000,
           "currency": "JPY"
         },
         {
-          "id": "h5",
-          "time": "20:00",
+          "id": "h10",
+          "time": "20:30",
           "type": "note",
           "title": "Pack; return rental gear tonight if the shop allows, or first thing tomorrow",
           "status": "planned",
           "location": "Lodging"
+        },
+        {
+          "id": "h11",
+          "time": "08:15",
+          "type": "ski",
+          "title": "ALTERNATIVE if it is a powder day: ski Nozawa instead",
+          "status": "skip",
+          "location": "Nagasaka gondola",
+          "endTime": "16:00",
+          "cost": 8000,
+          "currency": "JPY",
+          "notes": "Marked as skipped so it stays out of the budget. Flip the status to Planned and set the Togakushi items to Skipped if you choose to ski. Sunday lift lines ease after 2pm."
         }
       ]
     },
@@ -859,10 +980,10 @@
         "notes": "Airside, level 1. Covered by the Business ticket. Melbourne Airport lists a 10:15pm Monday close, but Qantas says lounges stay open until the last departure and Monday QF49 is a new service from Dec 2026: re-check the hours in January and be at the gate by 10:45pm regardless."
       },
       {
-        "airport": "Melbourne T2, First Lounge (level 3)",
+        "airport": "Melbourne T2, First Lounge (level 3), Mon 8 Feb ~9pm-10:45pm",
         "lounge": "Qantas International First Lounge",
-        "access": "maybe",
-        "notes": "NOT included with a Business ticket. Only First Class passengers, Platinum/Platinum One, oneworld Emerald and holders of “Titanium” (Qantas Money Titanium card) or “Platinum One” lounge invitations get in. Open the Qantas app → Complimentary Lounge Invitations and check the type of your two passes. If they say Domestic or General they are Qantas Club / Business Lounge passes, which add nothing on this trip (keep them for another time). Third-party listings put closing at 10:15-11:15pm."
+        "access": "yes",
+        "notes": "Confirmed: your two passes are Qantas Money Titanium First Lounge invitations, which are valid at the Sydney, Melbourne and Los Angeles First Lounges when you are flying on a QF or JQ flight number. Use ONE here: escalator near gates 9-10 up to level 3, show the invitation in the Qantas app. Sit-down dining (the Neil Perry menu), spa if you book on arrival, showers. The second pass cannot be used on this trip (Narita has no Qantas First Lounge and you leave Sydney from the domestic terminal), so keep it for a later international departure. Third-party listings put closing at 10:15-11:15pm; be at the gate by 10:45pm. Invitations are cardholder-only and expire, so check the expiry date in the app now."
       },
       {
         "airport": "Brisbane domestic (Mon 8 Feb morning)",
@@ -884,6 +1005,24 @@
       }
     ]
   },
+  "foodGuide": [
+    {
+      "title": "How to tell a place is happy to have you",
+      "body": "Green lights: a menu or prices visible outside, a ticket machine (ramen, soba, gyudon), plastic food models, a photo or English menu, a listing on Tabelog, staff who call “irasshaimase” when the door opens, and any yakiniku, okonomiyaki, udon or soba shop. Nozawa, Tenma, Fukushima, Tsuruhashi and Narai are all used to visitors; you are not intruding."
+    },
+    {
+      "title": "When to bow out",
+      "body": "A sign reading 一見さんお断り (ichigen-san okotowari, “first-timers not accepted”) or 会員制 (members only); a tiny “snack” bar with a hostess and no price list; a six-seat counter where every seat is a regular and the master does not look up. Being turned away is not an insult: a small bow, “sumimasen”, and try the next door. That system is mostly Kyoto tea-house culture anyway; Osaka standing bars welcome anyone who orders a drink."
+    },
+    {
+      "title": "Manners that matter more than language",
+      "body": "Order a drink first, then food. The small dish that arrives unasked (otoshi) is a cover charge, not a mistake. One drink and a couple of plates, then move on when it is crowded; angle your body to make room at a standing bar. Cash out, no tipping ever. No photos of other customers or the counter without a nod from the master. “Oishii” and “gochisosama deshita” (thanks for the meal) on the way out go a long way."
+    },
+    {
+      "title": "Onsen and ryokan",
+      "body": "Shoes off at the genkan, slippers off on tatami. Ryokan dinner is at a set time; be there. In the bathhouses: wash sitting down before you get in, no towel in the water, no swimwear, quiet, no phones. Tattoos: Nozawa’s village bathhouses are relaxed but cover-up stickers are cheap insurance if you have visible ink."
+    }
+  ],
   "points": {
     "balance": 170000,
     "availableFrom": "2026-10-15",
@@ -1312,8 +1451,9 @@
     {
       "id": "ck15",
       "group": "Before you go",
-      "text": "Book ski rental online (village shop) for 12-15 Feb, include ski wear if you are travelling light",
-      "due": "2027-01-15"
+      "text": "Book ski rental online (village shop) for Fri 12, Sat 13 and Mon 15 Feb with your boot size in cm; include ski wear if travelling light",
+      "due": "2027-01-15",
+      "notes": "Big boot sizes run out in peak weeks. Pick a shop that opens by 7:45 so Friday is not lost."
     },
     {
       "id": "ck16",
@@ -1350,6 +1490,38 @@
       "group": "In Japan",
       "text": "Tax-free shopping is now a refund at the airport (from Nov 2026): pay the 10% tax at the till, keep receipts and passport scans, and allow time at Narita to claim it back on Nintendo World or Osaka souvenirs",
       "due": "2027-02-15"
+    },
+    {
+      "id": "ck24",
+      "group": "Before you go",
+      "text": "Open the Qantas app → Complimentary Lounge Invitations and confirm the Titanium First Lounge invitations show with an expiry after 8 Feb 2027",
+      "due": "2026-09-30",
+      "notes": "They renew each card anniversary. If the current pair expires before February, the next pair will be issued on the anniversary; check which."
+    },
+    {
+      "id": "ck25",
+      "group": "Points and bookings",
+      "text": "Ask the Nozawa lodging (when booking) whether they accept a courier parcel before arrival, and get their address in Japanese for the takkyubin slip",
+      "due": "2026-10-31"
+    },
+    {
+      "id": "ck26",
+      "group": "Points and bookings",
+      "text": "Reserve the Shinano seats Nagoya → Kiso-Fukushima and Shiojiri → Nagano for Thu 11 Feb, plus the local train times to and from Narai",
+      "due": "2027-01-11",
+      "notes": "Holiday Thursday: reserved seats go. The local Chuo line runs roughly hourly, so match the connections when you book."
+    },
+    {
+      "id": "ck27",
+      "group": "Before you go",
+      "text": "Buy simple strap-on crampons (or plan to buy at Workman/Don Quijote in Osaka) for the Togakushi snow walk",
+      "due": "2027-02-01"
+    },
+    {
+      "id": "ck28",
+      "group": "In Japan",
+      "text": "Saturday night: check Sunday’s weather. Powder dump = ski; anything else = Togakushi. Check the Alpico winter bus 70 timetable for the first bus and the last bus back",
+      "due": "2027-02-13"
     },
     {
       "id": "ck21",
@@ -1481,6 +1653,42 @@
       "notes": "Tsuruichi (1949), Aji Yoshi, Horumon Sora."
     },
     {
+      "id": "p21",
+      "name": "Narai-juku",
+      "kind": "town",
+      "town": "Kiso valley",
+      "lat": 35.967,
+      "lng": 137.81,
+      "notes": "Edo-period post town on the Nakasendo. Bag-minding at the station ¥300."
+    },
+    {
+      "id": "p22",
+      "name": "Kiso-Fukushima Station",
+      "kind": "station",
+      "town": "Kiso valley",
+      "lat": 35.842,
+      "lng": 137.693,
+      "notes": "Shinano stops here; change to the local train for Narai."
+    },
+    {
+      "id": "p23",
+      "name": "Togakushi Okusha (inner shrine) entrance",
+      "kind": "other",
+      "town": "Togakushi",
+      "lat": 36.762,
+      "lng": 138.087,
+      "notes": "Start of the cedar avenue; winter bus stop."
+    },
+    {
+      "id": "p24",
+      "name": "Zenko-ji temple",
+      "kind": "other",
+      "town": "Nagano",
+      "lat": 36.6617,
+      "lng": 138.1876,
+      "notes": "Get off bus 70 at Zenkoji Daimon."
+    },
+    {
       "id": "p12",
       "name": "Nagoya Station",
       "kind": "station",
@@ -1599,14 +1807,14 @@
     {
       "id": "q5",
       "question": "What are the two “first class lounge passes”, exactly?",
-      "why": "On a Business ticket you already get the Sydney T3 Business Lounge and the Melbourne International Business Lounge. The Melbourne First Lounge only opens to Titanium (Qantas Money Titanium card) or Platinum One invitations. Ordinary lounge invitations from a credit card or Points Club are Qantas Club / Business Lounge passes and would be wasted on this trip.",
+      "why": "Answered: they are Qantas Money Titanium card First Lounge invitations. Valid at the Sydney, Melbourne and LA First Lounges on a QF/JQ flight, cardholder only.",
       "options": [
-        "Titanium or Platinum One invitations: use one at Melbourne T2 First Lounge on 8 Feb (level 3, escalator near gates 9-10)",
-        "General or Domestic invitations: keep them for a future economy trip"
+        "Use one at Melbourne T2 First Lounge on 8 Feb",
+        "Second one is unusable on this trip; keep it"
       ],
-      "recommendation": "Check the type in the Qantas app under Complimentary Lounge Invitations and note the expiry.",
-      "answer": "",
-      "resolved": false
+      "recommendation": "Use one in Melbourne on 8 Feb; check the expiry in the Qantas app.",
+      "answer": "Titanium credit card passes. One will be used in Melbourne; the other saved.",
+      "resolved": true
     },
     {
       "id": "q6",
@@ -1641,6 +1849,32 @@
         "Make the repo private (Settings → General → Danger zone). Pages on private repos needs GitHub Pro."
       ],
       "recommendation": "Keep public for now and use the vault; revisit if you want to store confirmation emails in the repo.",
+      "answer": "",
+      "resolved": false
+    },
+    {
+      "id": "q10",
+      "question": "Give up Sunday’s skiing for Togakushi and Zenko-ji, or fly home Tuesday to keep three full ski days?",
+      "why": "You asked for a rural day and said a ski day could go. Narai-juku is now built into Thursday’s travel day at no cost. Sunday is the worst ski day (long-weekend crowds), so it is the cheapest one to trade for Togakushi’s cedar avenue and Zenko-ji. That leaves Friday, Saturday and Monday morning on skis. Flying home Tuesday 16 instead would add a full quiet Monday on the slopes for about A$150 of lodging plus a day of leave.",
+      "options": [
+        "Sunday rural day, Monday morning ski, fly Mon 15 (planned)",
+        "Sunday rural day and fly Tue 16 so Monday is a full ski day",
+        "Keep skiing Sunday; rural Japan is just the Narai stop on Thursday"
+      ],
+      "recommendation": "As planned, with the powder-day escape hatch: if Sunday dawns dumping, ski and skip Togakushi.",
+      "answer": "",
+      "resolved": false
+    },
+    {
+      "id": "q11",
+      "question": "Which rural stop, if you want a different one?",
+      "why": "Alternatives to Togakushi from Nozawa: Obuse (30 min from Nagano by Nagaden train, chestnut sweets, the Hokusai museum, sake brewery, old streets; easy and flat) or a dawn visit to Zenko-ji’s o-asaji morning service. Shirakawa-go’s farmhouses are the postcard but are 4+ hours each way from Nozawa and heavily touristed; not worth it on this trip. Matsumoto castle is a city.",
+      "options": [
+        "Togakushi + Zenko-ji (planned): mountain shrine, cedars, soba, snow walk",
+        "Obuse + Zenko-ji: gentler, indoor-heavy, good if the weather is foul",
+        "Nothing beyond Narai"
+      ],
+      "recommendation": "Togakushi, with Obuse as the bad-weather substitute.",
       "answer": "",
       "resolved": false
     },
