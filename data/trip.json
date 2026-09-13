@@ -5,7 +5,7 @@
     "end": "2027-02-16",
     "homeCurrency": "AUD",
     "jpyPerAud": 108,
-    "updatedAt": "2026-09-13T04:21:37Z",
+    "updatedAt": "2026-09-13T04:30:36Z",
     "version": 1,
     "about": "Solo ski trip. Confirmed: Business Classic Reward SYD→MEL→NRT on 8 Feb. Everything else is planned from research done 13 Sep 2026; prices marked est. need checking when booking."
   },
@@ -33,8 +33,8 @@
           "title": "Qantas Brisbane → Sydney (to be booked)",
           "status": "idea",
           "location": "BNE domestic → SYD T3",
-          "endTime": "13:30",
-          "notes": "Book on a QF flight number so bags through-check to Narita and you land at T3, the same terminal as QF481. Aim to land in Sydney by 3pm AEDT at the latest. Cost lives in Flights & points."
+          "endTime": "14:05",
+          "notes": "Departs 11:30 Queensland time, lands about 2:05pm Sydney time (Sydney is an hour ahead in February). Book on a QF flight number so bags through-check to Narita and you land at T3, the same terminal as QF481. Aim to land by 3pm Sydney time at the latest. Tip: check in online for QF481 the day before; its Business boarding pass gets you into the T3 Business Lounge the moment you land. Cost lives in Flights & points."
         },
         {
           "id": "a3",
@@ -202,7 +202,7 @@
           "title": "Be at the gates before official opening",
           "status": "planned",
           "location": "USJ main entrance",
-          "notes": "Posted opening is usually 9:00 in February but the park regularly opens 30-60 min early. Being there by 7:45 matters if you are relying on the free timed-entry ticket."
+          "notes": "Posted opening is usually 9:00-9:30 in February but the park regularly opens 30-60 min early. Being there by 7:45 matters if you are relying on the free timed-entry ticket. Log into the USJ app the night before and make sure the eSIM has data: the timed-entry ticket is app-only (since Jan 2026) and needs signal at the gate."
         },
         {
           "id": "c3",
@@ -244,11 +244,12 @@
           "title": "Rest of the park: Jurassic Park, Harry Potter area, Jaws",
           "status": "planned",
           "location": "USJ",
-          "notes": "Single Rider lines are the solo traveller’s cheat code and are free."
+          "endTime": "19:00",
+          "notes": "Single Rider lines are the solo traveller’s cheat code and are free. February weekdays historically close around 7pm, so the day is shorter than summer: front-load Nintendo World."
         },
         {
           "id": "c7",
-          "time": "19:00",
+          "time": "19:45",
           "type": "food",
           "title": "Okonomiyaki dinner back in town",
           "status": "planned",
@@ -383,7 +384,7 @@
       "date": "2027-02-12",
       "title": "Ski Nozawa, day 1",
       "base": "Nozawa Onsen",
-      "notes": "Friday of the long weekend. Be on the Nagasaka gondola at opening (8:30) and head to Yamabiko at the top; crowds build from 10.",
+      "notes": "Thursday was a stand-alone public holiday, so Friday is the comparatively quiet day before the weekend crowd arrives. Be on the Nagasaka gondola at opening (8:30) and head to Yamabiko at the top.",
       "items": [
         {
           "id": "f1",
@@ -699,14 +700,14 @@
             "route": "BNE → SYD T3",
             "date": "2027-02-08",
             "dep": "11:30",
-            "arr": "13:30",
-            "duration": "1h30",
+            "arr": "14:05",
+            "duration": "1h35",
             "cashAud": 140,
             "priceNote": "A$95-365 range; est. mid",
             "points": 9200,
             "pointsTaxAud": 58,
             "status": "planned",
-            "notes": "Recommended. Park at BNE AIRPARK (A$109 for 8 days). With QF62 landing at BNE on the way home, this is the cheapest and simplest overall. Lands Sydney 13:30 AEDT: 5 hours of buffer and lounge."
+            "notes": "Recommended. Park at BNE AIRPARK (A$109 for 8 days). With QF62 landing at BNE on the way home, this is the cheapest and simplest overall. 11:30 Queensland time → ~2:05pm Sydney time (AEDT): 4+ hours of buffer and lounge. Any QF flight landing before 3pm Sydney time works."
           },
           {
             "id": "opt-qf-mcy",
@@ -865,9 +866,9 @@
       },
       {
         "airport": "Brisbane domestic (Mon 8 Feb morning)",
-        "lounge": "Qantas Domestic Business Lounge",
+        "lounge": "Qantas Club or Domestic Business Lounge",
         "access": "maybe",
-        "notes": "Qantas/oneworld rule: Business passengers connecting the same day to a long-haul oneworld flight can use the lounge before the domestic sector regardless of that sector’s cabin. On a separate ticket this is at the agent’s discretion; show the QF49 itinerary and ask nicely."
+        "notes": "Two routes in. (1) If your two passes turn out to be ordinary General/Domestic invitations, this is the one place on the trip they are useful: they open the Qantas Club here before an economy feeder. (2) Qantas/oneworld rule: Business passengers connecting the same day to a long-haul oneworld flight can use the Business Lounge before the domestic sector regardless of cabin; on a separate ticket that is at the agent’s discretion, so show the QF49 itinerary and ask nicely."
       },
       {
         "airport": "Sunshine Coast (MCY)",
@@ -1208,7 +1209,7 @@
       "amount": 12800,
       "currency": "JPY",
       "status": "estimate",
-      "notes": "Nintendo-inclusive Express Pass 4 variants (e.g. “Mine Cart & Jaws”) were ~¥12,800 in 2026; Express Pass 7 ¥17,800-21,800. Guarantees area entry plus Mario Kart and the Donkey Kong mine cart without the timed-entry scramble. Sells out on popular dates."
+      "notes": "Nintendo-inclusive Express Pass 4 variants (e.g. “Mine Cart & Jaws”) were ~¥12,800 in 2026; Express Pass 7 ¥17,800-21,800. Names change every season: buy any Express Pass whose description includes “Super Nintendo World Area Entry” (ideally with Mario Kart and Mine-Cart Madness). Sells out on popular dates."
     }
   ],
   "checklist": [
@@ -1293,7 +1294,7 @@
       "group": "Before you go",
       "text": "Install eSIM (Ubigi ~US$14 for 10 GB/7 days, or Airalo) and set up Welcome Suica Mobile (iPhone) or plan to buy a physical Welcome Suica at Narita (Android)",
       "due": "2027-01-31",
-      "notes": "Suica works in Osaka (ICOCA area) and Nagano too. Google Wallet on non-Japanese Android phones generally cannot hold Suica. Top up with Mastercard/Amex in Apple Wallet; some Visa cards fail."
+      "notes": "Suica works in Osaka (ICOCA area) and Nagano too. Google Wallet on non-Japanese Android phones generally cannot hold Suica; the physical Welcome Suica is cash top-up only and expires after 28 days, which is fine for this trip. Top up with Mastercard/Amex in Apple Wallet; some Visa cards fail."
     },
     {
       "id": "ck13",
@@ -1343,6 +1344,12 @@
       "group": "In Japan",
       "text": "Keep the N’EX round-trip ticket somewhere safe for the trip back to Narita",
       "due": "2027-02-09"
+    },
+    {
+      "id": "ck23",
+      "group": "In Japan",
+      "text": "Tax-free shopping is now a refund at the airport (from Nov 2026): pay the 10% tax at the till, keep receipts and passport scans, and allow time at Narita to claim it back on Nintendo World or Osaka souvenirs",
+      "due": "2027-02-15"
     },
     {
       "id": "ck21",
