@@ -2,12 +2,12 @@
   "meta": {
     "title": "Japan 2027",
     "start": "2027-02-08",
-    "end": "2027-02-16",
+    "end": "2027-02-17",
     "homeCurrency": "AUD",
     "jpyPerAud": 108,
-    "updatedAt": "2026-09-13T11:30:56Z",
+    "updatedAt": "2026-09-13T11:41:40Z",
     "version": 1,
-    "about": "Solo ski trip. Confirmed: Business Classic Reward SYD→MEL→NRT on 8 Feb. Everything else is planned from research done 13 Sep 2026; prices marked est. need checking when booking."
+    "about": "Solo ski trip. Confirmed: JQ815 BNE→SYD and the Business Classic Reward SYD→MEL→NRT on 8 Feb. Home Tue 16 Feb (QF62 preferred, QF80 + QF1258 fallback). Everything else is planned from research done 13 Sep 2026; prices marked est. need checking when booking."
   },
   "days": [
     {
@@ -405,7 +405,7 @@
           "id": "e10",
           "time": "18:00",
           "type": "stay",
-          "title": "Check in, Nozawa Onsen (4 nights)",
+          "title": "Check in, Nozawa Onsen (5 nights)",
           "status": "planned",
           "location": "See Stays",
           "notes": "Your suitcase should be waiting (sent by courier on Tuesday). If it is not, the daypack has tomorrow’s ski layers."
@@ -685,12 +685,71 @@
     {
       "id": "d0215",
       "date": "2027-02-15",
-      "title": "Quiet Monday morning ski, then home via Tokyo",
-      "base": "Overnight flight",
-      "notes": "Monday morning is the emptiest the mountain will be all trip. Two hours of skiing, then a comfortable run to Narita for a 9:45pm departure.",
+      "title": "Ski Nozawa, day 3 (the quiet Monday)",
+      "base": "Nozawa Onsen",
+      "notes": "The long-weekend crowd went home last night. This is the emptiest the mountain will be all trip, which is exactly why the trip now ends Tuesday.",
       "items": [
         {
           "id": "i1",
+          "time": "08:15",
+          "type": "ski",
+          "title": "Nozawa Onsen Snow Resort, full day",
+          "status": "planned",
+          "location": "Nagasaka gondola",
+          "endTime": "16:00",
+          "cost": 8000,
+          "currency": "JPY",
+          "notes": "Special Pack again. Skyline top to bottom with nobody on it; Yamabiko trees if it snowed overnight."
+        },
+        {
+          "id": "i2",
+          "time": "12:30",
+          "type": "food",
+          "title": "Mountain lunch",
+          "status": "planned",
+          "location": "On mountain",
+          "cost": 500,
+          "currency": "JPY"
+        },
+        {
+          "id": "i3",
+          "time": "16:30",
+          "type": "activity",
+          "title": "Onsen, then pack most of the bag",
+          "status": "planned",
+          "location": "Village",
+          "cost": 0,
+          "currency": "JPY"
+        },
+        {
+          "id": "i4",
+          "time": "18:30",
+          "type": "food",
+          "title": "Last Nozawa dinner: basashi, nozawana, a nabe hotpot",
+          "status": "planned",
+          "location": "Village izakaya",
+          "cost": 3500,
+          "currency": "JPY"
+        },
+        {
+          "id": "i5",
+          "time": "20:30",
+          "type": "note",
+          "title": "Confirm tomorrow: Liner time, Shinkansen reservation, rental return, cash to settle the bill",
+          "status": "planned",
+          "location": "Lodging"
+        }
+      ]
+    },
+    {
+      "id": "d0216",
+      "date": "2027-02-16",
+      "title": "Morning ski, then home via Tokyo",
+      "base": "Overnight flight",
+      "notes": "Timed for the earlier of the two possible flights (QF80 at 19:20). If you end up on QF62 at 21:45 you have two more hours of slack and can ski until noon.",
+      "items": [
+        {
+          "id": "j1",
           "time": "08:30",
           "type": "ski",
           "title": "Short morning ski (optional)",
@@ -699,55 +758,63 @@
           "endTime": "10:45",
           "cost": 6000,
           "currency": "JPY",
-          "notes": "Only if the lodging lets you check out late and the rental shop opens early. A half-day/morning pass if offered, else skip and have a slow breakfast and one last onsen."
+          "notes": "Only if the lodging allows a late checkout and the rental shop opens early. Otherwise a slow breakfast and one last bathhouse."
         },
         {
-          "id": "i2",
-          "time": "11:30",
+          "id": "j2",
+          "time": "11:15",
+          "type": "note",
+          "title": "Return rental gear, check out, settle in cash",
+          "status": "planned",
+          "location": "Village"
+        },
+        {
+          "id": "j3",
+          "time": "12:00",
           "type": "bus",
           "title": "Nozawa Onsen Liner → Iiyama Station",
           "status": "planned",
           "location": "Village bus stop",
-          "endTime": "11:55",
+          "endTime": "12:25",
           "cost": 600,
           "currency": "JPY"
         },
         {
-          "id": "i3",
-          "time": "12:15",
+          "id": "j4",
+          "time": "12:45",
           "type": "train",
           "title": "Hokuriku Shinkansen Iiyama → Tokyo",
           "status": "planned",
           "location": "Iiyama Station",
-          "endTime": "14:10",
+          "endTime": "14:40",
           "cost": 8500,
           "currency": "JPY",
-          "notes": "~1h50."
+          "notes": "~1h50, reserve the seat (Hakutaka services stop at Iiyama roughly hourly)."
         },
         {
-          "id": "i4",
-          "time": "14:30",
+          "id": "j5",
+          "time": "15:00",
           "type": "train",
           "title": "Narita Express Tokyo → Narita T2",
           "status": "planned",
           "location": "Tokyo Station",
-          "endTime": "15:30",
+          "endTime": "16:00",
           "cost": 0,
           "currency": "JPY",
-          "notes": "Covered by the N’EX round trip ticket bought on day 1."
+          "notes": "Covered by the N’EX round trip ticket bought on day 1 (valid 14 days)."
         },
         {
-          "id": "i5",
-          "time": "16:00",
+          "id": "j6",
+          "time": "16:15",
           "type": "note",
-          "title": "Narita T2: check in (Qantas counters), drop bag",
+          "title": "Narita T2: check in, drop bag, tax-free refund counter if you shopped",
           "status": "planned",
           "location": "NRT T2",
-          "notes": "Check-in closes 60 min before departure. Plenty of buffer."
+          "notes": "QF80 check-in closes 18:20; QF62 closes 20:45."
         },
         {
-          "id": "i6",
-          "time": "18:00",
+          "id": "j7",
+          "time": "17:00",
           "type": "food",
           "title": "Dinner at Narita T2 food court",
           "status": "planned",
@@ -757,40 +824,40 @@
           "notes": "Tonkatsu or ramen; last Japanese meal."
         },
         {
-          "id": "i7",
-          "time": "21:45",
+          "id": "j8",
+          "time": "19:20",
           "type": "flight",
-          "title": "QF62 Narita → Brisbane (to be booked)",
+          "title": "Flight home: QF62 Narita → Brisbane 21:45 (preferred) or QF80 Narita → Melbourne 19:20 + QF1258 → Brisbane",
           "status": "idea",
-          "location": "NRT T2 → BNE international",
+          "location": "NRT T2",
           "endTime": "07:45",
-          "notes": "A330-300, ~9 h, lands 7:45am Tuesday. Two-class aircraft: there is no Premium Economy on this route. See Flights & points for the options."
+          "notes": "See Flights & points. Both are two-class A330s (no Premium Economy). QF62 is direct, later, cheaper in points and lands 07:45 Wed. QF80 + QF1258 lands Brisbane 11:35 Wed with a protected 2h35 change in Melbourne."
         }
       ]
     },
     {
-      "id": "d0216",
-      "date": "2027-02-16",
+      "id": "d0217",
+      "date": "2027-02-17",
       "title": "Land Brisbane, drive home",
       "base": "Home",
       "notes": "",
       "items": [
         {
-          "id": "j1",
+          "id": "k1",
           "time": "07:45",
           "type": "note",
-          "title": "Land Brisbane, immigration, bag",
+          "title": "Land Brisbane (QF62) or Melbourne (QF80: immigration, bag, domestic transfer desk, walk T2 → T1 for QF1258 at 10:20)",
           "status": "planned",
-          "location": "BNE international"
+          "location": "BNE or MEL"
         },
         {
-          "id": "j2",
+          "id": "k2",
           "time": "09:00",
           "type": "transfer",
           "title": "AIRPARK shuttle to the car, coffee, drive to Gympie",
           "status": "planned",
           "location": "BNE → Gympie, ~1h45",
-          "notes": "Do not drive tired. Get a proper coffee and breakfast at the airport first; the Bruce Highway is not the place to nod off."
+          "notes": "If on QF1258 this becomes 12:00. Either way: proper coffee and food first; do not drive tired."
         }
       ]
     }
@@ -930,7 +997,7 @@
       },
       {
         "id": "leg-home",
-        "name": "Japan to home, Mon 15 Feb",
+        "name": "Japan to home, Tue 16 Feb",
         "chosenOptionId": "opt-qf62-econ",
         "notes": "Big finding: the Brisbane flight (QF62) has no Premium Economy cabin at all, so “book economy and upgrade to PE” does not exist on it. The only Qantas Tokyo flight with PE is the 6:55am Haneda → Sydney. Realistic comfort upgrades: Economy Plus extra-legroom seats on the A330 (new from Sep 2026), or a Business Classic Reward if a seat appears. Points numbers marked “est.” are inferred from the Aug 2025 price rise; confirm on qantas.com when booking.",
         "options": [
@@ -939,7 +1006,7 @@
             "rank": 1,
             "label": "QF62 Narita → Brisbane, Economy Classic Reward",
             "route": "NRT → BNE",
-            "date": "2027-02-15",
+            "date": "2027-02-16",
             "dep": "21:45",
             "arr": "07:45",
             "duration": "~9h",
@@ -948,14 +1015,14 @@
             "points": 29000,
             "pointsTaxAud": 150,
             "status": "planned",
-            "notes": "Recommended if a reward seat shows for 15 or 16 Feb. ~29,000 pts (est.) + ~A$120-170 taxes (Japan’s departure tax tripled to ¥3,000 from July 2026, so ex-Japan taxes are a little higher than older guides say). Add Economy Plus (extra legroom, ~19,500 pts or ~A$100-150 cash on similar routes) for comfort. Lands straight into Brisbane where the car is."
+            "notes": "Recommended if a reward seat shows for Tue 16 Feb (try 17 too). ~29,000 pts (est.) + ~A$120-170 taxes (Japan’s departure tax tripled to ¥3,000 from July 2026, so ex-Japan taxes are a little higher than older guides say). Add Economy Plus (extra legroom, ~19,500 pts or ~A$100-150 cash on similar routes) for comfort. Lands straight into Brisbane where the car is."
           },
           {
             "id": "opt-qf62-bus",
-            "rank": 2,
+            "rank": 3,
             "label": "QF62 Narita → Brisbane, Business Classic Reward",
             "route": "NRT → BNE",
-            "date": "2027-02-15",
+            "date": "2027-02-16",
             "dep": "21:45",
             "arr": "07:45",
             "duration": "~9h",
@@ -968,10 +1035,10 @@
           },
           {
             "id": "opt-jq10",
-            "rank": 3,
+            "rank": 4,
             "label": "Jetstar JQ10 Narita → Brisbane, economy",
             "route": "NRT → BNE",
-            "date": "2027-02-15",
+            "date": "2027-02-16",
             "dep": "20:50",
             "arr": "06:45",
             "duration": "8h55",
@@ -984,10 +1051,10 @@
           },
           {
             "id": "opt-jq24",
-            "rank": 4,
+            "rank": 5,
             "label": "Jetstar JQ24 Osaka KIX → Brisbane (only if the trip is flipped to end in Osaka)",
             "route": "KIX → BNE",
-            "date": "2027-02-15",
+            "date": "2027-02-16",
             "dep": "21:45",
             "arr": "07:25",
             "duration": "8h45",
@@ -999,11 +1066,27 @@
             "notes": "Runs ~4x weekly; confirm Monday operates. Would let you do USJ on the last day and skip the Tokyo backtrack, at the cost of USJ on a Monday instead of Wednesday."
           },
           {
+            "id": "opt-qf80",
+            "rank": 2,
+            "label": "QF80 Narita → Melbourne 19:20 + QF1258 Melbourne → Brisbane 10:20 (one booking)",
+            "route": "NRT → MEL → BNE",
+            "date": "2027-02-16",
+            "dep": "19:20",
+            "arr": "11:35",
+            "duration": "10h25 + 2h35 change + 2h15",
+            "cashAud": 800,
+            "priceNote": "cash est.",
+            "points": 42000,
+            "pointsTaxAud": 170,
+            "status": "planned",
+            "notes": "The fallback if QF62 has no reward seat on the 16th. Priced on total distance, which tips into the next zone up, so more points than the direct flight (figure here is an estimate; Qantas shows the real one). 2h35 in Melbourne: immigration, bag, domestic transfer desk, T2 → T1 walk. Protected connection if on one booking. Lands Brisbane 11:35 Wed. One of the Titanium card’s Qantas Club invitations opens the T1 lounge for the wait."
+          },
+          {
             "id": "opt-qf26",
-            "rank": 5,
+            "rank": 6,
             "label": "QF26 Haneda → Sydney, the only flight with Premium Economy",
             "route": "HND → SYD",
-            "date": "2027-02-16",
+            "date": "2027-02-17",
             "dep": "06:55",
             "arr": "18:55",
             "duration": "~10h",
@@ -1049,10 +1132,16 @@
         "notes": "Small terminal, four eateries, free wifi."
       },
       {
-        "airport": "Narita T2 (Mon 15 Feb)",
+        "airport": "Narita T2 (Tue 16 Feb)",
         "lounge": "Economy: none. Business reward: JAL Sakura Lounge",
         "access": "no",
         "notes": "If you end up on the Business reward home, Qantas uses the JAL Sakura Lounge at Narita. In economy there is no lounge access; the 4F food court is good."
+      },
+      {
+        "airport": "Melbourne T1 domestic (Wed 17 Feb, only on the QF80 + QF1258 routing)",
+        "lounge": "Qantas Club via a Titanium card Qantas Club invitation",
+        "access": "maybe",
+        "notes": "Arriving international and connecting to a domestic economy flight gives no lounge on its own. The Titanium card’s Qantas Club invitations (two a year, separate from the First Lounge ones) should open the T1 Qantas Club for the 2h35 wait."
       }
     ]
   },
@@ -1132,10 +1221,10 @@
       "type": "Family-run minshuku, private room, shared bath",
       "status": "shortlist",
       "pricePerNightAud": 90,
-      "nights": 4,
+      "nights": 5,
       "priceNote": "from ~¥5,000 pp; single surcharge likely",
       "checkIn": "2027-02-11",
-      "checkOut": "2027-02-15",
+      "checkOut": "2027-02-16",
       "distance": "In the village, 5-10 min walk to Nagasaka gondola",
       "url": "https://nozawa-onsen.com/nozawa-accommodation/nozawa-onsen-ryokan-accommodation/",
       "notes": "Closest to the Banff-motel price point. Ask for a single tatami room with breakfast. The long-weekend dates fill first."
@@ -1147,10 +1236,10 @@
       "type": "Minshuku, private room",
       "status": "shortlist",
       "pricePerNightAud": 95,
-      "nights": 4,
+      "nights": 5,
       "priceNote": "from ~US$56; verify single rate",
       "checkIn": "2027-02-11",
-      "checkOut": "2027-02-15",
+      "checkOut": "2027-02-16",
       "distance": "Village centre",
       "url": "https://www.kayak.com/Nozawa-Onsen-Hotels-Minshuku-Kojima.2959745.ksp",
       "notes": "Simple, local-run, warm. Book by phone/email or via Booking.com."
@@ -1162,10 +1251,10 @@
       "type": "Ryokan, half board",
       "status": "planned",
       "pricePerNightAud": 165,
-      "nights": 4,
+      "nights": 5,
       "priceNote": "¥15,000-19,000 pp half board est.; verify",
       "checkIn": "2027-02-11",
-      "checkOut": "2027-02-15",
+      "checkOut": "2027-02-16",
       "distance": "5-8 min to the gondola",
       "url": "https://www.booking.com/",
       "notes": "Planned as the budget placeholder (about the Banff rate once dinner and breakfast are counted). A ryokan dinner is the local-cuisine experience you asked for, and it solves the solo-dinner question three nights out of four."
@@ -1177,10 +1266,10 @@
       "type": "Lodge, private room",
       "status": "idea",
       "pricePerNightAud": 150,
-      "nights": 4,
+      "nights": 5,
       "priceNote": "est.; verify",
       "checkIn": "2027-02-11",
-      "checkOut": "2027-02-15",
+      "checkOut": "2027-02-16",
       "distance": "Village",
       "url": "https://www.nozawaholidays.com/",
       "notes": "Easy English, good beds, but you will be surrounded by Australians. Fallback if the Japanese-run places are full."
@@ -1192,10 +1281,10 @@
       "type": "Onsen ryokan, per-person twin basis",
       "status": "idea",
       "pricePerNightAud": 80,
-      "nights": 4,
+      "nights": 5,
       "priceNote": "¥8,400-9,200 pp twin basis; single rate unknown",
       "checkIn": "2027-02-11",
-      "checkOut": "2027-02-15",
+      "checkOut": "2027-02-16",
       "distance": "Ski-in walk to Akakura Onsen lifts",
       "url": "https://joetsu-myoko.com/joetsu-myoko-accommodation/akakura-onsen-accommodation-hotels/",
       "notes": "Quieter and cheaper than Nozawa, more Japanese, 13-16 m of snow, smaller mountain. See Decisions."
@@ -1335,8 +1424,8 @@
     {
       "id": "bg1",
       "category": "Parking",
-      "label": "Brisbane Airport AIRPARK, 8 days",
-      "amount": 109,
+      "label": "Brisbane Airport AIRPARK, 9 days",
+      "amount": 119,
       "currency": "AUD",
       "status": "estimate",
       "notes": "A$99/week + A$10/day. Book online; sometimes cheaper than drive-up. MCY would be ~A$90 but needs a A$55-85 shuttle back from Brisbane on the way home."
@@ -1371,8 +1460,8 @@
     {
       "id": "bg5",
       "category": "Food",
-      "label": "Breakfasts, snacks, drinks, incidentals (¥3,000/day x 7)",
-      "amount": 21000,
+      "label": "Breakfasts, snacks, drinks, incidentals (¥3,000/day x 8)",
+      "amount": 24000,
       "currency": "JPY",
       "status": "estimate"
     },
@@ -1420,7 +1509,7 @@
     {
       "id": "ck3",
       "group": "Points and bookings",
-      "text": "Book Nozawa Onsen accommodation for 11-15 Feb (long weekend; the village sells out)",
+      "text": "Book Nozawa Onsen accommodation for 11-16 Feb, 5 nights (long weekend; the village sells out)",
       "due": "2026-09-30",
       "notes": "Email the minshuku directly for a single room, or Booking.com. Ask about single-occupancy pricing and whether dinner is included."
     },
@@ -1434,9 +1523,9 @@
     {
       "id": "ck5",
       "group": "Points and bookings",
-      "text": "Points land: book the homeward Classic Reward (QF62 NRT→BNE, or the best available option) as soon as the balance shows",
+      "text": "Points land: book the homeward Classic Reward for Tue 16 Feb (QF62 NRT→BNE first; QF80 + QF1258 via Melbourne as the fallback)",
       "due": "2026-10-16",
-      "notes": "Log in, search Use Points, one-way NRT→BNE 15 Feb (try 16 Feb too). If Business shows at 82,100 and you want it, take it; otherwise Economy Classic and add Economy Plus."
+      "notes": "Log in, search Use Points, one-way NRT→BNE 16 Feb. If Business shows at 82,100 and you want it, take it; otherwise Economy Classic and add Economy Plus. Only fall back to the Melbourne routing if QF62 has nothing."
     },
     {
       "id": "ck6",
@@ -1461,7 +1550,7 @@
     {
       "id": "ck7",
       "group": "Points and bookings",
-      "text": "Book Brisbane AIRPARK online for 8-16 Feb",
+      "text": "Book Brisbane AIRPARK online for 8-17 Feb",
       "due": "2026-11-30"
     },
     {
@@ -1483,7 +1572,7 @@
       "group": "Points and bookings",
       "text": "Reserve Shinkansen and Shinano seats (smart-EX for Tokyo↔Osaka, JR East site for Hokuriku), opens 1 month before each travel date",
       "due": "2027-01-09",
-      "notes": "9 Jan for the 9 Feb trains; 11 Jan for the 11 Feb trains; 15 Jan for the 15 Feb trains. Holiday Thursday trains fill."
+      "notes": "9 Jan for the 9 Feb trains; 11 Jan for the 11 Feb trains; 16 Jan for the 16 Feb trains. Holiday Thursday trains fill."
     },
     {
       "id": "ck11",
@@ -1515,7 +1604,7 @@
     {
       "id": "ck15",
       "group": "Before you go",
-      "text": "Book ski rental online (village shop) for Fri 12, Sat 13 and Mon 15 Feb with your boot size in cm; include ski wear if travelling light",
+      "text": "Book ski rental online (village shop) for Fri 12, Sat 13, Mon 15 and Tue 16 morning with your boot size in cm; include ski wear if travelling light",
       "due": "2027-01-15",
       "notes": "Big boot sizes run out in peak weeks. Pick a shop that opens by 7:45 so Friday is not lost."
     },
@@ -1553,7 +1642,7 @@
       "id": "ck23",
       "group": "In Japan",
       "text": "Tax-free shopping is now a refund at the airport (from Nov 2026): pay the 10% tax at the till, keep receipts and passport scans, and allow time at Narita to claim it back on Nintendo World or Osaka souvenirs",
-      "due": "2027-02-15"
+      "due": "2027-02-16"
     },
     {
       "id": "ck24",
@@ -1591,13 +1680,13 @@
       "id": "ck21",
       "group": "Coming home",
       "text": "Return rental gear; settle the lodging bill in cash if they do not take cards",
-      "due": "2027-02-15"
+      "due": "2027-02-16"
     },
     {
       "id": "ck22",
       "group": "Coming home",
-      "text": "QF62 check-in closes 8:45pm at Narita T2",
-      "due": "2027-02-15"
+      "text": "Narita T2 check-in closes 60 min before departure: 18:20 for QF80, 20:45 for QF62",
+      "due": "2027-02-16"
     }
   ],
   "places": [
@@ -1901,16 +1990,14 @@
     },
     {
       "id": "q7",
-      "question": "Fly home Monday 15 or Tuesday 16 Feb? (each extra day costs about A$660 in lost income plus ~A$250 on the ground)",
-      "why": "The trip is transit-heavy: of the 9 calendar days from Mon 8 to Tue 16, four are mostly travel (8, 9, 15, 16). Flying Monday leaves USJ, Narai, two full ski days, Togakushi and a Monday morning ski: about A$3,400 cash plus 7 lost workdays (~A$4,600) for 5 real days, roughly A$1,600 per real day. Each added day costs ~A$900 all-in and buys a full quiet ski day, so it lowers the average. Two extra days is where it stops making sense for a one-week trip.",
+      "question": "Fly home Monday 15 or Tuesday 16 Feb?",
+      "why": "Decided: Tuesday 16. Monday becomes a full quiet ski day; the extra day costs about A$900 all-in.",
       "options": [
-        "Mon 15 Feb, QF62 21:45: 7 workdays lost, 2 full ski days + Monday morning (planned)",
-        "Tue 16 Feb: 8 workdays lost, +A$900, adds a full quiet Monday on the slopes (recommended if the reward seat shows on the 16th, and worth it either way)",
-        "Wed 17 Feb: 9 workdays lost, +A$1,800, adds Monday and Tuesday skiing"
+        "Tue 16: QF62 direct 21:45 (preferred) or QF80 + QF1258 via Melbourne 19:20"
       ],
-      "recommendation": "Tuesday 16. It fixes the one weak spot in the plan (only two full ski days) for less than the trip’s average daily cost. Search the reward seat for both dates when the points land and let availability break the tie.",
-      "answer": "",
-      "resolved": false
+      "recommendation": "Search QF62 for the 16th first; QF80 + QF1258 is the fallback.",
+      "answer": "Tuesday 16 Feb.",
+      "resolved": true
     },
     {
       "id": "q8",
