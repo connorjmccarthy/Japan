@@ -5,7 +5,7 @@
     "end": "2027-02-17",
     "homeCurrency": "AUD",
     "jpyPerAud": 108,
-    "updatedAt": "2026-09-13T23:32:58.349Z",
+    "updatedAt": "2026-09-13T23:33:18.444Z",
     "version": 1,
     "about": "Solo ski trip. Confirmed: JQ815 BNE→SYD and the Business Classic Reward SYD→MEL→NRT on 8 Feb. Home Tue 16 Feb on QF80 + QF1256 (booked). Everything else is planned from research done 13 Sep 2026; prices marked est. need checking when booking."
   },
@@ -2451,7 +2451,8 @@
       "group": "Points and bookings",
       "text": "Keep a free AwardFares alert on QF62 NRT→BNE and QF80 NRT→MEL for 16 Feb 2027 (Business especially)",
       "due": "2026-09-20",
-      "notes": "Seats are released in batches. The paid Sale fare cannot be upgraded, but a Business Classic Reward could replace it if one appears and the Sale fare’s cancellation terms make it worthwhile (Sale fares are usually non-refundable, so probably not)."
+      "notes": "Seats are released in batches. The paid Sale fare cannot be upgraded, but a Business Classic Reward could replace it if one appears and the Sale fare’s cancellation terms make it worthwhile (Sale fares are usually non-refundable, so probably not).",
+      "done": true
     },
     {
       "id": "ck3",
