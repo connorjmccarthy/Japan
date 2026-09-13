@@ -5,7 +5,7 @@
     "end": "2027-02-17",
     "homeCurrency": "AUD",
     "jpyPerAud": 108,
-    "updatedAt": "2026-09-13T23:27:31.431Z",
+    "updatedAt": "2026-09-13T23:27:42.839Z",
     "version": 1,
     "about": "Solo ski trip. Confirmed: JQ815 BNE→SYD and the Business Classic Reward SYD→MEL→NRT on 8 Feb. Home Tue 16 Feb on QF80 + QF1256 (booked). Everything else is planned from research done 13 Sep 2026; prices marked est. need checking when booking."
   },
@@ -2548,13 +2548,15 @@
       "group": "Before you go",
       "text": "Install eSIM (Ubigi ~US$14 for 10 GB/7 days, or Airalo) and set up Welcome Suica Mobile (iPhone) or plan to buy a physical Welcome Suica at Narita (Android)",
       "due": "2027-01-31",
-      "notes": "Suica works in Osaka (ICOCA area) and Nagano too. Google Wallet on non-Japanese Android phones generally cannot hold Suica; the physical Welcome Suica is cash top-up only and expires after 28 days, which is fine for this trip. Top up with Mastercard/Amex in Apple Wallet; some Visa cards fail."
+      "notes": "Suica works in Osaka (ICOCA area) and Nagano too. Google Wallet on non-Japanese Android phones generally cannot hold Suica; the physical Welcome Suica is cash top-up only and expires after 28 days, which is fine for this trip. Top up with Mastercard/Amex in Apple Wallet; some Visa cards fail.",
+      "done": true
     },
     {
       "id": "ck13",
       "group": "Before you go",
       "text": "Re-check Melbourne T2 lounge hours for Monday nights (Business Lounge and, if your passes qualify, First Lounge)",
-      "due": "2027-01-31"
+      "due": "2027-01-31",
+      "done": true
     },
     {
       "id": "ck14",
