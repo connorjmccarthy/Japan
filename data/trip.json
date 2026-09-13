@@ -5,7 +5,7 @@
     "end": "2027-02-17",
     "homeCurrency": "AUD",
     "jpyPerAud": 108,
-    "updatedAt": "2026-09-13T13:23:59Z",
+    "updatedAt": "2026-09-13T23:27:31.431Z",
     "version": 1,
     "about": "Solo ski trip. Confirmed: JQ815 BNE→SYD and the Business Classic Reward SYD→MEL→NRT on 8 Feb. Home Tue 16 Feb on QF80 + QF1256 (booked). Everything else is planned from research done 13 Sep 2026; prices marked est. need checking when booking."
   },
@@ -2613,7 +2613,8 @@
       "group": "Before you go",
       "text": "Open the Qantas app → Complimentary Lounge Invitations and confirm the Titanium First Lounge invitations show with an expiry after 8 Feb 2027",
       "due": "2026-09-30",
-      "notes": "They renew each card anniversary. If the current pair expires before February, the next pair will be issued on the anniversary; check which."
+      "notes": "They renew each card anniversary. If the current pair expires before February, the next pair will be issued on the anniversary; check which.",
+      "done": true
     },
     {
       "id": "ck25",
