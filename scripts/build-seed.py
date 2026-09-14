@@ -32,7 +32,8 @@ days = [
     item('b6c', '16:15', 'activity', 'Nintendo OSAKA store (optional, 45 min)', location='Daimaru Umeda 13F, 5 min walk from JR Osaka Station', endTime='17:00', status='idea', notes='The official Nintendo store, exclusive merchandise, quieter than the USJ shops on Wednesday. Open 10:00-20:00. Borrowed from your friend’s Tokyo list (theirs was the Shibuya Parco store).'),
     item('b6d', '16:45', 'food', 'Grenier (Umeda): strawberry millefeuille or creme brulee', location='Hankyu Grand Building 1F, Kakudacho; 5 min walk from Daimaru Umeda', endTime='17:00', cost=900, currency='JPY', notes='French patisserie known for a very crisp, buttery millefeuille and rich custard. Takeaway counter with a few seats; 10:00-20:00. A five-minute detour on the way from Daimaru to the Nakazakicho lanes.'),
     item('b7', '17:00', 'activity', 'Walk Nakazakicho and Tenma', location='Nakazakicho (old wooden lanes) → Tenjinbashisuji shopping arcade → Tenma', notes='Low-key neighbourhoods a short train ride from Umeda. Tenjinbashisuji is 2.6 km of covered arcade where locals shop.'),
-    item('b8', '18:30', 'food', 'Dinner in Tenma: Gyoza Club Rock Lee, then the izakaya alleys', location='Gyoza Club Rock Lee, 2-1-3 Ikedacho, Kita-ku (Tenma / Minamimorimachi), then under the tracks at Tenma', cost=3500, currency='JPY', notes='Your pick. Small, loud gyoza bar a few minutes from Tenma station: crisp-bottomed gyoza, flaming mapo tofu, cheese and chilli-mayo variations; all-you-can-eat gyoza for ¥888 on weekdays with a reservation (Tuesday qualifies). Reserve on Tabelog or byFood a week or two out, or walk in early and expect a short wait. Afterwards a standing bar under the tracks for doteyaki (beef tendon simmered in miso). Early night; tomorrow starts at 7.'),
+    item('b7b', '17:45', 'food', 'Tuna at Harukoma (a few pieces at the counter)', location='Harukoma, 5-5-2 Tenjinbashi, inside the Tenjinbashisuji arcade near 6-chome', cost=1800, currency='JPY', notes='Osaka’s famous local sushi counter: slabs of fish cut thick, ¥100-500 a piece, mostly Osakans at the counter. Order akami, chutoro and otoro (lean, medium, fatty tuna) and stop there; gyoza is next. Expect a 20-40 min queue, it moves fast. Open 11:00-21:30. Point at the case if the menu defeats you.'),
+    item('b8', '18:30', 'food', 'Dinner in Tenma: Gyoza Club Rock Lee, then the izakaya alleys', location='Gyoza Club Rock Lee, 2-1-3 Ikedacho, Kita-ku (Tenma / Minamimorimachi), then under the tracks at Tenma', cost=3500, currency='JPY', notes='Your pick. Small, loud gyoza bar a few minutes from Harukoma: crisp-bottomed gyoza, flaming mapo tofu, cheese and chilli-mayo variations; all-you-can-eat gyoza for ¥888 on weekdays with a reservation (Tuesday qualifies). Reserve on Tabelog or byFood a week or two out, or walk in early and expect a short wait. Afterwards a standing bar under the tracks for doteyaki (beef tendon simmered in miso). Early night; tomorrow starts at 7.'),
   ]),
   dict(id='d0210', date='2027-02-10', title='Universal Studios Japan and Super Nintendo World', base='Osaka', notes='Wednesday is the calmest weekday in the window (Thursday is a public holiday, and the weekend follows). Buy the Studio Pass and an Express Pass that includes Super Nintendo World entry as soon as they go on sale for this date.', items=[
     item('c1', '07:00', 'train', 'Train to Universal City', location='Osaka Station platform 1 → Universal City (JR Yumesaki line, ~12 min direct)', cost=200, currency='JPY'),
@@ -41,7 +42,7 @@ days = [
     item('c4', '09:30', 'activity', 'Super Nintendo World: Mario Kart, Yoshi’s Adventure, Donkey Kong Country', location='Super Nintendo World', cost=4800, currency='JPY', notes='The ¥4,800 is the Power-Up Band (optional but it is the whole point of the key challenges and Bowser Jr boss fight). Ride Mario Kart first, then Donkey Kong’s Mine Cart, then wander.'),
     item('c5', '12:30', 'food', 'Kinopio’s Cafe (Toad’s cafe)', location='Super Nintendo World', cost=2500, currency='JPY', notes='Reserve in the app on the day if slots show. Otherwise Yoshi’s Snack Island for a quick bite.'),
     item('c6', '14:00', 'activity', 'Rest of the park: Jurassic Park, Harry Potter area, Jaws', location='USJ', endTime='19:00', notes='Single Rider lines are the solo traveller’s cheat code and are free. February weekdays historically close around 7pm, so the day is shorter than summer: front-load Nintendo World.'),
-    item('c7', '19:45', 'food', 'Okonomiyaki dinner back in town', location='A neighbourhood okonomiyaki counter near the hotel (see Food)', cost=1800, currency='JPY'),
+    item('c7', '19:30', 'food', 'Yakiniku with wagyu yukke (beef tartare) in Tsuruhashi', location='Tsuruhashi, Korea Town: Yakiniku Tsuruhashi or one of the counters by the station', cost=5000, currency='JPY', notes='Your beef tartare. Raw beef is only legal at licensed kitchens in Japan, so if yukke is on the menu it is the real thing: minced wagyu with egg yolk, sesame and soy. Order it first, then grilled cuts. About 35 min from Universal City (Loop Line to Tsuruhashi). If USJ has flattened you, the fallback is an okonomiyaki counter near the hotel.'),
   ]),
   dict(id='d0211', date='2027-02-11', title='Osaka → Narai-juku (Edo post town) → Nozawa Onsen', base='Nozawa Onsen', notes='National Foundation Day, so reserve every seat a month ahead. The Shinano express runs straight through the Kiso valley, so this is the day to see rural Japan for free: hop off at Kiso-Fukushima, ride one local stop to Narai-juku, walk the 1 km Edo-period street in the snow, then carry on to Nagano. Travel hands-free: the suitcase goes ahead by courier from Osaka (see Tuesday).', items=[
     item('e1', '08:00', 'transfer', 'Check out (daypack only), to Shin-Osaka', location='Shin-Osaka', cost=300, currency='JPY'),
@@ -178,8 +179,10 @@ food = [
   dict(id='fd8', town='Osaka', dish='Doteyaki and kushikatsu in Tenma', where='Izakaya alleys under the tracks at Tenma station', why='Beef tendon simmered in miso, and the deep-fried skewers Osaka is known for, in the part of town where office workers drink. No double dipping.', priceBand='¥'),
   dict(id='fd9', town='Osaka', dish='Takoyaki from a street stand', where='A stand with a queue of locals, not the ones with English menus', why='Octopus balls, Osaka’s thing. Eat them standing up, straight away.', priceBand='¥'),
   dict(id='fd10', town='Osaka', dish='Kitsune udon', where='Usami-tei Matsubaya (the shop that claims to have invented it, near Minami-Semba)', why='Udon in dashi with sweet fried tofu, Osaka’s soul food. Old shop, cheap.', priceBand='¥'),
-  dict(id='fd11', town='Osaka', dish='Yakiniku in Tsuruhashi (Korea Town)', where='Tsuruhashi station area', why='Osaka’s Korean neighbourhood; smoky yakiniku joints, nothing trendy about it. Good for a solo counter seat.', priceBand='¥¥'),
+  dict(id='fd11', town='Osaka', dish='Yakiniku and wagyu yukke (beef tartare) in Tsuruhashi (Korea Town)', where='Tsuruhashi station area; Yakiniku Tsuruhashi lists wagyu yukke', why='Osaka’s Korean neighbourhood; smoky yakiniku joints, nothing trendy about it. Yukke is the Japanese-Korean beef tartare and only licensed places may serve it, so a menu that has it is safe. Planned for the Wednesday night after USJ.', priceBand='¥¥', url='https://tabelog.com/en/osaka/A2701/A270205/27081829/'),
   dict(id='fd15', town='Osaka', dish='Kushikatsu at Yaekatsu (Shinsekai)', where='Shinsekai, a few doors from the famous Daruma', why='If you do go to Shinsekai, this is the locals’ pick over the tourist-famous Daruma. About ¥2,000 a head.', priceBand='¥'),
+  dict(id='fd19', town='Osaka', dish='Tuna at Harukoma', where='Tenjinbashisuji arcade, 5-chome', why='The tuna stop. Thick-cut akami, chutoro and otoro at a loud local counter for a few hundred yen a piece. On the Tuesday walk, before gyoza.', priceBand='¥'),
+  dict(id='fd20', town='Osaka', dish='Endo Sushi at the Central Fish Market (early option)', where='Osaka Central Wholesale Market, Noda; 5:00-14:00, closed Sundays and holidays', why='Since 1907, five pieces of whatever landed that morning, tuna included, eaten standing by the market. Only fits at 6:00 on the USJ morning (Noda is two stops from Universal City), which is earlier than you like, so it is an option, not the plan. Check the market’s calendar; some Wednesdays are market holidays.', priceBand='¥¥', url='https://tabelog.com/en/osaka/A2701/A270108/27002698/'),
   dict(id='fd17', town='Osaka', dish='Millefeuille at Grenier patisserie', where='Umeda branch, Hankyu Grand Building 1F (also Kitahama)', why='Strawberry millefeuille with a loud crunch and a rich custard; the pastry stop on the Tuesday afternoon between the Nintendo store and Nakazakicho.', priceBand='¥', url='https://mindtrip.ai/attraction/osaka/grenier-umeda-branch/at-973mTKFW'),
   dict(id='fd18', town='Osaka', dish='Wagyu burger at Kitan Hibiki (optional swap)', where='Hozenji Yokocho, 3 min from Namba station exit 14', why='Charcoal-grilled 100% wagyu burger, ranked in the World’s 101 Best Burgers. Only served 12:00-15:00 and 17:00-19:00, and it needs a reservation. The only slot is Wednesday evening straight from USJ, leaving the park by about 17:30, in place of the okonomiyaki dinner. Yakiniku the rest of the evening.', priceBand='¥¥¥', url='https://tabelog.com/en/osaka/A2701/A270202/27141837/'),
   dict(id='fd16', town='Osaka', dish='Fukushima izakaya under the tracks', where='Fukumaru-dori, one Loop Line stop from Osaka Station', why='A workers’ dining street lined with small izakaya and bars; a good alternative base for dinner if the hotel is around Fukushima.', priceBand='¥¥'),
@@ -360,7 +363,7 @@ B_ITEMS = {
     item('c15b', '09:45', 'activity', 'Option: Okuhida onsen villages (Hirayu Onsen, 1 h by bus)', location='Nohi bus from Takayama Bus Center', status='idea', notes='Open-air hot spring baths in the snow (Hirayu no Mori, ¥700), and the Shinhotaka Ropeway another 40 min on for a snow panorama of the Northern Alps. Back by dinner. About ¥5,000 in buses and baths.'),
     item('c15c', '09:45', 'activity', 'Option: Gero Onsen (1 h by train)', location='Hida express south', status='idea', notes='One of Japan’s “three great onsen”; a bathhouse pass (Yumeguri Tegata, ¥1,500) gets you into three of the ryokan baths. Riverside foot baths are free.'),
     item('c15d', '10:00', 'activity', 'Option: Takayama Jinya, Hida Folk Village, the Higashiyama temple walk', location='All in town', status='idea', notes='The only surviving Edo provincial government office (¥440); a hillside of relocated farmhouses (¥700); a quiet 3.5 km walk past a dozen temples above town.'),
-    item('c15e', '19:00', 'food', 'Last Takayama dinner: Hida beef properly, or sushi at a counter', location='Takayama', cost=4000, currency='JPY'),
+    item('c15e', '19:00', 'food', 'Last Takayama dinner: Hida beef properly (yakiniku, and yukke if it is on the menu)', location='Takayama: Ajikura Tengoku or Gyu-suke (both Hida beef yakiniku near the station)', cost=5000, currency='JPY', notes='Hida beef is the point of the town. Yakiniku lets you taste several cuts; several of the yakiniku places run a licensed raw menu (yukke with egg yolk, beef sashimi) that changes with supply, so ask. Book a counter seat a day ahead in February.'),
   ],
   '2027-02-16': [
     item('c16a', '08:30', 'note', 'Free morning, pack, check out', location='Takayama hub', notes='Breakfast at the hotel, a last walk to the river. Nothing to catch until 9:40.'),
@@ -369,9 +372,32 @@ B_ITEMS = {
     item('c16d', '14:30', 'train', 'Narita Express Tokyo → Narita T2', location='Tokyo Station', endTime='15:30', cost=0, currency='JPY', notes='Covered by the N’EX round-trip ticket bought on day 1.'),
   ],
 }
+# Walking estimates (steps; about 1,300 steps per km). Base values cover Plan A and the shared days;
+# B_WALK overrides them for Plan B.
+WALK = {
+  '2027-02-08': '6,000-8,000 steps (airports, the Melbourne terminal change)',
+  '2027-02-09': '12,000-15,000 steps (stations, Umeda, the Nakazakicho and Tenma walk)',
+  '2027-02-10': '18,000-25,000 steps (USJ; theme parks are long days on your feet)',
+  '2027-02-11': '10,000-12,000 steps (Narai post town and the transfers)',
+  '2027-02-12': '6,000-9,000 steps (ski boots on snow; walking is short)',
+  '2027-02-13': '6,000-9,000 steps (ski day)',
+  '2027-02-14': '12,000-15,000 steps (Togakushi cedar avenue and Zenko-ji)',
+  '2027-02-15': '6,000-9,000 steps (ski day)',
+  '2027-02-16': '6,000-8,000 steps (stations and Narita)',
+  '2027-02-17': '3,000-5,000 steps (Melbourne connection, then the drive)',
+}
+B_WALK = {
+  '2027-02-11': '12,000-15,000 steps (Okunoin is 2 km each way, plus the Garan; flat, may be icy)',
+  '2027-02-12': '8,000-10,000 steps (mostly trains; the old town in the evening)',
+  '2027-02-13': '10,000-13,000 steps (village lanes and the viewpoint climb, on packed snow)',
+  '2027-02-14': '8,000-12,000 steps (Hida Furukawa or the temple walk, your call)',
+  '2027-02-15': '8,000-15,000 steps (depends on the option: Hirayu is mostly bathing, town is mostly walking)',
+}
 for d in days:
+    if d['date'] in WALK: d['walk'] = WALK[d['date']]
     if d['date'] in B_DAYS:
         d['variants'] = {'culture': B_DAYS[d['date']]}
+        if d['date'] in B_WALK: d['variants']['culture']['walk'] = B_WALK[d['date']]
         for it in B_ITEMS.get(d['date'], []):
             it['variant'] = 'culture'; d['items'].append(it)
 
@@ -431,8 +457,8 @@ questions.insert(0, dict(id='q12', question='Plan A (ski) or Plan B (no skiing)?
 # ---- link itinerary items to map places (placeId) ---------------------------
 PLACE_OF = {
   'a1': 'p2', 'a2': 'p2', 'a2b': 'p4', 'a3': 'p4', 'a4': 'p4', 'a5': 'p5', 'a6': 'p5', 'a7': 'p5',
-  'b1': 'p6', 'b2': 'p6', 'b3': 'p7', 'b4': 'p7', 'b5': 'p8', 'b6': 'p27', 'b6b': 'p27', 'b6c': 'p25', 'b6d': 'p25', 'b7': 'p11', 'b8': 'p10',
-  'c1': 'p9', 'c2': 'p9', 'c3': 'p9', 'c4': 'p9', 'c5': 'p9', 'c6': 'p9', 'c7': 'p27',
+  'b1': 'p6', 'b2': 'p6', 'b3': 'p7', 'b4': 'p7', 'b5': 'p8', 'b6': 'p27', 'b6b': 'p27', 'b6c': 'p25', 'b6d': 'p25', 'b7': 'p11', 'b7b': 'p10', 'b8': 'p10', 'c7': 'p20',
+  'c1': 'p9', 'c2': 'p9', 'c3': 'p9', 'c4': 'p9', 'c5': 'p9', 'c6': 'p9',
   'e1': 'p8', 'e2': 'p12', 'e3': 'p22', 'e4': 'p21', 'e5': 'p21', 'e6': 'p21', 'e7': 'p21', 'e8': 'p13', 'e9': 'p14', 'e10': 'p15', 'e11': 'p15', 'e12': 'p15',
   'f0': 'p15', 'f1': 'p16', 'f2': 'p16', 'f3': 'p15', 'f4': 'p15',
   'g1': 'p16', 'g2': 'p16', 'g3': 'p15', 'g4': 'p15',

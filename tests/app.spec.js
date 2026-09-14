@@ -234,6 +234,16 @@ test.describe('day map', () => {
     await page.locator('.daymap-head').click();
     await expect(page.locator('.daymap-canvas')).toBeHidden();
   });
+
+  test('each day shows a walking estimate that follows the active plan', async ({ page, isMobile }) => {
+    await boot(page, '#/itinerary/2027-02-11');
+    await expect(page.locator('.day-walk')).toContainText('steps');
+    const text = await page.locator('.day-walk').textContent();
+    if (isMobile) await page.getByRole('button', { name: 'More' }).click();
+    await page.locator('#variant-switch').getByRole('button', { name: 'A: Ski' }).click();
+    await expect(page.locator('.day-walk')).not.toHaveText(text);
+    await expect(page.locator('.day-walk')).toContainText('Narai');
+  });
 });
 
 

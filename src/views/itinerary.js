@@ -39,6 +39,7 @@ export function render(root, { store, params, navigate }) {
       el('div', { class: 'day-meta' }, [day.base ? `Sleeping: ${day.base}` : 'No base set', items.length ? `${items.length} items` : 'Nothing planned yet', dayCost(items, trip.meta.jpyPerAud) ? `~${fmtMoney(dayCost(items, trip.meta.jpyPerAud))}` : ''].filter(Boolean).join(' · ')),
     ),
   );
+  if (day.walk) dayHead.firstChild.append(el('div', { class: 'day-meta day-walk' }, `🚶 ${day.walk}`));
   root.append(dayHead);
   root.append(dayMap(store, day, items, navigate));
   if (day.notes) root.append(el('div', { class: 'callout', style: { marginBottom: '12px' } }, el('span', { class: 'ico' }, '📝'), el('div', { html: linkify(day.notes) })));
@@ -134,6 +135,7 @@ function editDay(store, day, navigate) {
   const f = form([
     { name: 'title', label: 'Day title', value: day.title || '' },
     { name: 'base', label: 'Where you sleep tonight', value: day.base || '', placeholder: 'e.g. Nozawa Onsen' },
+    { name: 'walk', label: 'Walking estimate', value: day.walk || '', placeholder: 'e.g. 12,000-15,000 steps' },
     { name: 'notes', label: 'Day notes', type: 'textarea', value: day.notes || '' },
   ]);
   const av = activeVariant(store.trip);

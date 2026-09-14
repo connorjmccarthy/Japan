@@ -112,6 +112,6 @@ export const inVariant = (x, v) => !v || !x?.variant || x.variant === v;
 export const forVariant = (arr, v) => (arr || []).filter((x) => inVariant(x, v));
 export const dayView = (d, v) => {
   const o = (v && d.variants && d.variants[v]) || {};
-  return { ...d, title: o.title ?? d.title, base: o.base ?? d.base, notes: o.notes ?? d.notes, items: forVariant(d.items, v) };
+  return { ...d, title: o.title ?? d.title, base: o.base ?? d.base, notes: o.notes ?? d.notes, walk: o.walk ?? d.walk, items: forVariant(d.items, v) };
 };
 export const variantOptions = (t) => [['', 'Both plans'], ...variantList(t).map((x) => [x.id, x.name])];
