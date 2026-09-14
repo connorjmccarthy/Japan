@@ -353,6 +353,7 @@ button { cursor: pointer; }
 .tl-time { font-size: 13px; font-weight: 600; color: var(--text-2); text-align: right; padding-top: 7px; font-variant-numeric: tabular-nums; }
 .tl-time .tl-end { display: block; font-weight: 400; color: var(--text-3); font-size: 11px; }
 .tl-body {
+  overflow-wrap: anywhere;
   background: var(--bg-elev); border: 1px solid var(--border); border-radius: var(--radius-sm); padding: 10px 12px;
   display: flex; flex-direction: column; gap: 4px; cursor: pointer; min-width: 0;
 }
@@ -374,10 +375,11 @@ button { cursor: pointer; }
   border-radius: var(--radius-sm); padding: 12px 14px; cursor: pointer;
 }
 .row:hover { border-color: var(--border-strong); }
-.row-main { flex: 1; min-width: 0; }
+.row-main { flex: 1; min-width: 0; overflow-wrap: anywhere; }
 .row-title { font-weight: 600; display: flex; gap: 8px; align-items: center; flex-wrap: wrap; }
 .row-sub { color: var(--text-2); font-size: 13px; margin-top: 2px; }
-.row-side { text-align: right; font-variant-numeric: tabular-nums; white-space: nowrap; }
+.row-side { text-align: right; font-variant-numeric: tabular-nums; max-width: 42%; flex: none; overflow-wrap: anywhere; }
+.row-side .big { white-space: nowrap; }
 .row-side .big { font-weight: 700; font-size: 15px; }
 .row-side .sm { font-size: 12px; color: var(--text-3); }
 

@@ -19,8 +19,7 @@ test.describe('shell', () => {
       await page.goto(`/#/${v}`);
       await page.waitForTimeout(150);
       await expect(page.locator('#main')).not.toBeEmpty();
-      const w = await page.evaluate(() => document.documentElement.scrollWidth);
-      const vw = await page.evaluate(() => window.innerWidth);
+      const [w, vw] = await page.evaluate(() => [document.documentElement.scrollWidth, document.documentElement.clientWidth]);
       expect(w, `${v} overflows horizontally`).toBeLessThanOrEqual(vw + 1);
     }
     expect(errors).toEqual([]);
