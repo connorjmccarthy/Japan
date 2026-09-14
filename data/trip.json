@@ -5,7 +5,7 @@
     "end": "2027-02-17",
     "homeCurrency": "AUD",
     "jpyPerAud": 108,
-    "updatedAt": "2026-09-14T00:23:20Z",
+    "updatedAt": "2026-09-14T04:57:13Z",
     "version": 1,
     "about": "Solo ski trip. Confirmed: JQ815 BNE→SYD and the Business Classic Reward SYD→MEL→NRT on 8 Feb. Home Tue 16 Feb on QF80 + QF1256 (booked). Everything else is planned from research done 13 Sep 2026; prices marked est. need checking when booking."
   },
@@ -506,11 +506,11 @@
           "type": "train",
           "title": "Nankai to Gokurakubashi, cable car, bus into town",
           "status": "planned",
-          "location": "Nankai Namba → Gokurakubashi (Limited Express Koya ~80 min, or express with a change at Hashimoto ~100 min) → cable car 5 min → bus 10 min to Senjuinbashi",
+          "location": "Nankai Namba → Gokurakubashi (Limited Express Koya ~80 min, or express with a change at Hashimoto ~100 min) → cable car 5 min → bus bound for Okunoin-mae, ~15 min to Okunoin-guchi (the temple stop) or Senjuinbashi (town centre)",
           "endTime": "12:15",
           "cost": 3980,
           "currency": "JPY",
-          "notes": "Buy the Koyasan World Heritage Ticket at Namba (~¥3,980): return train, cable car and unlimited Koyasan buses for two days. Reserve the limited express seat for the holiday.",
+          "notes": "Buy the Koyasan World Heritage Ticket at Namba (~¥3,980): return train, cable car and unlimited Koyasan buses for two days. Reserve the limited express seat for the holiday. Drop the daypack at Shojoshin-in (Okunoin-guchi stop) before lunch if you like; the town centre is a 15-minute walk or a bus hop away.",
           "variant": "culture",
           "placeId": "pb6"
         },
@@ -544,10 +544,10 @@
           "id": "c11e",
           "time": "15:00",
           "type": "stay",
-          "title": "Check in at the shukubo (temple lodging)",
+          "title": "Check in at Shojoshin-in (booked)",
           "status": "planned",
-          "location": "See Stays: Ekoin, Fukuchiin or Shojoshin-in",
-          "notes": "Tatami room, shared baths, dinner served in your room by monks-in-training. Curfew around 9pm. Solo guests are normal here.",
+          "location": "Okunoin-guchi bus stop, at the cemetery gate",
+          "notes": "Show the reservation QR from the vault. Tatami room, shared baths, dinner served in your room. Curfew around 9pm. Cash payment, ¥17,600, unless the card was charged in January.",
           "variant": "culture",
           "placeId": "pb2"
         },
@@ -584,11 +584,11 @@
           "type": "activity",
           "title": "Okunoin night tour with a monk (optional)",
           "status": "idea",
-          "location": "Departs Ekoin",
+          "location": "Departs Eko-in, a few minutes’ walk from Shojoshin-in",
           "endTime": "20:30",
           "cost": 3000,
           "currency": "JPY",
-          "notes": "Ekoin runs an English-language night walk most evenings; other temples can book you on it.",
+          "notes": "Eko-in runs an English-language night walk most evenings; ask Shojoshin-in at check-in to book you on it, and mind the 9pm curfew.",
           "variant": "culture",
           "placeId": "pb1"
         }
@@ -2108,19 +2108,19 @@
     },
     {
       "id": "s-b1",
-      "name": "Koyasan shukubo (request lodged 14 Sep: Shojoshin-in, then Fukuchi-in, then Rengejo-in)",
+      "name": "Shojoshin-in temple lodging (booked)",
       "town": "Koyasan",
-      "type": "Temple lodging, tatami room, 2 meals",
-      "status": "planned",
+      "type": "Temple lodging, tatami room, shared bath, dinner and breakfast",
+      "status": "booked",
       "variant": "culture",
-      "pricePerNightAud": 230,
+      "pricePerNightAud": 163,
       "nights": 1,
-      "priceNote": "request capped at ¥25,000 pp with meals; actual price comes with the offer",
+      "priceNote": "¥17,600 incl. tax, cash at the temple",
       "checkIn": "2027-02-11",
       "checkOut": "2027-02-12",
       "distance": "Central Koyasan, walk to Okunoin",
       "url": "https://koyasan-shukubo.net/en/",
-      "notes": "Booking request submitted on the official Shukubo Association site, 14 Sep 2026, check-in 15:00, half board, 1 person. Status: confirmation pending; the association emails an offer naming the temple, room and price (they may phone between 09:00-12:00 Japan time, which is 10:00-13:00 Queensland). Request number in the Private vault. If nothing arrives within a week, book Eko-in on the instant-booking page instead. Night out no. 1."
+      "notes": "CONFIRMED via the Shukubo Association, check-in 15:00, half board, 1 person. Shojoshin-in sits at the Okunoin cemetery gate (bus bound for Okunoin-mae, get off at Okunoin-guchi). Payment: cash at the temple, no cards (the site also lists a “scheduled advance payment date” of 12 Jan; check on the day whether the card was charged, otherwise bring ¥17,600 cash). Cancellation free until 4pm JST on 7 Feb, then 30/50/100%. Reservation number and QR in the Private vault; the QR is what you show at check-in. Night out no. 1."
     },
     {
       "id": "s-b2",
@@ -2666,10 +2666,18 @@
     {
       "id": "ckb1",
       "group": "Points and bookings",
-      "text": "Plan B: Koyasan temple night, request lodged 14 Sep (Shojoshin-in / Fukuchi-in / Rengejo-in). Tick when the association’s offer email is accepted and paid",
-      "due": "2026-09-21",
+      "text": "Plan B: Koyasan temple night booked (Shojoshin-in, 11 Feb, ¥17,600, cash on arrival)",
+      "due": "2026-09-14",
+      "done": true,
       "variant": "culture",
-      "notes": "If no offer within a week, book Eko-in instantly on koyasan-shukubo.net instead. Once confirmed: set the stay to Booked, put the reservation number in the vault."
+      "notes": "Reservation number and QR code in the Private vault."
+    },
+    {
+      "id": "ckb1b",
+      "group": "Points and bookings",
+      "text": "12 Jan: check whether the temple charged the registered card; if not, add ¥17,600 to the cash to withdraw at Narita",
+      "due": "2027-01-12",
+      "variant": "culture"
     },
     {
       "id": "ckb2",
