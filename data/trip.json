@@ -5,7 +5,7 @@
     "end": "2027-02-17",
     "homeCurrency": "AUD",
     "jpyPerAud": 108,
-    "updatedAt": "2026-09-14T05:58:14Z",
+    "updatedAt": "2026-09-14T06:02:27Z",
     "version": 1,
     "about": "Solo ski trip. Confirmed: JQ815 BNE→SYD and the Business Classic Reward SYD→MEL→NRT on 8 Feb. Home Tue 16 Feb on QF80 + QF1256 (booked). Everything else is planned from research done 13 Sep 2026; prices marked est. need checking when booking."
   },
@@ -1885,6 +1885,21 @@
     "notes": "Update 13 Sep 2026: the flight home was booked as a paid Economy Sale fare, which cannot be upgraded with points (Sale classes E/N/O/Q are excluded from Classic Upgrade Rewards). Only the Jetstar feeder (5,700) has used points, so about 164k stay in the bank; Economy Plus on QF80 (~19,500 pts if offered) is the one remaining use on this trip. Prices confirmed post-5 Aug 2025: NRT→BNE Business 82,100; HND/NRT→SYD/MEL Business 98,400; short domestic (Zone 1) economy 9,200 + ~A$58. Economy Tokyo→Brisbane is estimated at ~29,000 (Zone 5) and Tokyo→Sydney/Melbourne ~36,200 (Zone 6); the exact cells were not visible from here, confirm on qantas.com. Bronze members are last in the upgrade queue and are typically only considered inside 24 h of departure, so treat any upgrade as a bonus, not a plan. Qantas’ Flight Reward Finder can be searched without logging in; AwardFares has a free Qantas search with alerts."
   },
   "stays": [
+    {
+      "id": "s-os4",
+      "name": "Anda no Mori Osaka Tennoji Tower (ex Hotel Bali Tower)",
+      "town": "Osaka",
+      "type": "All-inclusive urban resort hotel; the one from Instagram",
+      "status": "shortlist",
+      "pricePerNightAud": 170,
+      "nights": 2,
+      "priceNote": "est. Feb, A$120-220; verify",
+      "checkIn": "2027-02-09",
+      "checkOut": "2027-02-11",
+      "distance": "3 min from Tennoji station: Loop Line to USJ about 25 min (change at Nishikujo), Midosuji line 2 stops to Namba for the Koyasan train, 20 min to Shin-Osaka",
+      "url": "https://www.booking.com/hotel/jp/bali-tower-osaka-tennoji.html",
+      "notes": "Went viral for the guests-only LUNON lounge: patissier afternoon tea stand, 100+ free-flow drinks for up to 18 hours a day, free late-night ramen, an amenity bar with 100+ items, karaoke hour, 1,000 manga. Not literally 24 hours, and it is big, Balinese-themed and family-oriented rather than local. Worth it if you want the lounge as the evening; otherwise Dormy Inn Kitahama is quieter."
+    },
     {
       "id": "s-os1",
       "name": "Dormy Inn Premium Osaka Kitahama",
