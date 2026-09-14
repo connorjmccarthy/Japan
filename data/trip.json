@@ -5,7 +5,7 @@
     "end": "2027-02-17",
     "homeCurrency": "AUD",
     "jpyPerAud": 108,
-    "updatedAt": "2026-09-13T23:55:43Z",
+    "updatedAt": "2026-09-14T00:03:30Z",
     "version": 1,
     "about": "Solo ski trip. Confirmed: JQ815 BNE→SYD and the Business Classic Reward SYD→MEL→NRT on 8 Feb. Home Tue 16 Feb on QF80 + QF1256 (booked). Everything else is planned from research done 13 Sep 2026; prices marked est. need checking when booking."
   },
@@ -189,7 +189,7 @@
           "location": "Hotel front desk",
           "cost": 3000,
           "currency": "JPY",
-          "notes": "Ask the desk for “takkyubin to this address” and show the destination’s name and address in Japanese. Plan A: to the Nozawa lodging, waiting when you arrive Thursday. Plan B: to the Takayama hub hotel (write “for guest arriving 12 Feb”; hotels hold parcels). Two days is the standard lead time. Travel in between with a daypack: two or three days of clothes, USJ tickets, and in Plan A Friday’s ski base layers. Confirm beforehand that the receiving place accepts parcels (most do).",
+          "notes": "Ask the desk for “takkyubin to this address” and show the destination’s name and address in Japanese. Plan A: to the Nozawa lodging, waiting when you arrive Thursday. Plan B: to Temple Hotel Takayama Zenkoji, 岐阜県高山市天満町4丁目3, 506-0025, tel via the booking email (write “for guest Connor McCarthy arriving 12 Feb”; ask them first, most hold parcels). Two days is the standard lead time. Travel in between with a daypack: two or three days of clothes, USJ tickets, and in Plan A Friday’s ski base layers. Confirm beforehand that the receiving place accepts parcels (most do).",
           "placeId": "p27"
         },
         {
@@ -2127,16 +2127,16 @@
       "name": "Temple Hotel Takayama Zenkoji, Sakura-mi room (hub, 4 nights)",
       "town": "Takayama",
       "type": "Guesthouse inside a temple; 8-tatami room, shared bath, kitchen and hearth",
-      "status": "planned",
+      "status": "booked",
       "variant": "culture",
-      "pricePerNightAud": 164,
+      "pricePerNightAud": 163.9,
       "nights": 4,
-      "priceNote": "A$655.58 for 4 nights, no meals, early-bird rate",
+      "priceNote": "A$655.58 paid, 4 nights, no meals",
       "checkIn": "2027-02-12",
       "checkOut": "2027-02-16",
       "distance": "About 10-12 min walk from the station and Nohi bus centre; near the Higashiyama temple walk",
       "url": "https://travel.rakuten.com/",
-      "notes": "Free cancellation until 28 Jan 2027, so lock it now and keep the option open. Compact (12 m²), indigo-blue interior, double glazing, no bath or toilet in the room; shared bath is private-use (check whether you book a slot), plus a full kitchen for breakfasts. Room sits next to the main hall, so pack earplugs. Ask them (1) to accept the courier parcel arriving 11 Feb, and (2) that keeping the room over Saturday night while you sleep in Shirakawa-go is fine (it is; you have paid for it). Alternatives if it falls through: Hotel Around Takayama, Tabino Hotel Hida Takayama, Hida Plaza Hotel."
+      "notes": "BOOKED (prepaid; free cancellation until 28 Jan 2027). Address for the courier slip: 岐阜県高山市天満町4丁目3, 506-0025 (Tenman-machi 4-3, Takayama, Gifu). The hotel asks to be told if you will arrive after 19:00; the plan has you there about 16:30. Reservation number goes in the Private vault. Compact (12 m²), indigo-blue interior, double glazing, no bath or toilet in the room; shared bath is private-use (check whether you book a slot), plus a full kitchen for breakfasts. Room sits next to the main hall, so pack earplugs. Ask them (1) to accept the courier parcel arriving 11 Feb, and (2) that keeping the room over Saturday night while you sleep in Shirakawa-go is fine (it is; you have paid for it). Alternatives if it falls through: Hotel Around Takayama, Tabino Hotel Hida Takayama, Hida Plaza Hotel."
     },
     {
       "id": "s-b3",
@@ -2681,10 +2681,18 @@
     {
       "id": "ckb3",
       "group": "Points and bookings",
-      "text": "Plan B: book the Takayama hub hotel for 4 nights, 12-16 Feb (one booking; you skip Saturday night there)",
-      "due": "2026-11-30",
+      "text": "Plan B: Takayama hub booked (Temple Hotel Takayama Zenkoji, 12-16 Feb, prepaid, free cancellation to 28 Jan)",
+      "due": "2026-09-14",
+      "done": true,
       "variant": "culture",
-      "notes": "Tell them a parcel arrives on the 11th for a guest checking in on the 12th."
+      "notes": "Put the reservation number in the Private vault."
+    },
+    {
+      "id": "ckb3b",
+      "group": "Points and bookings",
+      "text": "Plan B: email Temple Hotel Takayama Zenkoji to confirm they will hold a courier parcel arriving 11 Feb, and that the room stays yours over Saturday 13 while you are in Shirakawa-go",
+      "due": "2026-10-15",
+      "variant": "culture"
     },
     {
       "id": "ckb4",
