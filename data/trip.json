@@ -5,7 +5,7 @@
     "end": "2027-02-17",
     "homeCurrency": "AUD",
     "jpyPerAud": 108,
-    "updatedAt": "2026-09-14T00:03:30Z",
+    "updatedAt": "2026-09-14T00:23:20Z",
     "version": 1,
     "about": "Solo ski trip. Confirmed: JQ815 BNE→SYD and the Business Classic Reward SYD→MEL→NRT on 8 Feb. Home Tue 16 Feb on QF80 + QF1256 (booked). Everything else is planned from research done 13 Sep 2026; prices marked est. need checking when booking."
   },
@@ -2108,19 +2108,19 @@
     },
     {
       "id": "s-b1",
-      "name": "Koyasan shukubo: Ekoin, Fukuchiin or Shojoshin-in",
+      "name": "Koyasan shukubo (request lodged 14 Sep: Shojoshin-in, then Fukuchi-in, then Rengejo-in)",
       "town": "Koyasan",
       "type": "Temple lodging, tatami room, 2 meals",
       "status": "planned",
       "variant": "culture",
-      "pricePerNightAud": 175,
+      "pricePerNightAud": 230,
       "nights": 1,
-      "priceNote": "¥15,000-22,000 pp with meals est.",
+      "priceNote": "request capped at ¥25,000 pp with meals; actual price comes with the offer",
       "checkIn": "2027-02-11",
       "checkOut": "2027-02-12",
       "distance": "Central Koyasan, walk to Okunoin",
       "url": "https://koyasan-shukubo.net/en/",
-      "notes": "Book on the official Shukubo Association site (English). Ekoin is the most foreigner-friendly and runs the night tour; Fukuchiin has an onsen; Shojoshin-in sits right at the Okunoin entrance. Solo is normal. Night out no. 1."
+      "notes": "Booking request submitted on the official Shukubo Association site, 14 Sep 2026, check-in 15:00, half board, 1 person. Status: confirmation pending; the association emails an offer naming the temple, room and price (they may phone between 09:00-12:00 Japan time, which is 10:00-13:00 Queensland). Request number in the Private vault. If nothing arrives within a week, book Eko-in on the instant-booking page instead. Night out no. 1."
     },
     {
       "id": "s-b2",
@@ -2666,9 +2666,10 @@
     {
       "id": "ckb1",
       "group": "Points and bookings",
-      "text": "Plan B: book the Koyasan temple night on the Shukubo Association site (koyasan-shukubo.net), 11 Feb, 1 person with dinner and breakfast",
-      "due": "2026-10-15",
-      "variant": "culture"
+      "text": "Plan B: Koyasan temple night, request lodged 14 Sep (Shojoshin-in / Fukuchi-in / Rengejo-in). Tick when the association’s offer email is accepted and paid",
+      "due": "2026-09-21",
+      "variant": "culture",
+      "notes": "If no offer within a week, book Eko-in instantly on koyasan-shukubo.net instead. Once confirmed: set the stay to Booked, put the reservation number in the vault."
     },
     {
       "id": "ckb2",
