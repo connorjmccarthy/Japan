@@ -5,7 +5,7 @@
     "end": "2027-02-17",
     "homeCurrency": "AUD",
     "jpyPerAud": 108,
-    "updatedAt": "2026-09-14T05:33:58Z",
+    "updatedAt": "2026-09-14T05:58:14Z",
     "version": 1,
     "about": "Solo ski trip. Confirmed: JQ815 BNE→SYD and the Business Classic Reward SYD→MEL→NRT on 8 Feb. Home Tue 16 Feb on QF80 + QF1256 (booked). Everything else is planned from research done 13 Sep 2026; prices marked est. need checking when booking."
   },
@@ -217,12 +217,12 @@
           "id": "b8",
           "time": "18:30",
           "type": "food",
-          "title": "Dinner in the Tenma izakaya alleys",
+          "title": "Dinner in Tenma: Gyoza Club Rock Lee, then the izakaya alleys",
           "status": "planned",
-          "location": "Around Tenma station, under the tracks",
+          "location": "Gyoza Club Rock Lee, 2-1-3 Ikedacho, Kita-ku (Tenma / Minamimorimachi), then under the tracks at Tenma",
           "cost": 3500,
           "currency": "JPY",
-          "notes": "Standing bars and tiny izakaya, mostly Japanese customers. Order doteyaki (beef tendon simmered in miso) and kushikatsu. Early night; tomorrow starts at 7.",
+          "notes": "Your pick. Small, loud gyoza bar a few minutes from Tenma station: crisp-bottomed gyoza, flaming mapo tofu, cheese and chilli-mayo variations; all-you-can-eat gyoza for ¥888 on weekdays with a reservation (Tuesday qualifies). Reserve on Tabelog or byFood a week or two out, or walk in early and expect a short wait. Afterwards a standing bar under the tracks for doteyaki (beef tendon simmered in miso). Early night; tomorrow starts at 7.",
           "placeId": "p10"
         }
       ]
@@ -2219,6 +2219,15 @@
       "priceBand": "¥"
     },
     {
+      "id": "fd8b",
+      "town": "Osaka",
+      "dish": "Gyoza at Gyoza Club Rock Lee (Tenma)",
+      "where": "2-1-3 Ikedacho, Kita-ku; 5 min from Tenma or Minamimorimachi stations",
+      "why": "The gyoza bar you asked for. Crisp-bottomed gyoza, flaming mapo tofu, cheese and chilli-mayo gyoza, ¥888 all-you-can-eat on weekdays with a reservation. Planned for the Tuesday 9 Feb dinner. Book on Tabelog or byFood, or walk in early.",
+      "priceBand": "¥",
+      "url": "https://tabelog.com/en/osaka/A2701/A270103/27137566/"
+    },
+    {
       "id": "fd8",
       "town": "Osaka",
       "dish": "Doteyaki and kushikatsu in Tenma",
@@ -3065,6 +3074,19 @@
       ],
       "recommendation": "Decide by accommodation: if a Nozawa room lands by late October, Plan A. If not, Plan B is not a consolation prize; the Koyasan and Shirakawa-go nights are two of the best things you can do in Japan in winter, and every bed in it is easier to get.",
       "answer": "Plan B",
+      "resolved": true
+    },
+    {
+      "id": "q13",
+      "question": "Kamakura or Yamaguchi: can either fit?",
+      "why": "Kamakura (Great Buddha, Hase-dera, the Enoden tram along the coast) is an hour from Tokyo and a proper day. On this trip Tokyo is only a transit point: the morning you land (jet-lagged, heading to Osaka) and the afternoon you fly home (Takayama to Narita already takes the day). Fitting it means leaving Takayama a day early, forfeiting the prepaid Monday night, paying for a Tokyo hotel and moving the suitcase again, for about three hours in Kamakura with the airport clock running. Yamaguchi (Rurikoji pagoda, Akiyoshido cave, Motonosumi shrine, Hagi) is at the far western end of Honshu, two and a half hours beyond Osaka by Shinkansen and spread out enough to need a car; it is a two- or three-day region of its own, not a detour.",
+      "options": [
+        "Leave both for another trip (planned)",
+        "Kamakura on 16 Feb: leave Takayama on the 15th, sleep in Tokyo, 3 h in Kamakura before Narita",
+        "Yamaguchi: not possible without dropping Koyasan or the Takayama hub"
+      ],
+      "recommendation": "Leave both. Kamakura is the first thing to do on a future Tokyo-based trip (spring or autumn, weekday). Yamaguchi pairs with Hiroshima and Miyajima on a western trip.",
+      "answer": "Neither this trip. Kamakura first on the next Tokyo trip; Yamaguchi with Hiroshima on a western trip.",
       "resolved": true
     },
     {
