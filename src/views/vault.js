@@ -12,7 +12,7 @@ const FIELDS = [
 export function render(root, { store }) {
   const v = store.vault.fields || {};
   root.append(el('div', { class: 'page-head' }, el('div', {}, el('h2', { class: 'page-title' }, 'Private vault'), el('p', { class: 'page-sub' }, 'Booking references, passport details and anything else that should never be in a public repo.'))));
-  root.append(el('div', { class: 'callout danger', style: { marginBottom: '14px' } }, el('span', { class: 'ico' }, '🔒'), el('div', {}, el('strong', {}, 'Stays on this device only. '), 'Nothing on this page is written to GitHub, even with sync on. To have it on your phone as well, use Export below and paste it into the phone.')));
+  root.append(el('div', { class: 'callout danger', style: { marginBottom: '14px' } }, el('span', { class: 'ico' }, '🔒'), el('div', {}, store.vaultSyncReady() ? [el('strong', {}, 'Encrypted sync is on. '), 'This page is scrambled with your passphrase before it is saved to GitHub, and unscrambled on any device with the same passphrase. Nothing here is ever written to the plan file in plain text.'] : [el('strong', {}, 'Stays on this device only. '), 'Nothing on this page is written to GitHub. To have it on your phone as well, either switch on encrypted vault sync in Settings, or use Export below and paste it into the phone.'])));
 
   const fm = form(FIELDS.map(([name, label]) => ({ name, label, value: v[name] || '', type: name === 'passportExpiry' ? 'date' : 'text' })));
   root.append(el('div', { class: 'card' }, fm.node, el('div', { class: 'btn-row', style: { marginTop: '14px' } }, el('button', { class: 'btn btn-primary', type: 'button', onClick: () => { store.setVault({ fields: fm.values() }); toast('Saved on this device', { kind: 'ok' }); } }, 'Save'))));

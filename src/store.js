@@ -1,5 +1,6 @@
 import { clone, debounce } from './util.js';
 import { getFile, putFile } from './github.js';
+import { encryptJson, decryptJson } from './crypto.js';
 
 const KEYS = { trip: 'jp27:trip', meta: 'jp27:meta', vault: 'jp27:vault', settings: 'jp27:settings' };
 const SEED_URL = new URL('../data/trip.json', import.meta.url).href;
@@ -7,17 +8,19 @@ const SEED_URL = new URL('../data/trip.json', import.meta.url).href;
 const read = (k, fallback) => { try { const v = localStorage.getItem(k); return v ? JSON.parse(v) : fallback; } catch { return fallback; } };
 const write = (k, v) => { try { localStorage.setItem(k, JSON.stringify(v)); return true; } catch { return false; } };
 
-const DEFAULT_SETTINGS = { owner: 'connorjmccarthy', repo: 'Japan', branch: 'main', path: 'data/trip.json', token: '', theme: 'system', autoSync: true };
+const DEFAULT_SETTINGS = { owner: 'connorjmccarthy', repo: 'Japan', branch: 'main', path: 'data/trip.json', token: '', theme: 'system', autoSync: true, vaultSync: false, vaultPass: '', vaultPath: 'data/vault.enc' };
 
 class Store {
   constructor() {
     this.trip = null;
-    this.meta = read(KEYS.meta, { dirty: false, remoteSha: null, lastSyncAt: null, seedUpdatedAt: null });
+    this.meta = read(KEYS.meta, { dirty: false, remoteSha: null, lastSyncAt: null, seedUpdatedAt: null, vaultSha: null, vaultDirty: false });
     this.settings = { ...DEFAULT_SETTINGS, ...read(KEYS.settings, {}) };
     this.vault = read(KEYS.vault, { fields: {}, itemSecrets: {} });
     this.status = { state: 'loading', message: 'Loading' };
     this.listeners = new Set();
     this.pushSoon = debounce(() => this.push().catch(() => {}), 1500);
+    this.pushVaultSoon = debounce(() => this.pushVault().catch(() => {}), 1500);
+    this.vaultStatus = { state: 'off', message: 'Vault stays on this device' };
     this.storageOk = true;
   }
 
@@ -54,6 +57,7 @@ class Store {
     this.setStatus(this.settings.token ? (this.meta.dirty ? 'pending' : 'synced') : 'local', this.settings.token ? (this.meta.dirty ? 'Changes waiting to sync' : 'Synced with GitHub') : 'Saved on this device');
     this.emit();
     if (this.settings.token && this.settings.autoSync) this.pull({ silent: true }).catch(() => {});
+    if (this.vaultSyncReady()) this.pullVault().catch(() => {});
     window.addEventListener('online', () => { if (this.settings.token && this.meta.dirty) this.push().catch(() => {}); });
   }
 
@@ -94,8 +98,52 @@ class Store {
     this.emit();
   }
 
-  // ---- private vault (never leaves this device) ---------------------------
-  setVault(patch) { this.vault = { ...this.vault, ...patch }; write(KEYS.vault, this.vault); this.emit(); }
+  // ---- private vault (device-only unless encrypted sync is switched on) ----
+  setVault(patch) {
+    this.vault = { ...this.vault, ...patch, updatedAt: new Date().toISOString() };
+    write(KEYS.vault, this.vault);
+    this.meta.vaultDirty = true; write(KEYS.meta, this.meta);
+    if (this.vaultSyncReady()) { this.setVaultStatus('pending', 'Encrypting and saving to GitHub'); this.pushVaultSoon(); }
+    this.emit();
+  }
+  vaultSyncReady() { return !!(this.settings.token && this.settings.vaultSync && this.settings.vaultPass); }
+  setVaultStatus(state, message) { this.vaultStatus = { state, message }; this.emit(); }
+  vaultCfg() { return { ...this.cfg(), path: this.settings.vaultPath || 'data/vault.enc' }; }
+
+  async pushVault() {
+    if (!this.vaultSyncReady()) return;
+    if (!navigator.onLine) { this.setVaultStatus('pending', 'Offline; will sync later'); return; }
+    try {
+      let currentSha = null, remoteBlob = null;
+      try { const r = await getFile(this.vaultCfg()); currentSha = r.sha; remoteBlob = r.data; } catch (e) { if (e.status !== 404) throw e; }
+      if (remoteBlob && currentSha !== this.meta.vaultSha) {
+        // Another device wrote first: take whichever copy is newer, then continue.
+        const remote = await decryptJson(remoteBlob, this.settings.vaultPass);
+        if ((remote.updatedAt || '') > (this.vault.updatedAt || '')) { this.vault = remote; write(KEYS.vault, this.vault); }
+      }
+      const blob = await encryptJson(this.vault, this.settings.vaultPass);
+      const res = await putFile({ ...this.vaultCfg(), sha: currentSha || undefined, text: JSON.stringify(blob, null, 2) + '\n', message: 'Update encrypted vault' });
+      this.meta.vaultSha = res.sha; this.meta.vaultDirty = false; write(KEYS.meta, this.meta);
+      this.setVaultStatus('synced', 'Vault synced (encrypted)');
+    } catch (e) { this.setVaultStatus('error', e.message || 'Vault sync failed'); throw e; }
+  }
+
+  async pullVault() {
+    if (!this.vaultSyncReady()) return { none: true };
+    this.setVaultStatus('pending', 'Checking GitHub for the vault');
+    let r;
+    try { r = await getFile(this.vaultCfg()); } catch (e) { if (e.status === 404) { this.setVaultStatus(this.meta.vaultDirty ? 'pending' : 'synced', 'No vault on GitHub yet'); if (this.meta.vaultDirty) await this.pushVault(); return { none: true }; } this.setVaultStatus('error', e.message); throw e; }
+    try {
+      const remote = await decryptJson(r.data, this.settings.vaultPass);
+      const remoteNewer = (remote.updatedAt || '') > (this.vault.updatedAt || '');
+      if (remoteNewer) { this.vault = remote; write(KEYS.vault, this.vault); this.meta.vaultDirty = false; }
+      this.meta.vaultSha = r.sha; write(KEYS.meta, this.meta);
+      if (!remoteNewer && this.meta.vaultDirty) { await this.pushVault(); return { pushed: true }; }
+      this.setVaultStatus('synced', remoteNewer ? 'Vault updated from GitHub' : 'Vault synced (encrypted)');
+      this.emit();
+      return { adopted: remoteNewer };
+    } catch (e) { this.setVaultStatus('error', e.message); throw e; }
+  }
   setItemSecret(itemId, text) {
     const itemSecrets = { ...this.vault.itemSecrets };
     if (text) itemSecrets[itemId] = text; else delete itemSecrets[itemId];

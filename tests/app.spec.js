@@ -235,3 +235,44 @@ test.describe('day map', () => {
     await expect(page.locator('.daymap-canvas')).toBeHidden();
   });
 });
+
+
+test.describe('vault encryption', () => {
+  test('round-trips with the right passphrase and fails with the wrong one', async ({ page }) => {
+    await boot(page, '#/settings');
+    const result = await page.evaluate(async () => {
+      const m = await import('../src/crypto.js');
+      const blob = await m.encryptJson({ fields: { passportNumber: 'X123' }, itemSecrets: {}, updatedAt: '2026-09-14T00:00:00Z' }, 'correct horse battery staple');
+      const back = await m.decryptJson(blob, 'correct horse battery staple');
+      let wrong = null;
+      try { await m.decryptJson(blob, 'wrong'); } catch (e) { wrong = e.message; }
+      return { hasCipher: blob.cipher === 'AES-256-GCM' && !JSON.stringify(blob).includes('X123'), back: back.fields.passportNumber, wrong };
+    });
+    expect(result.hasCipher).toBe(true);
+    expect(result.back).toBe('X123');
+    expect(result.wrong).toContain('Wrong passphrase');
+  });
+
+  test('vault sync writes only an encrypted blob to GitHub', async ({ page }) => {
+    await boot(page, '#/vault');
+    await page.getByLabel('Passport number').fill('SECRET-PP-42');
+    await page.getByRole('button', { name: 'Save', exact: true }).click();
+    const puts = [];
+    await page.route(/api\.github\.com\/repos\/.*\/contents\/data\/vault\.enc/, (route) => {
+      if (route.request().method() === 'PUT') { puts.push(JSON.parse(route.request().postData())); return route.fulfill({ status: 200, contentType: 'application/json', body: JSON.stringify({ content: { sha: 'vsha' } }) }); }
+      return route.fulfill({ status: 404, contentType: 'application/json', body: '{}' });
+    });
+    await page.route(/api\.github\.com\/repos\/.*\/contents\/data\/trip\.json/, (route) => route.fulfill({ status: 404, contentType: 'application/json', body: '{}' }));
+    await page.route(/api\.github\.com\/repos\/[^/]+\/[^/]+$/, (route) => route.fulfill({ status: 200, contentType: 'application/json', body: JSON.stringify({ private: false, default_branch: 'main', permissions: { push: true } }) }));
+    await page.goto('/#/settings');
+    await page.getByLabel('GitHub token').fill('ghp_test');
+    await page.getByRole('button', { name: 'Save & test' }).click();
+    await page.getByLabel('Sync the Private vault between devices (encrypted)').check();
+    await page.getByLabel('Vault passphrase').fill('a long passphrase for testing');
+    await page.getByRole('button', { name: 'Save & sync vault' }).click();
+    await expect.poll(() => puts.length).toBeGreaterThan(0);
+    const uploaded = Buffer.from(puts[0].content, 'base64').toString('utf8');
+    expect(uploaded).not.toContain('SECRET-PP-42');
+    expect(JSON.parse(uploaded).cipher).toBe('AES-256-GCM');
+  });
+});

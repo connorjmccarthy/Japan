@@ -20,7 +20,9 @@ The technical version: the app is static files on GitHub Pages; the data layer i
 
 ### What is never written to the repo
 
-This repo is **public**. Booking references, ticket numbers, passport details and anything else sensitive live only in the **Private vault** page and in the "Private note" field on items, and those are stored only in the browser on the device you typed them on. To copy them to a second device, use Export on the vault page and Import on the other device.
+This repo is **public**. Booking references, ticket numbers, passport details and anything else sensitive live only in the **Private vault** page and in the "Private note" field on items, and those are never written to `data/trip.json`.
+
+To have the vault on a second device, either use Export on the vault page and Import on the other device, or switch on **Private vault sync** in Settings: the vault is then encrypted on your device with a passphrase (AES-256-GCM, PBKDF2 key) and saved as `data/vault.enc`. That file is public but unreadable without the passphrase, which is stored only in each device's browser.
 
 ## First-time setup
 
