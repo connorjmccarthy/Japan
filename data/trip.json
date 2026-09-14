@@ -5,7 +5,7 @@
     "end": "2027-02-17",
     "homeCurrency": "AUD",
     "jpyPerAud": 108,
-    "updatedAt": "2026-09-14T06:02:27Z",
+    "updatedAt": "2026-09-14T06:21:34Z",
     "version": 1,
     "about": "Solo ski trip. Confirmed: JQ815 BNE→SYD and the Business Classic Reward SYD→MEL→NRT on 8 Feb. Home Tue 16 Feb on QF80 + QF1256 (booked). Everything else is planned from research done 13 Sep 2026; prices marked est. need checking when booking."
   },
@@ -201,6 +201,19 @@
           "location": "Daimaru Umeda 13F, 5 min walk from JR Osaka Station",
           "endTime": "17:00",
           "notes": "The official Nintendo store, exclusive merchandise, quieter than the USJ shops on Wednesday. Open 10:00-20:00. Borrowed from your friend’s Tokyo list (theirs was the Shibuya Parco store).",
+          "placeId": "p25"
+        },
+        {
+          "id": "b6d",
+          "time": "16:45",
+          "type": "food",
+          "title": "Grenier (Umeda): strawberry millefeuille or creme brulee",
+          "status": "planned",
+          "location": "Hankyu Grand Building 1F, Kakudacho; 5 min walk from Daimaru Umeda",
+          "endTime": "17:00",
+          "cost": 900,
+          "currency": "JPY",
+          "notes": "French patisserie known for a very crisp, buttery millefeuille and rich custard. Takeaway counter with a few seats; 10:00-20:00. A five-minute detour on the way from Daimaru to the Nakazakicho lanes.",
           "placeId": "p25"
         },
         {
@@ -2281,6 +2294,24 @@
       "where": "Shinsekai, a few doors from the famous Daruma",
       "why": "If you do go to Shinsekai, this is the locals’ pick over the tourist-famous Daruma. About ¥2,000 a head.",
       "priceBand": "¥"
+    },
+    {
+      "id": "fd17",
+      "town": "Osaka",
+      "dish": "Millefeuille at Grenier patisserie",
+      "where": "Umeda branch, Hankyu Grand Building 1F (also Kitahama)",
+      "why": "Strawberry millefeuille with a loud crunch and a rich custard; the pastry stop on the Tuesday afternoon between the Nintendo store and Nakazakicho.",
+      "priceBand": "¥",
+      "url": "https://mindtrip.ai/attraction/osaka/grenier-umeda-branch/at-973mTKFW"
+    },
+    {
+      "id": "fd18",
+      "town": "Osaka",
+      "dish": "Wagyu burger at Kitan Hibiki (optional swap)",
+      "where": "Hozenji Yokocho, 3 min from Namba station exit 14",
+      "why": "Charcoal-grilled 100% wagyu burger, ranked in the World’s 101 Best Burgers. Only served 12:00-15:00 and 17:00-19:00, and it needs a reservation. The only slot is Wednesday evening straight from USJ, leaving the park by about 17:30, in place of the okonomiyaki dinner. Yakiniku the rest of the evening.",
+      "priceBand": "¥¥¥",
+      "url": "https://tabelog.com/en/osaka/A2701/A270202/27141837/"
     },
     {
       "id": "fd16",
