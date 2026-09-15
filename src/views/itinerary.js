@@ -30,6 +30,7 @@ export function render(root, { store, params, navigate }) {
   }
 
   root.append(head, strip);
+  requestAnimationFrame(() => { const c = strip.querySelector('.day-chip.active'); if (c) strip.scrollLeft = c.offsetLeft - strip.clientWidth / 2 + c.clientWidth / 2; });
   if (!day) { root.append(empty('No days yet', 'Set the trip dates in Settings to generate days.')); return; }
 
   const items = sortBy(day.items || [], (i) => (i.time || '99:99'));

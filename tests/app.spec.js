@@ -1,6 +1,6 @@
 import { test, expect } from '@playwright/test';
 
-const VIEWS = ['overview', 'itinerary', 'flights', 'stays', 'food', 'budget', 'checklist', 'map', 'decisions', 'vault', 'settings'];
+const VIEWS = ['overview', 'itinerary', 'go', 'flights', 'stays', 'food', 'budget', 'checklist', 'map', 'decisions', 'vault', 'settings'];
 
 async function boot(page, hash = '#/overview') {
   const errors = [];
@@ -284,5 +284,59 @@ test.describe('vault encryption', () => {
     const uploaded = Buffer.from(puts[0].content, 'base64').toString('utf8');
     expect(uploaded).not.toContain('SECRET-PP-42');
     expect(JSON.parse(uploaded).cipher).toBe('AES-256-GCM');
+  });
+});
+
+test.describe('go mode', () => {
+  test('shows one card per stop with directions, and Done clears a card for good', async ({ page }) => {
+    const errors = await boot(page, '#/go/2027-02-13');
+    const cards = page.locator('.go-card');
+    const before = await cards.count();
+    expect(before).toBeGreaterThan(3);
+    await expect(page.locator('.go-counter')).toHaveText(`1 / ${before}`);
+    const first = cards.first();
+    await expect(first.locator('.go-title')).toContainText(/\S/);
+    await expect(first.locator('a', { hasText: 'Directions' })).toHaveAttribute('href', /google\.com\/maps/);
+    await expect(page.locator('.go-card.go-stay .go-title')).toContainText('farmhouse');
+    const title = await first.locator('.go-title').textContent();
+    await first.getByRole('button', { name: 'Done' }).click();
+    await expect(cards).toHaveCount(before - 1);
+    await expect(page.locator('.go-donelist summary')).toContainText('Done today (1)');
+    await page.reload();
+    await expect(page.locator('#topbar-heading')).toHaveText('Go');
+    await expect(page.locator('.go-card')).toHaveCount(before - 1);
+    expect(await page.locator('.go-card .go-title').first().textContent()).not.toBe(title);
+    await page.locator('.go-donelist summary').click();
+    await page.locator('.go-done-list').getByRole('button', { name: 'Undo' }).click();
+    await expect(page.locator('.go-card')).toHaveCount(before);
+    expect(errors).toEqual([]);
+  });
+
+  test('swiping a card up marks it done; arrows move through the deck', async ({ page }) => {
+    await boot(page, '#/go/2027-02-13');
+    const before = await page.locator('.go-card').count();
+    await page.getByRole('button', { name: 'Next stop' }).click();
+    await expect(page.locator('.go-counter')).toHaveText(`2 / ${before}`);
+    await page.getByRole('button', { name: 'Previous stop' }).click();
+    await expect(page.locator('.go-counter')).toHaveText(`1 / ${before}`);
+    const card = page.locator('.go-card').first();
+    const box = await card.locator('.go-title').boundingBox();
+    const x = box.x + box.width / 2, y = box.y + box.height / 2;
+    const opts = (cy) => ({ pointerId: 1, isPrimary: true, pointerType: 'touch', clientX: x, clientY: cy, bubbles: true });
+    await card.dispatchEvent('pointerdown', opts(y));
+    await card.dispatchEvent('pointermove', opts(y - 60));
+    await card.dispatchEvent('pointermove', opts(y - 140));
+    await card.dispatchEvent('pointerup', opts(y - 140));
+    await expect(page.locator('.go-card')).toHaveCount(before - 1);
+  });
+
+  test('picks the stop happening now', async ({ page }) => {
+    await boot(page, '#/go');
+    const r = await page.evaluate(async () => {
+      const m = await import('/src/views/go.js');
+      const items = [{ time: '09:00', endTime: '10:00' }, { time: '11:00' }, { time: '13:00', endTime: '15:00' }];
+      return [m.nowIndex(items, '09:30'), m.nowIndex(items, '10:30'), m.nowIndex(items, '14:00'), m.nowIndex(items, '18:00'), m.nowIndex([], '12:00'), m.localNow({ meta: { start: '2027-02-08', end: '2027-02-17' } }, '2027-02-12').tz];
+    });
+    expect(r).toEqual([0, 1, 2, 2, -1, 'Asia/Tokyo']);
   });
 });

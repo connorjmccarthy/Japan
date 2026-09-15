@@ -3,6 +3,7 @@ import { el, fmtDate, activeVariant, variantList } from './util.js';
 import { toast } from './ui.js';
 import * as overview from './views/overview.js';
 import * as itinerary from './views/itinerary.js';
+import * as go from './views/go.js';
 import * as flights from './views/flights.js';
 import * as stays from './views/stays.js';
 import * as food from './views/food.js';
@@ -16,10 +17,11 @@ import * as decisions from './views/decisions.js';
 const VIEWS = {
   overview: { mod: overview, label: 'Overview', ico: '🏔️', tab: true },
   itinerary: { mod: itinerary, label: 'Plan', ico: '📅', tab: true },
+  go: { mod: go, label: 'Go', ico: '🧳', tab: true },
   flights: { mod: flights, label: 'Flights & points', ico: '✈️' },
   stays: { mod: stays, label: 'Stays', ico: '🏨' },
   food: { mod: food, label: 'Food', ico: '🍜' },
-  budget: { mod: budget, label: 'Budget', ico: '💴', tab: true },
+  budget: { mod: budget, label: 'Budget', ico: '💴' },
   checklist: { mod: checklist, label: 'Checklists', ico: '✅', tab: true },
   map: { mod: map, label: 'Map', ico: '🗺️' },
   decisions: { mod: decisions, label: 'Decisions', ico: '🧭' },

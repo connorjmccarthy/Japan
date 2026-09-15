@@ -529,3 +529,70 @@ details.acc .acc-body { padding: 0 14px 14px; }
 .daymap-stop > span:nth-child(2) { flex: 1; }
 .pin-num { width: 26px; height: 26px; border-radius: 50%; background: var(--accent); color: var(--accent-ink); font-weight: 700; font-size: 13px; display: grid; place-items: center; border: 2px solid #fff; box-shadow: 0 1px 4px rgba(0,0,0,0.35); }
 .pin-num.small-pin { width: 22px; height: 22px; font-size: 12px; border-width: 1px; box-shadow: none; flex: none; }
+
+/* --------------------------------------------------------------------------
+   Go mode: one full-screen card per stop
+   -------------------------------------------------------------------------- */
+.go-strip { padding-bottom: 6px; }
+.go-head { display: flex; align-items: center; justify-content: space-between; gap: 10px; margin: 4px 0 8px; }
+.go-head-main { min-width: 0; }
+.go-day { font-weight: 700; font-size: 15px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.go-sub { color: var(--text-2); font-size: 13px; }
+.go-next { width: 100%; text-align: left; display: flex; flex-direction: column; gap: 2px; padding: 8px 12px; margin-bottom: 8px; border: 1px solid color-mix(in srgb, var(--accent) 40%, var(--border)); background: var(--accent-soft); border-radius: var(--radius-sm); color: var(--text); }
+.go-next-label { font-size: 11px; text-transform: uppercase; letter-spacing: 0.08em; font-weight: 700; color: var(--accent); }
+.go-next-title { font-weight: 600; font-size: 14px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.go-deck {
+  display: flex; gap: 12px; overflow-x: auto; overflow-y: hidden; scroll-snap-type: x mandatory; scrollbar-width: none; -webkit-overflow-scrolling: touch;
+  margin: 0 calc(var(--gutter) * -1); padding: 4px var(--gutter) 6px; outline: none;
+  height: calc(100dvh - var(--topbar-h) - var(--tabbar-h) - var(--safe-b) - 268px); min-height: 340px;
+}
+.go-strip .day-chip .dc-base { display: none; }
+.go-strip .day-chip { padding-block: 6px; }
+.go-deck::-webkit-scrollbar { display: none; }
+.go-deck:focus-visible { box-shadow: inset 0 0 0 2px var(--accent); border-radius: var(--radius); }
+.go-card {
+  flex: 0 0 100%; min-width: 0; scroll-snap-align: center; scroll-snap-stop: always; display: flex; flex-direction: column; gap: 6px;
+  background: var(--bg-elev); border: 1px solid var(--border); border-top: 6px solid var(--t-note); border-radius: var(--radius); padding: 16px 16px 14px;
+  box-shadow: var(--shadow); position: relative; overflow: hidden; touch-action: pan-x; transition: transform 0.28s ease, opacity 0.28s ease; user-select: none; -webkit-user-select: none;
+}
+.go-card[data-type="flight"] { border-top-color: var(--t-flight); }
+.go-card[data-type="train"], .go-card[data-type="bus"] { border-top-color: var(--t-train); }
+.go-card[data-type="stay"] { border-top-color: var(--t-stay); }
+.go-card[data-type="ski"] { border-top-color: var(--t-ski); }
+.go-card[data-type="food"] { border-top-color: var(--t-food); }
+.go-card[data-type="activity"] { border-top-color: var(--t-activity); }
+.go-card.go-now { box-shadow: 0 0 0 2px var(--accent), var(--shadow); }
+.go-card.leaving { transform: translateY(-130%) !important; opacity: 0; }
+.go-card.go-empty { justify-content: center; align-items: center; text-align: center; }
+.go-top { display: flex; align-items: baseline; justify-content: space-between; gap: 8px; }
+.go-time { font-size: 34px; line-height: 1; }
+.go-end { font-size: 15px; color: var(--text-3); font-family: var(--font-body); font-weight: 500; }
+.go-badges { display: flex; gap: 6px; flex-wrap: wrap; justify-content: flex-end; }
+.go-title { font-size: 21px; font-weight: 700; line-height: 1.2; overflow-wrap: anywhere; margin-top: 4px; }
+.go-where { font-size: 15px; color: var(--text-2); overflow-wrap: anywhere; }
+.go-notes { flex: 1; min-height: 0; overflow-y: auto; touch-action: pan-y; font-size: 15px; line-height: 1.45; color: var(--text); margin-top: 6px; padding-right: 2px; white-space: pre-wrap; overflow-wrap: anywhere; user-select: text; -webkit-user-select: text; }
+.go-secret { margin-top: 8px; padding: 6px 8px; border-radius: 8px; background: var(--bg-sunken); font-weight: 600; }
+.go-address { text-align: left; border: 1px dashed var(--border-strong); background: var(--bg-sunken); border-radius: var(--radius-sm); padding: 8px 10px; font-size: 15px; color: var(--text); overflow-wrap: anywhere; }
+.go-actions { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin-top: 10px; }
+.go-actions .btn { min-height: 48px; font-size: 15px; justify-content: center; }
+.go-actions .go-done-btn { grid-column: 1 / -1; background: var(--ok); border-color: var(--ok); color: #fff; font-weight: 700; }
+.go-actions .go-done-btn:hover { background: color-mix(in srgb, var(--ok) 88%, black); }
+.go-nav { display: flex; align-items: center; gap: 8px; margin-top: 8px; }
+.go-nav .icon-btn { font-size: 26px; width: 44px; height: 44px; flex: none; }
+.go-nav-mid { flex: 1; min-width: 0; text-align: center; }
+.go-counter { font-size: 13px; font-weight: 600; color: var(--text-2); }
+.go-dots { display: flex; gap: 4px; justify-content: center; flex-wrap: wrap; margin-top: 4px; }
+.go-dots span { width: 6px; height: 6px; border-radius: 99px; background: var(--border-strong); transition: width 0.15s ease; }
+.go-dots span.active { background: var(--accent); width: 18px; }
+.go-hint { font-size: 11px; color: var(--text-3); margin-top: 4px; }
+.go-done { margin-top: 14px; border: 1px solid var(--border); border-radius: var(--radius-sm); background: var(--bg-elev); padding: 8px 12px; }
+.go-done summary { cursor: pointer; font-weight: 600; font-size: 14px; }
+.go-done-list { list-style: none; margin: 8px 0 0; padding: 0; display: flex; flex-direction: column; gap: 6px; }
+.go-done-list li { display: flex; align-items: center; gap: 10px; font-size: 14px; }
+.go-done-list li span:first-child { width: 58px; flex: none; }
+.go-done-list li span:nth-child(2) { flex: 1; min-width: 0; text-decoration: line-through; color: var(--text-3); }
+@media (min-width: 900px) {
+  .go-deck { height: calc(100dvh - var(--topbar-h) - 250px); min-height: 460px; margin: 0; padding: 4px 2px 6px; }
+  .go-card { flex-basis: 100%; }
+  .go-time { font-size: 40px; }
+}

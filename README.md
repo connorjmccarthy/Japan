@@ -9,6 +9,7 @@ It is a plain static website (HTML, CSS, JavaScript, no build step), so it runs 
 - On the web: `https://connorjmccarthy.github.io/Japan/` (after GitHub Pages is switched on, see below).
 - On a phone: open that link in Safari or Chrome, tap Share, then **Add to Home Screen**. It opens full-screen and works offline.
 - On a computer: same link. Bookmark it.
+- In Japan: use the **Go** tab. One full-screen card per stop, swipe sideways to move through the day, swipe up when a stop is done, and a Directions button that opens Google Maps from where you are. It works offline once the app has loaded.
 
 ## How the data works, in plain English
 
@@ -53,7 +54,7 @@ src/main.js            router, navigation, sync pill, service worker registratio
 src/store.js           state, localStorage, GitHub sync, private vault
 src/github.js          GitHub Contents API client
 src/ui.js              sheet/modal, forms, toasts
-src/views/*.js         one module per page
+src/views/*.js         one module per page (go.js is the on-the-move card deck)
 data/trip.json         the plan
 sw.js                  offline cache
 vendor/leaflet         map library (BSD-2, vendored so it works offline)

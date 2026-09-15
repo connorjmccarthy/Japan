@@ -59,7 +59,7 @@ export function render(root, { store, navigate }) {
   if (focusDay) {
     const items = sortBy(focusDay.items || [], (i) => i.time || '99');
     root.append(section(phase === 'during' ? 'Today' : 'First day',
-      el('div', { class: 'card clickable', onClick: () => navigate(`itinerary/${focusDay.date}`) },
+      el('div', { class: 'card clickable', onClick: () => navigate(phase === 'during' ? `go/${focusDay.date}` : `itinerary/${focusDay.date}`) },
         el('div', { class: 'card-title' }, `${fmtDate(focusDay.date)} · ${focusDay.title || ''}`),
         items.length ? el('ul', { class: 'row-list', style: { marginTop: '10px', gap: '6px' } }, ...items.slice(0, 6).map((i) => el('li', { style: { display: 'flex', gap: '10px', alignItems: 'center', fontSize: '14px' } }, el('span', { class: 'mono muted', style: { width: '58px', flex: 'none' } }, fmtTime(i.time) || '—'), el('span', {}, (TYPES[i.type]?.ico || '') + ' ' + i.title)))) : el('p', { class: 'muted', style: { marginTop: '6px' } }, 'Nothing planned yet.'),
       )));
