@@ -5,7 +5,7 @@
     "end": "2027-02-17",
     "homeCurrency": "AUD",
     "jpyPerAud": 108,
-    "updatedAt": "2026-09-15T00:44:27Z",
+    "updatedAt": "2026-09-15T07:48:52Z",
     "version": 1,
     "about": "Solo ski trip. Confirmed: JQ815 BNE→SYD and the Business Classic Reward SYD→MEL→NRT on 8 Feb. Home Tue 16 Feb on QF80 + QF1256 (booked). Everything else is planned from research done 13 Sep 2026; prices marked est. need checking when booking."
   },
@@ -1310,21 +1310,88 @@
           "id": "c15a",
           "time": "09:30",
           "type": "note",
-          "title": "Free-roam day; the options are all optional",
+          "title": "Beef day: nothing before 9:30, and everything is within a 15-minute walk of the hub",
           "status": "planned",
           "location": "Takayama hub",
-          "notes": "Nothing booked, nothing before 9:30.",
+          "notes": "A themed free day, not a schedule. Skip anything; the only thing worth booking is dinner.",
           "variant": "culture",
           "placeId": "pb10"
+        },
+        {
+          "id": "c15f",
+          "time": "10:00",
+          "type": "food",
+          "title": "Miyagawa morning market: mitarashi dango and a coffee by the river",
+          "status": "planned",
+          "location": "Miyagawa river bank, 10 min walk; runs until about noon",
+          "endTime": "10:40",
+          "cost": 500,
+          "currency": "JPY",
+          "notes": "Grilled rice dumplings brushed with soy, savoury not sweet, ¥100 a stick. Pickles, apples and crafts on the other stalls; a good wander with a coffee in hand.",
+          "variant": "culture",
+          "placeId": "pb13"
+        },
+        {
+          "id": "c15g",
+          "time": "10:45",
+          "type": "food",
+          "title": "Hida beef sushi at Kotte Ushi, Sanmachi",
+          "status": "planned",
+          "location": "Sanmachi-suji old street, the shop with the queue",
+          "endTime": "11:15",
+          "cost": 900,
+          "currency": "JPY",
+          "notes": "Two pieces of seared A5 Hida beef nigiri served on a rice cracker, eaten standing in the street. The queue moves fast. A beef croquette or beef bun from the next window if you are still peckish.",
+          "variant": "culture",
+          "placeId": "pb3"
+        },
+        {
+          "id": "c15h",
+          "time": "11:30",
+          "type": "food",
+          "title": "Lunch at Maruaki: Hida beef from the butcher, weekday lunch set",
+          "status": "planned",
+          "location": "Maruaki Hida Takayama, a few minutes from the station and the hub; lunch 11:00-14:30 on weekdays",
+          "endTime": "12:45",
+          "cost": 3000,
+          "currency": "JPY",
+          "notes": "A butcher with a restaurant attached. The weekday lunch sets and the yakiniku platter of A5 cut-ends are the cheapest way to eat top-grade Hida beef; go at 11:30 before the queue. Monday is a weekday, so the lunch menu runs.",
+          "variant": "culture",
+          "placeId": "pb14"
+        },
+        {
+          "id": "c15i",
+          "time": "13:30",
+          "type": "activity",
+          "title": "Sake tasting in the old town: Funasaka (tastings 13:00-16:00) and Harada",
+          "status": "planned",
+          "location": "Sanmachi-suji; look for the cedar balls hanging over the doors",
+          "endTime": "15:00",
+          "cost": 1000,
+          "currency": "JPY",
+          "notes": "Funasaka has a tasting corner with masu cups and a courtyard; Harada is two doors along and older. A few hundred yen a pour. Buy one bottle to carry home in the suitcase.",
+          "variant": "culture",
+          "placeId": "pb3"
+        },
+        {
+          "id": "c15j",
+          "time": "15:00",
+          "type": "activity",
+          "title": "Afternoon, your call: rest at the hub, the Higashiyama temple walk, Takayama Jinya or the Hida Folk Village",
+          "status": "idea",
+          "location": "All in town",
+          "notes": "The temple walk is a quiet 3.5 km loop above the town that starts near the hub and earns dinner. Jinya (¥440) is the only surviving Edo provincial office; the Folk Village (¥700) is a hillside of relocated farmhouses, 10 min by bus.",
+          "variant": "culture",
+          "placeId": "pb3"
         },
         {
           "id": "c15b",
           "time": "09:45",
           "type": "activity",
-          "title": "Option: Okuhida onsen villages (Hirayu Onsen, 1 h by bus)",
+          "title": "Instead of the beef day: Okuhida onsen villages (Hirayu Onsen, 1 h by bus)",
           "status": "idea",
           "location": "Nohi bus from Takayama Bus Center",
-          "notes": "Open-air hot spring baths in the snow (Hirayu no Mori, ¥700), and the Shinhotaka Ropeway another 40 min on for a snow panorama of the Northern Alps. Back by dinner. About ¥5,000 in buses and baths.",
+          "notes": "Open-air hot spring baths in the snow (Hirayu no Mori, ¥700), and the Shinhotaka Ropeway another 40 min on for a snow panorama of the Northern Alps. Back by dinner; the yakiniku still happens. About ¥5,000 in buses and baths.",
           "variant": "culture",
           "placeId": "pb8"
         },
@@ -1332,7 +1399,7 @@
           "id": "c15c",
           "time": "09:45",
           "type": "activity",
-          "title": "Option: Gero Onsen (1 h by train)",
+          "title": "Instead of the beef day: Gero Onsen (1 h by train)",
           "status": "idea",
           "location": "Hida express south",
           "notes": "One of Japan’s “three great onsen”; a bathhouse pass (Yumeguri Tegata, ¥1,500) gets you into three of the ryokan baths. Riverside foot baths are free.",
@@ -1340,37 +1407,26 @@
           "placeId": "pb9"
         },
         {
-          "id": "c15d",
-          "time": "10:00",
-          "type": "activity",
-          "title": "Option: Takayama Jinya, Hida Folk Village, the Higashiyama temple walk",
-          "status": "idea",
-          "location": "All in town",
-          "notes": "The only surviving Edo provincial government office (¥440); a hillside of relocated farmhouses (¥700); a quiet 3.5 km walk past a dozen temples above town.",
-          "variant": "culture",
-          "placeId": "pb3"
-        },
-        {
           "id": "c15e",
-          "time": "19:00",
+          "time": "18:30",
           "type": "food",
-          "title": "Last Takayama dinner: Hida beef properly (yakiniku, and yukke if it is on the menu)",
+          "title": "Yakiniku dinner: Gyu-suke (aged A5 Hida beef, by the station), yukke if it is on the menu",
           "status": "planned",
-          "location": "Takayama: Ajikura Tengoku or Gyu-suke (both Hida beef yakiniku near the station)",
-          "cost": 5000,
+          "location": "Gyu-suke, a step from Takayama Station; Ajikura Tengoku is the walk-in alternative",
+          "cost": 6000,
           "currency": "JPY",
-          "notes": "Hida beef is the point of the town. Yakiniku lets you taste several cuts; several of the yakiniku places run a licensed raw menu (yukke with egg yolk, beef sashimi) that changes with supply, so ask. Book a counter seat a day ahead in February.",
+          "notes": "The beef day’s main event: several cuts you grill yourself, and a licensed raw menu (yukke with egg yolk, beef sashimi) that changes with supply, so ask. Gyu-suke takes online reservations (Tabelog or SavorJapan); book a counter seat a week or two out. Ajikura Tengoku runs a walk-in ticket system and sells out on weekends, so it is the fallback on a Monday.",
           "variant": "culture",
-          "placeId": "pb3"
+          "placeId": "pb15"
         }
       ],
       "walk": "6,000-9,000 steps (ski day)",
       "variants": {
         "culture": {
-          "title": "Free-roam day from the hub",
+          "title": "Beef day in Takayama (free-roam, all optional)",
           "base": "Takayama (hub)",
-          "notes": "Deliberately empty. The options below are all easy from Takayama station and none starts before 9:30. Pick one, or none.",
-          "walk": "8,000-15,000 steps (depends on the option: Hirayu is mostly bathing, town is mostly walking)"
+          "notes": "A themed free day: morning market, beef sushi in the old street, a butcher’s lunch, sake tasting, and aged Hida beef yakiniku at night. Everything is within a 15-minute walk of the hub and nothing starts before 9:30. If you would rather leave town, the Okuhida or Gero onsen options replace the daytime and the yakiniku still happens.",
+          "walk": "8,000-11,000 steps (market, old street, breweries; all in town)"
         }
       }
     },
@@ -2504,6 +2560,44 @@
       "variant": "culture"
     },
     {
+      "id": "fb8",
+      "town": "Takayama",
+      "dish": "Hida beef sushi at Kotte Ushi",
+      "where": "Sanmachi-suji old street",
+      "why": "Two pieces of seared A5 beef nigiri on a rice cracker, eaten in the street. The Takayama snack. Planned for the Monday beef day.",
+      "priceBand": "¥",
+      "variant": "culture"
+    },
+    {
+      "id": "fb9",
+      "town": "Takayama",
+      "dish": "Butcher’s lunch at Maruaki",
+      "where": "Maruaki Hida Takayama, a few minutes from the station; weekday lunch 11:00-14:30",
+      "why": "A butcher with a restaurant: lunch sets and a platter of A5 cut-ends at a fraction of dinner prices. Monday beef-day lunch.",
+      "priceBand": "¥¥",
+      "variant": "culture",
+      "url": "https://www.tripadvisor.com/Restaurant_Review-g298113-d1663719-Reviews-Maruaki_Hida_Takayama-Takayama_Gifu_Prefecture_Tokai_Chubu.html"
+    },
+    {
+      "id": "fb10",
+      "town": "Takayama",
+      "dish": "Aged Hida beef yakiniku at Gyu-suke",
+      "where": "By Takayama Station; reserve on Tabelog or SavorJapan",
+      "why": "Female A5 Hida beef, dry-aged, grilled at your counter; ask for yukke or beef sashimi from the licensed raw menu. The beef day’s dinner. Ajikura Tengoku is the walk-in fallback.",
+      "priceBand": "¥¥¥",
+      "variant": "culture",
+      "url": "https://tabelog.com/en/gifu/A2104/A210401/21021240/"
+    },
+    {
+      "id": "fb11",
+      "town": "Takayama",
+      "dish": "Old-town sake tasting",
+      "where": "Funasaka and Harada breweries on Sanmachi-suji; Funasaka tastings 10:00-12:00 and 13:00-16:00",
+      "why": "Cedar balls over the door mean a brewery. A few hundred yen a pour in a masu cup; one bottle for the suitcase.",
+      "priceBand": "¥",
+      "variant": "culture"
+    },
+    {
       "id": "fb5",
       "town": "Shirakawa-go",
       "dish": "Irori hearth dinner",
@@ -2880,6 +2974,14 @@
       "variant": "culture"
     },
     {
+      "id": "ckb7",
+      "group": "Points and bookings",
+      "text": "Plan B: reserve a counter seat at Gyu-suke (Takayama) for dinner on Mon 15 Feb, about 18:30",
+      "due": "2027-02-01",
+      "variant": "culture",
+      "notes": "Tabelog or SavorJapan take online bookings 1-2 weeks out; or ask the hub hotel to call on check-in day. Ajikura Tengoku (walk-in tickets) is the fallback."
+    },
+    {
       "id": "ckb4",
       "group": "Points and bookings",
       "text": "Plan B: reserve the Nohi buses Takayama ↔ Shirakawa-go (13 and 14 Feb, late-morning services)",
@@ -3196,6 +3298,36 @@
       "lat": 36.142,
       "lng": 137.259,
       "variant": "culture"
+    },
+    {
+      "id": "pb13",
+      "name": "Miyagawa morning market",
+      "kind": "food",
+      "town": "Takayama",
+      "lat": 36.144,
+      "lng": 137.2612,
+      "variant": "culture",
+      "notes": "Riverbank stalls until about noon."
+    },
+    {
+      "id": "pb14",
+      "name": "Maruaki Hida Takayama (butcher and restaurant)",
+      "kind": "food",
+      "town": "Takayama",
+      "lat": 36.1402,
+      "lng": 137.2545,
+      "variant": "culture",
+      "notes": "Weekday lunch sets 11:00-14:30."
+    },
+    {
+      "id": "pb15",
+      "name": "Gyu-suke yakiniku (by the station)",
+      "kind": "food",
+      "town": "Takayama",
+      "lat": 36.1412,
+      "lng": 137.253,
+      "variant": "culture",
+      "notes": "Aged A5 Hida beef; reserve online."
     },
     {
       "id": "pb4",
