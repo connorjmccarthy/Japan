@@ -5,7 +5,7 @@
     "end": "2027-02-17",
     "homeCurrency": "AUD",
     "jpyPerAud": 108,
-    "updatedAt": "2026-09-15T00:34:55Z",
+    "updatedAt": "2026-09-15T00:44:27Z",
     "version": 1,
     "about": "Solo ski trip. Confirmed: JQ815 BNE→SYD and the Business Classic Reward SYD→MEL→NRT on 8 Feb. Home Tue 16 Feb on QF80 + QF1256 (booked). Everything else is planned from research done 13 Sep 2026; prices marked est. need checking when booking."
   },
@@ -338,11 +338,35 @@
           "location": "Tsuruhashi, Korea Town: Yakiniku Tsuruhashi or one of the counters by the station",
           "cost": 5000,
           "currency": "JPY",
-          "notes": "Your beef tartare. Raw beef is only legal at licensed kitchens in Japan, so if yukke is on the menu it is the real thing: minced wagyu with egg yolk, sesame and soy. Order it first, then grilled cuts. About 35 min from Universal City (Loop Line to Tsuruhashi). If USJ has flattened you, the fallback is an okonomiyaki counter near the hotel.",
+          "notes": "Your beef tartare. Raw beef is only legal at licensed kitchens in Japan, so if yukke is on the menu it is the real thing: minced wagyu with egg yolk, sesame and soy. Order it first, then grilled cuts; aim to be done by about 20:45 for Dotonbori. About 35 min from Universal City (Loop Line to Tsuruhashi). If USJ has flattened you, the fallback is an okonomiyaki counter near the hotel.",
           "placeId": "p20"
+        },
+        {
+          "id": "c7b",
+          "time": "21:00",
+          "type": "activity",
+          "title": "Dotonbori by night: the Glico sign from Ebisubashi, the canal, Hozenji Yokocho",
+          "status": "planned",
+          "location": "Sennichimae line Tsuruhashi → Nippombashi (4 min), then a 5 min walk to the canal",
+          "endTime": "21:30",
+          "notes": "The neon you have seen in every photo: the Glico running man from Ebisubashi bridge, the crab and the dragon signs, the canal walkway underneath. Loud, touristy, and worth 30 minutes once. Then Hozenji Yokocho, the lantern-lit stone lane two minutes south, with the moss-covered Fudo statue people splash water on. No need to eat here; you have eaten.",
+          "placeId": "p28"
+        },
+        {
+          "id": "c7c",
+          "time": "21:30",
+          "type": "food",
+          "title": "Standing bars (tachinomi) in Ura-Namba",
+          "status": "planned",
+          "location": "The backstreets south and east of Namba station, around Sennichimae",
+          "endTime": "23:00",
+          "cost": 2500,
+          "currency": "JPY",
+          "notes": "Osaka’s real nightlife: no seats, order at the counter, beer ¥350 and highballs ¥300 at the cheaper ones, a small plate with each drink. More locals than tourists, and the easiest format in Japan to walk into alone. Two bars is a good evening; the person next to you will tell you where the third is. Namba to the hotel by subway; tomorrow is a 9:15 check-out for the 10:00 Koyasan train, so home by 11.",
+          "placeId": "p29"
         }
       ],
-      "walk": "18,000-25,000 steps (USJ; theme parks are long days on your feet)",
+      "walk": "20,000-27,000 steps (USJ, then Dotonbori and the Namba backstreets)",
       "variants": {
         "culture": {
           "title": "Universal Studios Japan and Super Nintendo World",
@@ -2384,6 +2408,15 @@
       "url": "https://en.ichiran.com/shop/chubu/nagoya-station/"
     },
     {
+      "id": "fd23",
+      "town": "Osaka",
+      "dish": "Standing bars in Ura-Namba",
+      "where": "Backstreets south and east of Namba station, around Sennichimae",
+      "why": "Tachinomi: no seats, cheap drinks, a small plate with each, and conversation that happens on its own. Planned for the Wednesday night after yakiniku and the Dotonbori neon. Optional extra: the 20 min Tombori canal cruise (¥2,000, last boat 21:00) only if you leave USJ early.",
+      "priceBand": "¥",
+      "url": "https://www.osakatourism.org/ura-namba-bar-hopping/"
+    },
+    {
       "id": "fd17",
       "town": "Osaka",
       "dish": "Millefeuille at Grenier patisserie",
@@ -3001,6 +3034,24 @@
       "lat": 34.696,
       "lng": 135.487,
       "notes": "Fukumaru-dori under the Loop Line tracks."
+    },
+    {
+      "id": "p28",
+      "name": "Dotonbori canal and Glico sign (Ebisubashi)",
+      "kind": "other",
+      "town": "Osaka",
+      "lat": 34.6687,
+      "lng": 135.5013,
+      "notes": "Neon at night; Hozenji Yokocho two minutes south."
+    },
+    {
+      "id": "p29",
+      "name": "Ura-Namba standing bars",
+      "kind": "food",
+      "town": "Osaka",
+      "lat": 34.664,
+      "lng": 135.5045,
+      "notes": "Backstreets behind Namba station, around Sennichimae."
     },
     {
       "id": "p20",
