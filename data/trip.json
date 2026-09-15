@@ -5,7 +5,7 @@
     "end": "2027-02-17",
     "homeCurrency": "AUD",
     "jpyPerAud": 108,
-    "updatedAt": "2026-09-14T06:30:38Z",
+    "updatedAt": "2026-09-15T00:34:55Z",
     "version": 1,
     "about": "Solo ski trip. Confirmed: JQ815 BNE→SYD and the Business Classic Reward SYD→MEL→NRT on 8 Feb. Home Tue 16 Feb on QF80 + QF1256 (booked). Everything else is planned from research done 13 Sep 2026; prices marked est. need checking when booking."
   },
@@ -1429,7 +1429,7 @@
           "title": "Narita T2: check in, drop bag, tax-free refund counter if you shopped",
           "status": "planned",
           "location": "NRT T2",
-          "notes": "QF80 check-in closes 18:20. Check in online 24 h before and pick a seat.",
+          "notes": "Arrive between 15:30 and 16:30 depending on the trains. QF80 check-in closes 18:20. Check in online 24 h before and pick a seat.",
           "placeId": "p6"
         },
         {
@@ -1481,27 +1481,41 @@
           "placeId": "pb10"
         },
         {
+          "id": "c16b2",
+          "time": "12:20",
+          "type": "food",
+          "title": "Ichiran Nagoya Station: last ramen in Japan, in a solo booth",
+          "status": "planned",
+          "location": "B1 of Hotel Resol Nagoya, a few minutes from the Shinkansen exit; open 24 h",
+          "endTime": "13:05",
+          "cost": 1300,
+          "currency": "JPY",
+          "notes": "Ticket machine, then a one-person booth with a curtain: tonkotsu ramen, you tick the strength, richness and spice on a slip and never speak to anyone. Order the extra noodles (kaedama) with the button. 40 minutes is plenty; if the queue is long, kishimen on the platform instead.",
+          "variant": "culture",
+          "placeId": "p12"
+        },
+        {
           "id": "c16c",
-          "time": "12:30",
+          "time": "13:15",
           "type": "train",
           "title": "Nozomi Nagoya → Tokyo",
           "status": "planned",
           "location": "Nagoya",
-          "endTime": "14:10",
+          "endTime": "14:55",
           "cost": 11300,
           "currency": "JPY",
-          "notes": "~1h40, every 10 minutes.",
+          "notes": "~1h40, every 10 minutes. Booked later than strictly necessary so lunch is not a sprint; Narita check-in still has two hours of slack.",
           "variant": "culture",
           "placeId": "p12"
         },
         {
           "id": "c16d",
-          "time": "14:30",
+          "time": "15:15",
           "type": "train",
           "title": "Narita Express Tokyo → Narita T2",
           "status": "planned",
           "location": "Tokyo Station",
-          "endTime": "15:30",
+          "endTime": "16:15",
           "cost": 0,
           "currency": "JPY",
           "notes": "Covered by the N’EX round-trip ticket bought on day 1.",
@@ -1898,6 +1912,10 @@
     {
       "title": "Manners that matter more than language",
       "body": "Order a drink first, then food. The small dish that arrives unasked (otoshi) is a cover charge, not a mistake. One drink and a couple of plates, then move on when it is crowded; angle your body to make room at a standing bar. Cash out, no tipping ever. No photos of other customers or the counter without a nod from the master. “Oishii” and “gochisosama deshita” (thanks for the meal) on the way out go a long way."
+    },
+    {
+      "title": "Eating alone: booths, counters and ticket machines",
+      "body": "Solo dining is completely normal in Japan and much of the country’s best food is built for it. Easiest formats, in order: 1. Ticket-machine shops (ramen, soba, udon, gyudon at Yoshinoya or Matsuya, tonkatsu): pay the machine, hand over the ticket, sit at the counter; zero conversation. 2. Ichiran and its imitators: one-person booths with a curtain and an order slip; Dotonbori and Nagoya Station are open 24 hours. 3. Conveyor sushi (Kura, Sushiro, Hamazushi): a touch-screen at your seat, plates arrive on a belt, pay by the plate. 4. Counter seats (kauntaa) at izakaya, yakitori, okonomiyaki and yakiniku: say “hitori” (one person) with one finger up; the counter is where solo diners are put and where the cooking is. 5. Department-store basements (depachika) and konbini for a room picnic when you are done with people. Osaka’s Harukoma, Rock Lee, the Tenma alleys and Tsuruhashi yakiniku all seat singles at the counter without fuss. The only places solo is awkward are hotpot or course menus priced for two; the plan avoids them."
     },
     {
       "title": "Carnivore, not big on vegetables: what to order",
@@ -2346,6 +2364,24 @@
       "why": "Since 1907, five pieces of whatever landed that morning, tuna included, eaten standing by the market. Only fits at 6:00 on the USJ morning (Noda is two stops from Universal City), which is earlier than you like, so it is an option, not the plan. Check the market’s calendar; some Wednesdays are market holidays.",
       "priceBand": "¥¥",
       "url": "https://tabelog.com/en/osaka/A2701/A270108/27002698/"
+    },
+    {
+      "id": "fd21",
+      "town": "Osaka",
+      "dish": "Ichiran (solo ramen booths): Dotonbori 24 h, Umeda Hankyu Higashi-dori",
+      "where": "Dotonbori main and south buildings, 4 min from Namba exit 14 (24 hours); Umeda branch in the Hankyu Higashi-dori arcade near the hotel",
+      "why": "The famous one-person booths. Not planned into a slot in Osaka because every meal there is already spoken for, but it is the answer at midnight, in the rain, or when you cannot face another menu. Ticket machine, curtain, slip of paper, done.",
+      "priceBand": "¥",
+      "url": "https://en.ichiran.com/shop/hourstable.html"
+    },
+    {
+      "id": "fd22",
+      "town": "Nagoya",
+      "dish": "Ichiran Nagoya Station: the last ramen",
+      "where": "B1 Hotel Resol Nagoya, a few minutes from the Shinkansen exit; 24 hours",
+      "why": "Planned for the Tuesday 16 Feb lunch between the Hida and the Nozomi home. Solo booth, no talking, 40 minutes door to door.",
+      "priceBand": "¥",
+      "url": "https://en.ichiran.com/shop/chubu/nagoya-station/"
     },
     {
       "id": "fd17",
