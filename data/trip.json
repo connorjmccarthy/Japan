@@ -5,7 +5,7 @@
     "end": "2027-02-17",
     "homeCurrency": "AUD",
     "jpyPerAud": 108,
-    "updatedAt": "2026-09-15T10:21:57Z",
+    "updatedAt": "2026-09-17T11:48:04Z",
     "version": 1,
     "about": "Solo ski trip. Confirmed: JQ815 BNE→SYD and the Business Classic Reward SYD→MEL→NRT on 8 Feb. Home Tue 16 Feb on QF80 + QF1256 (booked). Everything else is planned from research done 13 Sep 2026; prices marked est. need checking when booking."
   },
@@ -1207,14 +1207,56 @@
         },
         {
           "id": "c14d",
-          "time": "13:30",
-          "type": "note",
-          "title": "Free afternoon",
+          "time": "13:20",
+          "type": "bus",
+          "title": "Nohi bus Takayama → Hirayu Onsen",
           "status": "planned",
-          "location": "Takayama hub",
-          "notes": "Option: Hida Furukawa, 15 minutes by train, a small canal town with carp, white storehouses and two sake breweries, almost no tourists. Or the hotel bath and a nap.",
+          "location": "Takayama Nohi Bus Center, next to the station",
+          "endTime": "14:20",
+          "cost": 1600,
+          "currency": "JPY",
+          "notes": "Roughly hourly, about 1 h. No reservation needed on this route: buy at the ticket window in the bus centre before boarding, or pay on board if it is shut. Snow delays are normal in February, so take the earlier bus if one is going.",
           "variant": "culture",
-          "placeId": "pb7"
+          "placeId": "pb10"
+        },
+        {
+          "id": "c14d2",
+          "time": "14:30",
+          "type": "activity",
+          "title": "Hirayu no Mori: open-air baths in the snow",
+          "status": "planned",
+          "location": "Hirayu no Mori, 3 min walk from the Hirayu Onsen bus terminal",
+          "endTime": "16:45",
+          "cost": 700,
+          "currency": "JPY",
+          "notes": "Sixteen rotenburo (open-air baths) scattered through a snowy pine forest, ¥700, open from 8:00 in winter. Private baths can be rented at the desk for about 45 min, roughly ¥1,500-3,000, usually midday to 3pm; ask when you arrive. Bring the small towel: the only cold part is the short walk on snow between the changing room and the water. Soap and shampoo are provided, and there is a Hida beef meal set if you want lunch here instead of ramen in town.",
+          "variant": "culture",
+          "placeId": "pb8"
+        },
+        {
+          "id": "c14d3",
+          "time": "17:00",
+          "type": "bus",
+          "title": "Nohi bus Hirayu Onsen → Takayama",
+          "status": "planned",
+          "location": "Hirayu Onsen bus terminal",
+          "endTime": "18:00",
+          "cost": 1600,
+          "currency": "JPY",
+          "notes": "Last services back are around 17:30, so do not cut it fine. Buy the return leg when you buy the outbound if the counter offers it.",
+          "variant": "culture",
+          "placeId": "pb8"
+        },
+        {
+          "id": "c14d4",
+          "time": "13:30",
+          "type": "activity",
+          "title": "If the weather is foul: baths and a canal town in town instead",
+          "status": "idea",
+          "location": "Takayama",
+          "notes": "Associa Takayama Resort has ten outdoor baths with mountain views, 8 min by free shuttle from the station, day use with a Hida beef lunch set about ¥4,700. Takayama Green Hotel (Tenryo-no-yu) is an 8 min walk and open to day visitors 11:00-14:00 and 15:00-22:00, so it also works after dinner. Hida Furukawa, a quiet canal town with carp and two sake breweries, is 15 min by train.",
+          "variant": "culture",
+          "placeId": "pb3"
         },
         {
           "id": "c14e",
@@ -1232,10 +1274,10 @@
       "walk": "12,000-15,000 steps (Togakushi cedar avenue and Zenko-ji)",
       "variants": {
         "culture": {
-          "title": "Back to the hub, free afternoon",
+          "title": "Back to the hub, then open-air baths at Hirayu",
           "base": "Takayama (hub)",
-          "notes": "Sleep in, breakfast at the hearth, a late-morning bus back. The afternoon is open: the quiet canal town of Hida Furukawa is 15 minutes by train, or do nothing at all.",
-          "walk": "8,000-12,000 steps (Hida Furukawa or the temple walk, your call)"
+          "notes": "Sleep in, breakfast at the hearth, a late-morning bus back, ramen, then an hour up into the Okuhida mountains to sit in an open-air bath in the snow. Home in time for dinner. If the weather is foul, the in-town baths do the same job with no bus.",
+          "walk": "7,000-9,000 steps (village walk at dawn, then mostly bus and bathing)"
         }
       }
     },
@@ -1388,10 +1430,10 @@
           "id": "c15b",
           "time": "09:45",
           "type": "activity",
-          "title": "Instead of the beef day: Okuhida onsen villages (Hirayu Onsen, 1 h by bus)",
+          "title": "Instead of the beef day: Shinhotaka, deeper into Okuhida (1h40 by bus)",
           "status": "idea",
-          "location": "Nohi bus from Takayama Bus Center",
-          "notes": "Open-air hot spring baths in the snow (Hirayu no Mori, ¥700), and the Shinhotaka Ropeway another 40 min on for a snow panorama of the Northern Alps. Back by dinner; the yakiniku still happens. About ¥5,000 in buses and baths.",
+          "location": "Nohi bus from Takayama Bus Center, past Hirayu",
+          "notes": "The most dramatic rotenburo in the region, directly under the 3,000 m Hotaka peaks, plus Japan’s only double-decker ropeway for a snow panorama of the Northern Alps. Yarimikan opens its riverside outdoor baths to day visitors; note two of its three are mixed gender. Book ahead only if boarding between Nakao and Shinhotaka Onsen. Back by dinner; the yakiniku still happens. About ¥6,000 in buses and baths.",
           "variant": "culture",
           "placeId": "pb8"
         },
@@ -3362,13 +3404,13 @@
     },
     {
       "id": "pb8",
-      "name": "Hirayu Onsen (Okuhida)",
+      "name": "Hirayu no Mori, Hirayu Onsen (Okuhida)",
       "kind": "other",
       "town": "Okuhida",
       "lat": 36.192,
       "lng": 137.559,
       "variant": "culture",
-      "notes": "Open-air baths in the snow; 1 h by bus. Free-day option."
+      "notes": "16 open-air baths in a snowy pine forest, ¥700, private baths rentable. 1 h by Nohi bus. Planned for the Sunday afternoon."
     },
     {
       "id": "pb9",
