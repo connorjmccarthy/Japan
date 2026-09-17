@@ -5,7 +5,7 @@
     "end": "2027-02-17",
     "homeCurrency": "AUD",
     "jpyPerAud": 108,
-    "updatedAt": "2026-09-17T12:26:28Z",
+    "updatedAt": "2026-09-17T12:28:44Z",
     "version": 1,
     "about": "Solo ski trip. Confirmed: JQ815 BNE→SYD and the Business Classic Reward SYD→MEL→NRT on 8 Feb. Home Tue 16 Feb on QF80 + QF1256 (booked). Everything else is planned from research done 13 Sep 2026; prices marked est. need checking when booking."
   },
@@ -1270,7 +1270,7 @@
           "location": "Hirayu no Mori",
           "cost": 0,
           "currency": "JPY",
-          "notes": "The half-board plan starts at ¥11,000 for the night with dinner and breakfast, which is why there is no separate cost here. Afterwards go back in the water: the public baths run to 21:00 and the private bath is yours until 10:00 tomorrow. No bus to catch and no closing time to beat.",
+          "notes": "Included in the room rate: a Japanese set dinner built around premium Hida beef loin, grilled at the table, with tempura, hot pot, rice and soup. (They no longer serve the salt-grilled river fish shown in the photos.) Breakfast is a traditional Japanese set. Afterwards go back in the water: the public baths run to 21:00 and the private bath is yours until 10:00 tomorrow. No bus to catch and no closing time to beat.",
           "variant": "culture"
         },
         {
@@ -2388,17 +2388,17 @@
       "id": "s-b4",
       "name": "Hirayu no Mori, Okuhida (night out no. 3)",
       "town": "Hirayu Onsen",
-      "type": "Onsen lodge attached to the bathhouse; Japanese-style room, 16 open-air baths",
+      "type": "Onsen lodge attached to the bathhouse; Special Japanese-Western Single Room, 16 open-air baths",
       "status": "planned",
       "variant": "culture",
-      "pricePerNightAud": 102,
+      "pricePerNightAud": 135,
       "nights": 1,
-      "priceNote": "from ¥11,000 with dinner and breakfast",
+      "priceNote": "¥14,550 half board, single room, prepaid",
       "checkIn": "2027-02-14",
       "checkOut": "2027-02-15",
       "distance": "3 min walk from Hirayu Onsen bus terminal; 1 h by Nohi bus from Takayama",
       "url": "https://www.booking.com/hotel/jp/hirayunomori.html",
-      "notes": "Half board from ¥11,000; room only and B&B also offered. The reason to stay: the private bath is ¥3,000 for day visitors but FREE for guests, and their window runs 15:00 to 10:00 the next morning, so you can use it after dark and before breakfast. The public forest baths are open to guests until 08:00 too. Reported as tattoo friendly; confirm in writing, though the free private bath covers you either way. Hotel Hirayunomori Annex is the cheaper sister property 3 min away. Their own site is Japanese-only, so use Booking.com."
+      "notes": "Plan to book: 【Half Board】premium Hida beef loin dinner + traditional Japanese breakfast, ¥14,550 in a Special Japanese-Western Single Room. A real single room at single occupancy, so no solo supplement, which was the main risk. Prepaid by credit card through Time Design, so CONFIRM THE TATTOO POLICY BEFORE PAYING and read the cancellation terms; prepaid agency bookings are often strict. Cheaper plans exist from ¥11,000 (room only or B&B) if you would rather eat elsewhere. The reason to stay: the private bath is ¥3,000 for day visitors but FREE for guests, and their window runs 15:00 to 10:00 the next morning, so you can use it after dark and before breakfast. The public forest baths are open to guests until 08:00 too. Reported as tattoo friendly; confirm in writing, though the free private bath covers you either way. Hotel Hirayunomori Annex is the cheaper sister property 3 min away. Their own site is Japanese-only, so use Booking.com."
     },
     {
       "id": "s-b3",
@@ -3078,10 +3078,10 @@
     {
       "id": "ckb8",
       "group": "Points and bookings",
-      "text": "Plan B: book one night at Hirayu no Mori (Okuhida) for 14 Feb, half board, and confirm the tattoo policy in writing",
+      "text": "Plan B: confirm the Hirayu no Mori tattoo policy, then book the 14 Feb half-board single (¥14,550, prepaid)",
       "due": "2026-10-31",
       "variant": "culture",
-      "notes": "Take the half-board plan, from ¥11,000 with dinner and breakfast. Booking.com lists both the main lodge and the cheaper Annex; their own site is Japanese-only. Ask them to confirm two things: that tattoos are accepted in the open-air baths, and that bath access is included in the room rate. The private bath is free for guests (15:00-10:00) but cannot be reserved ahead, only at the desk on arrival."
+      "notes": "Book the 【Half Board】Hida beef loin plan, ¥14,550, Special Japanese-Western Single Room, single occupancy so no solo supplement. It is prepaid by card through Time Design, so confirm the tattoo policy and read the cancellation terms BEFORE you pay. Booking.com lists both the main lodge and the cheaper Annex; their own site is Japanese-only. Ask them to confirm two things: that tattoos are accepted in the open-air baths, and that bath access is included in the room rate. The private bath is free for guests (15:00-10:00) but cannot be reserved ahead, only at the desk on arrival."
     },
     {
       "id": "ckb7",
