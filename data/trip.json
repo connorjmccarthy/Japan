@@ -5,7 +5,7 @@
     "end": "2027-02-17",
     "homeCurrency": "AUD",
     "jpyPerAud": 108,
-    "updatedAt": "2026-09-17T11:50:08Z",
+    "updatedAt": "2026-09-17T12:14:56Z",
     "version": 1,
     "about": "Solo ski trip. Confirmed: JQ815 BNE→SYD and the Business Classic Reward SYD→MEL→NRT on 8 Feb. Home Tue 16 Feb on QF80 + QF1256 (booked). Everything else is planned from research done 13 Sep 2026; prices marked est. need checking when booking."
   },
@@ -985,6 +985,7 @@
           "location": "Village",
           "cost": 700,
           "currency": "JPY",
+          "notes": "The onsen is a public bathhouse, so check its tattoo policy before you undress. The farmhouse bath is a normal family bathroom, no issue there.",
           "variant": "culture",
           "placeId": "pb4"
         },
@@ -1215,7 +1216,7 @@
           "endTime": "13:20",
           "cost": 1600,
           "currency": "JPY",
-          "notes": "Roughly hourly, about 1 h. This early departure exists for one reason: the private baths stop admitting at 14:15, and the next bus lands after that. Only a 20 min connection from the Shirakawa-go bus, so walk straight over and buy the ticket at the window (no reservation needed on this route; pay on board if it is shut). Confirm the exact February times on nouhibus.co.jp in January. If the Shirakawa-go bus is late, take the next one and skip the private bath; the sixteen open-air baths are the main event anyway.",
+          "notes": "Roughly hourly, about 1 h. This early departure exists for one reason: the private bath stops admitting at 14:15, and the next bus lands after that. Only a 20 min connection from the Shirakawa-go bus, so walk straight over and buy the ticket at the window (no reservation needed on this route; pay on board if it is shut). Daypack only: the suitcase stays in the Takayama room, which is yours all night either way. Confirm the exact February times on nouhibus.co.jp in January.",
           "variant": "culture",
           "placeId": "pb10"
         },
@@ -1223,13 +1224,13 @@
           "id": "c14d2",
           "time": "13:30",
           "type": "activity",
-          "title": "Hirayu no Mori: ask for a private bath at the desk (last admission 14:15)",
+          "title": "Hirayu no Mori: book the private bath at the desk (last reservation 14:15)",
           "status": "planned",
           "location": "Hirayu no Mori, 3 min walk from the Hirayu Onsen bus terminal",
           "endTime": "14:15",
-          "cost": 700,
+          "cost": 3700,
           "currency": "JPY",
-          "notes": "Entry ¥700. There are only two private baths (kashikiri) and they run 12:00-15:00 with last admission 14:15, so this is the first thing you do, before you get changed. Expect about ¥1,500-3,000 on top for roughly 45 min. With only two of them on a Sunday they may already be taken, in which case go straight to the open-air baths and eat the Hida beef set instead.",
+          "notes": "Do this before anything else. Entry ¥700 from the ticket machine in the lobby, handed to the front desk; the private bath is ¥3,000 per group for 45 min, noon to 3pm, last reservation 14:15, in person only (no phone, no online). There are two of them, so on a Sunday they may be gone. Towels are not included: bring one from the Takayama room or buy one for a few hundred yen. Soap and shampoo are in the bathhouse.",
           "variant": "culture",
           "placeId": "pb8"
         },
@@ -1237,50 +1238,49 @@
           "id": "c14d5",
           "time": "14:30",
           "type": "activity",
-          "title": "The sixteen open-air baths in the snow",
+          "title": "Lunch at Mominoki, then check in from 15:00",
           "status": "planned",
           "location": "Hirayu no Mori",
-          "endTime": "16:45",
-          "cost": 0,
+          "endTime": "16:00",
+          "cost": 2500,
           "currency": "JPY",
-          "notes": "Bicarbonate water, the soft kind that leaves your skin smooth. Sixteen rotenburo scattered through a snowy pine forest, seven of them on the men’s side, plus one indoor bath each side to warm up in. Take the small towel: the only cold part is the short walk on snow between the changing room and the water. Soap and shampoo are provided. Lunch here if you skipped the ramen.",
+          "notes": "Mominoki is the forest restaurant on site: heated tatami room, tables facing the trees, Hida beef and cheaper set meals. Eat late so dinner can be light, or the other way round. There is also a tatami relaxation room and Komorebi Cafe by the front desk if you just want to lie down.",
           "variant": "culture",
           "placeId": "pb8"
         },
         {
-          "id": "c14d3",
-          "time": "17:00",
-          "type": "bus",
-          "title": "Nohi bus Hirayu Onsen → Takayama",
+          "id": "c14d6",
+          "time": "16:00",
+          "type": "activity",
+          "title": "The forest baths as it goes dark",
           "status": "planned",
-          "location": "Hirayu Onsen bus terminal",
-          "endTime": "18:00",
-          "cost": 1600,
+          "location": "Hirayu no Mori",
+          "endTime": "18:30",
+          "cost": 0,
           "currency": "JPY",
-          "notes": "Last services back are around 17:30, so do not cut it fine. Buy the return leg when you buy the outbound if the counter offers it.",
-          "variant": "culture",
-          "placeId": "pb8"
+          "notes": "Bicarbonate water, the soft kind that leaves your skin smooth. Sixteen open-air pools at different temperatures scattered through the snowy pines, seven on the men’s side, plus a big Taisho-style indoor bath and a sauna to warm up in. Dusk is from about half four here because the valley sits under the ridgeline. Reported as tattoo friendly, but confirm when you book the room so there is no surprise at the door.",
+          "variant": "culture"
+        },
+        {
+          "id": "c14d7",
+          "time": "19:00",
+          "type": "food",
+          "title": "Dinner at Hirayu, then the baths again at night",
+          "status": "planned",
+          "location": "Hirayu no Mori",
+          "cost": 3000,
+          "currency": "JPY",
+          "notes": "No bus to catch and no closing time to beat: the baths run to 21:00 for day visitors and you are staying, so you can go back in after eating. This is the part a day trip cannot give you.",
+          "variant": "culture"
         },
         {
           "id": "c14d4",
           "time": "12:30",
           "type": "activity",
-          "title": "If the weather is foul: baths and a canal town in town instead",
+          "title": "If you cancel the overnight: baths and a canal town in town instead: baths and a canal town in town instead",
           "status": "idea",
           "location": "Takayama",
           "notes": "Associa Takayama Resort has ten outdoor baths with mountain views, 8 min by free shuttle from the station, day use with a Hida beef lunch set about ¥4,700. Takayama Green Hotel (Tenryo-no-yu) is an 8 min walk and open to day visitors 11:00-14:00 and 15:00-22:00, so it also works after dinner. Hida Furukawa, a quiet canal town with carp and two sake breweries, is 15 min by train.",
-          "variant": "culture",
-          "placeId": "pb3"
-        },
-        {
-          "id": "c14e",
-          "time": "19:00",
-          "type": "food",
-          "title": "Dinner: hoba-miso set or an izakaya near the station",
-          "status": "planned",
-          "location": "Takayama",
-          "cost": 2500,
-          "currency": "JPY",
           "variant": "culture",
           "placeId": "pb3"
         }
@@ -1288,10 +1288,10 @@
       "walk": "12,000-15,000 steps (Togakushi cedar avenue and Zenko-ji)",
       "variants": {
         "culture": {
-          "title": "Back to the hub, then open-air baths at Hirayu",
-          "base": "Takayama (hub)",
-          "notes": "Sleep in, breakfast at the hearth, a late-morning bus back, then straight onto the 12:20 bus an hour up into the Okuhida mountains to sit in an open-air bath in the snow. Home in time for dinner. If the weather is foul, the in-town baths do the same job with no bus.",
-          "walk": "7,000-9,000 steps (village walk at dawn, then mostly bus and bathing)"
+          "title": "Shirakawa-go → Hirayu Onsen (night out no. 3)",
+          "base": "Hirayu Onsen, Okuhida",
+          "walk": "5,000-7,000 steps (village walk at dawn, then buses and bathing)",
+          "notes": "Breakfast at the hearth, a late-morning bus back, then straight onto the 12:20 bus an hour up into the Okuhida mountains. Private bath, check in, the forest pools as it goes dark, dinner, then back in the water at night with no bus to catch. Daypack only: the suitcase and the room stay yours in Takayama."
         }
       }
     },
@@ -1363,10 +1363,38 @@
           "placeId": "p15"
         },
         {
+          "id": "c15k",
+          "time": "06:45",
+          "type": "activity",
+          "title": "Dawn bath in the snow",
+          "status": "planned",
+          "location": "Hirayu no Mori",
+          "endTime": "08:00",
+          "cost": 0,
+          "currency": "JPY",
+          "notes": "The open-air baths stay open to staying guests until 08:00. First light on snow with the pools steaming is the best hour of the whole stay, and it is the one thing no day visitor gets. Worth the early alarm; it is the only one on this trip.",
+          "variant": "culture",
+          "placeId": "pb8"
+        },
+        {
+          "id": "c15l",
+          "time": "09:20",
+          "type": "bus",
+          "title": "Nohi bus Hirayu Onsen → Takayama",
+          "status": "planned",
+          "location": "Hirayu Onsen bus terminal",
+          "endTime": "10:20",
+          "cost": 1600,
+          "currency": "JPY",
+          "notes": "Check-out is by 10:00, so breakfast then straight to the terminal. This bus gets you back in time for the tail of the morning market and keeps the whole beef day intact. Confirm the exact time in January.",
+          "variant": "culture",
+          "placeId": "pb8"
+        },
+        {
           "id": "c15a",
-          "time": "09:30",
+          "time": "10:20",
           "type": "note",
-          "title": "Beef day: nothing before 9:30, and everything is within a 15-minute walk of the hub",
+          "title": "Beef day: back in Takayama, everything from here is within a 15-minute walk",
           "status": "planned",
           "location": "Takayama hub",
           "notes": "A themed free day, not a schedule. Skip anything; the only thing worth booking is dinner.",
@@ -1375,12 +1403,12 @@
         },
         {
           "id": "c15f",
-          "time": "10:00",
+          "time": "10:30",
           "type": "food",
           "title": "Miyagawa morning market: mitarashi dango and a coffee by the river",
           "status": "planned",
           "location": "Miyagawa river bank, 10 min walk; runs until about noon",
-          "endTime": "10:40",
+          "endTime": "11:05",
           "cost": 500,
           "currency": "JPY",
           "notes": "Grilled rice dumplings brushed with soy, savoury not sweet, ¥100 a stick. Pickles, apples and crafts on the other stalls; a good wander with a coffee in hand.",
@@ -1389,12 +1417,12 @@
         },
         {
           "id": "c15g",
-          "time": "10:45",
+          "time": "11:15",
           "type": "food",
           "title": "Hida beef sushi at Kotte Ushi, Sanmachi",
           "status": "planned",
           "location": "Sanmachi-suji old street, the shop with the queue",
-          "endTime": "11:15",
+          "endTime": "11:40",
           "cost": 900,
           "currency": "JPY",
           "notes": "Two pieces of seared A5 Hida beef nigiri served on a rice cracker, eaten standing in the street. The queue moves fast. A beef croquette or beef bun from the next window if you are still peckish.",
@@ -1403,7 +1431,7 @@
         },
         {
           "id": "c15h",
-          "time": "11:30",
+          "time": "11:50",
           "type": "food",
           "title": "Lunch at Maruaki: Hida beef from the butcher, weekday lunch set",
           "status": "planned",
@@ -1482,7 +1510,7 @@
           "title": "Beef day in Takayama (free-roam, all optional)",
           "base": "Takayama (hub)",
           "notes": "A themed free day: morning market, beef sushi in the old street, a butcher’s lunch, sake tasting, and aged Hida beef yakiniku at night. Everything is within a 15-minute walk of the hub and nothing starts before 9:30. If you would rather leave town, the Okuhida or Gero onsen options replace the daytime and the yakiniku still happens.",
-          "walk": "8,000-11,000 steps (market, old street, breweries; all in town)"
+          "walk": "8,000-11,000 steps (bus back, then market, old street and breweries on foot)"
         }
       }
     },
@@ -2357,6 +2385,22 @@
       "notes": "BOOKED (prepaid; free cancellation until 28 Jan 2027). Address for the courier slip: 岐阜県高山市天満町4丁目3, 506-0025 (Tenman-machi 4-3, Takayama, Gifu). The hotel asks to be told if you will arrive after 19:00; the plan has you there about 16:30. Reservation number goes in the Private vault. Compact (12 m²), indigo-blue interior, double glazing, no bath or toilet in the room; shared bath is private-use (check whether you book a slot), plus a full kitchen for breakfasts. Room sits next to the main hall, so pack earplugs. Ask them (1) to accept the courier parcel arriving 11 Feb, and (2) that keeping the room over Saturday night while you sleep in Shirakawa-go is fine (it is; you have paid for it). Alternatives if it falls through: Hotel Around Takayama, Tabino Hotel Hida Takayama, Hida Plaza Hotel."
     },
     {
+      "id": "s-b4",
+      "name": "Hirayu no Mori, Okuhida (night out no. 3)",
+      "town": "Hirayu Onsen",
+      "type": "Onsen lodge attached to the bathhouse; Japanese-style room, 16 open-air baths",
+      "status": "planned",
+      "variant": "culture",
+      "pricePerNightAud": 140,
+      "nights": 1,
+      "priceNote": "est. A$70-200 room only; meals on site",
+      "checkIn": "2027-02-14",
+      "checkOut": "2027-02-15",
+      "distance": "3 min walk from Hirayu Onsen bus terminal; 1 h by Nohi bus from Takayama",
+      "url": "https://www.booking.com/hotel/jp/hirayunomori.html",
+      "notes": "Reported as tattoo friendly, which is why this works: confirm it in writing when you book. Staying gets you the forest baths at night and again until 08:00 the next morning, which day visitors never see. Room-only plans exist and the Mominoki restaurant on site does Hida beef. Hotel Hirayunomori Annex is the cheaper sister property 3 min away, twin beds, with a free bath ticket. Bookable now; their own site is Japanese-only, so use Booking.com."
+    },
+    {
       "id": "s-b3",
       "name": "Shirakawa-go gassho-zukuri farmhouse minshuku",
       "town": "Shirakawa-go",
@@ -3030,6 +3074,14 @@
       "text": "Plan B: email Temple Hotel Takayama Zenkoji to confirm they will hold a courier parcel arriving 11 Feb, and that the room stays yours over Saturday 13 while you are in Shirakawa-go",
       "due": "2026-10-15",
       "variant": "culture"
+    },
+    {
+      "id": "ckb8",
+      "group": "Points and bookings",
+      "text": "Plan B: book one night at Hirayu no Mori (Okuhida) for 14 Feb, and confirm the tattoo policy in writing",
+      "due": "2026-10-31",
+      "variant": "culture",
+      "notes": "Booking.com lists both the main lodge and the cheaper Annex; their own site is Japanese-only. Room-only is fine, the restaurant is on site. Ask them to confirm tattoos are accepted in the open-air baths, because that is the whole reason for staying. The private bath cannot be reserved ahead by phone or online, only in person on the day."
     },
     {
       "id": "ckb7",
