@@ -297,7 +297,7 @@ test.describe('go mode', () => {
     const first = cards.first();
     await expect(first.locator('.go-title')).toContainText(/\S/);
     await expect(first.locator('a', { hasText: 'Directions' })).toHaveAttribute('href', /google\.com\/maps/);
-    await expect(page.locator('.go-card.go-stay .go-title')).toContainText('farmhouse');
+    await expect(page.locator('.go-card.go-stay .go-title')).toContainText('Ootaya');
     const title = await first.locator('.go-title').textContent();
     await first.getByRole('button', { name: 'Done' }).click();
     await expect(cards).toHaveCount(before - 1);
