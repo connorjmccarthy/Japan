@@ -5,7 +5,7 @@
     "end": "2027-02-17",
     "homeCurrency": "AUD",
     "jpyPerAud": 108,
-    "updatedAt": "2026-09-17T12:22:35Z",
+    "updatedAt": "2026-09-17T12:26:28Z",
     "version": 1,
     "about": "Solo ski trip. Confirmed: JQ815 BNE→SYD and the Business Classic Reward SYD→MEL→NRT on 8 Feb. Home Tue 16 Feb on QF80 + QF1256 (booked). Everything else is planned from research done 13 Sep 2026; prices marked est. need checking when booking."
   },
@@ -1222,15 +1222,15 @@
         },
         {
           "id": "c14d2",
-          "time": "15:00",
+          "time": "14:20",
           "type": "stay",
-          "title": "Check in at Hirayu no Mori, and book the private bath while you are at the desk",
+          "title": "Arrive, bag at the desk, book the private bath; room from 15:00",
           "status": "planned",
           "location": "Hirayu no Mori, 3 min walk from the Hirayu Onsen bus terminal",
           "endTime": "15:30",
           "cost": 0,
           "currency": "JPY",
-          "notes": "The private bath costs day visitors ¥3,000 between noon and 3pm. For staying guests it is FREE, and the window is 15:00 right through to 10:00 the next morning. So book it at check-in and take it whenever you like, including after dark and before breakfast. It cannot be reserved by phone or online, only in person. Bath access is normally included in the room rate; confirm that when you book so you are not paying ¥700 on top.",
+          "notes": "Check-in is officially 15:00 and they will hold you to it, but arriving 40 min early is normal: leave the bag at the desk and ask whether you can use the baths straight away. As a staying guest they usually say yes. Otherwise there is a tatami relaxation room and Komorebi Cafe by the front desk. Book the private bath at the same time: it costs day visitors ¥3,000 between noon and 3pm, but for staying guests it is FREE from 15:00 right through to 10:00 tomorrow, so take it after dark and again before breakfast. Do not let anyone charge you ¥3,000 for it. It cannot be reserved by phone or online, only in person. Bath entry is normally included in the room rate; confirm that when you book so you are not paying ¥700 on top.",
           "variant": "culture",
           "placeId": "pb8"
         },
