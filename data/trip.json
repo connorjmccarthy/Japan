@@ -5,7 +5,7 @@
     "end": "2027-02-17",
     "homeCurrency": "AUD",
     "jpyPerAud": 108,
-    "updatedAt": "2026-09-17T12:32:36Z",
+    "updatedAt": "2026-09-17T12:52:16Z",
     "version": 1,
     "about": "Solo ski trip. Confirmed: JQ815 BNE→SYD and the Business Classic Reward SYD→MEL→NRT on 8 Feb. Home Tue 16 Feb on QF80 + QF1256 (booked). Everything else is planned from research done 13 Sep 2026; prices marked est. need checking when booking."
   },
@@ -2419,7 +2419,7 @@
       "name": "Hirayu no Mori, Okuhida (night out no. 3)",
       "town": "Hirayu Onsen",
       "type": "Onsen lodge attached to the bathhouse; Special Japanese-Western Single Room, 16 open-air baths",
-      "status": "planned",
+      "status": "booked",
       "variant": "culture",
       "pricePerNightAud": 135,
       "nights": 1,
@@ -3116,10 +3116,11 @@
     {
       "id": "ckb8",
       "group": "Points and bookings",
-      "text": "Plan B: confirm the Hirayu no Mori tattoo policy, then book the 14 Feb half-board single (¥14,550, prepaid)",
+      "text": "Plan B: Hirayu no Mori booked for 14 Feb (half board, single, ¥14,550, prepaid)",
       "due": "2026-10-31",
       "variant": "culture",
-      "notes": "Book the 【Half Board】Hida beef loin plan, ¥14,550, Special Japanese-Western Single Room, single occupancy so no solo supplement. It is prepaid by card through Time Design, so confirm the tattoo policy and read the cancellation terms BEFORE you pay. Booking.com lists both the main lodge and the cheaper Annex; their own site is Japanese-only. Ask them to confirm two things: that tattoos are accepted in the open-air baths, and that bath access is included in the room rate. The private bath is free for guests (15:00-10:00) but cannot be reserved ahead, only at the desk on arrival."
+      "done": true,
+      "notes": "Booked and prepaid through Time Design; reservation number is in the Private vault. Loose ends: check the confirmation email from the property actually arrived, and read the cancellation terms so you know where you stand. Tattoos are not a blocker either way, because the private baths are free for guests from 15:00 and nobody else is in them."
     },
     {
       "id": "ckb7",
