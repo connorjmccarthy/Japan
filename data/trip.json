@@ -5,7 +5,7 @@
     "end": "2027-02-17",
     "homeCurrency": "AUD",
     "jpyPerAud": 108,
-    "updatedAt": "2026-09-17T11:48:04Z",
+    "updatedAt": "2026-09-17T11:50:08Z",
     "version": 1,
     "about": "Solo ski trip. Confirmed: JQ815 BNE→SYD and the Business Classic Reward SYD→MEL→NRT on 8 Feb. Home Tue 16 Feb on QF80 + QF1256 (booked). Everything else is planned from research done 13 Sep 2026; prices marked est. need checking when booking."
   },
@@ -1196,40 +1196,54 @@
           "id": "c14c",
           "time": "12:15",
           "type": "food",
-          "title": "Takayama ramen",
-          "status": "planned",
-          "location": "An old shop in the centre",
+          "title": "Takayama ramen, only if the bus is on time",
+          "status": "idea",
+          "location": "An old shop near the station",
           "cost": 1000,
           "currency": "JPY",
-          "notes": "Thin curly noodles in a soy-shoyu broth; the town’s everyday lunch.",
+          "notes": "Thin curly noodles in a soy-shoyu broth; the town’s everyday lunch. Skip it if the Shirakawa-go bus runs late: the 12:20 bus to Hirayu matters more, and there is a Hida beef meal set at the baths. Have the ramen on Monday instead.",
           "variant": "culture",
           "placeId": "pb3"
         },
         {
           "id": "c14d",
-          "time": "13:20",
+          "time": "12:20",
           "type": "bus",
-          "title": "Nohi bus Takayama → Hirayu Onsen",
+          "title": "Nohi bus Takayama → Hirayu Onsen (take this one, not the next)",
           "status": "planned",
           "location": "Takayama Nohi Bus Center, next to the station",
-          "endTime": "14:20",
+          "endTime": "13:20",
           "cost": 1600,
           "currency": "JPY",
-          "notes": "Roughly hourly, about 1 h. No reservation needed on this route: buy at the ticket window in the bus centre before boarding, or pay on board if it is shut. Snow delays are normal in February, so take the earlier bus if one is going.",
+          "notes": "Roughly hourly, about 1 h. This early departure exists for one reason: the private baths stop admitting at 14:15, and the next bus lands after that. Only a 20 min connection from the Shirakawa-go bus, so walk straight over and buy the ticket at the window (no reservation needed on this route; pay on board if it is shut). Confirm the exact February times on nouhibus.co.jp in January. If the Shirakawa-go bus is late, take the next one and skip the private bath; the sixteen open-air baths are the main event anyway.",
           "variant": "culture",
           "placeId": "pb10"
         },
         {
           "id": "c14d2",
-          "time": "14:30",
+          "time": "13:30",
           "type": "activity",
-          "title": "Hirayu no Mori: open-air baths in the snow",
+          "title": "Hirayu no Mori: ask for a private bath at the desk (last admission 14:15)",
           "status": "planned",
           "location": "Hirayu no Mori, 3 min walk from the Hirayu Onsen bus terminal",
-          "endTime": "16:45",
+          "endTime": "14:15",
           "cost": 700,
           "currency": "JPY",
-          "notes": "Sixteen rotenburo (open-air baths) scattered through a snowy pine forest, ¥700, open from 8:00 in winter. Private baths can be rented at the desk for about 45 min, roughly ¥1,500-3,000, usually midday to 3pm; ask when you arrive. Bring the small towel: the only cold part is the short walk on snow between the changing room and the water. Soap and shampoo are provided, and there is a Hida beef meal set if you want lunch here instead of ramen in town.",
+          "notes": "Entry ¥700. There are only two private baths (kashikiri) and they run 12:00-15:00 with last admission 14:15, so this is the first thing you do, before you get changed. Expect about ¥1,500-3,000 on top for roughly 45 min. With only two of them on a Sunday they may already be taken, in which case go straight to the open-air baths and eat the Hida beef set instead.",
+          "variant": "culture",
+          "placeId": "pb8"
+        },
+        {
+          "id": "c14d5",
+          "time": "14:30",
+          "type": "activity",
+          "title": "The sixteen open-air baths in the snow",
+          "status": "planned",
+          "location": "Hirayu no Mori",
+          "endTime": "16:45",
+          "cost": 0,
+          "currency": "JPY",
+          "notes": "Bicarbonate water, the soft kind that leaves your skin smooth. Sixteen rotenburo scattered through a snowy pine forest, seven of them on the men’s side, plus one indoor bath each side to warm up in. Take the small towel: the only cold part is the short walk on snow between the changing room and the water. Soap and shampoo are provided. Lunch here if you skipped the ramen.",
           "variant": "culture",
           "placeId": "pb8"
         },
@@ -1249,7 +1263,7 @@
         },
         {
           "id": "c14d4",
-          "time": "13:30",
+          "time": "12:30",
           "type": "activity",
           "title": "If the weather is foul: baths and a canal town in town instead",
           "status": "idea",
@@ -1276,7 +1290,7 @@
         "culture": {
           "title": "Back to the hub, then open-air baths at Hirayu",
           "base": "Takayama (hub)",
-          "notes": "Sleep in, breakfast at the hearth, a late-morning bus back, ramen, then an hour up into the Okuhida mountains to sit in an open-air bath in the snow. Home in time for dinner. If the weather is foul, the in-town baths do the same job with no bus.",
+          "notes": "Sleep in, breakfast at the hearth, a late-morning bus back, then straight onto the 12:20 bus an hour up into the Okuhida mountains to sit in an open-air bath in the snow. Home in time for dinner. If the weather is foul, the in-town baths do the same job with no bus.",
           "walk": "7,000-9,000 steps (village walk at dawn, then mostly bus and bathing)"
         }
       }
@@ -3410,7 +3424,7 @@
       "lat": 36.192,
       "lng": 137.559,
       "variant": "culture",
-      "notes": "16 open-air baths in a snowy pine forest, ¥700, private baths rentable. 1 h by Nohi bus. Planned for the Sunday afternoon."
+      "notes": "Bicarbonate spring. 16 open-air baths (7 men, 9 women) plus 1 indoor each, ¥700. Two private baths, 12:00-15:00, last admission 14:15. 1 h by Nohi bus. Planned for the Sunday afternoon."
     },
     {
       "id": "pb9",
