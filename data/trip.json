@@ -5,7 +5,7 @@
     "end": "2027-02-17",
     "homeCurrency": "AUD",
     "jpyPerAud": 108,
-    "updatedAt": "2026-09-17T14:06:05Z",
+    "updatedAt": "2026-09-17T14:12:20Z",
     "version": 1,
     "about": "Solo ski trip. Confirmed: JQ815 BNE→SYD and the Business Classic Reward SYD→MEL→NRT on 8 Feb. Home Tue 16 Feb on QF80 + QF1256 (booked). Everything else is planned from research done 13 Sep 2026; prices marked est. need checking when booking."
   },
@@ -182,25 +182,13 @@
           "placeId": "p27"
         },
         {
-          "id": "b6b",
-          "time": "15:20",
-          "type": "transfer",
-          "title": "Send the suitcase ahead by Yamato courier (takkyubin)",
-          "status": "planned",
-          "location": "Hotel front desk",
-          "cost": 3000,
-          "currency": "JPY",
-          "notes": "Ask the desk for “takkyubin to this address” and show the destination’s name and address in Japanese. Plan A: to the Nozawa lodging, waiting when you arrive Thursday. Plan B: to Temple Hotel Takayama Zenkoji, 岐阜県高山市天満町4丁目3, 506-0025, tel via the booking email (write “for guest Connor McCarthy arriving 12 Feb”; ask them first, most hold parcels). Two days is the standard lead time. Travel in between with a daypack: two or three days of clothes, USJ tickets, and in Plan A Friday’s ski base layers. Confirm beforehand that the receiving place accepts parcels (most do).",
-          "placeId": "p27"
-        },
-        {
           "id": "b6c",
-          "time": "16:15",
+          "time": "16:00",
           "type": "activity",
           "title": "Nintendo OSAKA store (optional, 45 min)",
           "status": "idea",
           "location": "Daimaru Umeda 13F, 5 min walk from JR Osaka Station",
-          "endTime": "17:00",
+          "endTime": "16:40",
           "notes": "The official Nintendo store, exclusive merchandise, quieter than the USJ shops on Wednesday. Open 10:00-20:00. Borrowed from your friend’s Tokyo list (theirs was the Shibuya Parco store).",
           "placeId": "p25"
         },
@@ -325,36 +313,36 @@
           "title": "Rest of the park: Jurassic Park, Harry Potter area, Jaws",
           "status": "planned",
           "location": "USJ",
-          "endTime": "19:00",
-          "notes": "Single Rider lines are the solo traveller’s cheat code and are free. February weekdays historically close around 7pm, so the day is shorter than summer: front-load Nintendo World.",
+          "endTime": "18:00",
+          "notes": "Single Rider lines are the solo traveller’s cheat code and are free. February weekdays historically close around 7pm, but leave at six: Universal City to Tsuruhashi is 35-40 min and today is already a fourteen-hour day. Front-load Nintendo World in the morning and you will have done the park by then.",
           "placeId": "p9"
         },
         {
           "id": "c7",
-          "time": "19:30",
+          "time": "19:00",
           "type": "food",
           "title": "Yakiniku with wagyu yukke (beef tartare) in Tsuruhashi",
           "status": "planned",
           "location": "Tsuruhashi, Korea Town: Yakiniku Tsuruhashi or one of the counters by the station",
           "cost": 5000,
           "currency": "JPY",
-          "notes": "Your beef tartare. Raw beef is only legal at licensed kitchens in Japan, so if yukke is on the menu it is the real thing: minced wagyu with egg yolk, sesame and soy. Order it first, then grilled cuts; aim to be done by about 20:45 for Dotonbori. About 35 min from Universal City (Loop Line to Tsuruhashi). If USJ has flattened you, the fallback is an okonomiyaki counter near the hotel.",
+          "notes": "Your beef tartare. Raw beef is only legal at licensed kitchens in Japan, so if yukke is on the menu it is the real thing: minced wagyu with egg yolk, sesame and soy. Order it first, then grilled cuts; aim to be done by about 20:30 for Dotonbori. Loop Line from Universal City, change at Nishikujo, 35-40 min. About 35 min from Universal City (Loop Line to Tsuruhashi). If USJ has flattened you, the fallback is an okonomiyaki counter near the hotel.",
           "placeId": "p20"
         },
         {
           "id": "c7b",
-          "time": "21:00",
+          "time": "20:45",
           "type": "activity",
           "title": "Dotonbori by night: the Glico sign from Ebisubashi, the canal, Hozenji Yokocho",
           "status": "planned",
           "location": "Sennichimae line Tsuruhashi → Nippombashi (4 min), then a 5 min walk to the canal",
-          "endTime": "21:30",
+          "endTime": "21:15",
           "notes": "The neon you have seen in every photo: the Glico running man from Ebisubashi bridge, the crab and the dragon signs, the canal walkway underneath. Loud, touristy, and worth 30 minutes once. Then Hozenji Yokocho, the lantern-lit stone lane two minutes south, with the moss-covered Fudo statue people splash water on. No need to eat here; you have eaten.",
           "placeId": "p28"
         },
         {
           "id": "c7c",
-          "time": "21:30",
+          "time": "21:15",
           "type": "food",
           "title": "Standing bars (tachinomi) in Ura-Namba",
           "status": "planned",
@@ -540,6 +528,20 @@
           "notes": "13 free soto-yu bathhouses run by the village. Wash first, no towel in the water, keep it quiet, no photos. Bring a small towel; expect it hot.",
           "variant": "ski",
           "placeId": "p15"
+        },
+        {
+          "id": "c11z",
+          "time": "09:00",
+          "type": "transfer",
+          "title": "Send the suitcase ahead to Takayama by Yamato courier (takkyubin)",
+          "status": "planned",
+          "location": "Osaka hotel front desk",
+          "endTime": "09:15",
+          "cost": 3000,
+          "currency": "JPY",
+          "notes": "Do this at check-out, not earlier, or you spend two Osaka nights without your clothes. Hand it to the desk and ask for “takkyubin to this address”, showing the Takayama address in Japanese from the Stays page. Osaka to Gifu is next-day, so it lands at the hotel on the 12th, the day you check in. Ask for the earliest collection. Everything you need for Koyasan goes in the daypack: one change of clothes, toiletries, chargers, and something warm.",
+          "variant": "culture",
+          "placeId": "p27"
         },
         {
           "id": "c11a",
@@ -1511,28 +1513,28 @@
           "title": "Afternoon, your call: rest at the hub, the Higashiyama temple walk, Takayama Jinya or the Hida Folk Village",
           "status": "idea",
           "location": "All in town",
-          "notes": "The temple walk is a quiet 3.5 km loop above the town that starts near the hub and earns dinner. Jinya (¥440) is the only surviving Edo provincial office; the Folk Village (¥700) is a hillside of relocated farmhouses, 10 min by bus.",
+          "notes": "The Hida Folk Village runs a winter light-up from mid-January to the end of February, and entry after dark drops to ¥300: thatched farmhouses lit up in the snow, 10 min by bus, and it fits between about 16:30 and 18:00 before dinner. Otherwise the temple walk is a quiet 3.5 km loop above the town that starts near the hub and earns dinner. Jinya (¥440) is the only surviving Edo provincial office; the Folk Village (¥700) is a hillside of relocated farmhouses, 10 min by bus.",
           "variant": "culture",
           "placeId": "pb3"
         },
         {
           "id": "c15b",
-          "time": "09:45",
+          "time": "08:30",
           "type": "activity",
-          "title": "Instead of the beef day: Shinhotaka, deeper into Okuhida (1h40 by bus)",
+          "title": "Instead of coming straight back: carry on to Shinhotaka from Hirayu (40 min)",
           "status": "idea",
-          "location": "Nohi bus from Takayama Bus Center, past Hirayu",
-          "notes": "The most dramatic rotenburo in the region, directly under the 3,000 m Hotaka peaks, plus Japan’s only double-decker ropeway for a snow panorama of the Northern Alps. Yarimikan opens its riverside outdoor baths to day visitors; note two of its three are mixed gender. Book ahead only if boarding between Nakao and Shinhotaka Onsen. Back by dinner; the yakiniku still happens. About ¥6,000 in buses and baths.",
+          "location": "Nohi bus onward from Hirayu Onsen terminal",
+          "notes": "You are already halfway there, so this is much easier from Hirayu than from Takayama. The most dramatic rotenburo in the region, directly under the 3,000 m Hotaka peaks, plus Japan’s only double-decker ropeway for a snow panorama of the Northern Alps. Yarimikan opens its riverside outdoor baths to day visitors; note two of its three are mixed gender. Book ahead only if boarding between Nakao and Shinhotaka Onsen. Back by dinner; the yakiniku still happens. About ¥6,000 in buses and baths.",
           "variant": "culture",
           "placeId": "pb8"
         },
         {
           "id": "c15c",
-          "time": "09:45",
+          "time": "11:00",
           "type": "activity",
-          "title": "Instead of the beef day: Gero Onsen (1 h by train)",
+          "title": "Instead of the beef day: Gero Onsen (1 h by train from Takayama)",
           "status": "idea",
-          "location": "Hida express south",
+          "location": "Hida express south, after the bus back",
           "notes": "One of Japan’s “three great onsen”; a bathhouse pass (Yumeguri Tegata, ¥1,500) gets you into three of the ryokan baths. Riverside foot baths are free.",
           "variant": "culture",
           "placeId": "pb9"
@@ -2955,6 +2957,7 @@
       "text": "Travel insurance with the snow-sports add-on (and off-piste cover if you plan to ski Nozawa’s tree runs)",
       "due": "2026-11-30",
       "done": true,
+      "variant": "ski",
       "notes": "Standard Australian policies exclude skiing. About A$80 for a week before the add-on. Buy it when you book the first non-refundable thing so cancellation cover starts. Medicare does not cover Japan."
     },
     {
@@ -2991,7 +2994,7 @@
       "group": "Before you go",
       "text": "Get ¥30,000-50,000 cash (or plan to withdraw at 7-Eleven ATMs on arrival)",
       "due": "2027-02-01",
-      "notes": "Ski villages and small restaurants are still cash-heavy."
+      "notes": "Small restaurants, the standing bars and the buses are still cash-heavy. Both night-out stays are now prepaid, so the only large cash item left is Koyasan at ¥17,600, and only if they have not charged the card by 12 Jan. 7-Eleven ATMs take Australian cards."
     },
     {
       "id": "ck15",
@@ -3075,6 +3078,14 @@
       "text": "Buy simple strap-on crampons (or plan to buy at Workman/Don Quijote in Osaka) for the Togakushi snow walk",
       "due": "2027-02-01",
       "variant": "ski"
+    },
+    {
+      "id": "ckb11",
+      "group": "Points and bookings",
+      "text": "Travel insurance for 8-17 Feb (no snow-sports add-on needed for Plan B)",
+      "due": "2026-11-30",
+      "variant": "culture",
+      "notes": "You now have roughly A$1,190 of prepaid, non-refundable accommodation, so cancellation cover is the point rather than medical alone. Check it covers trip disruption from snow and flight delays. About A$90 for ten days."
     },
     {
       "id": "ckb10",
@@ -3173,9 +3184,26 @@
     {
       "id": "ckb5",
       "group": "Points and bookings",
-      "text": "Plan B: reserve the Nankai Limited Express Koya (11 Feb), Hida express Nagoya → Takayama (12 Feb) and Takayama → Nagoya (16 Feb, 9:40), and the Nozomi Nagoya → Tokyo (16 Feb)",
+      "text": "Plan B: reserve the Nankai Limited Express Koya, Namba → Koyasan, 11 Feb 10:00",
+      "due": "2027-01-11",
+      "variant": "culture",
+      "notes": "Opens exactly one month ahead. 11 Feb is National Foundation Day, a public holiday, so this train will be busier than a normal Thursday. Reserve rather than turning up. Alternatively buy the Koyasan World Heritage Ticket at Nankai Namba, which includes a discounted seat reservation."
+    },
+    {
+      "id": "ckb5b",
+      "group": "Points and bookings",
+      "text": "Plan B: reserve the Limited Express Hida, Nagoya → Takayama, 12 Feb 13:45",
+      "due": "2027-01-12",
+      "variant": "culture",
+      "notes": "Opens one month ahead on the JR Central site, or any JR ticket machine on the day. Rarely sells out on a Friday, but you will have a daypack and a long day behind you."
+    },
+    {
+      "id": "ckb5c",
+      "group": "Points and bookings",
+      "text": "Plan B: reserve the 16 Feb trains home: Hida 09:40 Takayama → Nagoya, Nozomi Nagoya → Tokyo",
       "due": "2027-01-16",
-      "variant": "culture"
+      "variant": "culture",
+      "notes": "The Hida matters most: it runs about hourly and you are connecting to an international flight. smart-EX lets you change the Nozomi free of charge any number of times before departure, so book early and adjust later."
     },
     {
       "id": "ckb6",
