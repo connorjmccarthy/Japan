@@ -5,7 +5,7 @@
     "end": "2027-02-17",
     "homeCurrency": "AUD",
     "jpyPerAud": 108,
-    "updatedAt": "2026-09-17T12:59:18Z",
+    "updatedAt": "2026-09-17T13:05:58Z",
     "version": 1,
     "about": "Solo ski trip. Confirmed: JQ815 BNE→SYD and the Business Classic Reward SYD→MEL→NRT on 8 Feb. Home Tue 16 Feb on QF80 + QF1256 (booked). Everything else is planned from research done 13 Sep 2026; prices marked est. need checking when booking."
   },
@@ -975,7 +975,7 @@
           "endTime": "16:00",
           "cost": 0,
           "currency": "JPY",
-          "notes": "HARD RULES, worth respecting: check in by 17:00, phone them if you will be late, and if you arrive after 20:00 the reservation is cancelled with no refund. There is a 21:00 curfew if you go out after dinner. Six-mat tatami room, futon, dinner and breakfast included. Day-trippers leave on the last buses around five, and then the village is yours.",
+          "notes": "HARD RULES, worth respecting: check in by 17:00, phone 05769-6-1425 if you will be late, and if you arrive after 20:00 the reservation is cancelled with no refund. There is a 21:00 curfew if you go out after dinner. Six-mat tatami room, futon, dinner and breakfast included. Day-trippers leave on the last buses around five, and then the village is yours.",
           "variant": "culture",
           "placeId": "pb4"
         },
@@ -2451,17 +2451,18 @@
       "id": "s-b3",
       "name": "Ootaya, gassho-zukuri guesthouse (night out no. 2)",
       "town": "Shirakawa-go",
-      "type": "Thatched gassho farmhouse in Ogimachi; 6-mat tatami room, dinner and breakfast",
-      "status": "planned",
+      "address": "岐阜県大野郡白川村荻町1807 〒501-5627 (1807 Ogimachi, Shirakawa-mura, Ono-gun, Gifu). Tel 05769-6-1425",
+      "type": "Thatched gassho farmhouse in Ogimachi; 6-mat tatami, non-smoking, dinner and breakfast",
+      "status": "booked",
       "variant": "culture",
-      "pricePerNightAud": 224,
+      "pricePerNightAud": 234,
       "nights": 1,
-      "priceNote": "¥24,200 single occupancy, 2 meals",
+      "priceNote": "¥25,300 single occupancy, 2 meals, prepaid",
       "checkIn": "2027-02-13",
       "checkOut": "2027-02-14",
       "distance": "In the village",
       "url": "https://www.travelclassroom.net/eng/shirakawa-stay.html",
-      "notes": "Night out no. 2. Book through the Shirakawa-go Tourist Association reservation system (shirakawa-go.gr.jp/en/stay/; the TravelClassroom guide explains the form). Shortlist, solo-friendly first: Bunroku (has taken single guests), Gensaku (4 rooms, 300 years old), Kanjiya (also on Booking.com), then Yokichi, Yoshiro, Wadaya. Magoemon is closed. Windows open 3-9 months ahead and good houses go within hours, so check now and again on 1 Oct. No light-up event in Feb 2027, so no lottery. Dinner around 6, arrive 4-5."
+      "notes": "BOOKED and prepaid by card. Package: Traditional Gassho style house, 1 night with 2 meals. Reservation number is in the Private vault. Check in 15:30; the window closes at 17:00 and you must phone 05769-6-1425 if you will be late. Arrive after 20:00 and the booking is cancelled with no refund. Curfew 21:00. Check out by 09:30, and they will hold your bag afterwards. Cancellation: 20 percent from 15 days out (29 Jan), 50 percent from 7 days, 70 percent the day before, 100 percent inside 24 hours. Dates and guest numbers CANNOT be amended online: changing either means cancelling and rebooking from scratch. Note their standing warning that all their cooking uses dashi (fish stock) and sake."
     }
   ],
   "food": [
@@ -3109,10 +3110,11 @@
     {
       "id": "ckb2",
       "group": "Points and bookings",
-      "text": "Plan B: book Ootaya gassho farmhouse, Shirakawa-go, 13 Feb (¥24,200 single, 2 meals)",
+      "text": "Plan B: Ootaya gassho farmhouse booked for 13 Feb (¥25,300, 2 meals, prepaid)",
       "due": "2026-10-01",
       "variant": "culture",
-      "notes": "Pick Ootaya over Shirakawa-go no Yu and Yui no Sho: it is the only actual thatched farmhouse of the three, the cheapest, and you already have an onsen night at Hirayu the following evening. Six-mat tatami room, dinner and breakfast, package runs 1 Jan to 28 Feb. Reservations close at noon two days before, but a Saturday in February will go long before that, so book as soon as it is bookable. Cancellation: 20 percent from 15 days out, 50 percent from 7 days, 70 percent the day before, 100 percent inside 24 hours. Put the reservation number in the Private vault."
+      "done": true,
+      "notes": "Chosen over Shirakawa-go no Yu and Yui no Sho: the only actual thatched farmhouse of the three, the cheapest, and you already have an onsen night at Hirayu the following evening. Reservation number in the Private vault."
     },
     {
       "id": "ckb3",
