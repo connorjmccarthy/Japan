@@ -7,7 +7,7 @@
     "rates": {
       "IDR": 10300
     },
-    "updatedAt": "2026-09-18T03:40:00Z",
+    "updatedAt": "2026-09-18T04:14:50.396Z",
     "version": 1,
     "mapRegion": "Bali, Indonesia",
     "travelMode": "driving",
@@ -1359,21 +1359,24 @@
       "id": "bk1",
       "group": "Before you book anything else",
       "text": "Settle the big one: is this a trip to the 11th or to the 15th? The booked return and the Ubud hotel contradict each other",
-      "due": "2026-09-25"
+      "due": "2026-09-25",
+      "done": true
     },
     {
       "id": "bk2",
       "group": "Before you book anything else",
       "text": "Confirm whether the A$2,655 Jetstar charge is the whole group or just you, and fix the split on the budget line",
       "due": "2026-09-25",
-      "money": true
+      "money": true,
+      "done": true
     },
     {
       "id": "bk3",
       "group": "Before you book anything else",
       "text": "Put the villa's nightly price into Stays so the budget is not missing its biggest line",
       "due": "2026-10-01",
-      "money": true
+      "money": true,
+      "done": true
     },
     {
       "id": "bk4",
