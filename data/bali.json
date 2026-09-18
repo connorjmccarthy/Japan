@@ -2,117 +2,47 @@
   "meta": {
     "title": "Bali 2026",
     "start": "2026-11-04",
-    "end": "2026-11-15",
+    "end": "2026-11-11",
     "homeCurrency": "AUD",
-    "rates": {
-      "IDR": 10300
-    },
-    "updatedAt": "2026-09-18T03:40:00Z",
-    "version": 1,
+    "updatedAt": "2026-09-18T04:10:00Z",
+    "version": 2,
     "mapRegion": "Bali, Indonesia",
     "travelMode": "driving",
-    "categories": [
-      "Flights",
-      "Transport",
-      "Accommodation",
-      "Food",
-      "Drinks",
-      "Activities",
-      "Visas & fees",
-      "Insurance",
-      "Connectivity",
-      "Other"
-    ],
-    "about": "Five of you in Bali, 4 to 11 November 2026, in a villa at Tibubeneng in Canggu, with an Ubud leg to the 15th that still needs confirming. Two flying from Sydney, three from the Sunshine Coast, meeting at Sydney T1. Built from the Wanderlog export of 18 Sep 2026 plus research done the same day; the Sunday and Tuesday filler has been rebuilt and every open question is on the Decisions page."
+    "features": {
+      "flights": false,
+      "budget": false,
+      "points": false
+    },
+    "about": "Five of you in Bali, 4 to 11 November 2026, in a villa at Tibubeneng in Canggu. This is the day-by-day: where everyone is going, when, and what to know before you get there. Flights and money are sorted separately and are deliberately not in here."
   },
   "days": [
     {
       "id": "d20261104",
       "date": "2026-11-04",
-      "title": "Fly out: Sunshine Coast, Sydney, then Bali",
-      "base": "In the air / late arrival in Canggu",
-      "notes": "Two groups converging. The Sydney two go straight to T1 in the evening; the Sunshine Coast three fly down at midday and change terminals. Everyone is on JQ37 at 7:15pm, into Denpasar at 10:45pm local. Expect to reach the villa somewhere around half midnight once immigration and the drive are done, so the first real day is Thursday.",
+      "title": "Travel day: everyone lands in Bali",
+      "base": "Villa Bunia, Canggu",
+      "notes": "Two groups converging, three from the Sunshine Coast and two from Sydney, both landing at Denpasar late in the evening. Flights are not in this app, so check your own booking for times. The villa is about an hour from the airport at that time of night, so plan on getting in around midnight and treat Thursday as the first real day.",
       "items": [
         {
           "id": "a1",
-          "time": "09:00",
-          "type": "transfer",
-          "title": "Gympie → Sunshine Coast Airport",
-          "status": "planned",
-          "location": "MCY, Marcoola",
-          "endTime": "10:20",
-          "who": "Sunshine Coast three",
-          "notes": "About 1h15. Domestic check-in closes 30 minutes before departure and Jetstar is strict about it. Park long-term or get dropped off; you are away 8 nights."
-        },
-        {
-          "id": "a2",
-          "time": "12:00",
-          "type": "flight",
-          "title": "JQ787 Sunshine Coast → Sydney",
-          "status": "booked",
-          "location": "MCY → SYD T2",
-          "endTime": "14:40",
-          "who": "Sunshine Coast three",
-          "notes": "2h40. Sydney is on daylight saving in November and Queensland is not, so you land at 2:40pm Sydney time, which is 1:40pm at home."
-        },
-        {
-          "id": "a3",
-          "time": "14:40",
-          "type": "transfer",
-          "title": "Collect bags, T2 domestic → T1 international",
-          "status": "planned",
-          "location": "Sydney Airport",
-          "endTime": "15:40",
-          "who": "Sunshine Coast three",
-          "cost": 9,
-          "currency": "AUD",
-          "notes": "Bags are NOT through-checked to Bali on separate Jetstar bookings, so collect them at T2. The T-Bus runs between terminals every 10 minutes and is free with a same-day boarding pass; the train (Domestic → International, one stop) is faster at about 2 minutes but costs roughly A$9 with the station access fee. Allow an hour door to door with bags."
-        },
-        {
-          "id": "a4",
-          "time": "16:00",
-          "type": "note",
-          "title": "Meet the Sydney two at T1 check-in",
-          "status": "planned",
-          "location": "Sydney T1, Jetstar check-in",
-          "endTime": "16:30",
-          "notes": "International check-in opens 3 hours before and closes 60 minutes before. Get the bags on early, then eat landside or airside together. Nobody needs to be at the gate before about 6:30pm."
-        },
-        {
-          "id": "a5",
-          "time": "19:15",
-          "type": "flight",
-          "title": "JQ37 Sydney → Denpasar",
-          "status": "booked",
-          "location": "SYD T1 → DPS",
-          "endTime": "22:45",
-          "notes": "6h30. Arrives 10:45pm Bali time. Jetstar sells food and drink on board and does not include checked bags on the cheapest fares, so check what is on the booking before you get to the airport. Fill in the All Indonesia arrival card before you fly (see Checklists) and have the QR ready."
-        },
-        {
-          "id": "a6",
           "time": "22:45",
           "type": "transfer",
-          "title": "Immigration, arrival card and levy QR, bags",
+          "title": "Land at Denpasar: immigration, arrival card and levy",
           "status": "planned",
           "location": "Ngurah Rai International, Terminal I",
           "endTime": "23:45",
-          "cost": 0,
-          "currency": "IDR",
-          "notes": "The queue at that hour is the slow part. Order: e-VOA QR (or pay on arrival), All Indonesia arrival card QR, then the Bali tourist levy QR. Have all three saved as screenshots, not just in email, because the airport wifi is hopeless. Do not change money at the airport counters; use an ATM in Canggu or pay by card.",
+          "notes": "The queue at that hour is the slow part. Have three QR codes saved as SCREENSHOTS, not sitting in your email, because the airport wifi is hopeless: your e-VOA, the All Indonesia arrival card, and the Bali tourist levy. All three are on the Checklists page, and all three want doing before you fly. Do not change money at the airport counters; the rate is poor. Use an ATM in Canggu or just pay by card.",
           "placeId": "q2"
         },
         {
-          "id": "a7",
+          "id": "a2",
           "time": "23:50",
           "type": "transfer",
-          "title": "Airport → Villa Bunia, Canggu",
+          "title": "Airport to Villa Bunia, Canggu",
           "status": "planned",
-          "location": "DPS → Tibubeneng, Canggu",
+          "location": "DPS to Tibubeneng, Canggu",
           "endTime": "00:45",
-          "cost": 400000,
-          "currency": "IDR",
-          "split": 5,
-          "notes": "About 45 to 60 minutes at that time of night; in daytime traffic it can be double. Five people plus luggage needs a van, not a car: book one ahead through the villa or a driver, or use Grab/Gojek car and take two. Roughly Rp350,000 to Rp450,000 for a private van. Tell Villa Bunia the arrival time in advance so somebody is awake.",
+          "notes": "About 45 to 60 minutes at that time of night; in daytime traffic it can be double. Five people plus luggage needs a van, not a car, so book one ahead through the villa rather than trying to sort it at 11pm. Roughly Rp350,000 to Rp450,000 for a private van, which is nothing split five ways. Grab and Gojek also work from the airport but you would need two cars.",
           "placeId": "q1"
         }
       ]
@@ -132,7 +62,7 @@
           "status": "booked",
           "location": "Tibubeneng, Kuta Utara, Badung",
           "endTime": "01:15",
-          "notes": "Sort out who is in which room tonight rather than in the morning. Aircon on, water from the dispenser not the tap.",
+          "notes": "Sort out who is in which room tonight rather than in the morning. Aircon on, and drink from the water dispenser rather than the tap.",
           "placeId": "q1"
         },
         {
@@ -142,9 +72,7 @@
           "title": "Breakfast and coffee at Pantai Berawa",
           "status": "planned",
           "location": "Berawa beach strip, 5 min from the villa",
-          "cost": 120000,
-          "currency": "IDR",
-          "notes": "Your own pick. The beachfront cafes along Berawa do a proper Australian-style breakfast for a fraction of the price: eggs, smashed avo, smoothie bowls, good flat whites. Rp80,000 to Rp150,000 a head with coffee.",
+          "notes": "The beachfront cafes along Berawa do a proper Australian-style breakfast for a fraction of the price at home: eggs, smashed avo, smoothie bowls, good flat whites. Around Rp80,000 to Rp150,000 a head with coffee.",
           "placeId": "q3"
         },
         {
@@ -155,9 +83,7 @@
           "status": "planned",
           "location": "Pantai Berawa",
           "endTime": "12:00",
-          "cost": 0,
-          "currency": "IDR",
-          "notes": "Black volcanic sand, so it gets hot underfoot by midday. There is a rip most days: swim between the flags where they are set, and in November the west coast starts picking up debris on the tide, which is normal and not pollution from the beach itself. Sun is brutal from 11 to 3 even under cloud.",
+          "notes": "Black volcanic sand, so it gets hot underfoot by midday. There is a rip most days: swim between the flags where they are set. In November the west coast starts picking up debris on the tide, which is seasonal and normal rather than anything to worry about. The sun is brutal from 11 to 3 even under cloud.",
           "placeId": "q3"
         },
         {
@@ -168,9 +94,7 @@
           "status": "planned",
           "location": "Scooter hire, Jl. Pantai Berawa",
           "endTime": "13:15",
-          "cost": 420000,
-          "currency": "IDR",
-          "notes": "READ THIS BEFORE YOU RIDE. From April 2026 Bali runs a zero-tolerance policy on foreign riders. At a checkpoint you must produce your physical Australian licence, the physical International Driving Permit booklet (a photo on your phone is not accepted), and the bike's registration papers (STNK) which the rental shop gives you. Your IDP must carry the \"A\" motorcycle stamp; a car-only permit does not cover a scooter. Missing any one document is roughly Rp300,000 to Rp500,000 each. The bigger risk is insurance: crash without a valid licence and almost every Australian travel insurer will decline the claim outright, including the medical evacuation. Helmets on, always, including the passenger. About Rp70,000 a day for a 125cc Scoopy or Vario, cheaper for the week; check the brakes, tyres and lights before you pay, and photograph any existing damage.",
+          "notes": "READ THIS BEFORE YOU RIDE. Since April 2026 Bali has run a zero-tolerance policy on foreign riders. At a checkpoint you must produce your physical Australian licence, the physical International Driving Permit booklet (a photo on your phone is not accepted), and the bike registration papers (STNK) which the rental shop gives you. Your IDP must carry the \"A\" motorcycle stamp; a car-only permit does not cover a scooter. Each missing document is roughly Rp300,000 to Rp500,000. The bigger risk is insurance: crash without a valid licence and almost every Australian travel insurer will decline the claim outright, including the medical evacuation. Helmets on, always, including the passenger. About Rp70,000 a day for a 125cc Scoopy or Vario, cheaper by the week. Check the brakes, tyres and lights before you pay, and photograph any existing damage.",
           "placeId": "q3"
         },
         {
@@ -181,9 +105,7 @@
           "status": "planned",
           "location": "Reload Sanctuary, Canggu",
           "endTime": "16:00",
-          "cost": 150000,
-          "currency": "IDR",
-          "notes": "Your own pick. Drop-in day passes are normal here, roughly Rp120,000 to Rp180,000, and most Canggu gyms take walk-ins without a booking. Go before 4pm; it is packed with the after-work crowd from about 5.",
+          "notes": "Drop-in day passes are normal here, roughly Rp120,000 to Rp180,000, and most Canggu gyms take walk-ins without a booking. Go before 4pm; it is packed with the after-work crowd from about 5.",
           "placeId": "q19"
         },
         {
@@ -194,7 +116,7 @@
           "status": "planned",
           "location": "Canggu",
           "endTime": "17:30",
-          "notes": "Three jobs. (1) Data: an eSIM bought before you left is the painless option; otherwise a Telkomsel counter sells a tourist SIM for around Rp150,000 and will set it up for you. (2) Cash: use a bank ATM (BCA, Mandiri, BNI) attached to a branch rather than a standalone machine; expect a Rp50,000 fee and take the largest withdrawal allowed. Always decline the machine's own currency conversion. (3) A supermarket run (Pepito or Popular) for water, sunscreen and breakfast things is much cheaper than buying daily."
+          "notes": "Three jobs. (1) Data: an eSIM bought before you left is the painless option; otherwise a Telkomsel counter sells a tourist SIM for around Rp150,000 and will set it up for you. (2) Cash: use a bank ATM (BCA, Mandiri, BNI) attached to a branch rather than a standalone machine; expect a Rp50,000 fee, so take the largest withdrawal allowed. Always decline the machine own-currency conversion, which is always worse than your bank rate. (3) A supermarket run (Pepito or Popular) for water, sunscreen and breakfast things is far cheaper than buying it daily."
         },
         {
           "id": "b6",
@@ -204,9 +126,7 @@
           "status": "idea",
           "location": "Pantai Batu Bolong, Canggu",
           "endTime": "19:00",
-          "cost": 0,
-          "currency": "IDR",
-          "notes": "The classic Canggu sunset, 10 minutes up the beach. Sunset in Bali in early November is about 6:15pm and the light goes fast, so be there by six.",
+          "notes": "The classic Canggu sunset, 10 minutes up the beach. Sunset in early November is about 6:15pm and the light goes fast, so be there by six.",
           "placeId": "q4"
         },
         {
@@ -216,9 +136,7 @@
           "title": "First dinner in Canggu",
           "status": "planned",
           "location": "Canggu",
-          "cost": 180000,
-          "currency": "IDR",
-          "notes": "Keep it close tonight. Warungs off the main road do nasi goreng, mie goreng and satay for Rp40,000 to Rp70,000; the Berawa and Batu Bolong strips do everything else. Babi guling (suckling pig) is the Balinese dish worth seeking out and there are good warungs for it around Canggu.",
+          "notes": "Keep it close tonight. Warungs off the main road do nasi goreng, mie goreng and satay for Rp40,000 to Rp70,000; the Berawa and Batu Bolong strips do everything else. Babi guling, Balinese suckling pig, is the dish worth seeking out and there are good warungs for it around Canggu.",
           "placeId": "q1"
         }
       ]
@@ -228,7 +146,7 @@
       "date": "2026-11-06",
       "title": "Seminyak coffee, the raccoons, and Kuta",
       "base": "Villa Bunia, Canggu",
-      "notes": "A day working south through Seminyak into Kuta, built around the places you saved. Twenty minutes on the scooters each way, more in traffic. Sunset Road and Petitenget are the two spines: everything below is on or just off them.",
+      "notes": "A day working south through Seminyak into Kuta. Twenty minutes on the scooters each way, more in traffic. Sunset Road and Petitenget are the two spines: everything below is on or just off them.",
       "items": [
         {
           "id": "c1",
@@ -238,9 +156,7 @@
           "status": "planned",
           "location": "ST. ALi, Seminyak",
           "endTime": "10:30",
-          "cost": 180000,
-          "currency": "IDR",
-          "notes": "Your own pick, and a good one: the Melbourne coffee institution's Bali outpost. Proper espresso and a serious brunch menu. Busy from about 9:30 on a weekday, so early is better. Around Rp150,000 to Rp250,000 a head.",
+          "notes": "The Melbourne coffee institution Bali outpost, so the coffee is properly good rather than Bali-good, and the brunch menu is serious. Busy from about 9:30 on a weekday, so early is better. Around Rp150,000 to Rp250,000 a head.",
           "placeId": "q13"
         },
         {
@@ -251,9 +167,7 @@
           "status": "planned",
           "location": "Jl. Sunset Road No.201, Seminyak",
           "endTime": "12:30",
-          "cost": 468000,
-          "currency": "IDR",
-          "notes": "Your own pick, and the note on it just said \"RACOON\". Here is what it actually is: a pet cafe and lounge on Sunset Road with three rooms, dogs, cats and raccoons. A single-room pass is about Rp75,000 and an all-access pass about Rp150,000. The one everybody comes for is the swim-and-dine-with-raccoons booking at around Rp468,000, which includes a welcome drink, feeding them, and getting in the pool with them. Book ahead online (Klook or Traveloka list it) because the raccoon slots sell out. Worth saying plainly: this is a captive-animal attraction rather than a sanctuary, so go in with eyes open.",
+          "notes": "A pet cafe and lounge on Sunset Road with three rooms: dogs, cats and raccoons. A single-room pass is about Rp75,000 and an all-access pass about Rp150,000. The one everybody comes for is the swim-and-dine-with-raccoons booking at around Rp468,000, which includes a welcome drink, feeding them, and getting in the pool with them. BOOK AHEAD online (Klook or Traveloka list it) because the raccoon slots sell out. Worth saying plainly: this is a captive-animal attraction rather than a sanctuary, so go in with eyes open.",
           "placeId": "q17"
         },
         {
@@ -264,9 +178,7 @@
           "status": "planned",
           "location": "Jl. Petitenget No.77, Kerobokan Kelod",
           "endTime": "14:00",
-          "cost": 120000,
-          "currency": "IDR",
-          "notes": "Your own pick. Korean-Indonesian cafe and cocktail bar from chef Joel Sijin Lim: a two-storey glasshouse with a water-wall entrance corridor, doing Jeju tea, bean-to-bar chocolate, bingsoo and pastries from about Rp20,000. Open 9am to 9pm daily. The cocktail side is the evening half, so if the note \"coffee / cocktails\" meant the drinks, come back after dark instead.",
+          "notes": "Korean-Indonesian cafe and cocktail bar from chef Joel Sijin Lim: a two-storey glasshouse with a water-wall entrance corridor, doing Jeju tea, bean-to-bar chocolate, bingsoo and pastries from about Rp20,000. Open 9am to 9pm daily. The cocktail side is the evening half, so if you would rather drink than eat cake, come back after dark instead.",
           "placeId": "q14"
         },
         {
@@ -277,9 +189,7 @@
           "status": "planned",
           "location": "Six Seven Shop, Seminyak",
           "endTime": "15:00",
-          "cost": 0,
-          "currency": "IDR",
-          "notes": "Your own pick. Seminyak is where the actual shopping is: Jl. Kayu Aya (Eat Street) and Jl. Petitenget are lined with Australian-run labels, surf brands and homewares. Prices are marked and not really negotiable in the proper shops.",
+          "notes": "Seminyak is where the actual shopping is: Jl. Kayu Aya (Eat Street) and Jl. Petitenget are lined with Australian-run labels, surf brands and homewares. Prices are marked and not really negotiable in the proper shops, unlike the markets.",
           "placeId": "q15"
         },
         {
@@ -290,9 +200,7 @@
           "status": "idea",
           "location": "Sinamon Bali, Umalas",
           "endTime": "16:00",
-          "cost": 90000,
-          "currency": "IDR",
-          "notes": "Your own pick. Umalas sits between Canggu and Seminyak, so it drops neatly onto the way home rather than being a detour.",
+          "notes": "Umalas sits between Canggu and Seminyak, so it drops neatly onto the way home rather than being a detour of its own.",
           "placeId": "q16"
         },
         {
@@ -303,9 +211,7 @@
           "status": "planned",
           "location": "Jl. Poppies Lane II, Kuta",
           "endTime": "18:00",
-          "cost": 0,
-          "currency": "IDR",
-          "notes": "Your own pick. The old Kuta backpacker lane: narrow, chaotic, cheap tailors, surf shops, warungs and bars. It is the loud, unreconstructed Bali that Canggu has grown out of, and worth an hour for exactly that reason. Watch your pockets in the crush and ignore the touts. Kuta Beach for sunset is two minutes away if you want it.",
+          "notes": "The old Kuta backpacker lane: narrow, chaotic, cheap tailors, surf shops, warungs and bars. It is the loud, unreconstructed Bali that Canggu has grown out of, and worth an hour for exactly that reason. Watch your pockets in the crush and ignore the touts. Kuta Beach for sunset is two minutes away if you want it.",
           "placeId": "q18"
         },
         {
@@ -315,9 +221,7 @@
           "title": "Dinner back in Canggu",
           "status": "planned",
           "location": "Canggu",
-          "cost": 180000,
-          "currency": "IDR",
-          "notes": "Riding back from Kuta after dark takes about 40 minutes and the Sunset Road traffic is heavy. If anyone has been drinking, leave the scooter and take a Grab; drink-riding is where holidays in Bali go badly wrong."
+          "notes": "Riding back from Kuta after dark takes about 40 minutes and the Sunset Road traffic is heavy. If anyone has been drinking, leave the scooter and take a Grab. Drink-riding is where holidays in Bali go badly wrong."
         }
       ]
     },
@@ -326,7 +230,7 @@
       "date": "2026-11-07",
       "title": "Nusa Penida by boat",
       "base": "Villa Bunia, Canggu",
-      "notes": "The big one, and an early start: Kelingking Beach, the cliffs, and snorkelling with manta rays. Boats leave from Sanur or Serangan on the other side of the island, so the pickup is before dawn. Back late afternoon, wrecked and salty.",
+      "notes": "The big one, and an early start: Kelingking Beach, the cliffs, and snorkelling with manta rays. Boats leave from Serangan on the other side of the island, so the pickup is before dawn. Back late afternoon, wrecked and salty.",
       "items": [
         {
           "id": "e1",
@@ -336,9 +240,7 @@
           "status": "planned",
           "location": "Canggu / Berawa pickup point",
           "endTime": "07:00",
-          "cost": 0,
-          "currency": "IDR",
-          "notes": "Bluuu run a free shared van from Canggu/Berawa, Batu Belig, Seminyak and Legian/Kuta through to their lounge at Serangan harbour. Confirm the exact pickup point and time the day before; it moves depending on how many they are collecting. Take: reef-safe sunscreen, a hat, a dry bag, motion sickness tablets taken 30 minutes BEFORE boarding, and a towel. Leave passports at the villa, bring a photo.",
+          "notes": "Bluuu run a free shared van from Canggu and Berawa, Batu Belig, Seminyak and Legian and Kuta through to their lounge at Serangan harbour. Confirm the exact pickup point and time the day before; it moves depending on how many they are collecting. Take: reef-safe sunscreen, a hat, a dry bag, motion sickness tablets taken 30 minutes BEFORE boarding, and a towel. Leave passports at the villa and bring a photo of yours.",
           "placeId": "q1"
         },
         {
@@ -347,11 +249,9 @@
           "type": "boat",
           "title": "Speedboat to Nusa Penida",
           "status": "planned",
-          "location": "Serangan harbour → Nusa Penida",
+          "location": "Serangan harbour to Nusa Penida",
           "endTime": "08:50",
-          "cost": 1450000,
-          "currency": "IDR",
-          "notes": "About 45 minutes across the Badung Strait. The crossing gets bumpy when the wind is up, which in November it often is by mid-morning; going out is usually calmer than coming back. Price is the full-day all-inclusive tour, roughly Rp1,300,000 to Rp1,600,000 a head depending on the package.",
+          "notes": "About 45 minutes across the Badung Strait. It gets bumpy when the wind is up, which in November it often is by mid-morning; going out is usually calmer than coming back. The full-day all-inclusive tour runs roughly Rp1,300,000 to Rp1,600,000 a head depending on the package.",
           "placeId": "q20"
         },
         {
@@ -362,9 +262,7 @@
           "status": "planned",
           "location": "Nusa Penida, south coast",
           "endTime": "11:00",
-          "cost": 0,
-          "currency": "IDR",
-          "notes": "This is the part people remember. Manta rays with four-metre wingspans, no cage, no feeding, just floating above them. The swell at Manta Point is genuinely rolling and this is where most people get seasick, so take the tablets early. If you are not a confident swimmer, say so on the boat: they will give you a float vest without making a thing of it.",
+          "notes": "This is the part people remember. Manta rays with four-metre wingspans, no cage, no feeding, just floating above them. The swell at Manta Point is genuinely rolling and this is where most people get seasick, so take the tablets early rather than when you feel it coming. If you are not a confident swimmer, say so on the boat: they will give you a float vest without making a thing of it.",
           "placeId": "q21"
         },
         {
@@ -375,9 +273,7 @@
           "status": "planned",
           "location": "Nusa Penida",
           "endTime": "14:30",
-          "cost": 0,
-          "currency": "IDR",
-          "notes": "Kelingking is the T-Rex-shaped headland that is on every Bali poster. The viewpoint is the photo; the path down to the sand is a genuinely steep, rough scramble of about 45 minutes down and an hour back up, in full sun, with a rope handrail. Most people do the viewpoint and skip the descent, which is the sensible call on a day trip. Broken Beach and Angel's Billabong are usually on the same loop. The island roads are narrow and rough, so the driving between stops eats more time than you expect.",
+          "notes": "Kelingking is the T-Rex-shaped headland that is on every Bali poster. The viewpoint is the photo; the path down to the sand is a genuinely steep, rough scramble of about 45 minutes down and an hour back up, in full sun, with a rope handrail. Most people do the viewpoint and skip the descent, which is the sensible call on a day trip. Broken Beach and Angel Billabong are usually on the same loop. The island roads are narrow and rough, so the driving between stops eats more time than you expect.",
           "placeId": "q21"
         },
         {
@@ -387,9 +283,7 @@
           "title": "Lunch with the Mount Agung view",
           "status": "planned",
           "location": "Nusa Penida",
-          "cost": 0,
-          "currency": "IDR",
-          "notes": "Included in the tour: a buffet lunch at a spot looking back across the water to Mount Agung, usually with pool access. Included, but bring cash for drinks."
+          "notes": "Included in the tour: a buffet lunch at a spot looking back across the water to Mount Agung, usually with pool access. Bring cash for drinks."
         },
         {
           "id": "e6",
@@ -397,10 +291,8 @@
           "type": "boat",
           "title": "Boat back to Serangan",
           "status": "planned",
-          "location": "Nusa Penida → Serangan",
+          "location": "Nusa Penida to Serangan",
           "endTime": "17:00",
-          "cost": 0,
-          "currency": "IDR",
           "notes": "The afternoon crossing is the rougher one. Sit at the back and in the middle if you are prone to it.",
           "placeId": "q20"
         },
@@ -410,11 +302,9 @@
           "type": "transfer",
           "title": "Van back to Canggu",
           "status": "planned",
-          "location": "Serangan → Berawa",
+          "location": "Serangan to Berawa",
           "endTime": "18:30",
-          "cost": 0,
-          "currency": "IDR",
-          "notes": "Straight into the evening traffic, so this can take longer than the boat. Included in the tour.",
+          "notes": "Straight into the evening traffic, so this can take longer than the boat did. Included in the tour.",
           "placeId": "q1"
         },
         {
@@ -424,8 +314,6 @@
           "title": "Easy dinner near the villa",
           "status": "planned",
           "location": "Berawa",
-          "cost": 150000,
-          "currency": "IDR",
           "notes": "Nobody will want to ride anywhere tonight. Walk to whatever is closest."
         }
       ]
@@ -435,7 +323,7 @@
       "date": "2026-11-08",
       "title": "Canggu properly: beach, market, sunset, pizza",
       "base": "Villa Bunia, Canggu",
-      "notes": "A deliberately slow day between Nusa Penida and the beach club, and the day where Wanderlog had five food stops in a row. This version keeps the good ones and puts a beach, a market and a sunset between them. Everything here is within about ten minutes of the villa.",
+      "notes": "A deliberately slow day between Nusa Penida and the beach club. Everything here is within about ten minutes of the villa, and none of it needs booking.",
       "items": [
         {
           "id": "f1",
@@ -445,8 +333,6 @@
           "status": "planned",
           "location": "Crate Cafe, Canggu (opens 6am)",
           "endTime": "10:45",
-          "cost": 110000,
-          "currency": "IDR",
           "notes": "The Canggu breakfast institution: huge portions, cheap, and a queue by 9am on a weekend, which this is. Milk & Madu in Berawa is the alternative and takes bookings, which Crate does not.",
           "placeId": "q8"
         },
@@ -458,9 +344,7 @@
           "status": "idea",
           "location": "Pantai Batu Bolong",
           "endTime": "13:30",
-          "cost": 350000,
-          "currency": "IDR",
-          "notes": "Batu Bolong is the beginner-friendly break and the board hire and instructors are right on the sand. About Rp350,000 for a two-hour lesson with the board, or Rp100,000 to hire a board for a couple of hours. November is the start of the wet season shift: the west coast swell is smaller and the wind more variable than mid-year, which actually suits learners. Morning is much cleaner than afternoon.",
+          "notes": "Batu Bolong is the beginner-friendly break and the board hire and instructors are right there on the sand. About Rp350,000 for a two-hour lesson with the board, or Rp100,000 to hire a board for a couple of hours. November is the start of the wet season shift: the west coast swell is smaller and the wind more variable than mid-year, which actually suits learners. Morning is much cleaner than afternoon.",
           "placeId": "q4"
         },
         {
@@ -470,9 +354,7 @@
           "title": "Lunch at Shady Shack",
           "status": "idea",
           "location": "Shady Shack, Canggu (7:30am-10:30pm)",
-          "cost": 110000,
-          "currency": "IDR",
-          "notes": "Was on the Wanderlog list. Worth knowing before you walk in: it is entirely vegetarian. Good at what it does, but if the group wants meat, the warungs along Jl. Pantai Batu Bolong are a better call.",
+          "notes": "Worth knowing before you walk in: it is entirely vegetarian. Very good at what it does, but if the group wants meat, the warungs along Jl. Pantai Batu Bolong are the better call.",
           "placeId": "q10"
         },
         {
@@ -483,9 +365,7 @@
           "status": "planned",
           "location": "Love Anchor, Canggu (8am-10pm)",
           "endTime": "16:45",
-          "cost": 0,
-          "currency": "IDR",
-          "notes": "Your own pick. A timber bazaar of clothing, jewellery, leather and souvenir stalls. Haggling is expected here, unlike the Seminyak shops: start at about half the asking price and settle somewhere near two-thirds. The weekend market is the bigger one, and Sunday counts.",
+          "notes": "A timber bazaar of clothing, jewellery, leather and souvenir stalls. Haggling is expected here, unlike the Seminyak shops: start at about half the asking price and settle somewhere near two-thirds. The weekend market is the bigger one, and Sunday counts.",
           "placeId": "q7"
         },
         {
@@ -496,9 +376,7 @@
           "status": "planned",
           "location": "The Lawn / Old Man's, Batu Bolong",
           "endTime": "19:00",
-          "cost": 200000,
-          "currency": "IDR",
-          "notes": "Two doors apart and completely different. The Lawn is the polished one: grass, daybeds, cocktails, sunset over the water, and you will want to arrive by 5:30 to get a spot. Old Man's is the loud beer-garden institution with live music and long tables, easier for five people to just turn up to. Sunset is about 6:15pm.",
+          "notes": "Two doors apart and completely different. The Lawn is the polished one: grass, daybeds, cocktails, sunset over the water, and you will want to arrive by 5:30 to get a spot. Old Man's is the loud beer-garden institution with live music and long tables, much easier for five people to just turn up to. Sunset is about 6:15pm.",
           "placeId": "q6"
         },
         {
@@ -508,9 +386,7 @@
           "title": "Dinner at Luigi's Hot Pizza",
           "status": "planned",
           "location": "Luigi's Hot Pizza, Canggu",
-          "cost": 150000,
-          "currency": "IDR",
-          "notes": "Your own pick. Proper wood-fired pizza and the easiest possible feed for five people after a beach day. Walk or Grab from Old Man's rather than riding.",
+          "notes": "Proper wood-fired pizza and the easiest possible feed for five people after a beach day. Walk or take a Grab from Old Man's rather than riding.",
           "placeId": "q11"
         }
       ]
@@ -520,7 +396,7 @@
       "date": "2026-11-09",
       "title": "FINNS Beach Club",
       "base": "Villa Bunia, Canggu",
-      "notes": "The paid day. FINNS is booked and paid for already, and for five people that is a daybed or cabana package rather than plain entry, so find out what it actually includes before you go and make it count. Nothing else is scheduled: it is a full day of pools, food and sun.",
+      "notes": "The beach club day, booked and paid for already. Nothing else is scheduled: it is a full day of pools, food and sun, and it is a ten-minute walk from the villa so nobody needs to ride anywhere.",
       "items": [
         {
           "id": "g1",
@@ -529,9 +405,7 @@
           "title": "Slow breakfast at the villa or Milk & Madu",
           "status": "idea",
           "location": "Berawa",
-          "cost": 100000,
-          "currency": "IDR",
-          "notes": "Eat something before you go. Beach club food is four times the price of everything else on the island.",
+          "notes": "Eat something before you go. Beach club food is several times the price of everything else on the island.",
           "placeId": "q9"
         },
         {
@@ -540,12 +414,9 @@
           "type": "activity",
           "title": "FINNS Beach Club",
           "status": "booked",
-          "location": "FINNS Beach Club, Berawa (11am-midnight)",
+          "location": "FINNS Beach Club, Berawa (11am to midnight)",
           "endTime": "18:30",
-          "cost": 522,
-          "currency": "AUD",
-          "split": 5,
-          "notes": "Already paid for and logged in Wanderlog under Food. Work out exactly what that bought before the day: FINNS sells entry passes, daybeds, cabanas and minimum-spend packages, and they are not the same thing. If it is a minimum spend, it is credit at the bar rather than money gone. Things worth knowing: it is a ten-minute walk from the villa so nobody needs to ride; there are multiple pools including a swim-up bar and an adults-only area; take cash and a card because they run a wristband tab; bring your own towel to avoid the deposit; and it gets extremely loud from mid-afternoon. Book the daybed for the earliest slot you can, because the good ones go by noon.",
+          "notes": "Booked and paid for. Things worth knowing: it is a ten-minute walk from the villa, so leave the scooters. There are multiple pools including a swim-up bar and an adults-only area. Take cash and a card, because they run a wristband tab and it is very easy for five people to lose track of what they have spent, so nominate someone to hold it. Bring your own towel to avoid the deposit. It gets extremely loud from mid-afternoon, which is either the point or the problem depending on the day you are having.",
           "placeId": "q5"
         },
         {
@@ -555,8 +426,6 @@
           "title": "Dinner in Pererenan",
           "status": "idea",
           "location": "Pererenan, 10 min west",
-          "cost": 180000,
-          "currency": "IDR",
           "notes": "Pererenan is the quieter strip just past Canggu and where a lot of the better restaurants have moved. A good antidote to a loud day.",
           "placeId": "q12"
         }
@@ -567,7 +436,7 @@
       "date": "2026-11-10",
       "title": "Driver day north: Jatiluwih, Sangeh and Tanah Lot",
       "base": "Villa Bunia, Canggu",
-      "notes": "The last full day, and the one that uses the two places you saved and never scheduled. A private driver for the day is the way to do this: Jatiluwih is nearly two hours north on mountain roads, which is not a scooter trip, and a car costs about Rp800,000 for ten hours split five ways. Ends at Tanah Lot for sunset, which is on the way home.",
+      "notes": "The last full day, and the best scenery of the trip. A private driver for the day is the way to do this: Jatiluwih is nearly two hours north on mountain roads, which is not a scooter trip, and a car is about Rp850,000 for ten hours split five ways. Ends at Tanah Lot for sunset, which is on the way home.",
       "items": [
         {
           "id": "h1",
@@ -577,10 +446,7 @@
           "status": "planned",
           "location": "Villa Bunia",
           "endTime": "08:15",
-          "cost": 850000,
-          "currency": "IDR",
-          "split": 5,
-          "notes": "Book a driver with a car for the whole day rather than paying per trip: roughly Rp700,000 to Rp900,000 for 10 hours including fuel, for up to five or six people. The villa will arrange one, or use a driver a friend recommends. Agree the route and the price in writing before you set off, and tip Rp100,000 at the end if he has been good. Petrol and parking are usually included; your entrance tickets and his lunch are not.",
+          "notes": "Book a driver with a car for the whole day rather than paying per trip: roughly Rp700,000 to Rp900,000 for 10 hours including fuel, for up to five or six people. The villa will arrange one. Agree the route and the price in writing before you set off, and tip about Rp100,000 at the end if he has been good. Petrol and parking are usually included; your entrance tickets and his lunch are not.",
           "placeId": "q1"
         },
         {
@@ -591,9 +457,7 @@
           "status": "planned",
           "location": "Jatiluwih, Tabanan (6am-7pm)",
           "endTime": "12:15",
-          "cost": 75000,
-          "currency": "IDR",
-          "notes": "Your own pick. UNESCO-listed and the real thing: hundreds of hectares of terraced rice on the slopes of Mount Batukaru, still farmed with the thousand-year-old subak water-sharing system. It is an order of magnitude bigger and quieter than Tegallalang, which is the one on Instagram. Entry is about Rp75,000 for foreign adults; there are marked walking loops from 20 minutes to a couple of hours. Cooler up here at about 700m, and November afternoons cloud over, so morning light is the good light. Take the green loop if you only want a short walk.",
+          "notes": "UNESCO-listed and the real thing: hundreds of hectares of terraced rice on the slopes of Mount Batukaru, still farmed with the thousand-year-old subak water-sharing system. It is an order of magnitude bigger and quieter than Tegallalang, which is the one on Instagram. Entry is about Rp75,000 for foreign adults. There are marked walking loops from 20 minutes to a couple of hours; take the green loop if you only want a short one. Cooler up here at about 700m, and November afternoons cloud over, so the morning light is the good light.",
           "placeId": "q22"
         },
         {
@@ -604,8 +468,6 @@
           "status": "planned",
           "location": "Jatiluwih",
           "endTime": "13:30",
-          "cost": 90000,
-          "currency": "IDR",
           "notes": "The cafes along the terrace road do simple Indonesian food with the view, which is the point. Nasi campur or nasi goreng, Rp50,000 to Rp100,000.",
           "placeId": "q22"
         },
@@ -617,9 +479,7 @@
           "status": "planned",
           "location": "Sangeh, Badung",
           "endTime": "15:45",
-          "cost": 30000,
-          "currency": "IDR",
-          "notes": "Your own pick. A 35-acre grove of enormous nutmeg trees around 17th-century temple ruins, with several hundred long-tailed macaques. Much less touristed than the Ubud monkey forest. The monkeys are practised thieves: sunglasses, hats, phones and anything in an open hand will go. Take nothing loose, do not carry visible food, do not make eye contact, and buy the bananas from the official stall or none at all. A guide with a stick is usually included and is worth having.",
+          "notes": "A 35-acre grove of enormous nutmeg trees around 17th-century temple ruins, with several hundred long-tailed macaques. Much less touristed than the Ubud monkey forest, and about Rp30,000 in. The monkeys are practised thieves: sunglasses, hats, phones and anything in an open hand will go. Take nothing loose, do not carry visible food, do not make eye contact, and buy the bananas from the official stall or none at all. A guide with a stick is usually included and is worth having.",
           "placeId": "q23"
         },
         {
@@ -630,9 +490,7 @@
           "status": "idea",
           "location": "Mengwi",
           "endTime": "17:00",
-          "cost": 30000,
-          "currency": "IDR",
-          "notes": "Optional and on the way. A royal water temple set in a moat, also UNESCO-listed, and about 20 minutes from Sangeh. Quiet, formal, and a nice contrast to the monkeys. Skip it if the day is running late; Tanah Lot at sunset matters more.",
+          "notes": "Optional and on the way, about Rp30,000 and 20 minutes from Sangeh. A royal water temple set in a moat, also UNESCO-listed. Quiet, formal, and a nice contrast to the monkeys. Skip it if the day is running late, because Tanah Lot at sunset matters more.",
           "placeId": "q24"
         },
         {
@@ -643,9 +501,7 @@
           "status": "planned",
           "location": "Tanah Lot, Tabanan (6am-7pm)",
           "endTime": "18:45",
-          "cost": 75000,
-          "currency": "IDR",
-          "notes": "Was on the Wanderlog list for this day and it belongs here, at the end, not at 6am. A 16th-century temple on a rock stack in the sea, and the single best sunset on the island. Entry about Rp60,000 to Rp75,000. Be through the gate by 5:30 because the crowds and the car park are serious. You can only walk out to the rock at low tide and you cannot enter the temple itself. The stalls on the approach are a gauntlet of souvenirs; walk through and keep going.",
+          "notes": "A 16th-century temple on a rock stack in the sea, and the single best sunset on the island. Entry about Rp60,000 to Rp75,000. Be through the gate by 5:30 because the crowds and the car park are serious. You can only walk out to the rock at low tide and you cannot enter the temple itself. The stalls on the approach are a gauntlet of souvenirs; walk through and keep going.",
           "placeId": "q25"
         },
         {
@@ -655,18 +511,16 @@
           "title": "Last dinner in Canggu",
           "status": "planned",
           "location": "Canggu",
-          "cost": 200000,
-          "currency": "IDR",
-          "notes": "Driver drops you back around 7:30. Make it a proper one, since tomorrow the group splits up."
+          "notes": "The driver drops you back around 7:30. Make it a proper one, because tomorrow everyone goes home."
         }
       ]
     },
     {
       "id": "d20261111",
       "date": "2026-11-11",
-      "title": "Check out. The group flies home, you go to Ubud",
-      "base": "Ubud (to confirm) / overnight flight",
-      "notes": "The day the trip splits, and the day with the biggest open question on it. The booked Jetstar return has all five of you leaving Denpasar at 9:10pm, but you also have a hotel in Ubud from tonight until the 15th. Both cannot be true. Read the Decisions page and settle it, because everything after today depends on it.",
+      "title": "Last morning, then check out",
+      "base": "Home",
+      "notes": "Check-out is 11am. Ask the villa the night before whether they will hold luggage for the day, because most Canggu villas will, and some will sell you a late check-out for a few hundred thousand rupiah, which split between whoever wants it is worth it for the shower alone.",
       "items": [
         {
           "id": "i1",
@@ -676,22 +530,19 @@
           "status": "planned",
           "location": "Brunch Club, Pererenan",
           "endTime": "10:30",
-          "cost": 130000,
-          "currency": "IDR",
-          "notes": "Your own pick, and a good last one. Ten minutes west, easy parking, and the sort of place you can sit in for an hour and a half without anyone rushing you.",
+          "notes": "Ten minutes west, easy parking, and the sort of place you can sit in for an hour and a half without anyone rushing you.",
           "placeId": "q12"
         },
         {
           "id": "i2",
           "time": "10:45",
           "type": "scooter",
-          "title": "Return the scooters, settle up",
+          "title": "Return the scooters and settle up",
           "status": "planned",
           "location": "Berawa",
           "endTime": "11:00",
-          "cost": 0,
-          "currency": "IDR",
-          "notes": "Do this before check-out, not after, and get the deposit back in cash. Photograph the bikes as you hand them over."
+          "notes": "Do this before check-out, not after, and get the deposit back in cash. Photograph the bikes as you hand them over.",
+          "placeId": "q3"
         },
         {
           "id": "i3",
@@ -701,387 +552,12 @@
           "status": "booked",
           "location": "Villa Bunia, Tibubeneng",
           "endTime": "11:30",
-          "notes": "Standard villa check-out is 11am. Ask the night before whether they will hold luggage for the day: the group's flight is not until 9:10pm and nobody wants to drag bags around for ten hours. Most Canggu villas will, and many will sell you a late check-out for a few hundred thousand rupiah, which split five ways is worth it for the shower alone.",
+          "notes": "Strip the rooms, check the safes and the charger sockets, and settle anything outstanding with the villa. If they are holding bags for the day, agree a pickup time now.",
           "placeId": "q1"
-        },
-        {
-          "id": "i4",
-          "time": "12:30",
-          "type": "transfer",
-          "title": "Canggu → Ubud by private car",
-          "status": "planned",
-          "location": "Tibubeneng → Ubud",
-          "endTime": "14:00",
-          "cost": 300000,
-          "currency": "IDR",
-          "notes": "This was the question you asked back in September, so here is the answer. It is 35km and takes 1 to 2 hours depending on traffic, and a private car is Rp200,000 to Rp300,000 one way, booked through the villa, Klook, or a driver you have used during the week. Grab and Gojek will quote less but both are restricted in parts of Ubud and drivers often will not take the job; a pre-booked car avoids the argument at the other end. Leave before 9am or after 2pm if you can, because the Denpasar ring road is the bottleneck. Do not attempt it on a hired scooter with luggage.",
-          "placeId": "q26"
-        },
-        {
-          "id": "i5",
-          "time": "14:00",
-          "type": "stay",
-          "title": "Check in, Ubud hotel",
-          "status": "planned",
-          "location": "Ubud (hotel name to confirm)",
-          "endTime": "14:30",
-          "notes": "You said back in September that this is booked from the 11th to the 15th. The name, address and confirmation are not in the app yet: add them on the Stays page and put the reservation number in the Private vault. Standard Bali check-in is 2pm or 3pm."
-        },
-        {
-          "id": "i6",
-          "time": "17:30",
-          "type": "transfer",
-          "title": "The group: Canggu → Denpasar airport",
-          "status": "planned",
-          "location": "Canggu → DPS",
-          "endTime": "19:00",
-          "cost": 400000,
-          "currency": "IDR",
-          "split": 4,
-          "who": "Whoever is flying home tonight",
-          "notes": "Allow 90 minutes even though it is only 20km: the airport road at that hour is genuinely bad, and international check-in closes 60 minutes before. Be at the terminal by 7pm for a 9:10pm departure. Nothing left to pay on the way out; the departure tax is in the ticket.",
-          "placeId": "q2"
-        },
-        {
-          "id": "i7",
-          "time": "21:10",
-          "type": "flight",
-          "title": "JQ87 Denpasar → Sunshine Coast",
-          "status": "booked",
-          "location": "DPS → MCY",
-          "endTime": "06:15",
-          "who": "Whoever is flying home tonight",
-          "notes": "Lands 6:15am on the 12th, Queensland time. See the Flights page for the two things to check on this booking.",
-          "placeId": "q2"
-        },
-        {
-          "id": "i8",
-          "time": "19:00",
-          "type": "food",
-          "title": "Dinner in Ubud",
-          "status": "idea",
-          "location": "Ubud",
-          "cost": 150000,
-          "currency": "IDR",
-          "notes": "If you are staying on: Ubud eats earlier and quieter than Canggu. Most kitchens are winding down by 9:30pm."
-        }
-      ]
-    },
-    {
-      "id": "d20261112",
-      "date": "2026-11-12",
-      "title": "Ubud: the ridge walk, the market and the monkeys",
-      "base": "Ubud (to confirm)",
-      "notes": "DRAFT. These last four days only happen if the Ubud half of the trip is going ahead, and your booked flight home says otherwise. Treat everything from here as a sketch to approve rather than a plan. Ubud is a different island to Canggu: rice fields, temples, art and rain in the afternoon.",
-      "items": [
-        {
-          "id": "j1",
-          "time": "06:30",
-          "type": "activity",
-          "title": "Campuhan Ridge Walk",
-          "status": "planned",
-          "location": "Campuhan, Ubud",
-          "endTime": "08:00",
-          "cost": 0,
-          "currency": "IDR",
-          "notes": "Free, about 2km each way along a paved spine between two river valleys, with tall grass on both sides. Do it at dawn: by 9am it is hot and busy, and there is no shade at all. Starts near the Ibah hotel by the Campuhan bridge.",
-          "placeId": "q27"
-        },
-        {
-          "id": "j2",
-          "time": "08:30",
-          "type": "food",
-          "title": "Breakfast in central Ubud",
-          "status": "planned",
-          "location": "Ubud",
-          "cost": 110000,
-          "currency": "IDR"
-        },
-        {
-          "id": "j3",
-          "time": "10:00",
-          "type": "activity",
-          "title": "Ubud Art Market and the Palace",
-          "status": "planned",
-          "location": "Jl. Raya Ubud",
-          "endTime": "12:00",
-          "cost": 0,
-          "currency": "IDR",
-          "notes": "The market is a haggle: opening prices for tourists run three to four times what things go for, so start low and be willing to walk. Puri Saren, the royal palace, is opposite and free to wander in daylight. Both are at their least pleasant between 11 and 2.",
-          "placeId": "q26"
-        },
-        {
-          "id": "j4",
-          "time": "14:00",
-          "type": "activity",
-          "title": "Sacred Monkey Forest Sanctuary",
-          "status": "planned",
-          "location": "Jl. Monkey Forest, Ubud",
-          "endTime": "16:00",
-          "cost": 100000,
-          "currency": "IDR",
-          "notes": "About Rp100,000 entry. Long-tailed macaques in a genuine temple forest, and considerably more organised than Sangeh. Same rules: nothing loose, no food, no eye contact.",
-          "placeId": "q28"
-        },
-        {
-          "id": "j5",
-          "time": "19:00",
-          "type": "food",
-          "title": "Dinner and a legong dance performance",
-          "status": "idea",
-          "location": "Ubud Palace or Pura Dalem",
-          "cost": 150000,
-          "currency": "IDR",
-          "notes": "Traditional dance is performed most nights around Ubud, usually 7:30pm, about Rp100,000. Touristy but genuinely good, and the gamelan is worth hearing live once."
-        }
-      ]
-    },
-    {
-      "id": "d20261113",
-      "date": "2026-11-13",
-      "title": "Ubud: Mount Batur at sunrise, hot springs after",
-      "base": "Ubud (to confirm)",
-      "notes": "DRAFT. The one thing in Ubud worth setting a 2am alarm for. If nobody fancies it, the waterfall day below works instead and starts at a civilised hour.",
-      "items": [
-        {
-          "id": "k1",
-          "time": "02:00",
-          "type": "transfer",
-          "title": "Pickup for the Mount Batur trek",
-          "status": "planned",
-          "location": "Ubud",
-          "endTime": "03:30",
-          "cost": 0,
-          "currency": "IDR",
-          "notes": "Yes, 2am. It is about 90 minutes to the trailhead at Toya Bungkah."
-        },
-        {
-          "id": "k2",
-          "time": "04:00",
-          "type": "activity",
-          "title": "Climb Mount Batur for sunrise",
-          "status": "planned",
-          "location": "Mount Batur, Kintamani",
-          "endTime": "08:00",
-          "cost": 600000,
-          "currency": "IDR",
-          "notes": "An active volcano, 1,717m, about two hours up in the dark on loose volcanic scree with a head torch. Not technical, but it is a real climb and you will feel it. Sunrise over the caldera and Lake Batur with Mount Agung behind is the payoff, and they cook eggs in the volcanic steam at the top. Roughly Rp500,000 to Rp700,000 a head including the guide, torch, breakfast and transfers; going with a licensed guide is compulsory. Take a jumper, it is genuinely cold at the summit before dawn. In the wet season the summit can be clouded in, and no operator refunds for weather.",
-          "placeId": "q29"
-        },
-        {
-          "id": "k3",
-          "time": "09:00",
-          "type": "activity",
-          "title": "Toya Devasya or Batur natural hot springs",
-          "status": "planned",
-          "location": "Lake Batur",
-          "endTime": "11:00",
-          "cost": 200000,
-          "currency": "IDR",
-          "notes": "Lakeside thermal pools, usually bookable as an add-on to the trek for about Rp150,000 to Rp250,000. Exactly what your legs will want.",
-          "placeId": "q29"
-        },
-        {
-          "id": "k4",
-          "time": "13:00",
-          "type": "note",
-          "title": "Back to Ubud, and do nothing",
-          "status": "planned",
-          "location": "Ubud",
-          "notes": "You will have been up since 2am. Write the afternoon off."
-        },
-        {
-          "id": "k5",
-          "time": "18:30",
-          "type": "food",
-          "title": "Easy dinner",
-          "status": "planned",
-          "location": "Ubud",
-          "cost": 130000,
-          "currency": "IDR"
-        }
-      ]
-    },
-    {
-      "id": "d20261114",
-      "date": "2026-11-14",
-      "title": "Ubud: water temple, rice terraces and a waterfall",
-      "base": "Ubud (to confirm)",
-      "notes": "DRAFT. A driver day around the villages north of Ubud. All of it is within an hour of town and it works in any order, so let the driver route around the rain.",
-      "items": [
-        {
-          "id": "l1",
-          "time": "08:30",
-          "type": "transfer",
-          "title": "Driver for the day",
-          "status": "idea",
-          "location": "Ubud",
-          "cost": 700000,
-          "currency": "IDR",
-          "split": 5,
-          "notes": "Same arrangement as the Jatiluwih day: roughly Rp600,000 to Rp800,000 for the car for 10 hours."
-        },
-        {
-          "id": "l2",
-          "time": "09:15",
-          "type": "activity",
-          "title": "Tirta Empul water temple",
-          "status": "planned",
-          "location": "Tampaksiring",
-          "endTime": "11:30",
-          "cost": 75000,
-          "currency": "IDR",
-          "notes": "A 10th-century spring temple where Balinese Hindus queue to purify themselves under 30 stone spouts. You can take part: you will need a sarong (provided) and a separate wet sarong for the water, and there is an order to the spouts that the attendants will show you. Go at opening, 8am, because by mid-morning the bathing pool is shoulder to shoulder. Two spouts are for funerary rites and are skipped; watch what locals do.",
-          "placeId": "q30"
-        },
-        {
-          "id": "l3",
-          "time": "12:00",
-          "type": "activity",
-          "title": "Tegallalang Rice Terrace",
-          "status": "idea",
-          "location": "Tegallalang",
-          "endTime": "13:30",
-          "cost": 50000,
-          "currency": "IDR",
-          "notes": "The famous one, and honestly the lesser one after Jatiluwih: steep, photogenic, small, and monetised to the hilt with swings, nests and \"donation\" gates on every path. Worth 45 minutes if you have not seen Jatiluwih; skippable if you have. Carry small notes for the gate donations.",
-          "placeId": "q31"
-        },
-        {
-          "id": "l4",
-          "time": "14:30",
-          "type": "activity",
-          "title": "Tegenungan or Kanto Lampo waterfall",
-          "status": "planned",
-          "location": "Gianyar",
-          "endTime": "16:30",
-          "cost": 50000,
-          "currency": "IDR",
-          "notes": "Tegenungan is the big, easy one with steps and a cafe; Kanto Lampo is smaller, prettier and involves scrambling over wet rock. Both are about Rp20,000 to Rp50,000. November means more water and more mud: the rocks are slippery and flash flooding after heavy rain upstream is a genuine risk, so if the water is brown and rising, do not get in.",
-          "placeId": "q32"
-        },
-        {
-          "id": "l5",
-          "time": "19:00",
-          "type": "food",
-          "title": "Last proper dinner",
-          "status": "planned",
-          "location": "Ubud",
-          "cost": 200000,
-          "currency": "IDR",
-          "notes": "Babi guling at Ibu Oka near the palace is the Ubud institution, but it is a lunch dish and they sell out. For dinner, the restaurants along Jl. Goutama do very good Indonesian food in the Rp60,000 to Rp120,000 range."
-        }
-      ]
-    },
-    {
-      "id": "d20261115",
-      "date": "2026-11-15",
-      "title": "Ubud, then home",
-      "base": "Overnight flight (to confirm)",
-      "notes": "DRAFT, and the biggest gap in the plan: there is no flight home on this date in the booking. Add it on the Flights page once you know what it is, and this day will make sense.",
-      "items": [
-        {
-          "id": "m1",
-          "time": "08:00",
-          "type": "food",
-          "title": "Breakfast and pack",
-          "status": "planned",
-          "location": "Ubud hotel"
-        },
-        {
-          "id": "m2",
-          "time": "10:00",
-          "type": "activity",
-          "title": "Last morning: a spa, or the Yoga Barn, or nothing",
-          "status": "idea",
-          "location": "Ubud",
-          "endTime": "12:00",
-          "cost": 300000,
-          "currency": "IDR",
-          "notes": "Ubud does a proper hour-long Balinese massage for Rp150,000 to Rp350,000, which is the correct way to spend the last morning of a holiday. Book the day before."
-        },
-        {
-          "id": "m3",
-          "time": "12:00",
-          "type": "stay",
-          "title": "Check out",
-          "status": "planned",
-          "location": "Ubud hotel",
-          "endTime": "12:30",
-          "notes": "Ask them to hold your bag if the flight is in the evening."
-        },
-        {
-          "id": "m4",
-          "time": "16:00",
-          "type": "transfer",
-          "title": "Ubud → Denpasar airport",
-          "status": "planned",
-          "location": "Ubud → DPS",
-          "endTime": "17:45",
-          "cost": 350000,
-          "currency": "IDR",
-          "notes": "Allow two hours, not the 75 minutes Google promises. Ubud to the airport in the late afternoon is the worst run on the island.",
-          "placeId": "q2"
-        },
-        {
-          "id": "m5",
-          "time": "18:00",
-          "type": "note",
-          "title": "Flight home: NOT BOOKED IN THE APP",
-          "status": "planned",
-          "location": "Denpasar airport",
-          "notes": "There is no return flight recorded for this date. Either the Ubud stay is not happening and you fly home with everyone on the 11th, or you have a separate ticket that is not in the plan. Add it on the Flights page.",
-          "placeId": "q2"
         }
       ]
     }
   ],
-  "flights": {
-    "confirmed": [
-      {
-        "id": "jq787",
-        "flight": "JQ787",
-        "from": "Sunshine Coast (MCY)",
-        "to": "Sydney T2 (domestic)",
-        "date": "2026-11-04",
-        "arrDate": "2026-11-04",
-        "dep": "12:00",
-        "arr": "14:40",
-        "cabin": "Economy",
-        "duration": "2h40 on the clock, 1h40 in the air",
-        "notes": "The three from the Sunshine Coast. Jetstar lands at Sydney T2 (domestic) but the Bali flight goes from T1 (international), so bags come off here and get re-checked at T1. Allow 45 minutes for that move plus international check-in; you have about four and a half hours, which is comfortable rather than tight. Sunshine Coast Airport is about 1h15 from Gympie, so leave home by 9am."
-      },
-      {
-        "id": "jq37",
-        "flight": "JQ37",
-        "from": "Sydney T1 (international)",
-        "to": "Denpasar (DPS)",
-        "date": "2026-11-04",
-        "arrDate": "2026-11-04",
-        "dep": "19:15",
-        "arr": "22:45",
-        "cabin": "Economy",
-        "duration": "6h30",
-        "notes": "All five of you on this one. TIME CORRECTED: the Wanderlog entry said 7:15 AM, which is impossible because the Sunshine Coast feeder does not land in Sydney until 2:40 PM. Evening works out exactly: 7:15 PM Sydney (AEDT, UTC+11) plus 6h30 flying, minus the 3-hour time difference, lands at 10:45 PM Bali time (WITA, UTC+8). Jetstar has moved JQ37 around seasonally, so check the real departure time on your booking and correct it here if it differs.",
-        "cashAud": 0
-      },
-      {
-        "id": "jq87",
-        "flight": "JQ87",
-        "from": "Denpasar (DPS)",
-        "to": "Sunshine Coast (MCY)",
-        "date": "2026-11-11",
-        "arrDate": "2026-11-12",
-        "dep": "21:10",
-        "arr": "06:15",
-        "cabin": "Economy",
-        "duration": "7h05",
-        "notes": "The booked return, as it appears in Wanderlog. Two things to check on the actual booking. First, Jetstar publishes this route at about 5h40 flying time, and 9:10 PM to 6:15 AM is 7h05 once you allow the 2-hour difference (Queensland has no daylight saving), so one of the two times is probably out. Second, and much more important: this has the whole group flying home on the 11th, which is the day you have an Ubud hotel booked until the 15th. See the Decisions page."
-      }
-    ],
-    "legs": [],
-    "lounges": []
-  },
   "people": [
     {
       "id": "p-connor",
@@ -1113,11 +589,11 @@
   "foodGuide": [
     {
       "title": "Warung, cafe, restaurant: knowing which is which",
-      "body": "A warung is a small family-run place, often open-fronted, doing Indonesian food for Rp30,000 to Rp70,000 a plate. A Canggu \"cafe\" is a Western-facing operation charging Rp80,000 to Rp180,000 for brunch. A beach club is four to six times warung prices. The food at a good warung is usually better than the cafe next door, and the gap in your budget between eating mostly at one or mostly at the other is several hundred dollars over a week. Nasi campur (rice with a selection of small dishes) is the thing to order when you cannot decide."
+      "body": "A warung is a small family-run place, often open-fronted, doing Indonesian food for Rp30,000 to Rp70,000 a plate. A Canggu \"cafe\" is a Western-facing operation charging Rp80,000 to Rp180,000 for brunch. A beach club is four to six times warung prices. The food at a good warung is usually better than the cafe next door, and the gap between eating mostly at one or mostly at the other adds up over a week. Nasi campur, rice with a selection of small dishes, is the thing to order when you cannot decide."
     },
     {
       "title": "Not getting sick",
-      "body": "The rules that actually matter: never drink the tap water and do not use it to brush your teeth; ice in established cafes and restaurants is factory-made and fine, ice from a street cart is not; eat at places with turnover, because food that has been sitting is the problem rather than food that is cheap. Fresh juice made in front of you is fine, pre-made juice is a coin flip. Carry rehydration sachets and Imodium, because the odds over ten days are not in your favour and the difference between a ruined day and a ruined trip is having them with you."
+      "body": "The rules that actually matter: never drink the tap water and do not use it to brush your teeth; ice in established cafes and restaurants is factory-made and fine, ice from a street cart is not; eat at places with turnover, because food that has been sitting is the problem rather than food that is cheap. Fresh juice made in front of you is fine, pre-made juice is a coin flip. Carry rehydration sachets and Imodium, because the odds over a week are not in your favour and the difference between a ruined day and a ruined trip is having them with you."
     },
     {
       "title": "Paying, tipping and prices",
@@ -1125,27 +601,32 @@
     },
     {
       "title": "Eating as a group of five",
-      "body": "Five is an awkward number for small warungs and a good number for everywhere else. Book ahead for dinner anywhere popular in Canggu from about 7pm, because the good places fill up and walk-ins wait. Ordering family-style and splitting the bill is normal and nobody will blink at one card paying and everyone squaring up later. Beach clubs run wristband tabs, which is the easiest way for five people to lose track of what they have spent, so nominate someone to hold the tab."
+      "body": "Five is an awkward number for small warungs and a good number for everywhere else. Book ahead for dinner anywhere popular in Canggu from about 7pm, because the good places fill up and walk-ins wait. Ordering family-style and splitting the bill is normal and nobody will blink at one card paying and everyone squaring up later. Beach clubs run wristband tabs, which is the easiest way for five people to lose track, so nominate someone to hold the tab."
     }
   ],
   "staysGuide": [
     {
-      "title": "The two halves of this trip",
-      "body": "Canggu and Ubud are 35km apart and feel like different countries. Canggu is flat, coastal, young and loud: surf, beach clubs, scooters, cafes, and a traffic problem that gets worse every year. Ubud is inland and uphill, cooler, greener, quieter and shuts earlier: temples, rice fields, art, yoga and massage. A week of one and a few days of the other is a good shape for a trip; doing both from one base is not, because the drive eats a day each way."
-    },
-    {
-      "title": "Getting between them",
-      "body": "Canggu to Ubud is 35km and takes 1 to 2 hours depending entirely on traffic. A pre-booked private car is Rp200,000 to Rp300,000 one way and is the right answer with luggage. Grab and Gojek will quote less but are restricted in parts of Ubud and drivers frequently cancel. Leave before 9am or after 2pm; the Denpasar ring road is the bottleneck. Do not try it on a hired scooter with bags."
+      "title": "Where you are",
+      "body": "Canggu, and specifically Tibubeneng and Berawa, which is the quieter northern end. Flat, coastal, young and loud: surf, beach clubs, scooters, cafes, and a traffic problem that gets worse every year. Everything on this plan except the Tuesday driver day and the Friday run to Seminyak and Kuta is within about ten minutes of the villa."
     },
     {
       "title": "What a Bali villa is and is not",
-      "body": "A private villa for five is usually cheaper per head than hotel rooms and comes with a pool, a kitchen and often staff who clean daily. What it does not come with: reliable hot water pressure, a lift, or anyone at the desk at 1am. Tell them a late arrival time in advance. Ask about luggage storage on the check-out day, whether late check-out is buyable, and whether they will arrange a driver, because villa staff almost always have a cousin who drives and the price will be better than a booking site."
+      "body": "A private villa for five is usually cheaper per head than hotel rooms and comes with a pool, a kitchen and often staff who clean daily. What it does not come with: reliable hot water pressure, a lift, or anyone at the desk at 1am. That is why the midnight arrival needs telling them in advance. Ask about luggage storage on the check-out day, whether a late check-out is buyable, and whether they will arrange a driver, because villa staff almost always have a cousin who drives and the price will beat a booking site."
     },
     {
       "title": "November in Bali",
-      "body": "The start of the wet season. Days sit around 27 to 30 degrees with humidity above 85%. Rain comes in short heavy afternoon bursts rather than all day: about 10 to 13 wet days in the month and 145mm total, so more than half the days stay dry. Plan outdoor things for the morning and let the afternoon look after itself. On the west coast the surf is smaller and the wind more variable than mid-year, which suits beginners, and the tide starts bringing debris onto Canggu and Seminyak beaches, which is seasonal and normal. Mosquitoes arrive with the rain, so repellent from day one."
+      "body": "The start of the wet season. Days sit around 27 to 30 degrees with humidity above 85%. Rain comes in short heavy afternoon bursts rather than all day: about 10 to 13 wet days in the month and 145mm total, so more than half the days stay dry. Plan outdoor things for the morning and let the afternoon look after itself. On the west coast the surf is smaller and the wind more variable than mid-year, which suits beginners, and the tide starts bringing debris onto the Canggu and Seminyak beaches, which is seasonal and normal. Mosquitoes arrive with the rain, so repellent from day one."
+    },
+    {
+      "title": "Getting around",
+      "body": "Scooters are the default and the fastest way around Canggu, with all the licence caveats on the Checklists page. Grab and Gojek are the alternative and are cheap: about Rp15,000 to Rp30,000 for a hop across Canggu, more in traffic. Both apps do cars as well as bikes, which is the answer after a drink or in the rain. For anything more than half an hour away, a driver for the day beats paying per trip."
     }
   ],
+  "flights": {
+    "confirmed": [],
+    "legs": [],
+    "lounges": []
+  },
   "points": {},
   "stays": [
     {
@@ -1153,32 +634,13 @@
       "name": "Villa Bunia",
       "town": "Canggu",
       "address": "Tibubeneng, Kuta Utara, Badung Regency, Bali, Indonesia",
-      "type": "Private villa, whole house for the five of you",
+      "type": "Private villa, the whole house for the five of you",
       "status": "booked",
-      "split": 5,
-      "pricePerNightAud": 0,
       "nights": 7,
-      "priceNote": "price not recorded yet: add it and the split updates",
       "checkIn": "2026-11-04",
       "checkOut": "2026-11-11",
       "distance": "Berawa; about 5 min to Pantai Berawa, 10 min walk to FINNS, 10 min ride to Batu Bolong",
-      "notes": "BOOKED for all seven nights. Two things to sort before you go: (1) tell them the flight lands at 10:45pm so the arrival is somewhere near half midnight and somebody needs to be awake, and (2) ask whether they will hold luggage on the 11th after the 11am check-out, because the group's flight is not until 9:10pm. Also worth asking: airport van pickup for five with bags, whether a late check-out is buyable, and whether they can recommend a driver for the Jatiluwih day. The nightly price is not recorded yet; add it on this page. Reservation details go in the Private vault, not here."
-    },
-    {
-      "id": "s-ubud",
-      "name": "Ubud hotel (name to confirm)",
-      "town": "Ubud",
-      "address": "",
-      "type": "Hotel, four nights",
-      "status": "planned",
-      "split": 1,
-      "pricePerNightAud": 0,
-      "nights": 4,
-      "priceNote": "not recorded yet",
-      "checkIn": "2026-11-11",
-      "checkOut": "2026-11-15",
-      "distance": "Ubud",
-      "notes": "You mentioned in September that this is booked for the 11th to the 15th, but the property, the price and the confirmation are not in the app, and the Jetstar return on the 11th contradicts it outright. Settle that first (see Decisions), then fill this in: name, address, check-in time, price, and the reservation number into the Private vault. If it is going ahead, also ask whether they do an airport transfer, because Ubud to Denpasar in the late afternoon is a two-hour run."
+      "notes": "Booked for all seven nights. The address above is the one to show a driver, and it is worth screenshotting before you land. Worth sorting before the trip: tell them everyone arrives around midnight on the 4th so somebody is awake, ask whether they will hold luggage on the 11th after the 11am check-out, ask about a van from the airport for five with bags, and ask them to line up a driver for the Jatiluwih day on the 10th. Villa staff almost always have someone and the price will beat a booking site."
     }
   ],
   "food": [
@@ -1203,7 +665,7 @@
       "town": "Canggu",
       "dish": "Wood-fired pizza at Luigi's Hot Pizza",
       "where": "Luigi's Hot Pizza, Canggu",
-      "why": "Your own pick. The path of least resistance for feeding five people after a day in the sun.",
+      "why": "The path of least resistance for feeding five people after a day in the sun.",
       "priceBand": "¥¥"
     },
     {
@@ -1211,7 +673,7 @@
       "town": "Canggu",
       "dish": "Breakfast at Crate Cafe",
       "where": "Crate Cafe, Canggu, opens 6am",
-      "why": "The Canggu breakfast, enormous and cheap. No bookings and a queue from about 9am.",
+      "why": "The Canggu breakfast: enormous and cheap. No bookings and a queue from about 9am.",
       "priceBand": "¥"
     },
     {
@@ -1219,7 +681,7 @@
       "town": "Canggu",
       "dish": "Breakfast at Milk & Madu",
       "where": "Milk & Madu, Berawa, 7am-10pm",
-      "why": "Was on the Wanderlog list. Open-air, relaxed, takes bookings, and does burgers and pizza later in the day too.",
+      "why": "Open-air, relaxed, takes bookings, and does burgers and pizza later in the day too.",
       "priceBand": "¥¥"
     },
     {
@@ -1227,7 +689,7 @@
       "town": "Pererenan",
       "dish": "Brunch Club",
       "where": "Brunch Club, Pererenan",
-      "why": "Your own pick. The quieter strip west of Canggu; a good long last breakfast before the split on the 11th.",
+      "why": "The quieter strip west of Canggu. A good long last breakfast on the 11th.",
       "priceBand": "¥¥"
     },
     {
@@ -1235,7 +697,7 @@
       "town": "Seminyak",
       "dish": "Coffee at ST. ALi Bali",
       "where": "ST. ALi, Seminyak",
-      "why": "Your own pick. The Melbourne roaster's Bali outpost, so the coffee is properly good rather than Bali-good.",
+      "why": "The Melbourne roaster Bali outpost, so the coffee is properly good rather than Bali-good.",
       "priceBand": "¥¥"
     },
     {
@@ -1243,7 +705,7 @@
       "town": "Seminyak",
       "dish": "32do: Jeju tea, bingsoo, bean-to-bar chocolate, cocktails after dark",
       "where": "Jl. Petitenget No.77, Kerobokan Kelod, 9am-9pm",
-      "why": "Your own pick, noted as \"coffee / cocktails\". Korean-Indonesian glasshouse cafe and cocktail bar; pastries from Rp20,000.",
+      "why": "Korean-Indonesian glasshouse cafe and cocktail bar. Pastries from Rp20,000.",
       "priceBand": "¥¥"
     },
     {
@@ -1251,7 +713,7 @@
       "town": "Canggu",
       "dish": "Shady Shack",
       "where": "Shady Shack, Canggu, 7:30am-10:30pm",
-      "why": "On the Wanderlog list. Worth knowing it is fully vegetarian before five carnivores walk in expecting otherwise.",
+      "why": "Worth knowing it is fully vegetarian before five carnivores walk in expecting otherwise.",
       "priceBand": "¥¥"
     },
     {
@@ -1267,200 +729,52 @@
       "town": "Umalas",
       "dish": "Sinamon Bali",
       "where": "Sinamon Bali, Umalas",
-      "why": "Your own pick. Umalas sits between Canggu and Seminyak, so it works as a stop on the way back rather than a trip of its own.",
+      "why": "Umalas sits between Canggu and Seminyak, so it works as a stop on the way back rather than a trip of its own.",
       "priceBand": "¥¥"
-    },
-    {
-      "id": "bf12",
-      "town": "Ubud",
-      "dish": "Babi guling at Ibu Oka",
-      "where": "Near Ubud Palace, lunch only",
-      "why": "The famous one. Go at 11am or it is gone. Draft, only if the Ubud half happens.",
-      "priceBand": "¥"
     }
   ],
-  "budget": [
-    {
-      "id": "bb1",
-      "category": "Flights",
-      "label": "Jetstar: MCY-SYD-DPS return, the whole booking",
-      "amount": 2655,
-      "currency": "AUD",
-      "status": "booked",
-      "split": 5,
-      "notes": "Straight from Wanderlog, logged there as \"Jetstar 787\". Assumed to be the whole group's fare and split five ways, which works out at A$531 each: a believable Jetstar price for that routing with bags in November. If it turns out A$2,655 was YOUR fare alone, open this line and set the split to 1. Worth checking, because it moves your share by about A$2,100."
-    },
-    {
-      "id": "bb2",
-      "category": "Visas & fees",
-      "label": "Indonesian e-VOA, 30 days",
-      "amount": 500000,
-      "currency": "IDR",
-      "status": "estimate",
-      "notes": "IDR 500,000, about A$50, per person. Apply at evisa.imigrasi.go.id at least 48 hours before you fly and save the QR as a screenshot. Only the .go.id site is official; the lookalikes charge double."
-    },
-    {
-      "id": "bb3",
-      "category": "Visas & fees",
-      "label": "Bali tourist levy",
-      "amount": 150000,
-      "currency": "IDR",
-      "status": "estimate",
-      "notes": "IDR 150,000, about A$15, once per person per trip. Pay at lovebali.baliprov.go.id before you fly and save the QR. Only .go.id is official: the .com and .org copies charge Rp300,000 or more and are scams."
-    },
-    {
-      "id": "bb4",
-      "category": "Insurance",
-      "label": "Travel insurance, 12 days",
-      "amount": 110,
-      "currency": "AUD",
-      "status": "estimate",
-      "notes": "Do not skip this and do not assume you are covered on the bike. Check the policy explicitly covers riding a motorcycle, what engine size it covers, and that it requires a valid licence and IDP, because nearly all of them do. Medical evacuation from Bali runs into six figures."
-    },
-    {
-      "id": "bb5",
-      "category": "Connectivity",
-      "label": "eSIM or local SIM, 12 days",
-      "amount": 25,
-      "currency": "AUD",
-      "status": "estimate",
-      "notes": "An eSIM bought before you leave is about A$20-30 for 10-20GB. A Telkomsel tourist SIM at the airport or in Canggu is around Rp150,000."
-    },
-    {
-      "id": "bb6",
-      "category": "Food",
-      "label": "Drinks, snacks, water and coffees not on the plan",
-      "amount": 1200000,
-      "currency": "IDR",
-      "status": "estimate",
-      "notes": "The named meals are costed on the days themselves, so this is only the gaps: the beers, the bottled water, the second coffee, the 7-Eleven run. About Rp100,000 a day."
-    },
-    {
-      "id": "bb7",
-      "category": "Other",
-      "label": "Massages, shopping and contingency",
-      "amount": 250,
-      "currency": "AUD",
-      "status": "estimate",
-      "notes": "An hour-long Balinese massage is Rp150,000 to Rp350,000. Bali is where the contingency actually gets spent."
-    },
-    {
-      "id": "bb8",
-      "category": "Other",
-      "label": "Tips for drivers and guides",
-      "amount": 400000,
-      "currency": "IDR",
-      "status": "estimate",
-      "notes": "Not expected, but normal now. Rp100,000 for a driver who has had you all day, Rp50,000 for the Batur guide, round up elsewhere."
-    }
-  ],
+  "budget": [],
   "checklist": [
     {
-      "id": "bk1",
-      "group": "Before you book anything else",
-      "text": "Settle the big one: is this a trip to the 11th or to the 15th? The booked return and the Ubud hotel contradict each other",
-      "due": "2026-09-25"
-    },
-    {
-      "id": "bk2",
-      "group": "Before you book anything else",
-      "text": "Confirm whether the A$2,655 Jetstar charge is the whole group or just you, and fix the split on the budget line",
-      "due": "2026-09-25",
-      "money": true
-    },
-    {
-      "id": "bk3",
-      "group": "Before you book anything else",
-      "text": "Put the villa's nightly price into Stays so the budget is not missing its biggest line",
-      "due": "2026-10-01",
-      "money": true
-    },
-    {
-      "id": "bk4",
-      "group": "Before you book anything else",
-      "text": "Add the Ubud hotel: name, address, price, and the reservation number into the Private vault",
-      "due": "2026-10-01"
-    },
-    {
       "id": "bk5",
-      "group": "Paperwork",
-      "text": "Everyone: check passports have 6+ months left beyond 15 Nov 2026 and two blank pages",
+      "group": "Everyone, before you fly",
+      "text": "Check your passport has 6+ months left beyond 11 Nov 2026 and two blank pages",
       "due": "2026-09-30"
     },
     {
       "id": "bk6",
-      "group": "Paperwork",
-      "text": "Everyone who plans to ride: get an International Driving Permit with the motorcycle \"A\" stamp from the RACQ or NRMA",
+      "group": "Everyone, before you fly",
+      "text": "If you plan to ride: get an International Driving Permit with the motorcycle \"A\" stamp from the RACQ or NRMA",
       "due": "2026-10-05",
-      "notes": "About A$50, issued over the counter or by post in a few days, valid 12 months. You need the physical booklet, not a scan, and it is only valid alongside your Australian licence. Without it you are riding unlicensed, which means a fine at a checkpoint and a refused insurance claim if you come off."
+      "notes": "About A$50, issued over the counter or by post in a few days, valid 12 months. You need the physical booklet, not a scan, and it is only valid alongside your normal licence. Without it you are riding unlicensed, which means a fine at a checkpoint and a refused insurance claim if you come off. This is the single most important thing on this list."
     },
     {
       "id": "bk7",
-      "group": "Paperwork",
-      "text": "Travel insurance for all five, with motorcycle cover checked in the fine print",
-      "due": "2026-10-10"
+      "group": "Everyone, before you fly",
+      "text": "Travel insurance, with motorcycle cover checked in the fine print",
+      "due": "2026-10-10",
+      "notes": "Do not assume you are covered on a scooter. Check the policy explicitly covers riding a motorcycle, what engine size it covers, and whether it requires a valid licence and IDP, because nearly all of them do. Medical evacuation from Bali runs into six figures."
     },
     {
       "id": "bk8",
-      "group": "Paperwork",
+      "group": "Everyone, before you fly",
       "text": "Apply for the e-VOA at evisa.imigrasi.go.id (only the .go.id site)",
       "due": "2026-10-28",
-      "notes": "IDR 500,000 each, 30 days, single entry. Apply at least 48 hours before departure. Save the QR as a screenshot."
+      "notes": "IDR 500,000 each, about A$50, 30 days, single entry. Apply at least 48 hours before departure. Save the QR as a screenshot."
     },
     {
       "id": "bk9",
-      "group": "Paperwork",
+      "group": "Everyone, before you fly",
       "text": "Pay the Bali tourist levy at lovebali.baliprov.go.id and screenshot the QR",
       "due": "2026-10-30",
-      "notes": "IDR 150,000 each. The .com and .org lookalikes are scams charging double."
+      "notes": "IDR 150,000 each, about A$15, once per trip. Only .go.id is official: the .com and .org lookalikes are scams charging double."
     },
     {
       "id": "bk10",
-      "group": "Paperwork",
+      "group": "Everyone, before you fly",
       "text": "Fill in the All Indonesia arrival card (free) within 72 hours of flying",
       "due": "2026-11-02",
       "notes": "One digital form that replaced the separate immigration, customs and health declarations. Free. Screenshot the QR."
-    },
-    {
-      "id": "bk11",
-      "group": "Bookings",
-      "text": "Book the Nusa Penida day with Bluuu Tours for Sat 7 Nov, five spots, Canggu pickup",
-      "due": "2026-10-15",
-      "notes": "Confirm the pickup point and time the day before you go."
-    },
-    {
-      "id": "bk12",
-      "group": "Bookings",
-      "text": "Book the raccoon session at Bali Pet Nirvana for Fri 6 Nov",
-      "due": "2026-10-20",
-      "notes": "The swim-with-raccoons slots sell out. Klook and Traveloka both list it."
-    },
-    {
-      "id": "bk13",
-      "group": "Bookings",
-      "text": "Find out exactly what the A$522 FINNS booking includes, and reserve the daybed slot",
-      "due": "2026-10-20",
-      "money": true
-    },
-    {
-      "id": "bk14",
-      "group": "Bookings",
-      "text": "Book a car and driver for the Jatiluwih, Sangeh and Tanah Lot day on Tue 10 Nov",
-      "due": "2026-11-01",
-      "notes": "Ask the villa first; they usually have someone. Agree the route and price in writing."
-    },
-    {
-      "id": "bk15",
-      "group": "Bookings",
-      "text": "Ask Villa Bunia about the late arrival, luggage storage on the 11th, and an airport van for five",
-      "due": "2026-10-10"
-    },
-    {
-      "id": "bk16",
-      "group": "Bookings",
-      "text": "Book the Canggu → Ubud car for 11 Nov, if the Ubud half is going ahead",
-      "due": "2026-11-01",
-      "notes": "Rp200,000 to Rp300,000. Book it rather than relying on Grab, which is restricted in parts of Ubud."
     },
     {
       "id": "bk17",
@@ -1471,9 +785,9 @@
     {
       "id": "bk18",
       "group": "A week out",
-      "text": "Cash plan: no need for much. Card works nearly everywhere; take about two hundred dollars worth for warungs, markets and drivers",
+      "text": "Cash: you need less than you think. Card works nearly everywhere; bring enough for warungs, markets and drivers",
       "due": "2026-11-01",
-      "notes": "Use bank ATMs at branches, not standalone machines. Always decline the machine's own conversion rate."
+      "notes": "Use bank ATMs at branches, not standalone machines. Always decline the machine own-currency conversion, which is always worse than your bank rate."
     },
     {
       "id": "bk19",
@@ -1492,9 +806,36 @@
     {
       "id": "bk21",
       "group": "Pack",
-      "text": "Sarong each, or plan to hire one at every temple",
+      "text": "A sarong each, or plan to hire one at every temple",
       "due": "2026-11-01",
-      "notes": "Required at Tanah Lot, Taman Ayun, Tirta Empul and every other temple. They rent them at the gate, but owning one is Rp50,000 and saves the queue."
+      "notes": "Required at Tanah Lot, Taman Ayun and every other temple. They rent them at the gate, but owning one is Rp50,000 and saves the queue."
+    },
+    {
+      "id": "bk11",
+      "group": "Group bookings",
+      "text": "Book the Nusa Penida day with Bluuu Tours for Sat 7 Nov, five spots, Canggu pickup",
+      "due": "2026-10-15",
+      "notes": "Confirm the pickup point and time the day before you go."
+    },
+    {
+      "id": "bk12",
+      "group": "Group bookings",
+      "text": "Book the raccoon session at Bali Pet Nirvana for Fri 6 Nov",
+      "due": "2026-10-20",
+      "notes": "The swim-with-raccoons slots sell out. Klook and Traveloka both list it."
+    },
+    {
+      "id": "bk14",
+      "group": "Group bookings",
+      "text": "Book a car and driver for the Jatiluwih, Sangeh and Tanah Lot day on Tue 10 Nov",
+      "due": "2026-11-01",
+      "notes": "Ask the villa first; they usually have someone. Agree the route and price in writing."
+    },
+    {
+      "id": "bk15",
+      "group": "Group bookings",
+      "text": "Ask Villa Bunia about the midnight arrival, luggage storage on the 11th, and an airport van for five",
+      "due": "2026-10-10"
     }
   ],
   "places": [
@@ -1541,7 +882,7 @@
     },
     {
       "id": "q6",
-      "name": "Old Man's / The Lawn",
+      "name": "Old Man's and The Lawn",
       "kind": "food",
       "town": "Canggu",
       "lat": -8.6551,
@@ -1699,120 +1040,42 @@
       "town": "Tabanan",
       "lat": -8.6212,
       "lng": 115.0868
-    },
-    {
-      "id": "q26",
-      "name": "Ubud centre and palace",
-      "kind": "other",
-      "town": "Ubud",
-      "lat": -8.5069,
-      "lng": 115.2625
-    },
-    {
-      "id": "q27",
-      "name": "Campuhan Ridge Walk",
-      "kind": "other",
-      "town": "Ubud",
-      "lat": -8.5045,
-      "lng": 115.2523
-    },
-    {
-      "id": "q28",
-      "name": "Sacred Monkey Forest Sanctuary",
-      "kind": "other",
-      "town": "Ubud",
-      "lat": -8.5188,
-      "lng": 115.2586
-    },
-    {
-      "id": "q29",
-      "name": "Mount Batur",
-      "kind": "other",
-      "town": "Kintamani",
-      "lat": -8.2422,
-      "lng": 115.3752
-    },
-    {
-      "id": "q30",
-      "name": "Tirta Empul",
-      "kind": "other",
-      "town": "Tampaksiring",
-      "lat": -8.4156,
-      "lng": 115.3153
-    },
-    {
-      "id": "q31",
-      "name": "Tegallalang Rice Terrace",
-      "kind": "other",
-      "town": "Tegallalang",
-      "lat": -8.4315,
-      "lng": 115.279
-    },
-    {
-      "id": "q32",
-      "name": "Tegenungan Waterfall",
-      "kind": "other",
-      "town": "Gianyar",
-      "lat": -8.5751,
-      "lng": 115.288
     }
   ],
   "questions": [
     {
-      "id": "bq1",
-      "question": "Is this a trip to the 11th or to the 15th?",
-      "why": "The two things you have told me do not fit together. The booked Jetstar return, JQ87, leaves Denpasar at 9:10pm on Wednesday 11 November and lands at the Sunshine Coast the next morning. But in September you said you had a hotel in Ubud from the 11th to the 15th and asked how to get there from Canggu. One of those has to give. The likeliest explanation is that the four others fly home on the 11th and you stay on, in which case your own return flight is missing from the booking entirely. Everything from the 11th onwards in this app is built on a guess until you tell me which it is.",
-      "options": [
-        "All five fly home on 11 Nov; the Ubud booking is gone or was never made",
-        "The others fly home on 11 Nov and you stay in Ubud to the 15th on a separate return flight",
-        "All five go to Ubud and the 11 Nov return is the wrong flight in Wanderlog"
-      ],
-      "recommendation": "Check the actual Jetstar booking and the Ubud reservation email, then tell me which. If you are staying on, the missing piece is your own flight home on or after the 15th, and Jetstar fares that close to the date only go one way."
-    },
-    {
-      "id": "bq2",
-      "money": true,
-      "question": "Is the A$2,655 Jetstar charge the whole group, or just you?",
-      "why": "It is logged in Wanderlog as one expense against flight JQ787 with no split. A$2,655 for one person on Jetstar from the Sunshine Coast to Bali via Sydney would be extraordinary; divided across five it is A$531 each, which is a very ordinary November fare with bags. The app currently assumes the second. If it is actually your fare alone, your share of the trip jumps by about A$2,100 and the budget is badly wrong.",
-      "options": [
-        "It is the group booking, split five ways (currently assumed)",
-        "It is my fare alone",
-        "It is some other combination, needs unpicking"
-      ],
-      "recommendation": "Open the Jetstar confirmation and count the passengers on it. Then open the budget line in the app and set the split to match."
-    },
-    {
       "id": "bq3",
       "question": "Who is actually riding, and does everyone have an IDP?",
-      "why": "This is the one that can genuinely ruin the trip. Since April 2026 Bali has run a zero-tolerance policy on foreign riders, and at a checkpoint you need the physical International Driving Permit booklet with the motorcycle \"A\" stamp, alongside your Australian licence and the bike papers. A photo on your phone does not count. The fine is a few hundred thousand rupiah per missing document, which is annoying. The real cost is that riding unlicensed voids nearly every Australian travel insurance policy, so a crash becomes a six-figure medical bill that nobody covers.",
+      "why": "This is the one that can genuinely ruin the trip. Since April 2026 Bali has run a zero-tolerance policy on foreign riders, and at a checkpoint you need the physical International Driving Permit booklet with the motorcycle \"A\" stamp, alongside your normal licence and the bike papers. A photo on your phone does not count. The fine is a few hundred thousand rupiah per missing document, which is annoying. The real cost is that riding unlicensed voids nearly every Australian travel insurance policy, so a crash becomes a six-figure medical bill that nobody covers.",
       "options": [
         "Everyone rides, everyone gets an IDP with the A stamp before we go",
         "Only the confident riders take scooters; the rest use Grab and share cars",
         "No scooters at all; Grab, Gojek and a driver for the week"
       ],
-      "recommendation": "Get the IDPs. They are about A$50 from the RACQ, take a few days, and last a year. If anyone has never ridden a scooter before, Bali in the wet season is a genuinely bad place to learn: Grab and Gojek are cheap, everywhere, and about Rp15,000 to Rp30,000 for a Canggu hop."
-    },
-    {
-      "id": "bq4",
-      "question": "Sunday and Tuesday: does the rebuild work for you?",
-      "why": "Those were the two days you flagged as AI filler. Sunday had five food and drink stops in a row and nothing else; Tuesday had Tanah Lot at 6am followed by four more cafes and beach clubs. I rebuilt both. Sunday is now a genuine slow day between Nusa Penida and the beach club: a late Crate breakfast, the beach and an optional surf lesson, Love Anchor market, sunset at The Lawn or Old Man's, and Luigi's for dinner. Tuesday became the driver day north, which finally uses the two places you saved and never scheduled, Jatiluwih Rice Terraces and Sangeh Monkey Forest, and puts Tanah Lot at sunset where it belongs instead of at dawn.",
-      "options": [
-        "Both work",
-        "Sunday should be doing something, not resting",
-        "Swap the driver day to a different day"
-      ],
-      "recommendation": "Keep them. Nusa Penida on Saturday is a 5:45am start and a rough boat, and FINNS on Monday is a full day of sun and noise; putting the biggest driving day between them would have been brutal. Tuesday as the last full day also means the big scenery is the last thing you see."
+      "recommendation": "Get the IDPs. They are about A$50 from the RACQ, take a few days, and last a year. If anyone has never ridden a scooter before, Bali in the wet season is a genuinely bad place to learn: Grab and Gojek are cheap, everywhere, and about Rp15,000 to Rp30,000 for a hop across Canggu."
     },
     {
       "id": "bq5",
       "question": "Is the Nusa Penida day actually booked?",
-      "why": "Bluuu Tours is in the Wanderlog as a place, on the Saturday, but there is no expense logged against it and no confirmation anywhere. At roughly Rp1.45m a head it is the second biggest activity cost of the trip, and Saturday boats sell out.",
+      "why": "Bluuu Tours is on the plan for Saturday the 7th but there is no confirmation recorded anywhere. It is the biggest single thing anyone pays for on the trip, and Saturday boats sell out.",
       "options": [
         "Booked already",
         "Not booked yet",
         "Not doing it"
       ],
-      "recommendation": "If it is not booked, do it now for five: the shared boat with the free Canggu van pickup is the good-value option, and Saturdays go first."
+      "recommendation": "If it is not booked, do it now for five. The shared boat with the free Canggu van pickup is the good-value option, and Saturdays go first."
+    },
+    {
+      "id": "bq6",
+      "question": "Does anyone want to swap a day for something else?",
+      "why": "The week as it stands: settle in on Thursday, Seminyak and Kuta on Friday, Nusa Penida on Saturday, a slow Canggu day Sunday, FINNS on Monday, and the big driver day north on Tuesday. That leaves the two heaviest days, the boat and the driver, with lighter days on either side, which is deliberate. Things that did not make the cut and easily could: Uluwatu and the kecak fire dance at sunset, a day trip to the Gili islands, Ubud and the monkey forest, or a cooking class.",
+      "options": [
+        "The week is good as it is",
+        "Swap something for Uluwatu and the kecak dance",
+        "Swap something for a cooking class or a spa day",
+        "Something else, say so in the group chat"
+      ],
+      "recommendation": "Leave it. Six days is not many and the current shape already has two big days out plus a beach club. Uluwatu is the one genuine gap, and it would work as an evening instead of the Sunday sunset if enough people want it."
     }
   ]
 }

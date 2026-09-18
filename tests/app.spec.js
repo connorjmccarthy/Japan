@@ -310,11 +310,13 @@ test.describe('two trips in one app', () => {
     const errors = await boot(page, '#/overview');
     await expect(page.locator('#brand-title')).toHaveText('Japan 2027');
     await switchTo(page, 'Bali', isMobile);
-    await expect(page.locator('#brand-dates')).toHaveText('Wed 4 Nov to Sun 15 Nov');
+    await expect(page.locator('#brand-dates')).toHaveText('Wed 4 Nov to Wed 11 Nov');
     await expect(page.locator('#topbar-kicker')).toContainText('Bali 2026');
-    // The two trips are stored separately, so neither can clobber the other.
+    await switchTo(page, 'Ubud', isMobile);
+    await expect(page.locator('#brand-dates')).toHaveText('Wed 11 Nov to Sun 15 Nov');
+    // Each trip is stored separately, so none of them can clobber another.
     const keys = await page.evaluate(() => Object.keys(localStorage).filter((k) => k.endsWith(':trip')).sort());
-    expect(keys).toEqual(['t:bali:trip', 't:japan:trip']);
+    expect(keys).toEqual(['t:bali:trip', 't:japan:trip', 't:ubud:trip']);
     await switchTo(page, 'Japan', isMobile);
     await expect(page.locator('#brand-dates')).toHaveText('Mon 8 Feb to Wed 17 Feb');
     expect(errors).toEqual([]);
@@ -375,86 +377,102 @@ test.describe('sharing the link', () => {
     await expect(page.locator('#topbar-heading')).not.toHaveText('');
   }
 
-  test('a guest sees Bali only, with no money anywhere', async ({ page, isMobile }) => {
+  test('a guest sees the group trip only, with no money and no flights', async ({ page, isMobile }) => {
     await asGuest(page);
     await expect(page.locator('#brand-title')).toHaveText('Bali 2026');
     if (isMobile) await page.locator('#menu-btn').click();
-    // Japan is not shared, so it is not even a choice.
+    // Bali is the only shared trip, so there is nothing to switch between.
     await expect(page.locator('#trip-switch')).toBeHidden();
+    // The trip keeps no budget and no flights, so neither page exists at all.
     await expect(page.locator('.nav-link', { hasText: 'Budget' })).toHaveCount(0);
-    // No money on the Overview.
+    await expect(page.locator('.nav-link', { hasText: 'Flights' })).toHaveCount(0);
+    // The pages the group was promised are all there.
+    for (const label of ['Plan', 'Go', 'Stays', 'Food', 'Checklists', 'Map', 'Decisions']) {
+      await expect(page.locator('.nav-link', { hasText: label })).toHaveCount(1);
+    }
     await expect(page.locator('.stat-label', { hasText: /Budget|Your share/ })).toHaveCount(0);
-    // No prices on items or stays.
+    // No prices on items or stays, and no flight numbers anywhere.
     await page.goto('/#/itinerary/2026-11-07');
     await expect(page.locator('.tl-title', { hasText: 'Speedboat to Nusa Penida' })).toBeVisible();
     await expect(page.locator('#main')).not.toContainText('Rp1,450,000');
     await page.goto('/#/stays');
     await expect(page.locator('.row', { hasText: 'Villa Bunia' })).toBeVisible();
     await expect(page.locator('#main')).not.toContainText('/nt');
-    // And the Budget page itself is not reachable by URL.
-    await page.goto('/#/budget');
-    await expect(page.locator('#topbar-heading')).toHaveText('Overview');
-    // To-dos and decisions that are about who paid what are held back too.
-    await page.goto('/#/decisions');
-    await expect(page.locator('#main')).toContainText('Open (4)');
-    await expect(page.locator('#main')).not.toContainText('A$2,655');
+    // Neither page is reachable by URL either.
+    for (const hash of ['budget', 'flights']) {
+      await page.goto(`/#/${hash}`);
+      await expect(page.locator('#topbar-heading')).toHaveText('Overview');
+    }
+    // What the group does need is still there.
     await page.goto('/#/checklist');
-    await expect(page.locator('#main')).not.toContainText('A$2,655');
-    // Reference prices and the to-dos the group actually needs are still there.
     await expect(page.locator('#main')).toContainText('International Driving Permit');
-    await expect(page.locator('#main')).toContainText('0 of 18 done');
   });
 
-  test('the two switches in Settings bring money and Japan back, on this device only', async ({ page, isMobile }) => {
+  test('no flight numbers survive anywhere in the group plan', async ({ page }) => {
+    await asGuest(page);
+    const plan = await page.evaluate(() => localStorage.getItem('t:bali:trip'));
+    for (const flight of ['JQ787', 'JQ37', 'JQ87']) expect(plan, `${flight} is still in the group plan`).not.toContain(flight);
+    expect(JSON.parse(plan).flights.confirmed).toEqual([]);
+    // And no dollar amounts from anyone's bookings.
+    for (const amount of ['2,655', '522']) expect(plan).not.toContain(amount);
+  });
+
+  test('Ubud is private: invisible until this device asks for it', async ({ page, isMobile }) => {
+    await asGuest(page, '#/settings');
+    await expect(page.locator('#trip-switch')).toBeHidden();
+    await page.getByLabel('Show my private trips').check();
+    await page.locator('.card', { hasText: 'Show money' }).getByRole('button', { name: 'Save', exact: true }).click();
+    if (isMobile) await page.locator('#menu-btn').click();
+    await expect(page.locator('#trip-switch button', { hasText: 'Ubud' })).toHaveCount(1);
+    await expect(page.locator('#trip-switch button', { hasText: 'Japan' })).toHaveCount(1);
+  });
+
+  test('the money switch brings the budget back on a trip that keeps one', async ({ page, isMobile }) => {
     await asGuest(page, '#/settings');
     await page.getByLabel('Show money (Budget page, totals and prices)').check();
     await page.getByLabel('Show my private trips').check();
     await page.locator('.card', { hasText: 'Show money' }).getByRole('button', { name: 'Save', exact: true }).click();
-    // The menu rebuilds without a reload.
+    // Bali keeps no budget, so the switch does nothing for it.
+    if (isMobile) await page.locator('#menu-btn').click();
+    await expect(page.locator('.nav-link', { hasText: 'Budget' })).toHaveCount(0);
+    // Japan does, so there it comes back.
+    await page.locator('#trip-switch button:has-text("Japan")').click();
+    await expect(page.locator('#brand-title')).toHaveText('Japan 2027');
     if (isMobile) await page.locator('#menu-btn').click();
     await expect(page.locator('.nav-link', { hasText: 'Budget' })).toHaveCount(1);
-    await expect(page.locator('#trip-switch button', { hasText: 'Japan' })).toHaveCount(1);
     await page.goto('/#/budget');
     await expect(page.locator('#topbar-heading')).toHaveText('Budget');
-    await expect(page.locator('.stat-label').first()).toHaveText('Your share');
-    // The money-only decision comes back with it.
-    await page.goto('/#/decisions');
-    await expect(page.locator('#main')).toContainText('Open (5)');
-    await expect(page.locator('#main')).toContainText('A$2,655');
     // Nothing about the choice is written into the plan that syncs to GitHub.
-    const plan = await page.evaluate(() => localStorage.getItem('t:bali:trip'));
+    const plan = await page.evaluate(() => localStorage.getItem('t:japan:trip'));
     expect(plan).not.toContain('showBudget');
   });
 
   test('hiding the money does not delete it', async ({ page }) => {
-    await boot(page, '#/itinerary/2026-11-07', { trip: 'bali' });
-    await expect(page.locator('#main')).toContainText('Rp1,450,000');
+    await boot(page, '#/itinerary/2027-02-13');
+    await expect(page.locator('#main')).toContainText('¥1,800');
     await page.evaluate(() => { const s = JSON.parse(localStorage.getItem('app:settings')); s.showBudget = false; localStorage.setItem('app:settings', JSON.stringify(s)); });
     await page.reload();
-    await expect(page.locator('.tl-title', { hasText: 'Speedboat to Nusa Penida' })).toBeVisible();
-    await expect(page.locator('#main')).not.toContainText('Rp1,450,000');
+    await expect(page.locator('.tl-title', { hasText: 'Nohi bus Takayama' })).toBeVisible();
+    await expect(page.locator('#main')).not.toContainText('¥1,800');
     // Still in the data, just not on screen.
-    const cost = await page.evaluate(() => JSON.parse(localStorage.getItem('t:bali:trip')).days.flatMap((d) => d.items).find((i) => i.id === 'e2')?.cost);
-    expect(cost).toBe(1450000);
+    const cost = await page.evaluate(() => JSON.parse(localStorage.getItem('t:japan:trip')).days.flatMap((d) => d.items).find((i) => i.id === 'c13b')?.cost);
+    expect(cost).toBe(1800);
   });
 });
 
 test.describe('group costs and currencies', () => {
-  test('Bali splits shared lines and converts rupiah', async ({ page }) => {
-    await boot(page);
-    await page.evaluate(() => localStorage.setItem('app:tripId', JSON.stringify('bali')));
-    await page.goto('/#/budget');
-    await page.reload();
+  test('a budget line can be split, and the share is what shows', async ({ page }) => {
+    await boot(page, '#/budget');
+    await page.getByRole('button', { name: '+ Add line' }).click();
+    await page.getByLabel('What').fill('Test shared villa');
+    await page.getByLabel('Amount').fill('500');
+    await page.getByLabel('Split how many ways').fill('4');
+    await page.getByRole('button', { name: 'Save', exact: true }).click();
+    const row = page.locator('.row', { hasText: 'Test shared villa' }).first();
+    await expect(row).toContainText('÷4');
+    await expect(row).toContainText('A$500 ÷ 4');
+    await expect(row.locator('.big')).toHaveText('A$125');
     await expect(page.locator('.stat-label').first()).toHaveText('Your share');
-    const stats = await page.locator('.grid-stats').innerText();
-    expect(stats).toContain('across the group');
-    // The Jetstar booking is A$2,655 across five, so your share of it is A$531.
-    const jetstar = page.locator('.row', { hasText: 'Jetstar' }).first();
-    await expect(jetstar).toContainText('÷5');
-    await expect(jetstar).toContainText('A$2,655 ÷ 5');
-    await expect(jetstar.locator('.big')).toHaveText('A$531');
-    // Rupiah amounts are converted, not shown raw.
-    await expect(page.locator('.row', { hasText: 'tourist levy' }).first().locator('.big')).toHaveText('A$15');
   });
 
   test('Japan still converts yen in the day list', async ({ page }) => {

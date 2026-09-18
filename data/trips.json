@@ -14,6 +14,18 @@
       "shared": true
     },
     {
+      "id": "ubud",
+      "name": "Ubud 2026",
+      "short": "Ubud",
+      "ico": "🏞️",
+      "mark": "🏞️",
+      "file": "data/ubud.json",
+      "vault": "data/vault-ubud.enc",
+      "start": "2026-11-11",
+      "end": "2026-11-15",
+      "shared": false
+    },
+    {
       "id": "japan",
       "name": "Japan 2027",
       "short": "Japan",

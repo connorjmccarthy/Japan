@@ -18,10 +18,10 @@ const VIEWS = {
   overview: { mod: overview, label: 'Overview', ico: '🏔️', tab: true },
   itinerary: { mod: itinerary, label: 'Plan', ico: '📅', tab: true },
   go: { mod: go, label: 'Go', ico: '🧳', tab: true },
-  flights: { mod: flights, label: 'Flights', ico: '✈️' },
+  flights: { mod: flights, label: 'Flights', ico: '✈️', feature: 'flights' },
   stays: { mod: stays, label: 'Stays', ico: '🏨' },
   food: { mod: food, label: 'Food', ico: '🍜' },
-  budget: { mod: budget, label: 'Budget', ico: '💰', money: true },
+  budget: { mod: budget, label: 'Budget', ico: '💰', feature: 'budget', money: true },
   checklist: { mod: checklist, label: 'Checklists', ico: '✅', tab: true },
   map: { mod: map, label: 'Map', ico: '🗺️' },
   decisions: { mod: decisions, label: 'Decisions', ico: '🧭' },
@@ -34,8 +34,9 @@ let current = { id: null, params: [] };
 
 export function navigate(path) { location.hash = `#/${path}`; }
 
-// Views marked `money` only exist while the budget is switched on.
-const viewAllowed = (v) => !v.money || store.showMoney;
+// A view exists when the trip asks for its feature and, for money, when this
+// device has asked to see it.
+const viewAllowed = (v) => (!v.feature || store.tripHas(v.feature)) && (!v.money || store.showMoney);
 
 function parseHash() {
   const h = location.hash.replace(/^#\/?/, '');
@@ -171,7 +172,7 @@ async function boot() {
   let lastStatus = null;
   store.subscribe((trip, status) => {
     if (status !== lastStatus) { lastStatus = status; renderSync(status); if (status.state === 'conflict') toast('GitHub has a newer version of the plan.', { action: 'Resolve', onAction: () => navigate('settings'), ms: 10000 }); if (status.state === 'error') toast(status.message, { kind: 'error', ms: 6000 }); }
-    const chrome = `${store.settings.showBudget}|${store.settings.showAllTrips}`;
+    const chrome = `${store.settings.showBudget}|${store.settings.showAllTrips}|${store.tripId}`;
     if (chrome !== lastChrome) { lastChrome = chrome; buildNav(); renderTripSwitch(); markActive(current.id); }
     if (trip?.meta) {
       const name = trip.meta.title || store.tripRecord?.name || 'Trip';

@@ -125,6 +125,10 @@ export const STATUSES = {
   skip: 'Skipped',
 };
 export const CATEGORIES = ['Flights', 'Transport', 'Accommodation', 'Ski', 'Food', 'Activities', 'Parking', 'Insurance', 'Connectivity', 'Other'];
+// A trip can switch whole sections off. A group holiday where the flights and the
+// money are handled elsewhere has no use for the Flights or Budget pages, so it
+// sets meta.features = { flights: false, budget: false }. Anything unnamed is on.
+export const tripHas = (t, feature) => t?.meta?.features?.[feature] !== false;
 // A trip can name its own categories (a beach holiday has no use for 'Ski').
 export const tripCategories = (t) => (t?.meta?.categories?.length ? t.meta.categories : CATEGORIES);
 

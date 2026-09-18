@@ -30,7 +30,7 @@ export function render(root, { store, navigate }) {
 
   // Sharing: what anybody holding the link is allowed to see on their own phone.
   const shareFm = form([
-    { name: 'showBudget', label: 'Show money (Budget page, totals and prices)', type: 'checkbox', value: !!s.showBudget, hint: 'Off by default, because this link gets shared. With it off there is no Budget page, no totals on the Overview and no prices on items or stays. Nothing is deleted; it is hidden on this device only.' },
+    { name: 'showBudget', label: 'Show money (Budget page, totals and prices)', type: 'checkbox', value: !!s.showBudget, hint: 'Off by default, because this link gets shared. With it off there is no Budget page, no totals on the Overview and no prices on items or stays. Nothing is deleted; it is hidden on this device only. Trips that keep no budget at all, like Bali, are unaffected either way.' },
     { name: 'showAllTrips', label: 'Show my private trips', type: 'checkbox', value: !!s.showAllTrips, hint: 'Off by default. Everyone sees the shared trips; only a device with this switched on sees the rest. Japan 2027 is private.' },
   ]);
   root.append(section('Sharing this link', el('div', { class: 'card' },

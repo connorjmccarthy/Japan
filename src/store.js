@@ -1,4 +1,4 @@
-import { clone, debounce } from './util.js';
+import { clone, debounce, tripHas } from './util.js';
 import { getFile, putFile } from './github.js';
 import { encryptJson, decryptJson } from './crypto.js';
 
@@ -78,7 +78,10 @@ class Store {
   // A trip is shared unless the registry says otherwise. Anything not shared is
   // invisible until this device turns "show all trips" on in Settings.
   visibleTrips() { return this.settings.showAllTrips ? this.trips : this.trips.filter((x) => x.shared !== false); }
-  get showMoney() { return this.settings.showBudget === true; }
+  // A section exists only if the trip asks for it. Money needs the trip to have a
+  // budget at all AND this device to have asked to see it.
+  tripHas(feature) { return tripHas(this.trip, feature); }
+  get showMoney() { return this.settings.showBudget === true && this.tripHas('budget'); }
   get tripRecord() { return this.trips.find((x) => x.id === this.tripId) || this.visibleTrips()[0] || this.trips[0] || FALLBACK_TRIPS[0]; }
   filePath() { return this.settings.paths?.[this.tripId]?.file || this.tripRecord.file || 'data/trip.json'; }
   vaultPath() { return this.settings.paths?.[this.tripId]?.vault || this.tripRecord.vault || 'data/vault.enc'; }

@@ -2,14 +2,17 @@
 
 A personal trip planner. It works like a lightweight Wanderlog: a day‑by‑day plan, flights, stays, food list, live budget, checklists, a map and a place for decisions still to be made.
 
-It currently holds two trips, and the **Trip** switcher at the top of the menu moves between them:
+It holds three trips, and the **Trip** switcher at the top of the menu moves between the ones a device can see:
 
-| Trip | Dates | Who | Data file | Built by |
-|---|---|---|---|---|
-| **Bali 2026** | 4 to 15 Nov 2026 | five of you, Canggu then Ubud | `data/bali.json` | `scripts/build-bali.py` |
-| **Japan 2027** | 8 to 17 Feb 2027 | solo | `data/trip.json` | `scripts/build-seed.py` |
+| Trip | Dates | Who | Shared | Data file | Built by |
+|---|---|---|---|---|---|
+| **Bali 2026** | 4 to 11 Nov 2026 | the group of five, Canggu | yes | `data/bali.json` | `scripts/build-bali.py` |
+| **Ubud 2026** | 11 to 15 Nov 2026 | Connor, after the group flies home | no | `data/ubud.json` | `scripts/build-ubud.py` |
+| **Japan 2027** | 8 to 17 Feb 2027 | Connor, solo | no | `data/trip.json` | `scripts/build-seed.py` |
 
-Each trip keeps its own copy in your browser, its own file in this repo and its own encrypted vault, so editing one can never touch the other. Your GitHub token, theme and sync settings are shared across both. `data/trips.json` is the list of trips and which one a new device opens first.
+Each trip keeps its own copy in your browser, its own file in this repo and its own encrypted vault, so editing one can never touch another. Your GitHub token, theme and sync settings are shared across all of them. `data/trips.json` is the list of trips, which one a new device opens first, and which are shared.
+
+A trip can also switch whole sections off through `meta.features`. Bali sets `flights: false` and `budget: false`, because both are handled outside the app, so neither page exists there and no prices appear anywhere in it.
 
 It is a plain static website (HTML, CSS, JavaScript, no build step), so it runs on GitHub Pages for free and works on a phone as an installable app.
 
@@ -45,8 +48,8 @@ Without a token everything still works; edits just stay on whichever device you 
 
 The link can go to anyone. What they see is controlled by two switches under **Settings → Sharing this link**, both **off** by default and both stored in that person's browser only:
 
-- **Show money.** Off, so there is no Budget page, no totals on the Overview and no prices on items or stays. Turn it on to get your own budget back.
-- **Show my private trips.** Off, so only trips marked `"shared": true` in `data/trips.json` appear in the switcher. Bali is shared; Japan is not.
+- **Show money.** Off, so there is no Budget page, no totals on the Overview and no prices on items or stays. Turn it on to get your own budget back. It only affects trips that keep a budget at all: Bali has none either way.
+- **Show my private trips.** Off, so only trips marked `"shared": true` in `data/trips.json` appear in the switcher. Bali is shared; Ubud and Japan are not.
 
 Because these are per-device, turning one on for yourself does nothing to anyone else holding the link.
 
@@ -60,6 +63,7 @@ For bigger rewrites the Python builders are the source of truth. Edit `scripts/b
 
 ```
 python3 scripts/build-bali.py     # rewrites data/bali.json
+python3 scripts/build-ubud.py     # rewrites data/ubud.json
 python3 scripts/build-seed.py     # rewrites data/trip.json
 ```
 
@@ -84,7 +88,8 @@ src/ui.js              sheet/modal, forms, toasts
 src/views/*.js         one module per page (go.js is the on-the-move card deck)
 data/trips.json        the list of trips and which one opens by default
 data/trip.json         the Japan plan
-data/bali.json         the Bali plan
+data/bali.json         the Bali plan (shared with the group)
+data/ubud.json         the Ubud plan (private)
 scripts/build-*.py     the source of truth for each plan; re-run to regenerate the JSON
 sw.js                  offline cache
 vendor/leaflet         map library (BSD-2, vendored so it works offline)
