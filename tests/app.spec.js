@@ -330,6 +330,16 @@ test.describe('go mode', () => {
     await expect(page.locator('.go-card')).toHaveCount(before - 1);
   });
 
+  test('the two Takayama bookings show the right room on each night', async ({ page }) => {
+    await boot(page, '#/go/2027-02-12');
+    await expect(page.locator('.go-card.go-stay .go-title')).toContainText('Moon room');
+    await page.goto(page.url().replace('#/go/2027-02-12', '#/go/2027-02-15'));
+    await expect(page.locator('.go-card.go-stay .go-title')).toContainText('Sakura room');
+    // The nights away are not in Takayama at all, so no hotel card should appear for them.
+    await page.goto(page.url().replace('#/go/2027-02-15', '#/go/2027-02-14'));
+    await expect(page.locator('.go-card.go-stay .go-title')).toContainText('Hirayu no Mori');
+  });
+
   test('picks the stop happening now', async ({ page }) => {
     await boot(page, '#/go');
     const r = await page.evaluate(async () => {

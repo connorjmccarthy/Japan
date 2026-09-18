@@ -163,7 +163,7 @@ function stayCard(s) {
 
 function tonightStay(trip, v, date) {
   const stays = forVariant(trip.stays, v).filter((s) => s.checkIn && s.checkOut && s.checkIn <= date && date < s.checkOut && ['booked', 'planned'].includes(s.status));
-  // A night out (farmhouse, temple) sits inside the hub booking; the later check-in is where you actually sleep.
+  // If two bookings ever cover the same night, the later check-in is where you actually sleep.
   return sortBy(stays, (s) => `${s.checkIn}`).reverse()[0] || null;
 }
 

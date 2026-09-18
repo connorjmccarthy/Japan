@@ -5,9 +5,9 @@
     "end": "2027-02-17",
     "homeCurrency": "AUD",
     "jpyPerAud": 108,
-    "updatedAt": "2026-09-17T14:12:20Z",
+    "updatedAt": "2026-09-18T01:35:19Z",
     "version": 1,
-    "about": "Solo ski trip. Confirmed: JQ815 BNE→SYD and the Business Classic Reward SYD→MEL→NRT on 8 Feb. Home Tue 16 Feb on QF80 + QF1256 (booked). Everything else is planned from research done 13 Sep 2026; prices marked est. need checking when booking."
+    "about": "Solo trip, Plan B (no skiing): Osaka, Koyasan, Takayama, Shirakawa-go and Hirayu Onsen. Confirmed: JQ815 BNE→SYD and the Business Classic Reward SYD→MEL→NRT on 8 Feb. Home Tue 16 Feb on QF80 + QF1256 (booked). Everything else is planned from research done 13 Sep 2026; prices marked est. need checking when booking."
   },
   "days": [
     {
@@ -539,7 +539,7 @@
           "endTime": "09:15",
           "cost": 3000,
           "currency": "JPY",
-          "notes": "Do this at check-out, not earlier, or you spend two Osaka nights without your clothes. Hand it to the desk and ask for “takkyubin to this address”, showing the Takayama address in Japanese from the Stays page. Osaka to Gifu is next-day, so it lands at the hotel on the 12th, the day you check in. Ask for the earliest collection. Everything you need for Koyasan goes in the daypack: one change of clothes, toiletries, chargers, and something warm.",
+          "notes": "Do this at check-out, not earlier, or you spend two Osaka nights without your clothes. Hand it to the desk and ask for “takkyubin to this address”, showing the Takayama address in Japanese from the Stays page. Osaka to Gifu is next-day, so it lands at the hotel on the 12th, the day you check in. Ask for the earliest collection. Write your hotel reservation name on the delivery slip: the Takayama hotel has confirmed in writing that it will take the parcel in and hold it, and the name on the slip is how the desk matches it to you. Everything you need for Koyasan and the two nights after it goes in the daypack: two changes of clothes, toiletries, chargers, and something warm.",
           "variant": "culture",
           "placeId": "p27"
         },
@@ -653,7 +653,7 @@
         "culture": {
           "title": "Osaka → Koyasan (temple lodging)",
           "base": "Koyasan shukubo (night out no. 1)",
-          "notes": "National Foundation Day. Koyasan is a 1,200-year-old monastery town on a forested plateau, two hours from Namba: 117 temples, a 2 km cemetery walk through giant cedars, and a night in a temple with the monks’ vegetarian dinner. Late-morning start; the suitcase went ahead to the Takayama hub on Tuesday, so this is daypack only.",
+          "notes": "National Foundation Day. Koyasan is a 1,200-year-old monastery town on a forested plateau, two hours from Namba: 117 temples, a 2 km cemetery walk through giant cedars, and a night in a temple with the monks’ vegetarian dinner. Late-morning start; the suitcase went ahead to Takayama by courier this morning, so this is daypack only.",
           "walk": "12,000-15,000 steps (Okunoin is 2 km each way, plus the Garan; flat, may be icy)"
         }
       }
@@ -815,10 +815,10 @@
           "id": "c12f",
           "time": "16:30",
           "type": "stay",
-          "title": "Check in to the hub, Takayama (4 nights); the suitcase is waiting",
+          "title": "Check in at Temple Hotel Takayama Zenkoji (Moon room); the suitcase is waiting",
           "status": "planned",
           "location": "See Stays",
-          "notes": "Unpack. This room is home until Tuesday; Saturday night you simply do not sleep in it.",
+          "notes": "Collect the courier parcel at the desk. Tonight is the Moon room, the bigger of the two nights you have booked here, 20 m² of tatami. Do not unpack everything: tomorrow morning you check out and leave the suitcase in their store room for two nights, so set aside a daypack for Shirakawa-go and Hirayu now, while you have space to think. Tell them at check-in that you are back on Monday and leaving luggage, so the handover is expected.",
           "variant": "culture",
           "placeId": "pb10"
         },
@@ -850,9 +850,9 @@
       "walk": "6,000-9,000 steps (ski boots on snow; walking is short)",
       "variants": {
         "culture": {
-          "title": "Koyasan → Takayama, the hub for four nights",
-          "base": "Takayama (hub)",
-          "notes": "The 6:30 prayers are optional; breakfast is at a fixed time around 7:30, then a leisurely trip: down the mountain, Shinkansen to Nagoya, the Hida express up the gorge. Check into one room for four nights and unpack properly. Evening free.",
+          "title": "Koyasan → Takayama",
+          "base": "Takayama",
+          "notes": "The 6:30 prayers are optional; breakfast is at a fixed time around 7:30, then a leisurely trip: down the mountain, Shinkansen to Nagoya, the Hida express up the gorge. Takayama is booked as two separate single nights now, tonight and Monday, with the suitcase living in the hotel’s store room in between. Tonight is the bigger of the two rooms. Evening free.",
           "walk": "8,000-10,000 steps (mostly trains; the old town in the evening)"
         }
       }
@@ -915,6 +915,20 @@
           "placeId": "p15"
         },
         {
+          "id": "c13a0",
+          "time": "08:30",
+          "type": "stay",
+          "title": "Check out, and leave the suitcase with the hotel",
+          "status": "planned",
+          "location": "Temple Hotel Takayama Zenkoji",
+          "endTime": "08:55",
+          "cost": 0,
+          "currency": "JPY",
+          "notes": "Takayama is two separate one-night bookings, so this is a real check-out; you check back in on Monday afternoon. The hotel has confirmed in writing that it will store the suitcase for the two nights you are away. Daypack only from here: two changes of clothes, toiletries, chargers, something warm, and the crampons. Nothing you need in Shirakawa-go or Hirayu can be in the suitcase, because you will not see it again until Monday.",
+          "variant": "culture",
+          "placeId": "pb10"
+        },
+        {
           "id": "c13a",
           "time": "09:00",
           "type": "food",
@@ -937,7 +951,7 @@
           "endTime": "11:40",
           "cost": 1800,
           "currency": "JPY",
-          "notes": "50 min. Reserve the seat; reserved services sell out on weekends. Daypack only; the suitcase stays in the hub room.",
+          "notes": "50 min. Reserve the seat; reserved services sell out on weekends. Daypack only; the suitcase is in the hotel’s store room.",
           "variant": "culture",
           "placeId": "pb10"
         },
@@ -1014,7 +1028,7 @@
         "culture": {
           "title": "Shirakawa-go farmhouse night (night out no. 2)",
           "base": "Shirakawa-go gassho farmhouse",
-          "notes": "Leave the suitcase in the Takayama room and go with a daypack. Shirakawa-go’s thatched farmhouses under two metres of snow are the picture everyone has of rural Japan; it is busy from 10 to 3, and sleeping in one of the houses means you get it at dusk and dawn. Late-morning bus; no light-up event in Feb 2027.",
+          "notes": "Check out after breakfast, leave the suitcase with the hotel and go with a daypack. Shirakawa-go’s thatched farmhouses under two metres of snow are the picture everyone has of rural Japan; it is busy from 10 to 3, and sleeping in one of the houses means you get it at dusk and dawn. Late-morning bus; no light-up event in Feb 2027.",
           "walk": "10,000-13,000 steps (village lanes and the viewpoint climb, on packed snow)"
         }
       }
@@ -1235,7 +1249,7 @@
           "endTime": "14:20",
           "cost": 1600,
           "currency": "JPY",
-          "notes": "Roughly hourly, about 1 h. No reservation needed on this route: buy at the window in the bus centre, or pay on board if it is shut. Daypack only; the suitcase stays in the Takayama room, which is yours all night either way. Confirm the exact February times on nouhibus.co.jp in January.",
+          "notes": "Roughly hourly, about 1 h. No reservation needed on this route: buy at the window in the bus centre, or pay on board if it is shut. Daypack only; the suitcase is in the hotel’s store room in Takayama until Monday. Confirm the exact February times on nouhibus.co.jp in January.",
           "variant": "culture",
           "placeId": "pb10"
         },
@@ -1326,7 +1340,7 @@
           "title": "Shirakawa-go → Hirayu Onsen (night out no. 3)",
           "base": "Hirayu Onsen, Okuhida",
           "walk": "5,000-7,000 steps (village walk at dawn, then buses and bathing)",
-          "notes": "Breakfast at the hearth, a late-morning bus back, then straight onto the 12:20 bus an hour up into the Okuhida mountains. Ramen in town, an unhurried bus up, check in, the forest pools as it goes dark, dinner included, then back in the water at night with no bus to catch. The private bath is free for staying guests from 15:00 until 10:00 the next morning. Daypack only: the suitcase and the room stay yours in Takayama."
+          "notes": "Breakfast at the hearth, a late-morning bus back, then straight onto the 12:20 bus an hour up into the Okuhida mountains. Ramen in town, an unhurried bus up, check in, the forest pools as it goes dark, dinner included, then back in the water at night with no bus to catch. The private bath is free for staying guests from 15:00 until 10:00 the next morning. Daypack only: the suitcase is in the hotel’s store room in Takayama until Monday afternoon."
         }
       }
     },
@@ -1445,8 +1459,8 @@
           "type": "note",
           "title": "Beef day: back in Takayama, everything from here is within a 15-minute walk",
           "status": "planned",
-          "location": "Takayama hub",
-          "notes": "A themed free day, not a schedule. Skip anything; the only thing worth booking is dinner.",
+          "location": "Takayama",
+          "notes": "A themed free day, not a schedule. Skip anything; the only thing worth booking is dinner. One practical thing: you are not checked in yet, so you are carrying the daypack until mid-afternoon. It is small, and the market, Sanmachi and Maruaki are all a short walk from the hotel if you would rather drop it at the desk on the way past.",
           "variant": "culture",
           "placeId": "pb10"
         },
@@ -1484,7 +1498,7 @@
           "type": "food",
           "title": "Lunch at Maruaki: Hida beef from the butcher, weekday lunch set",
           "status": "planned",
-          "location": "Maruaki Hida Takayama, a few minutes from the station and the hub; lunch 11:00-14:30 on weekdays",
+          "location": "Maruaki Hida Takayama, a few minutes from the station and the hotel; lunch 11:00-14:30 on weekdays",
           "endTime": "12:45",
           "cost": 3000,
           "currency": "JPY",
@@ -1507,13 +1521,27 @@
           "placeId": "pb3"
         },
         {
+          "id": "c15n",
+          "time": "14:45",
+          "type": "stay",
+          "title": "Check in again, this time the Sakura room, and get the suitcase back",
+          "status": "planned",
+          "location": "Temple Hotel Takayama Zenkoji",
+          "endTime": "15:15",
+          "cost": 0,
+          "currency": "JPY",
+          "notes": "Same building, different and smaller room (12 m²), because this is a separate booking. Collect the suitcase from their store room, put the sake bottle in it, and repack properly tonight rather than tomorrow: the Hida leaves at 9:40 and it is a travel day all the way to Narita.",
+          "variant": "culture",
+          "placeId": "pb10"
+        },
+        {
           "id": "c15j",
           "time": "15:00",
           "type": "activity",
-          "title": "Afternoon, your call: rest at the hub, the Higashiyama temple walk, Takayama Jinya or the Hida Folk Village",
+          "title": "Afternoon, your call: rest at the hotel, the Higashiyama temple walk, Takayama Jinya or the Hida Folk Village",
           "status": "idea",
           "location": "All in town",
-          "notes": "The Hida Folk Village runs a winter light-up from mid-January to the end of February, and entry after dark drops to ¥300: thatched farmhouses lit up in the snow, 10 min by bus, and it fits between about 16:30 and 18:00 before dinner. Otherwise the temple walk is a quiet 3.5 km loop above the town that starts near the hub and earns dinner. Jinya (¥440) is the only surviving Edo provincial office; the Folk Village (¥700) is a hillside of relocated farmhouses, 10 min by bus.",
+          "notes": "The Hida Folk Village runs a winter light-up from mid-January to the end of February, and entry after dark drops to ¥300: thatched farmhouses lit up in the snow, 10 min by bus, and it fits between about 16:30 and 18:00 before dinner. Otherwise the temple walk is a quiet 3.5 km loop above the town that starts near the hotel and earns dinner. Jinya (¥440) is the only surviving Edo provincial office; the Folk Village (¥700) is a hillside of relocated farmhouses, 10 min by bus.",
           "variant": "culture",
           "placeId": "pb3"
         },
@@ -1557,8 +1585,8 @@
       "variants": {
         "culture": {
           "title": "Beef day in Takayama (free-roam, all optional)",
-          "base": "Takayama (hub)",
-          "notes": "A themed free day: morning market, beef sushi in the old street, a butcher’s lunch, sake tasting, and aged Hida beef yakiniku at night. Everything is within a 15-minute walk of the hub and nothing starts before 9:30. If you would rather leave town, the Okuhida or Gero onsen options replace the daytime and the yakiniku still happens.",
+          "base": "Takayama",
+          "notes": "A themed free day: morning market, beef sushi in the old street, a butcher’s lunch, sake tasting, and aged Hida beef yakiniku at night. Everything is within a 15-minute walk of the hotel and nothing starts before 9:30. If you would rather leave town, the Okuhida or Gero onsen options replace the daytime and the yakiniku still happens.",
           "walk": "8,000-11,000 steps (bus back, then market, old street and breweries on foot)"
         }
       }
@@ -1674,8 +1702,8 @@
           "type": "note",
           "title": "Free morning, pack, check out",
           "status": "planned",
-          "location": "Takayama hub",
-          "notes": "Breakfast at the hotel, a last walk to the river. Nothing to catch until 9:40.",
+          "location": "Takayama",
+          "notes": "A last walk to the river; there are no meals at this hotel, so grab something from the konbini or the station. Nothing to catch until 9:40.",
           "variant": "culture",
           "placeId": "pb10"
         },
@@ -2108,7 +2136,7 @@
       },
       {
         "id": "culture",
-        "name": "Plan B: No skiing, Takayama hub, two nights out, free days",
+        "name": "Plan B: No skiing, Takayama base, two nights out, free days",
         "short": "B: Culture"
       }
     ]
@@ -2142,7 +2170,7 @@
   "staysGuide": [
     {
       "title": "Sleeping on a futon (four of your nights)",
-      "body": "It is not the floor. A shikibuton is a thick cotton mattress on tatami, and tatami is woven rush over a springy base, so it gives. Firmer than a bed at home, nothing like boards. Back sleepers usually love it; side sleepers feel it in the shoulder and hip. The first night is the worst and most people have adjusted by the second. The fix everyone should know: ask at check-in for a second shikibuton and stack them. Almost every temple, ryokan and minshuku will do it free and without comment, because Japanese guests ask too. Say it at check-in, not at bedtime, because they lay the bedding out while you are at dinner. The other surprise is the pillow, often filled with buckwheat husks and both firm and crunchy. Ask for a soft one, or fold a towel. Your nights: Osaka is a Western bed, Koyasan, Takayama and Ootaya are futon, Hirayu is a Japanese-Western room so a bed. Four futon nights and never more than two in a row."
+      "body": "It is not the floor. A shikibuton is a thick cotton mattress on tatami, and tatami is woven rush over a springy base, so it gives. Firmer than a bed at home, nothing like boards. Back sleepers usually love it; side sleepers feel it in the shoulder and hip. The first night is the worst and most people have adjusted by the second. The fix everyone should know: ask at check-in for a second shikibuton and stack them. Almost every temple, ryokan and minshuku will do it free and without comment, because Japanese guests ask too. Say it at check-in, not at bedtime, because they lay the bedding out while you are at dinner. The other surprise is the pillow, often filled with buckwheat husks and both firm and crunchy. Ask for a soft one, or fold a towel. Your nights: Osaka is a Western bed; Koyasan (11th), Takayama (12th), Ootaya at Shirakawa-go (13th) and Takayama again (15th) are all futon; Hirayu on the 14th is a Japanese-Western room, so a bed. That is four futon nights, three of them back to back at the start, then the bed at Hirayu as a break. If the third night is telling on you, that is the one to ask for the extra shikibuton on."
     },
     {
       "title": "Why Booking.com looks empty",
@@ -2422,20 +2450,37 @@
     },
     {
       "id": "s-b2",
-      "name": "Temple Hotel Takayama Zenkoji, Sakura-mi room (hub, 4 nights)",
+      "name": "Temple Hotel Takayama Zenkoji, Moon room (night 1 of 2)",
       "town": "Takayama",
       "address": "岐阜県高山市天満町4丁目3 〒506-0025 (Tenman-machi 4-3, Takayama, Gifu)",
-      "type": "Guesthouse inside a temple; 8-tatami room, shared bath, kitchen and hearth",
       "status": "booked",
       "variant": "culture",
-      "pricePerNightAud": 163.9,
-      "nights": 4,
-      "priceNote": "A$655.58 paid, 4 nights, no meals",
-      "checkIn": "2027-02-12",
-      "checkOut": "2027-02-16",
-      "distance": "About 10-12 min walk from the station and Nohi bus centre; near the Higashiyama temple walk",
+      "distance": "About 10-12 min walk from the station and the Nohi bus centre; near the Higashiyama temple walk",
       "url": "https://travel.rakuten.com/",
-      "notes": "BOOKED (prepaid; free cancellation until 28 Jan 2027). Address for the courier slip: 岐阜県高山市天満町4丁目3, 506-0025 (Tenman-machi 4-3, Takayama, Gifu). The hotel asks to be told if you will arrive after 19:00; the plan has you there about 16:30. Reservation number goes in the Private vault. Compact (12 m²), indigo-blue interior, double glazing, no bath or toilet in the room; shared bath is private-use (check whether you book a slot), plus a full kitchen for breakfasts. Room sits next to the main hall, so pack earplugs. Ask them (1) to accept the courier parcel arriving 11 Feb, and (2) that keeping the room over Saturday night while you sleep in Shirakawa-go is fine (it is; you have paid for it). Alternatives if it falls through: Hotel Around Takayama, Tabino Hotel Hida Takayama, Hida Plaza Hotel."
+      "type": "Guesthouse inside a temple; Japanese-style [MOON] room, 20 m², futon, shared bath, kitchen and hearth",
+      "pricePerNightAud": 169.31,
+      "nights": 1,
+      "priceNote": "A$169.31 paid, 1 night, no meals",
+      "checkIn": "2027-02-12",
+      "checkOut": "2027-02-13",
+      "notes": "BOOKED and prepaid (early-bird, no meals). Free cancellation until 23:59 on 28 Jan 2027. This started as one four-night booking at A$655.58. You were only ever going to sleep in it twice, because Saturday is the Shirakawa-go farmhouse and Sunday is Hirayu, so A$327.80 of it was paying for an empty room. The hotel agreed to cancel it fee-free and let you rebook the two nights you actually use: A$326.52 in total, a saving of A$329.06. The hotel has confirmed three things in writing: they will take in the Yamato courier parcel and hold it until you arrive (write your reservation name on the delivery slip), they will store the suitcase on 13 and 14 Feb while you are at Shirakawa-go and Hirayu, and they waived the cancellation fee on the original booking. They ask to be told if you will arrive after 19:00; the plan has you there about 16:30. Address for the courier slip: 岐阜県高山市天満町4丁目3 〒506-0025 (Tenman-machi 4-3, Takayama, Gifu). The bigger of the two rooms: 20 m², three futons laid out, non-smoking. No bath or toilet in the room; the shared bath is private-use (ask at check-in whether you book a slot) and there is a full kitchen and a hearth. The rooms sit next to the temple main hall, so pack earplugs. Reservation number is in the Private vault. Alternatives if it falls through: Hotel Around Takayama, Tabino Hotel Hida Takayama, Hida Plaza Hotel."
+    },
+    {
+      "id": "s-b2b",
+      "name": "Temple Hotel Takayama Zenkoji, Sakura room (night 2 of 2)",
+      "town": "Takayama",
+      "address": "岐阜県高山市天満町4丁目3 〒506-0025 (Tenman-machi 4-3, Takayama, Gifu)",
+      "status": "booked",
+      "variant": "culture",
+      "distance": "About 10-12 min walk from the station and the Nohi bus centre; near the Higashiyama temple walk",
+      "url": "https://travel.rakuten.com/",
+      "type": "Guesthouse inside a temple; Japanese-style [SAKURA] room, 12 m², futon, shared bath, kitchen and hearth",
+      "pricePerNightAud": 157.21,
+      "nights": 1,
+      "priceNote": "A$157.21 paid, 1 night, no meals",
+      "checkIn": "2027-02-15",
+      "checkOut": "2027-02-16",
+      "notes": "BOOKED and prepaid (early-bird, no meals). Free cancellation until 23:59 on 31 Jan 2027, three days later than the first night, so diarise both. Same building as the Moon room but a different and smaller room (12 m², two futons, non-smoking), because this is a separate booking: you check out on Saturday morning and check in again on Monday afternoon, and the suitcase waits in their store room in between. No bath or toilet in the room; the shared bath is private-use (ask at check-in whether you book a slot) and there is a full kitchen and a hearth. The rooms sit next to the temple main hall, so pack earplugs. Last night in Japan, and there are no meals here, so repack on Monday evening rather than in the morning. Reservation number is in the Private vault."
     },
     {
       "id": "s-b4",
@@ -3143,18 +3188,28 @@
     {
       "id": "ckb3",
       "group": "Points and bookings",
-      "text": "Plan B: Takayama hub booked (Temple Hotel Takayama Zenkoji, 12-16 Feb, prepaid, free cancellation to 28 Jan)",
+      "text": "Plan B: Takayama booked as two separate nights (Temple Hotel Takayama Zenkoji, 12-13 and 15-16 Feb, both prepaid)",
       "due": "2026-09-14",
       "done": true,
       "variant": "culture",
-      "notes": "Put the reservation number in the Private vault."
+      "notes": "Was one four-night booking at A$655.58 covering two nights you sleep elsewhere. The hotel waived the cancellation fee and it was rebooked as A$169.31 (Moon room, 12-13 Feb) plus A$157.21 (Sakura room, 15-16 Feb): A$326.52, saving A$329.06. Both reservation numbers go in the Private vault."
     },
     {
       "id": "ckb3b",
       "group": "Points and bookings",
-      "text": "Plan B: email Temple Hotel Takayama Zenkoji to confirm they will hold a courier parcel arriving 11 Feb, and that the room stays yours over Saturday 13 while you are in Shirakawa-go",
+      "text": "Plan B: email Temple Hotel Takayama Zenkoji about the courier parcel, luggage storage and splitting the booking",
       "due": "2026-10-15",
-      "variant": "culture"
+      "done": true,
+      "variant": "culture",
+      "notes": "Answered yes to all three: they will receive and hold the Yamato parcel (put the reservation name on the delivery slip), they will store the suitcase on 13 and 14 Feb, and they waived the cancellation fee so the four nights could be rebooked as two."
+    },
+    {
+      "id": "ckb3c",
+      "group": "Points and bookings",
+      "text": "Plan B: two free-cancellation deadlines for Takayama, 28 Jan (12-13 Feb) and 31 Jan (15-16 Feb)",
+      "due": "2027-01-28",
+      "variant": "culture",
+      "notes": "Both are 23:59 local. Nothing to do if the trip is going ahead; this is here so a late change does not cost you the rooms by accident."
     },
     {
       "id": "ckb8",
@@ -3171,7 +3226,7 @@
       "text": "Plan B: reserve a counter seat at Gyu-suke (Takayama) for dinner on Mon 15 Feb, about 18:30",
       "due": "2027-02-01",
       "variant": "culture",
-      "notes": "Tabelog or SavorJapan take online bookings 1-2 weeks out; or ask the hub hotel to call on check-in day. Ajikura Tengoku (walk-in tickets) is the fallback."
+      "notes": "Tabelog or SavorJapan take online bookings 1-2 weeks out; or ask the hotel to call on check-in day. Ajikura Tengoku (walk-in tickets) is the fallback."
     },
     {
       "id": "ckb4",
@@ -3321,7 +3376,7 @@
     },
     {
       "id": "pb10",
-      "name": "Takayama Station and bus centre (hub hotel)",
+      "name": "Takayama Station and bus centre (hotel)",
       "kind": "hotel",
       "town": "Takayama",
       "lat": 36.141,
@@ -3592,10 +3647,10 @@
     {
       "id": "q12",
       "question": "Plan A (ski) or Plan B (no skiing)?",
-      "why": "Both use the flights already booked and the same Osaka and USJ days; they split on Thursday 11 Feb. Plan A: Nozawa Onsen for five nights, three ski days plus a rural Sunday, hinges on finding a solo room in a sold-out week. Plan B: Takayama as a four-night hub (one room, unpack once), with two nights out in great places (a temple at Koyasan, a farmhouse at Shirakawa-go), free afternoons and a free day, and no start before 9:30 except USJ, which the Express Pass makes optional. No dependence on Nozawa, and about A$500 cheaper because there are no lifts or rental. Lost workdays are identical. The plan switch at the top of the menu flips every page between them.",
+      "why": "Both use the flights already booked and the same Osaka and USJ days; they split on Thursday 11 Feb. Plan A: Nozawa Onsen for five nights, three ski days plus a rural Sunday, hinges on finding a solo room in a sold-out week. Plan B: Takayama as the base for four days, with two nights out in great places (a temple at Koyasan, a farmhouse at Shirakawa-go), free afternoons and a free day, and no start before 9:30 except USJ, which the Express Pass makes optional. No dependence on Nozawa, and about A$500 cheaper because there are no lifts or rental. Lost workdays are identical. The plan switch at the top of the menu flips every page between them.",
       "options": [
         "Plan A: ski trip (Nozawa Onsen)",
-        "Plan B: Takayama hub with Koyasan and Shirakawa-go nights out",
+        "Plan B: Takayama base with Koyasan and Shirakawa-go nights out",
         "Hybrid: Plan B with two of the Takayama nights swapped for Nozawa without skiing (onsen village, snow, food)"
       ],
       "recommendation": "Decide by accommodation: if a Nozawa room lands by late October, Plan A. If not, Plan B is not a consolation prize; the Koyasan and Shirakawa-go nights are two of the best things you can do in Japan in winter, and every bed in it is easier to get.",
@@ -3605,11 +3660,11 @@
     {
       "id": "q13",
       "question": "Kamakura or Yamaguchi: can either fit?",
-      "why": "Kamakura (Great Buddha, Hase-dera, the Enoden tram along the coast) is an hour from Tokyo and a proper day. On this trip Tokyo is only a transit point: the morning you land (jet-lagged, heading to Osaka) and the afternoon you fly home (Takayama to Narita already takes the day). Fitting it means leaving Takayama a day early, forfeiting the prepaid Monday night, paying for a Tokyo hotel and moving the suitcase again, for about three hours in Kamakura with the airport clock running. Yamaguchi (Rurikoji pagoda, Akiyoshido cave, Motonosumi shrine, Hagi) is at the far western end of Honshu, two and a half hours beyond Osaka by Shinkansen and spread out enough to need a car; it is a two- or three-day region of its own, not a detour.",
+      "why": "Kamakura (Great Buddha, Hase-dera, the Enoden tram along the coast) is an hour from Tokyo and a proper day. On this trip Tokyo is only a transit point: the morning you land (jet-lagged, heading to Osaka) and the afternoon you fly home (Takayama to Narita already takes the day). Fitting it means leaving Takayama a day early, forfeiting the prepaid Monday night in Takayama, paying for a Tokyo hotel and moving the suitcase again, for about three hours in Kamakura with the airport clock running. Yamaguchi (Rurikoji pagoda, Akiyoshido cave, Motonosumi shrine, Hagi) is at the far western end of Honshu, two and a half hours beyond Osaka by Shinkansen and spread out enough to need a car; it is a two- or three-day region of its own, not a detour.",
       "options": [
         "Leave both for another trip (planned)",
         "Kamakura on 16 Feb: leave Takayama on the 15th, sleep in Tokyo, 3 h in Kamakura before Narita",
-        "Yamaguchi: not possible without dropping Koyasan or the Takayama hub"
+        "Yamaguchi: not possible without dropping Koyasan or the Takayama days"
       ],
       "recommendation": "Leave both. Kamakura is the first thing to do on a future Tokyo-based trip (spring or autumn, weekday). Yamaguchi pairs with Hiroshima and Miyajima on a western trip.",
       "answer": "Neither this trip. Kamakura first on the next Tokyo trip; Yamaguchi with Hiroshima on a western trip.",
