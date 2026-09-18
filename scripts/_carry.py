@@ -42,7 +42,9 @@ def carry_over(trip, path):
             continue
         if was.get('answer') and not q.get('answer'):
             q['answer'] = was['answer']
-        if was.get('resolved') and 'resolved' not in q:
+        # Resolving is a one-way act by a person. A builder that still writes
+        # resolved=False must not undo it.
+        if was.get('resolved') and not q.get('resolved'):
             q['resolved'] = True
 
     names = {p['id']: p.get('name') for p in old.get('people', [])}

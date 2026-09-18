@@ -1,6 +1,11 @@
 #!/usr/bin/env python3
 """Builds data/trip.json from the research. Re-run after editing; the app reads the JSON directly."""
 import json, datetime
+import os
+import sys
+
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+from _carry import carry_over   # noqa: E402
 
 UPDATED = datetime.datetime.now(datetime.timezone.utc).replace(microsecond=0).isoformat().replace('+00:00', 'Z')
 RATE = 108  # JPY per AUD used for planning (mid-market ~110 in Sep 2026; 108 leaves room for card spreads)
@@ -534,6 +539,9 @@ trip = dict(
   variants=dict(active='culture', list=[dict(id='ski', name='Plan A: Ski trip (Nozawa)', short='A: Ski'), dict(id='culture', name='Plan B: No skiing, Takayama base, two nights out, free days', short='B: Culture')]),
   foodGuide=FOOD_GUIDE, staysGuide=STAYS_GUIDE, points=points, stays=stays, food=food, budget=budget, checklist=checklist, places=places, questions=questions,
 )
+# Anything ticked, answered or renamed in the app survives a rebuild.
+trip = carry_over(trip, 'data/trip.json')
+
 with open('data/trip.json', 'w') as f:
     json.dump(trip, f, ensure_ascii=False, indent=2); f.write('\n')
 print('wrote data/trip.json', sum(len(d['items']) for d in days), 'items,', len(stays), 'stays,', len(food), 'food,', len(checklist), 'todos,', len(questions), 'questions')
