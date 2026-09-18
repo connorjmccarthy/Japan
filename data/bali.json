@@ -739,7 +739,8 @@
       "id": "bk5",
       "group": "Everyone, before you fly",
       "text": "Check your passport has 6+ months left beyond 11 Nov 2026 and two blank pages",
-      "due": "2026-09-30"
+      "due": "2026-09-30",
+      "done": true
     },
     {
       "id": "bk6",
@@ -753,7 +754,8 @@
       "group": "Everyone, before you fly",
       "text": "Travel insurance, with motorcycle cover checked in the fine print",
       "due": "2026-10-10",
-      "notes": "Do not assume you are covered on a scooter. Check the policy explicitly covers riding a motorcycle, what engine size it covers, and whether it requires a valid licence and IDP, because nearly all of them do. Medical evacuation from Bali runs into six figures."
+      "notes": "Do not assume you are covered on a scooter. Check the policy explicitly covers riding a motorcycle, what engine size it covers, and whether it requires a valid licence and IDP, because nearly all of them do. Medical evacuation from Bali runs into six figures.",
+      "done": true
     },
     {
       "id": "bk8",

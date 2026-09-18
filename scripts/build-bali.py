@@ -12,6 +12,11 @@ This file is the source of truth. Edit here and re-run; never hand-edit the JSON
     python3 scripts/build-bali.py
 """
 import json
+import os
+import sys
+
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+from _carry import carry_over   # noqa: E402
 
 UPDATED = '2026-09-18T04:10:00Z'   # must be later than the last edit made in the app
 START, END = '2026-11-04', '2026-11-11'
@@ -358,6 +363,9 @@ trip = dict(
     flights=dict(confirmed=[], legs=[], lounges=[]),
     points={}, stays=stays, food=food, budget=[], checklist=checklist, places=places, questions=questions,
 )
+
+# Anything ticked, answered or renamed in the app survives a rebuild.
+trip = carry_over(trip, 'data/bali.json')
 
 with open('data/bali.json', 'w') as f:
     json.dump(trip, f, indent=2, ensure_ascii=False)

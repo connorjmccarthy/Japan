@@ -12,6 +12,11 @@ home. Both are on the Decisions and Checklists pages.
     python3 scripts/build-ubud.py
 """
 import json
+import os
+import sys
+
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+from _carry import carry_over   # noqa: E402
 
 UPDATED = '2026-09-18T04:10:00Z'
 RATE_IDR = 10300          # rupiah per AUD, approximate for late 2026
@@ -186,6 +191,9 @@ trip = dict(
     people=[], foodGuide=[], staysGuide=STAYS_GUIDE,
     points={}, stays=stays, food=food, budget=[], checklist=checklist, places=places, questions=questions,
 )
+
+# Anything ticked, answered or renamed in the app survives a rebuild.
+trip = carry_over(trip, 'data/ubud.json')
 
 with open('data/ubud.json', 'w') as f:
     json.dump(trip, f, indent=2, ensure_ascii=False)
