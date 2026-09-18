@@ -7,7 +7,7 @@
     "rates": {
       "IDR": 10300
     },
-    "updatedAt": "2026-09-18T12:00:00Z",
+    "updatedAt": "2026-09-18T03:26:46.768Z",
     "version": 1,
     "mapRegion": "Bali, Indonesia",
     "travelMode": "driving",
@@ -1091,25 +1091,25 @@
     },
     {
       "id": "p-mcy2",
-      "name": "Sunshine Coast #2",
+      "name": "Michael Clayton",
       "home": "Sunshine Coast",
       "note": "Tap to rename"
     },
     {
       "id": "p-mcy3",
-      "name": "Sunshine Coast #3",
+      "name": "Ellie Clayton",
       "home": "Sunshine Coast",
       "note": "Tap to rename"
     },
     {
       "id": "p-syd1",
-      "name": "Sydney #1",
+      "name": "Josh Irvine",
       "home": "Sydney",
       "note": "Tap to rename"
     },
     {
       "id": "p-syd2",
-      "name": "Sydney #2",
+      "name": "Claire Maloney",
       "home": "Sydney",
       "note": "Tap to rename"
     }
