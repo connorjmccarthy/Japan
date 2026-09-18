@@ -16,11 +16,15 @@ const FALLBACK_TRIPS = [{ id: 'japan', name: 'Japan 2027', short: 'Japan', ico: 
 const read = (k, fallback) => { try { const v = localStorage.getItem(k); return v ? JSON.parse(v) : fallback; } catch { return fallback; } };
 const write = (k, v) => { try { localStorage.setItem(k, JSON.stringify(v)); return true; } catch { return false; } };
 
-// showBudget and showAllTrips are OFF by default because this link gets shared.
-// Anyone the link is sent to sees the trips marked shared, and no money at all.
-// Turning either on is a per-device choice made in Settings; it changes nothing
-// in the repo, so it does not follow the link to anybody else.
-const DEFAULT_SETTINGS = { owner: 'connorjmccarthy', repo: 'Trips', branch: 'main', token: '', theme: 'system', autoSync: true, vaultSync: false, vaultPass: '', paths: {}, showBudget: false, showAllTrips: false };
+// This link gets shared, so money is off by default and anyone the link reaches
+// sees only the trips marked shared. Both are per-device choices made in
+// Settings and neither is written to the repo, so turning one on for yourself
+// does nothing for anybody else holding the link.
+//
+// showAllTrips is deliberately left undefined rather than false: undefined means
+// "decide for me", and a device holding a write token for the repo is yours, so
+// it gets the private trips without you having to go and find the switch.
+const DEFAULT_SETTINGS = { owner: 'connorjmccarthy', repo: 'Trips', branch: 'main', token: '', theme: 'system', autoSync: true, vaultSync: false, vaultPass: '', paths: {}, showBudget: false };
 
 // Pages serves this from https://<user>.github.io/<repo>/, so the repo name is
 // sitting in the URL. Reading it there means renaming the repo does not quietly
@@ -77,7 +81,11 @@ class Store {
   // ---- trips ---------------------------------------------------------------
   // A trip is shared unless the registry says otherwise. Anything not shared is
   // invisible until this device turns "show all trips" on in Settings.
-  visibleTrips() { return this.settings.showAllTrips ? this.trips : this.trips.filter((x) => x.shared !== false); }
+  showsPrivateTrips() {
+    if (typeof this.settings.showAllTrips === 'boolean') return this.settings.showAllTrips;
+    return !!this.settings.token;   // never chosen: a device that can write is yours
+  }
+  visibleTrips() { return this.showsPrivateTrips() ? this.trips : this.trips.filter((x) => x.shared !== false); }
   // A section exists only if the trip asks for it. Money needs the trip to have a
   // budget at all AND this device to have asked to see it.
   tripHas(feature) { return tripHas(this.trip, feature); }

@@ -427,6 +427,27 @@ test.describe('sharing the link', () => {
     await expect(page.locator('#trip-switch button', { hasText: 'Japan' })).toHaveCount(1);
   });
 
+  test('a device holding a write token is yours, so it sees the private trips', async ({ page, isMobile }) => {
+    page.on('pageerror', () => {});
+    await page.route(/fonts\.googleapis\.com|fonts\.gstatic\.com|tile\.openstreetmap\.org|api\.github\.com/, (r) => r.abort());
+    // A token, and nothing said either way about private trips.
+    await page.addInitScript(() => localStorage.setItem('app:settings', JSON.stringify({ token: 'ghp_test', owner: 'connorjmccarthy', repo: 'Trips', branch: 'main' })));
+    await page.goto('/#/overview');
+    await expect(page.locator('#topbar-heading')).not.toHaveText('');
+    if (isMobile) await page.locator('#menu-btn').click();
+    await expect(page.locator('#trip-switch button', { hasText: 'Japan' })).toHaveCount(1);
+    await expect(page.locator('#trip-switch button', { hasText: 'Ubud' })).toHaveCount(1);
+  });
+
+  test('turning it off explicitly beats holding a token', async ({ page }) => {
+    page.on('pageerror', () => {});
+    await page.route(/fonts\.googleapis\.com|fonts\.gstatic\.com|tile\.openstreetmap\.org|api\.github\.com/, (r) => r.abort());
+    await page.addInitScript(() => localStorage.setItem('app:settings', JSON.stringify({ token: 'ghp_test', showAllTrips: false })));
+    await page.goto('/#/overview');
+    await expect(page.locator('#brand-title')).toHaveText('Bali 2026');
+    await expect(page.locator('#trip-switch')).toBeHidden();
+  });
+
   test('the money switch brings the budget back on a trip that keeps one', async ({ page, isMobile }) => {
     await asGuest(page, '#/settings');
     await page.getByLabel('Show money (Budget page, totals and prices)').check();

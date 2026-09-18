@@ -5,7 +5,7 @@
     "end": "2027-02-17",
     "homeCurrency": "AUD",
     "jpyPerAud": 108,
-    "updatedAt": "2026-09-18T02:15:47Z",
+    "updatedAt": "2026-09-18T04:59:43Z",
     "version": 1,
     "about": "Solo trip, Plan B (no skiing): Osaka, Koyasan, Takayama, Shirakawa-go and Hirayu Onsen. Confirmed: JQ815 BNE→SYD and the Business Classic Reward SYD→MEL→NRT on 8 Feb. Home Tue 16 Feb on QF80 + QF1256 (booked). Everything else is planned from research done 13 Sep 2026; prices marked est. need checking when booking."
   },
@@ -3008,9 +3008,10 @@
     {
       "id": "ck10",
       "group": "Points and bookings",
-      "text": "Reserve Shinkansen and Shinano seats (smart-EX for Tokyo↔Osaka, JR East site for Hokuriku), opens 1 month before each travel date",
+      "text": "Plan A: reserve the Shinkansen and Shinano seats (smart-EX for Tokyo↔Osaka, JR East site for the Hokuriku)",
       "due": "2027-01-09",
-      "notes": "9 Jan for the 9 Feb trains; 11 Jan for the 11 Feb trains; 16 Jan for the 16 Feb trains. Holiday Thursday trains fill."
+      "notes": "Opens 1 month before each travel date: 9 Jan for the 9 Feb trains, 11 Jan for the 11 Feb trains, 16 Jan for the 16 Feb trains. Holiday Thursday trains fill.",
+      "variant": "ski"
     },
     {
       "id": "ck11",
@@ -3237,28 +3238,36 @@
       "notes": "Opens about a month ahead on nouhibus.co.jp."
     },
     {
+      "id": "ckb5a",
+      "group": "Points and bookings",
+      "text": "Plan B: reserve the Nozomi Tokyo → Shin-Osaka, 9 Feb 11:30, on smart-EX",
+      "due": "2027-01-09",
+      "variant": "culture",
+      "notes": "Opens 9 Jan at 10:00 Japan time, which is 11:00 at home. smart-EX takes an Australian card, needs no membership fee, and lets you change the train free of charge any number of times before departure. So book it now and move it if QF49 lands late; you are not locked in. This is the only train that is the same in both plans."
+    },
+    {
       "id": "ckb5",
       "group": "Points and bookings",
       "text": "Plan B: reserve the Nankai Limited Express Koya, Namba → Koyasan, 11 Feb 10:00",
       "due": "2027-01-11",
       "variant": "culture",
-      "notes": "Opens exactly one month ahead. 11 Feb is National Foundation Day, a public holiday, so this train will be busier than a normal Thursday. Reserve rather than turning up. Alternatively buy the Koyasan World Heritage Ticket at Nankai Namba, which includes a discounted seat reservation."
+      "notes": "Opens exactly one month ahead. Nankai is a private railway, so this is booked on Nankai's own site rather than anything JR. Do this one on the day it opens rather than saving it up with the JR bookings: 11 Feb is National Foundation Day, a public holiday, so this train will be busier than a normal Thursday. Reserve rather than turning up. Alternatively buy the Koyasan World Heritage Ticket at Nankai Namba, which includes a discounted seat reservation."
     },
     {
       "id": "ckb5b",
       "group": "Points and bookings",
-      "text": "Plan B: reserve the Limited Express Hida, Nagoya → Takayama, 12 Feb 13:45",
+      "text": "Plan B: reserve the 12 Feb pair, Nozomi Shin-Osaka → Nagoya 12:10 and Limited Express Hida Nagoya → Takayama 13:45",
       "due": "2027-01-12",
       "variant": "culture",
-      "notes": "Opens one month ahead on the JR Central site, or any JR ticket machine on the day. Rarely sells out on a Friday, but you will have a daypack and a long day behind you."
+      "notes": "Both open 12 Jan. The Nozomi is smart-EX. The Hida is NOT: smart-EX only sells Shinkansen, and the Hida is a limited express on a conventional line. Book it through JR West's online reservation (westjr.co.jp, English, takes an overseas card, collect from a machine with the QR), through a reseller like NAVITIME, or simply at a JR ticket machine when you land. The Hida rarely sells out on a Friday, but the 35-minute connection at Nagoya is tight enough that a booked seat is worth having."
     },
     {
       "id": "ckb5c",
       "group": "Points and bookings",
-      "text": "Plan B: reserve the 16 Feb trains home: Hida 09:40 Takayama → Nagoya, Nozomi Nagoya → Tokyo",
+      "text": "Plan B: reserve the 16 Feb trains home: Hida 09:40 Takayama → Nagoya, Nozomi 13:15 Nagoya → Tokyo",
       "due": "2027-01-16",
       "variant": "culture",
-      "notes": "The Hida matters most: it runs about hourly and you are connecting to an international flight. smart-EX lets you change the Nozomi free of charge any number of times before departure, so book early and adjust later."
+      "notes": "THE ONE DAY EVERYTHING IS OPEN. Japanese reservations open exactly one month before each departure at 10:00 Japan time, so 16 January is the first morning on which every train of the trip is bookable, and nothing on the list has sold out by then. Sit down once and do the lot. Two catches. First, it is three systems, not one checkout: smart-EX for the Nozomi legs, JR West online (or a reseller, or a machine on arrival) for the two Hida legs, and Nankai's own site for Koyasan. Second, the Nankai on the 11th is a public holiday and should not wait until the 16th; do that one on 11 Jan. Of everything here the 09:40 Hida matters most, because it runs about hourly and it is the train connecting to an international flight, so book it the morning it opens."
     },
     {
       "id": "ckb6",

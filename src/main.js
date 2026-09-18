@@ -168,11 +168,11 @@ async function boot() {
   });
   window.addEventListener('hashchange', render);
   // The two sharing switches change what the menu holds, so rebuild it when they move.
-  let lastChrome = `${store.settings.showBudget}|${store.settings.showAllTrips}`;
+  let lastChrome = `${store.settings.showBudget}|${store.showsPrivateTrips()}`;
   let lastStatus = null;
   store.subscribe((trip, status) => {
     if (status !== lastStatus) { lastStatus = status; renderSync(status); if (status.state === 'conflict') toast('GitHub has a newer version of the plan.', { action: 'Resolve', onAction: () => navigate('settings'), ms: 10000 }); if (status.state === 'error') toast(status.message, { kind: 'error', ms: 6000 }); }
-    const chrome = `${store.settings.showBudget}|${store.settings.showAllTrips}|${store.tripId}`;
+    const chrome = `${store.settings.showBudget}|${store.showsPrivateTrips()}|${store.tripId}`;
     if (chrome !== lastChrome) { lastChrome = chrome; buildNav(); renderTripSwitch(); markActive(current.id); }
     if (trip?.meta) {
       const name = trip.meta.title || store.tripRecord?.name || 'Trip';
