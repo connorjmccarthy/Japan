@@ -7,7 +7,7 @@
     "rates": {
       "IDR": 10300
     },
-    "updatedAt": "2026-09-18T04:14:55.368Z",
+    "updatedAt": "2026-09-18T04:15:06.976Z",
     "version": 1,
     "mapRegion": "Bali, Indonesia",
     "travelMode": "driving",
@@ -1402,7 +1402,8 @@
       "id": "bk7",
       "group": "Paperwork",
       "text": "Travel insurance for all five, with motorcycle cover checked in the fine print",
-      "due": "2026-10-10"
+      "due": "2026-10-10",
+      "done": true
     },
     {
       "id": "bk8",
