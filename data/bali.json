@@ -7,7 +7,7 @@
     "rates": {
       "IDR": 10300
     },
-    "updatedAt": "2026-09-18T03:26:38.289Z",
+    "updatedAt": "2026-09-18T03:26:42.341Z",
     "version": 1,
     "mapRegion": "Bali, Indonesia",
     "travelMode": "driving",
@@ -1103,7 +1103,7 @@
     },
     {
       "id": "p-syd1",
-      "name": "Sydney #1",
+      "name": "Josh Irvine",
       "home": "Sydney",
       "note": "Tap to rename"
     },
