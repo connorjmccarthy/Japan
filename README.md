@@ -15,7 +15,7 @@ It is a plain static website (HTML, CSS, JavaScript, no build step), so it runs 
 
 ## Open it
 
-- On the web: `https://connorjmccarthy.github.io/Japan/` (after GitHub Pages is switched on, see below).
+- On the web: `https://connorjmccarthy.github.io/Trips/` (after GitHub Pages is switched on, see below).
 - On a phone: open that link in Safari or Chrome, tap Share, then **Add to Home Screen**. It opens full-screen and works offline.
 - On a computer: same link. Bookmark it.
 - In Japan: use the **Go** tab. One full-screen card per stop, swipe sideways to move through the day, swipe up when a stop is done, and a Directions button that opens Google Maps from where you are. It works offline once the app has loaded.
@@ -37,9 +37,20 @@ To have the vault on a second device, either use Export on the vault page and Im
 ## First-time setup
 
 1. **Turn on GitHub Pages** (once): repo **Settings → Pages → Build and deployment → Source: GitHub Actions**. The workflow in `.github/workflows/pages.yml` deploys on every push to `main`. The first deploy may also happen automatically when the workflow runs.
-2. **Sync between devices** (optional, 5 minutes): GitHub **Settings → Developer settings → Personal access tokens → Fine-grained tokens → Generate new token**. Only select repositories: `Japan`. Repository permissions: **Contents: Read and write**. Expiry: after the trip. Paste the token into the app's Settings page on each device and press **Save & test**.
+2. **Sync between devices** (optional, 5 minutes): GitHub **Settings → Developer settings → Personal access tokens → Fine-grained tokens → Generate new token**. Only select repositories: `Trips`. Repository permissions: **Contents: Read and write**. Expiry: after the trip. Paste the token into the app's Settings page on each device and press **Save & test**.
 
 Without a token everything still works; edits just stay on whichever device you made them.
+
+## Sharing the link
+
+The link can go to anyone. What they see is controlled by two switches under **Settings → Sharing this link**, both **off** by default and both stored in that person's browser only:
+
+- **Show money.** Off, so there is no Budget page, no totals on the Overview and no prices on items or stays. Turn it on to get your own budget back.
+- **Show my private trips.** Off, so only trips marked `"shared": true` in `data/trips.json` appear in the switcher. Bali is shared; Japan is not.
+
+Because these are per-device, turning one on for yourself does nothing to anyone else holding the link.
+
+This hides, it does not lock. The repo is public, so `data/bali.json` and `data/trip.json` can still be read directly on GitHub by anyone who goes looking. Anything that must stay private belongs in the **Private vault**, which is never written to the plan files.
 
 ## Editing the plan outside the app
 

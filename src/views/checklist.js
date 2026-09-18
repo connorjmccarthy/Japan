@@ -1,10 +1,10 @@
-import { el, fmtDate, uid, groupBy, sortBy, todayIso, linkify, activeVariant, variantList, variantOptions, forVariant } from '../util.js';
+import { el, fmtDate, uid, groupBy, sortBy, todayIso, linkify, activeVariant, variantList, variantOptions, forVariant, withoutMoney } from '../util.js';
 import { sheet, form, toast, confirmDialog, section, empty } from '../ui.js';
 
 let filter = 'open';
 
 export function render(root, { store }) {
-  const items = forVariant(store.trip.checklist, activeVariant(store.trip));
+  const items = withoutMoney(forVariant(store.trip.checklist, activeVariant(store.trip)), store.showMoney);
   const today = todayIso();
   const done = items.filter((i) => i.done).length;
   root.append(el('div', { class: 'page-head' }, el('div', {}, el('h2', { class: 'page-title' }, 'Checklists'), el('p', { class: 'page-sub' }, `${done} of ${items.length} done`)), el('div', { class: 'page-actions' }, el('button', { class: 'btn btn-primary btn-sm', type: 'button', onClick: () => editItem(store, null) }, '+ Add'))));

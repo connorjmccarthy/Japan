@@ -16,7 +16,21 @@ const FALLBACK_TRIPS = [{ id: 'japan', name: 'Japan 2027', short: 'Japan', ico: 
 const read = (k, fallback) => { try { const v = localStorage.getItem(k); return v ? JSON.parse(v) : fallback; } catch { return fallback; } };
 const write = (k, v) => { try { localStorage.setItem(k, JSON.stringify(v)); return true; } catch { return false; } };
 
-const DEFAULT_SETTINGS = { owner: 'connorjmccarthy', repo: 'Japan', branch: 'main', token: '', theme: 'system', autoSync: true, vaultSync: false, vaultPass: '', paths: {} };
+// showBudget and showAllTrips are OFF by default because this link gets shared.
+// Anyone the link is sent to sees the trips marked shared, and no money at all.
+// Turning either on is a per-device choice made in Settings; it changes nothing
+// in the repo, so it does not follow the link to anybody else.
+const DEFAULT_SETTINGS = { owner: 'connorjmccarthy', repo: 'Trips', branch: 'main', token: '', theme: 'system', autoSync: true, vaultSync: false, vaultPass: '', paths: {}, showBudget: false, showAllTrips: false };
+
+// Pages serves this from https://<user>.github.io/<repo>/, so the repo name is
+// sitting in the URL. Reading it there means renaming the repo does not quietly
+// break sync on a device that saved the old name.
+function detectRepo() {
+  try {
+    if (!/\.github\.io$/i.test(location.hostname)) return null;
+    return location.pathname.split('/').filter(Boolean)[0] || null;
+  } catch { return null; }
+}
 
 // One-time move from the single-trip layout to the per-trip one. Anything the
 // old app saved becomes the Japan trip, so nothing is lost on an existing phone.
@@ -49,6 +63,8 @@ class Store {
     this.trip = null;
     this.meta = read(this.keys.meta, { dirty: false, remoteSha: null, lastSyncAt: null, seedUpdatedAt: null, vaultSha: null, vaultDirty: false });
     this.settings = { ...DEFAULT_SETTINGS, ...read(APP.settings, {}) };
+    const detected = detectRepo();
+    if (detected && this.settings.repo !== detected) { this.settings.repo = detected; write(APP.settings, this.settings); }
     this.vault = read(this.keys.vault, { fields: {}, itemSecrets: {} });
     this.status = { state: 'loading', message: 'Loading' };
     this.listeners = new Set();
@@ -59,13 +75,17 @@ class Store {
   }
 
   // ---- trips ---------------------------------------------------------------
-  get tripRecord() { return this.trips.find((x) => x.id === this.tripId) || this.trips[0] || FALLBACK_TRIPS[0]; }
+  // A trip is shared unless the registry says otherwise. Anything not shared is
+  // invisible until this device turns "show all trips" on in Settings.
+  visibleTrips() { return this.settings.showAllTrips ? this.trips : this.trips.filter((x) => x.shared !== false); }
+  get showMoney() { return this.settings.showBudget === true; }
+  get tripRecord() { return this.trips.find((x) => x.id === this.tripId) || this.visibleTrips()[0] || this.trips[0] || FALLBACK_TRIPS[0]; }
   filePath() { return this.settings.paths?.[this.tripId]?.file || this.tripRecord.file || 'data/trip.json'; }
   vaultPath() { return this.settings.paths?.[this.tripId]?.vault || this.tripRecord.vault || 'data/vault.enc'; }
   seedUrl() { return fileUrl(this.tripRecord.file || 'data/trip.json'); }
 
   switchTrip(id) {
-    if (!this.trips.some((x) => x.id === id) || id === this.tripId) return;
+    if (!this.visibleTrips().some((x) => x.id === id) || id === this.tripId) return;
     write(APP.tripId, id);
     this.pickedTrip = true;
     // A full reload is the honest way to swap trips: every view, the vault and
@@ -81,10 +101,14 @@ class Store {
       if (!Array.isArray(reg.trips) || !reg.trips.length) return;
       this.trips = reg.trips;
       write(APP.trips, this.trips);
-      // A device that has never picked a trip follows whatever the registry calls active.
-      const unknown = !this.trips.some((x) => x.id === this.tripId);
+      // A device that has never picked a trip follows whatever the registry calls
+      // active. A device pointed at a trip it can no longer see (Japan, on a
+      // phone that is not yours) gets moved to one it can.
+      const visible = this.visibleTrips();
+      const unknown = !visible.some((x) => x.id === this.tripId);
       if (unknown || !this.pickedTrip) {
-        const next = reg.active && this.trips.some((x) => x.id === reg.active) ? reg.active : this.trips[0].id;
+        const active = reg.active && visible.some((x) => x.id === reg.active) ? reg.active : null;
+        const next = active || visible[0]?.id || this.trips[0].id;
         if (next === this.tripId) return;
         this.tripId = next;
         this.keys = keysFor(this.tripId);

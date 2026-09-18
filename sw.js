@@ -1,5 +1,5 @@
 /* Service worker: cache the app shell for offline use; always try the network first for data. */
-const VERSION = 'v3';
+const VERSION = 'v4';
 const SHELL = ['./', './index.html', './styles/app.css', './src/main.js', './src/util.js', './src/ui.js', './src/store.js', './src/github.js', './src/ics.js', './src/daymap.js', './src/crypto.js',
   './src/views/overview.js', './src/views/itinerary.js', './src/views/go.js', './src/views/flights.js', './src/views/stays.js', './src/views/food.js', './src/views/budget.js', './src/views/checklist.js', './src/views/map.js', './src/views/vault.js', './src/views/decisions.js', './src/views/settings.js',
   './vendor/leaflet/leaflet.js', './vendor/leaflet/leaflet.css', './manifest.webmanifest', './icons/icon.svg', './icons/icon-192.png', './icons/icon-512.png', './data/trips.json', './data/trip.json', './data/bali.json'];

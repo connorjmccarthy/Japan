@@ -46,6 +46,8 @@ export function budgetSummary(t) {
 
 export function render(root, { store, navigate }) {
   const t = store.trip;
+  // Reachable only by a stale bookmark; the router sends you to Overview instead.
+  if (!store.showMoney) { root.append(el('div', { class: 'callout' }, el('span', { class: 'ico' }, '💰'), el('div', {}, el('strong', {}, 'The budget is switched off. '), 'Turn it back on under Settings if this is your own device.'))); return; }
   const { total, booked, mine, mineBooked, shared, lines } = budgetSummary(t);
   const nights = Math.max(1, (t.days || []).length - 1);
   const groupSize = (t.people || []).length;

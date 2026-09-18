@@ -37,7 +37,7 @@ export function render(root, { store, params, navigate }) {
   const dayHead = el('div', { class: 'day-header' },
     el('div', {},
       el('h3', { class: 'day-title' }, `${fmtDate(day.date)} · ${day.title || 'Untitled day'}`),
-      el('div', { class: 'day-meta' }, [day.base ? `Sleeping: ${day.base}` : 'No base set', items.length ? `${items.length} items` : 'Nothing planned yet', dayCost(items, tripRates(trip)) ? `~${fmtMoney(dayCost(items, tripRates(trip)))}` : ''].filter(Boolean).join(' · ')),
+      el('div', { class: 'day-meta' }, [day.base ? `Sleeping: ${day.base}` : 'No base set', items.length ? `${items.length} items` : 'Nothing planned yet', store.showMoney && dayCost(items, tripRates(trip)) ? `~${fmtMoney(dayCost(items, tripRates(trip)))}` : ''].filter(Boolean).join(' · ')),
     ),
   );
   if (day.walk) dayHead.firstChild.append(el('div', { class: 'day-meta day-walk' }, `🚶 ${day.walk}`));
@@ -66,8 +66,8 @@ function renderItem(store, day, it, rates) {
   const secret = store.vault.itemSecrets?.[it.id];
   const foot = [];
   const inAud = it.currency && it.currency !== 'AUD' ? toAud(it.cost, it.currency, rates) : 0;
-  if (cost) foot.push(el('span', { class: 'mono' }, cost + (inAud ? ` (~${fmtMoney(inAud)})` : '')));
-  if (it.split > 1) foot.push(el('span', { class: 'variant-tag' }, `÷${it.split}`));
+  if (cost && store.showMoney) foot.push(el('span', { class: 'mono' }, cost + (inAud ? ` (~${fmtMoney(inAud)})` : '')));
+  if (it.split > 1 && store.showMoney) foot.push(el('span', { class: 'variant-tag' }, `÷${it.split}`));
   if (it.status && it.status !== 'idea') foot.push(pill(it.status, STATUSES[it.status]));
   if (secret) foot.push(el('span', { class: 'pill' }, '🔒 ' + secret));
   if (it.url) foot.push(el('a', { href: it.url, target: '_blank', rel: 'noopener', onClick: (e) => e.stopPropagation() }, 'Link ↗'));
@@ -107,9 +107,11 @@ export function editItem(store, day, item) {
     { name: 'location', label: 'Place (as text)', value: it.location || '', placeholder: 'e.g. Nagano Station, east exit' },
     ...((store.trip.people || []).length > 1 ? [{ name: 'who', label: 'Who is this for', value: it.who || '', placeholder: 'Leave blank for everyone' }] : []),
     { name: 'placeId', label: 'Pin on the map', type: 'select', options: [['', 'No pin'], ...sortBy(store.trip.places || [], (p) => `${p.town || ''} ${p.name}`).map((p) => [p.id, `${p.town ? p.town + ' · ' : ''}${p.name}`])], value: it.placeId || '', hint: 'Pick a saved place; add new places on the Map page.' },
-    { name: 'cost', label: 'Cost', type: 'number', value: it.cost ?? '', half: true, hint: 'Leave blank if the cost lives in Flights or Stays' },
-    { name: 'currency', label: 'Currency', type: 'select', options: tripCurrencies(store.trip), value: it.currency || 'AUD', half: true },
-    ...((store.trip.people || []).length > 1 ? [{ name: 'split', label: 'Split how many ways', type: 'number', value: it.split ?? 1, half: true, hint: `1 means you pay it all. Put ${(store.trip.people || []).length} for a whole-group cost.` }] : []),
+    ...(store.showMoney ? [
+      { name: 'cost', label: 'Cost', type: 'number', value: it.cost ?? '', half: true, hint: 'Leave blank if the cost lives in Flights or Stays' },
+      { name: 'currency', label: 'Currency', type: 'select', options: tripCurrencies(store.trip), value: it.currency || 'AUD', half: true },
+      ...((store.trip.people || []).length > 1 ? [{ name: 'split', label: 'Split how many ways', type: 'number', value: it.split ?? 1, half: true, hint: `1 means you pay it all. Put ${(store.trip.people || []).length} for a whole-group cost.` }] : []),
+    ] : []),
     { name: 'url', label: 'Link', value: it.url || '', placeholder: 'https://' },
     { name: 'notes', label: 'Notes', type: 'textarea', value: it.notes || '' },
     { name: 'secret', label: 'Private note (booking ref, seat, code)', value: store.vault.itemSecrets?.[it.id] || '', hint: 'Stays on this device only. Never written to GitHub.' },
@@ -122,7 +124,10 @@ export function editItem(store, day, item) {
     label: isNew ? 'Add' : 'Save', class: 'btn-primary', onClick: () => {
       const v = f.values();
       if (!v.title) { toast('Give it a title', { kind: 'error' }); f.inputs.title.focus(); return false; }
-      const next = { ...it, type, title: v.title, status: v.status, time: v.time, endTime: v.endTime, location: v.location, cost: v.cost, currency: v.currency, url: v.url, notes: v.notes, done: v.done, category: it.category || typeCategory[type] };
+      const next = { ...it, type, title: v.title, status: v.status, time: v.time, endTime: v.endTime, location: v.location, url: v.url, notes: v.notes, done: v.done, category: it.category || typeCategory[type] };
+      // The money fields are not on the form when the budget is hidden, so keep
+      // whatever the plan already has rather than blanking it.
+      if ('cost' in v) { next.cost = v.cost; next.currency = v.currency; }
       if ('who' in v) { if (v.who) next.who = v.who; else delete next.who; }
       if ('split' in v) { if (Number(v.split) > 1) next.split = Math.round(Number(v.split)); else delete next.split; }
       if ('variant' in v) { if (v.variant) next.variant = v.variant; else delete next.variant; }

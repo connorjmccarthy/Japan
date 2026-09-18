@@ -10,7 +10,8 @@
       "file": "data/bali.json",
       "vault": "data/vault-bali.enc",
       "start": "2026-11-04",
-      "end": "2026-11-15"
+      "end": "2026-11-15",
+      "shared": true
     },
     {
       "id": "japan",
@@ -21,7 +22,8 @@
       "file": "data/trip.json",
       "vault": "data/vault.enc",
       "start": "2027-02-08",
-      "end": "2027-02-17"
+      "end": "2027-02-17",
+      "shared": false
     }
   ]
 }

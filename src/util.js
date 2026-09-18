@@ -136,6 +136,9 @@ export const activeVariant = (t) => t?.variants?.active || null;
 export const variantList = (t) => t?.variants?.list || [];
 export const inVariant = (x, v) => !v || !x?.variant || x.variant === v;
 export const forVariant = (arr, v) => (arr || []).filter((x) => inVariant(x, v));
+// A to-do, decision or note marked `money: true` is about what someone paid, so
+// it disappears with the rest of the money when the budget is switched off.
+export const withoutMoney = (arr, showMoney) => (arr || []).filter((x) => showMoney || !x?.money);
 export const dayView = (d, v) => {
   const o = (v && d.variants && d.variants[v]) || {};
   return { ...d, title: o.title ?? d.title, base: o.base ?? d.base, notes: o.notes ?? d.notes, walk: o.walk ?? d.walk, items: forVariant(d.items, v) };

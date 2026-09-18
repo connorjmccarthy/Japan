@@ -520,7 +520,7 @@
       "date": "2026-11-09",
       "title": "FINNS Beach Club",
       "base": "Villa Bunia, Canggu",
-      "notes": "The paid day. A$522 has already gone on FINNS, which for five people is a daybed or cabana package rather than just entry, so check what it actually includes before you go and make it count. Nothing else is scheduled: it is a full day of pools, food and sun.",
+      "notes": "The paid day. FINNS is booked and paid for already, and for five people that is a daybed or cabana package rather than plain entry, so find out what it actually includes before you go and make it count. Nothing else is scheduled: it is a full day of pools, food and sun.",
       "items": [
         {
           "id": "g1",
@@ -545,7 +545,7 @@
           "cost": 522,
           "currency": "AUD",
           "split": 5,
-          "notes": "PAID: A$522 through Wanderlog, logged as Food. Work out exactly what that bought before the day: FINNS sells entry passes, daybeds, cabanas and minimum-spend packages, and they are not the same thing. If it is a minimum spend, it is credit at the bar rather than money gone. Things worth knowing: it is a ten-minute walk from the villa so nobody needs to ride; there are multiple pools including a swim-up bar and an adults-only area; take cash and a card because they run a wristband tab; bring your own towel to avoid the deposit; and it gets extremely loud from mid-afternoon. Book the daybed for the earliest slot you can, because the good ones go by noon.",
+          "notes": "Already paid for and logged in Wanderlog under Food. Work out exactly what that bought before the day: FINNS sells entry passes, daybeds, cabanas and minimum-spend packages, and they are not the same thing. If it is a minimum spend, it is credit at the bar rather than money gone. Things worth knowing: it is a ten-minute walk from the villa so nobody needs to ride; there are multiple pools including a swim-up bar and an adults-only area; take cash and a card because they run a wristband tab; bring your own towel to avoid the deposit; and it gets extremely loud from mid-afternoon. Book the daybed for the earliest slot you can, because the good ones go by noon.",
           "placeId": "q5"
         },
         {
@@ -1166,7 +1166,7 @@
       "checkIn": "2026-11-04",
       "checkOut": "2026-11-11",
       "distance": "Berawa; about 5 min to Pantai Berawa, 10 min walk to FINNS, 10 min ride to Batu Bolong",
-      "notes": "BOOKED for all seven nights. Two things to sort before you go: (1) tell them the flight lands at 10:45pm so the arrival is somewhere near half midnight and somebody needs to be awake, and (2) ask whether they will hold luggage on the 11th after the 11am check-out, because the group's flight is not until 9:10pm. Also worth asking: airport van pickup for five with bags, whether a late check-out is buyable, and whether they can recommend a driver for the Jatiluwih day. Nightly price is not in the app yet, so the budget is missing the largest single line; add it on this page. Reservation details go in the Private vault, not here."
+      "notes": "BOOKED for all seven nights. Two things to sort before you go: (1) tell them the flight lands at 10:45pm so the arrival is somewhere near half midnight and somebody needs to be awake, and (2) ask whether they will hold luggage on the 11th after the 11am check-out, because the group's flight is not until 9:10pm. Also worth asking: airport van pickup for five with bags, whether a late check-out is buyable, and whether they can recommend a driver for the Jatiluwih day. The nightly price is not recorded yet; add it on this page. Reservation details go in the Private vault, not here."
     },
     {
       "id": "s-ubud",
@@ -1369,13 +1369,15 @@
       "id": "bk2",
       "group": "Before you book anything else",
       "text": "Confirm whether the A$2,655 Jetstar charge is the whole group or just you, and fix the split on the budget line",
-      "due": "2026-09-25"
+      "due": "2026-09-25",
+      "money": true
     },
     {
       "id": "bk3",
       "group": "Before you book anything else",
       "text": "Put the villa's nightly price into Stays so the budget is not missing its biggest line",
-      "due": "2026-10-01"
+      "due": "2026-10-01",
+      "money": true
     },
     {
       "id": "bk4",
@@ -1441,7 +1443,8 @@
       "id": "bk13",
       "group": "Bookings",
       "text": "Find out exactly what the A$522 FINNS booking includes, and reserve the daybed slot",
-      "due": "2026-10-20"
+      "due": "2026-10-20",
+      "money": true
     },
     {
       "id": "bk14",
@@ -1472,7 +1475,7 @@
     {
       "id": "bk18",
       "group": "A week out",
-      "text": "Cash plan: no need for much. Card works nearly everywhere; take A$200 for warungs, markets and drivers",
+      "text": "Cash plan: no need for much. Card works nearly everywhere; take about two hundred dollars worth for warungs, markets and drivers",
       "due": "2026-11-01",
       "notes": "Use bank ATMs at branches, not standalone machines. Always decline the machine's own conversion rate."
     },
@@ -1772,6 +1775,7 @@
     },
     {
       "id": "bq2",
+      "money": true,
       "question": "Is the A$2,655 Jetstar charge the whole group, or just you?",
       "why": "It is logged in Wanderlog as one expense against flight JQ787 with no split. A$2,655 for one person on Jetstar from the Sunshine Coast to Bali via Sydney would be extraordinary; divided across five it is A$531 each, which is a very ordinary November fare with bags. The app currently assumes the second. If it is actually your fare alone, your share of the trip jumps by about A$2,100 and the budget is badly wrong.",
       "options": [

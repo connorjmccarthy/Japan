@@ -1,4 +1,4 @@
-import { el, fmtDate, fmtMoney, todayIso, daysBetween, sortBy, plural, uid, TYPES, fmtTime, activeVariant, variantList, dayView, forVariant } from '../util.js';
+import { el, fmtDate, fmtMoney, todayIso, daysBetween, sortBy, plural, uid, TYPES, fmtTime, activeVariant, variantList, dayView, forVariant, withoutMoney } from '../util.js';
 import { section, pill, empty, sheet, form, toast, confirmDialog } from '../ui.js';
 import { budgetSummary } from './budget.js';
 import { neededPoints } from './flights.js';
@@ -19,9 +19,9 @@ export function render(root, { store, navigate }) {
   const allItems = days.flatMap((d) => (d.items || []).map((i) => ({ ...i, date: d.date })));
   const skiDays = allItems.filter((i) => i.type === 'ski' && i.status !== 'skip').length;
   const booked = allItems.filter((i) => i.status === 'booked').length + forVariant(t.stays, av).filter((s) => s.status === 'booked').length + (t.flights?.confirmed || []).length;
-  const openQ = (t.questions || []).filter((q) => !q.resolved).length;
-  const bs = budgetSummary(t);
-  const checklist = forVariant(t.checklist, av);
+  const openQ = withoutMoney(t.questions, store.showMoney).filter((q) => !q.resolved).length;
+  const bs = store.showMoney ? budgetSummary(t) : { total: 0, booked: 0, mine: 0, shared: false };
+  const checklist = withoutMoney(forVariant(t.checklist, av), store.showMoney);
   const openTodos = checklist.filter((c) => !c.done);
   const soon = sortBy(openTodos.filter((c) => c.due), (c) => c.due).slice(0, 5);
 
@@ -35,12 +35,14 @@ export function render(root, { store, navigate }) {
   root.append(el('div', { class: 'grid grid-stats', style: { marginTop: '12px' } },
     skiDays ? stat('Ski days', skiDays, 'in the plan') : stat('Days away', days.length, 'including travel'),
     stat('Booked', booked, 'confirmed things'),
-    bs.shared
-      ? stat('Your share', fmtMoney(bs.mine, 'AUD', { compact: true }), `of ${fmtMoney(bs.total, 'AUD', { compact: true })} across the group`)
-      : stat('Budget', fmtMoney(bs.total, 'AUD', { compact: true }), `${fmtMoney(bs.booked, 'AUD', { compact: true })} locked in`),
-    neededPoints(t)
-      ? stat('Points plan', `${Math.round(neededPoints(t) / 1000)}k`, `of ${Math.round((t.points?.balance || 0) / 1000)}k available`)
-      : stat('Going', people.length || 1, people.length > 1 ? 'of you' : 'just you'),
+    !store.showMoney
+      ? stat('Planned', allItems.filter((i) => i.status !== 'skip').length, 'stops across the trip')
+      : bs.shared
+        ? stat('Your share', fmtMoney(bs.mine, 'AUD', { compact: true }), `of ${fmtMoney(bs.total, 'AUD', { compact: true })} across the group`)
+        : stat('Budget', fmtMoney(bs.total, 'AUD', { compact: true }), `${fmtMoney(bs.booked, 'AUD', { compact: true })} locked in`),
+    !store.showMoney || !neededPoints(t)
+      ? stat('Going', people.length || 1, people.length > 1 ? 'of you' : 'just you')
+      : stat('Points plan', `${Math.round(neededPoints(t) / 1000)}k`, `of ${Math.round((t.points?.balance || 0) / 1000)}k available`),
   ));
 
   // Who's going (group trips only)

@@ -21,7 +21,7 @@ const VIEWS = {
   flights: { mod: flights, label: 'Flights', ico: '✈️' },
   stays: { mod: stays, label: 'Stays', ico: '🏨' },
   food: { mod: food, label: 'Food', ico: '🍜' },
-  budget: { mod: budget, label: 'Budget', ico: '💰' },
+  budget: { mod: budget, label: 'Budget', ico: '💰', money: true },
   checklist: { mod: checklist, label: 'Checklists', ico: '✅', tab: true },
   map: { mod: map, label: 'Map', ico: '🗺️' },
   decisions: { mod: decisions, label: 'Decisions', ico: '🧭' },
@@ -34,10 +34,14 @@ let current = { id: null, params: [] };
 
 export function navigate(path) { location.hash = `#/${path}`; }
 
+// Views marked `money` only exist while the budget is switched on.
+const viewAllowed = (v) => !v.money || store.showMoney;
+
 function parseHash() {
   const h = location.hash.replace(/^#\/?/, '');
   const [id, ...params] = h.split('/').filter(Boolean);
-  return { id: VIEWS[id] ? id : 'overview', params: params.map(decodeURIComponent) };
+  const ok = VIEWS[id] && viewAllowed(VIEWS[id]);
+  return { id: ok ? id : 'overview', params: ok ? params.map(decodeURIComponent) : [] };
 }
 
 function applyTheme() {
@@ -50,13 +54,14 @@ function buildNav() {
   const list = $('nav-list');
   list.innerHTML = '';
   for (const [id, v] of Object.entries(VIEWS)) {
+    if (!viewAllowed(v)) continue;
     if (v.sep) list.append(el('li', { class: 'nav-sep', role: 'presentation' }));
     list.append(el('li', {}, el('button', { class: 'nav-link', type: 'button', dataset: { view: id }, onClick: () => { navigate(id); closeSidebar(); } }, el('span', { class: 'nav-ico', 'aria-hidden': 'true' }, v.ico), el('span', {}, v.label))));
   }
   const tabs = $('tabbar');
   tabs.innerHTML = '';
   for (const [id, v] of Object.entries(VIEWS)) {
-    if (!v.tab) continue;
+    if (!v.tab || !viewAllowed(v)) continue;
     tabs.append(el('button', { class: 'tab', type: 'button', dataset: { view: id }, onClick: () => navigate(id) }, el('span', { class: 'tab-ico', 'aria-hidden': 'true' }, v.ico), el('span', {}, v.label)));
   }
   tabs.append(el('button', { class: 'tab', type: 'button', dataset: { view: 'more' }, onClick: () => openSidebar() }, el('span', { class: 'tab-ico', 'aria-hidden': 'true' }, '☰'), el('span', {}, 'More')));
@@ -67,10 +72,11 @@ function renderTripSwitch() {
   const host = $('trip-switch');
   if (!host) return;
   host.innerHTML = '';
-  if (!store.trips || store.trips.length < 2) { host.hidden = true; return; }
+  const list = store.visibleTrips();
+  if (list.length < 2) { host.hidden = true; return; }
   host.hidden = false;
   const seg = el('div', { class: 'seg seg-block', role: 'group', 'aria-label': 'Trip' });
-  for (const t of store.trips) {
+  for (const t of list) {
     seg.append(el('button', {
       type: 'button', class: t.id === store.tripId ? 'active' : '', dataset: { trip: t.id },
       onClick: () => store.switchTrip(t.id),
@@ -160,9 +166,13 @@ async function boot() {
     catch (e) { toast(e.message, { kind: 'error' }); }
   });
   window.addEventListener('hashchange', render);
+  // The two sharing switches change what the menu holds, so rebuild it when they move.
+  let lastChrome = `${store.settings.showBudget}|${store.settings.showAllTrips}`;
   let lastStatus = null;
   store.subscribe((trip, status) => {
     if (status !== lastStatus) { lastStatus = status; renderSync(status); if (status.state === 'conflict') toast('GitHub has a newer version of the plan.', { action: 'Resolve', onAction: () => navigate('settings'), ms: 10000 }); if (status.state === 'error') toast(status.message, { kind: 'error', ms: 6000 }); }
+    const chrome = `${store.settings.showBudget}|${store.settings.showAllTrips}`;
+    if (chrome !== lastChrome) { lastChrome = chrome; buildNav(); renderTripSwitch(); markActive(current.id); }
     if (trip?.meta) {
       const name = trip.meta.title || store.tripRecord?.name || 'Trip';
       $('brand-dates').textContent = `${fmtDate(trip.meta.start)} to ${fmtDate(trip.meta.end)}`;

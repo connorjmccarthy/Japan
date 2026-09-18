@@ -1,8 +1,8 @@
-import { el, uid, linkify } from '../util.js';
+import { el, uid, linkify , withoutMoney } from '../util.js';
 import { sheet, form, toast, confirmDialog, section, pill, empty } from '../ui.js';
 
 export function render(root, { store }) {
-  const qs = store.trip.questions || [];
+  const qs = withoutMoney(store.trip.questions, store.showMoney);
   const open = qs.filter((q) => !q.resolved), done = qs.filter((q) => q.resolved);
   root.append(el('div', { class: 'page-head' }, el('div', {}, el('h2', { class: 'page-title' }, 'Decisions'), el('p', { class: 'page-sub' }, 'Things only you can answer. Each one has a recommendation already filled in; change it or confirm it.')), el('div', { class: 'page-actions' }, el('button', { class: 'btn btn-primary btn-sm', type: 'button', onClick: () => editQ(store, null) }, '+ Add'))));
   root.append(section(`Open (${open.length})`, open.length ? el('div', { class: 'row-list' }, ...open.map((q) => card(store, q))) : empty('Nothing open', 'Every decision has been made.')));

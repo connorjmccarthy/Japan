@@ -4,15 +4,21 @@ const VIEWS = ['overview', 'itinerary', 'go', 'flights', 'stays', 'food', 'budge
 // Storage is namespaced per trip now; these tests all run against the Japan trip.
 const TRIP_KEY = 't:japan:trip';
 
-async function boot(page, hash = '#/overview', trip = 'japan') {
+async function boot(page, hash = '#/overview', opts = {}) {
+  const { trip = 'japan', seedSettings = true } = opts;
   const errors = [];
   page.on('pageerror', (e) => errors.push(e.message));
   page.on('console', (m) => { if (m.type() === 'error' && !/Failed to load resource/.test(m.text())) errors.push(m.text()); });
   await page.route(/fonts\.googleapis\.com|fonts\.gstatic\.com|tile\.openstreetmap\.org/, (r) => r.abort());
-  // Most tests are about the Japan trip, so pin it rather than depending on which
-  // trip data/trips.json currently calls active. Only sets it if nothing has
-  // chosen yet, so a test that switches trips in the UI still sticks.
-  await page.addInitScript((t) => { try { if (!localStorage.getItem('app:tripId')) localStorage.setItem('app:tripId', JSON.stringify(t)); } catch {} }, trip);
+  // Shipped defaults hide money and the private trips because the link is shared.
+  // Most tests are about the owner's view, so seed the switches on and pin the
+  // Japan trip. Both guards mean a test that changes either in the UI still wins.
+  await page.addInitScript(({ t, seed }) => {
+    try {
+      if (!localStorage.getItem('app:tripId')) localStorage.setItem('app:tripId', JSON.stringify(t));
+      if (seed && !localStorage.getItem('app:settings')) localStorage.setItem('app:settings', JSON.stringify({ showAllTrips: true, showBudget: true }));
+    } catch { /* blocked storage */ }
+  }, { t: trip, seed: seedSettings });
   await page.goto(`/${hash}`);
   await expect(page.locator('#topbar-heading')).not.toHaveText('');
   return errors;
@@ -346,9 +352,9 @@ test.describe('two trips in one app', () => {
       localStorage.setItem('__seeded', '1');
       localStorage.setItem('jp27:trip', JSON.stringify({ meta: { title: 'Legacy plan', start: '2027-02-08', end: '2027-02-17', updatedAt: '2099-01-01T00:00:00Z' }, days: [], flights: { confirmed: [], legs: [], lounges: [] }, stays: [], food: [], budget: [], checklist: [], places: [], questions: [] }));
       localStorage.setItem('jp27:meta', JSON.stringify({ dirty: true }));
-      localStorage.setItem('jp27:settings', JSON.stringify({ owner: 'someone', repo: 'Japan', path: 'data/trip.json', theme: 'dark' }));
+      localStorage.setItem('jp27:settings', JSON.stringify({ owner: 'someone', repo: 'Japan', path: 'data/trip.json', theme: 'dark', showAllTrips: true }));
     });
-    await boot(page, '#/overview');
+    await boot(page, '#/overview', { seedSettings: false });
     await expect(page.locator('#brand-title')).toHaveText('Japan 2027');
     // The old copy is still the one in use, under the new per-trip key.
     const moved = await page.evaluate(() => JSON.parse(localStorage.getItem('t:japan:trip'))?.meta?.title);
@@ -357,6 +363,79 @@ test.describe('two trips in one app', () => {
     expect(settings.owner).toBe('someone');
     expect(settings.theme).toBe('dark');
     expect(settings.paths.japan.file).toBe('data/trip.json');
+  });
+});
+
+test.describe('sharing the link', () => {
+  // A phone that has never touched Settings: this is what the group gets.
+  async function asGuest(page, hash = '#/overview') {
+    page.on('pageerror', () => {});
+    await page.route(/fonts\.googleapis\.com|fonts\.gstatic\.com|tile\.openstreetmap\.org/, (r) => r.abort());
+    await page.goto(`/${hash}`);
+    await expect(page.locator('#topbar-heading')).not.toHaveText('');
+  }
+
+  test('a guest sees Bali only, with no money anywhere', async ({ page, isMobile }) => {
+    await asGuest(page);
+    await expect(page.locator('#brand-title')).toHaveText('Bali 2026');
+    if (isMobile) await page.locator('#menu-btn').click();
+    // Japan is not shared, so it is not even a choice.
+    await expect(page.locator('#trip-switch')).toBeHidden();
+    await expect(page.locator('.nav-link', { hasText: 'Budget' })).toHaveCount(0);
+    // No money on the Overview.
+    await expect(page.locator('.stat-label', { hasText: /Budget|Your share/ })).toHaveCount(0);
+    // No prices on items or stays.
+    await page.goto('/#/itinerary/2026-11-07');
+    await expect(page.locator('.tl-title', { hasText: 'Speedboat to Nusa Penida' })).toBeVisible();
+    await expect(page.locator('#main')).not.toContainText('Rp1,450,000');
+    await page.goto('/#/stays');
+    await expect(page.locator('.row', { hasText: 'Villa Bunia' })).toBeVisible();
+    await expect(page.locator('#main')).not.toContainText('/nt');
+    // And the Budget page itself is not reachable by URL.
+    await page.goto('/#/budget');
+    await expect(page.locator('#topbar-heading')).toHaveText('Overview');
+    // To-dos and decisions that are about who paid what are held back too.
+    await page.goto('/#/decisions');
+    await expect(page.locator('#main')).toContainText('Open (4)');
+    await expect(page.locator('#main')).not.toContainText('A$2,655');
+    await page.goto('/#/checklist');
+    await expect(page.locator('#main')).not.toContainText('A$2,655');
+    // Reference prices and the to-dos the group actually needs are still there.
+    await expect(page.locator('#main')).toContainText('International Driving Permit');
+    await expect(page.locator('#main')).toContainText('0 of 18 done');
+  });
+
+  test('the two switches in Settings bring money and Japan back, on this device only', async ({ page, isMobile }) => {
+    await asGuest(page, '#/settings');
+    await page.getByLabel('Show money (Budget page, totals and prices)').check();
+    await page.getByLabel('Show my private trips').check();
+    await page.locator('.card', { hasText: 'Show money' }).getByRole('button', { name: 'Save', exact: true }).click();
+    // The menu rebuilds without a reload.
+    if (isMobile) await page.locator('#menu-btn').click();
+    await expect(page.locator('.nav-link', { hasText: 'Budget' })).toHaveCount(1);
+    await expect(page.locator('#trip-switch button', { hasText: 'Japan' })).toHaveCount(1);
+    await page.goto('/#/budget');
+    await expect(page.locator('#topbar-heading')).toHaveText('Budget');
+    await expect(page.locator('.stat-label').first()).toHaveText('Your share');
+    // The money-only decision comes back with it.
+    await page.goto('/#/decisions');
+    await expect(page.locator('#main')).toContainText('Open (5)');
+    await expect(page.locator('#main')).toContainText('A$2,655');
+    // Nothing about the choice is written into the plan that syncs to GitHub.
+    const plan = await page.evaluate(() => localStorage.getItem('t:bali:trip'));
+    expect(plan).not.toContain('showBudget');
+  });
+
+  test('hiding the money does not delete it', async ({ page }) => {
+    await boot(page, '#/itinerary/2026-11-07', { trip: 'bali' });
+    await expect(page.locator('#main')).toContainText('Rp1,450,000');
+    await page.evaluate(() => { const s = JSON.parse(localStorage.getItem('app:settings')); s.showBudget = false; localStorage.setItem('app:settings', JSON.stringify(s)); });
+    await page.reload();
+    await expect(page.locator('.tl-title', { hasText: 'Speedboat to Nusa Penida' })).toBeVisible();
+    await expect(page.locator('#main')).not.toContainText('Rp1,450,000');
+    // Still in the data, just not on screen.
+    const cost = await page.evaluate(() => JSON.parse(localStorage.getItem('t:bali:trip')).days.flatMap((d) => d.items).find((i) => i.id === 'e2')?.cost);
+    expect(cost).toBe(1450000);
   });
 });
 

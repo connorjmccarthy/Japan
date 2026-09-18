@@ -28,7 +28,9 @@ function stayRow(store, s) {
       s.notes ? el('div', { class: 'row-sub', html: linkify(s.notes) }) : null,
       el('div', { class: 'tl-foot' }, s.url ? el('a', { href: s.url, target: '_blank', rel: 'noopener', onClick: (e) => e.stopPropagation() }, 'Link ↗') : null, secret ? el('span', { class: 'pill' }, '🔒 ' + secret) : null),
     ),
-    el('div', { class: 'row-side' }, el('div', { class: 'big' }, s.pricePerNightAud ? `${fmtMoney(s.pricePerNightAud)}/nt` : '—'), s.nights ? el('div', { class: 'sm' }, `${s.nights} nt · ${fmtMoney(total)}`) : null, s.priceNote ? el('div', { class: 'sm' }, s.priceNote) : null),
+    store.showMoney
+      ? el('div', { class: 'row-side' }, el('div', { class: 'big' }, s.pricePerNightAud ? `${fmtMoney(s.pricePerNightAud)}/nt` : '—'), s.nights ? el('div', { class: 'sm' }, `${s.nights} nt · ${fmtMoney(total)}`) : null, s.priceNote ? el('div', { class: 'sm' }, s.priceNote) : null)
+      : (s.nights ? el('div', { class: 'row-side' }, el('div', { class: 'sm' }, `${s.nights} nt`)) : null),
   );
 }
 
@@ -41,10 +43,10 @@ export function editStay(store, s) {
     { name: 'type', label: 'Type', value: v0.type || '', placeholder: 'ryokan, business hotel, minshuku', half: true },
     { name: 'status', label: 'Status', type: 'select', options: STATUS, value: v0.status || 'idea', half: true },
     ...(variantList(store.trip).length > 1 ? [{ name: 'variant', label: 'Applies to', type: 'select', options: variantOptions(store.trip), value: v0.variant || (isNew ? (activeVariant(store.trip) || '') : ''), half: true }] : []),
-    { name: 'pricePerNightAud', label: 'Price per night (AUD)', type: 'number', value: v0.pricePerNightAud ?? '', half: true },
+    ...(store.showMoney ? [{ name: 'pricePerNightAud', label: 'Price per night (AUD)', type: 'number', value: v0.pricePerNightAud ?? '', half: true }] : []),
     { name: 'nights', label: 'Nights', type: 'number', value: v0.nights ?? '', half: true },
-    ...((store.trip.people || []).length > 1 ? [{ name: 'split', label: 'Split how many ways', type: 'number', value: v0.split ?? 1, half: true, hint: `1 means you pay it all. Put ${(store.trip.people || []).length} if the whole group shares it.` }] : []),
-    { name: 'priceNote', label: 'Price note', value: v0.priceNote || '', placeholder: 'estimate from Booking.com, Sep 2026', half: true },
+    ...(store.showMoney && (store.trip.people || []).length > 1 ? [{ name: 'split', label: 'Split how many ways', type: 'number', value: v0.split ?? 1, half: true, hint: `1 means you pay it all. Put ${(store.trip.people || []).length} if the whole group shares it.` }] : []),
+    ...(store.showMoney ? [{ name: 'priceNote', label: 'Price note', value: v0.priceNote || '', placeholder: 'estimate from Booking.com, Sep 2026', half: true }] : []),
     { name: 'checkIn', label: 'Check in', type: 'date', value: v0.checkIn || '', half: true },
     { name: 'checkOut', label: 'Check out', type: 'date', value: v0.checkOut || '', half: true },
     { name: 'address', label: 'Address (for taxis and Go mode)', value: v0.address || '', placeholder: 'Japanese address as written on the booking' },
