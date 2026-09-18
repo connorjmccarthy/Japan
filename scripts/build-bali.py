@@ -11,7 +11,7 @@ reservation numbers and phone numbers live in the app's Private vault instead.
 import json
 from datetime import date, timedelta
 
-UPDATED = '2026-09-18T12:00:00Z'
+UPDATED = '2026-09-18T03:40:00Z'   # must be later than the last edit made in the app
 RATE_IDR = 10300          # rupiah per AUD, approximate for late 2026
 GROUP = 5                 # five of you; group costs split this many ways
 
@@ -32,15 +32,17 @@ def day(date_, title, base, notes, items, **kw):
 
 # =============================================================================
 # PEOPLE
-# Names are placeholders: tap a chip on the Overview page to put the real ones in.
+# Entered in the app and kept here so re-running this file does not undo them.
 # `home` drives the flight groupings, so keep those accurate.
+# Note this file is public: if you would rather the group were first names only,
+# change them here and re-run, because editing in the app alone gets overwritten.
 # =============================================================================
 people = [
     dict(id='p-connor', name='Connor', home='Sunshine Coast', note='Trip organiser'),
-    dict(id='p-mcy2', name='Sunshine Coast #2', home='Sunshine Coast', note='Tap to rename'),
-    dict(id='p-mcy3', name='Sunshine Coast #3', home='Sunshine Coast', note='Tap to rename'),
-    dict(id='p-syd1', name='Sydney #1', home='Sydney', note='Tap to rename'),
-    dict(id='p-syd2', name='Sydney #2', home='Sydney', note='Tap to rename'),
+    dict(id='p-mcy2', name='Michael Clayton', home='Sunshine Coast'),
+    dict(id='p-mcy3', name='Ellie Clayton', home='Sunshine Coast'),
+    dict(id='p-syd1', name='Josh Irvine', home='Sydney'),
+    dict(id='p-syd2', name='Claire Maloney', home='Sydney'),
 ]
 
 # =============================================================================
