@@ -103,7 +103,7 @@ days = [
     item('j3', '12:00', 'bus', 'Nozawa Onsen Liner → Iiyama Station', location='Village bus stop', endTime='12:25', cost=600, currency='JPY'),
     item('j4', '12:45', 'train', 'Hokuriku Shinkansen Iiyama → Tokyo', location='Iiyama Station', endTime='14:40', cost=8500, currency='JPY', notes='~1h50, reserve the seat (Hakutaka services stop at Iiyama roughly hourly).'),
     item('j5', '15:00', 'train', 'Narita Express Tokyo → Narita T2', location='Tokyo Station', endTime='16:00', cost=0, currency='JPY', notes='Covered by the N’EX round trip ticket bought on day 1 (valid 14 days).'),
-    item('j6', '16:15', 'note', 'Narita T2: check in, drop bag, tax-free refund counter if you shopped', location='NRT T2', notes='Arrive between 15:30 and 16:30 depending on the trains. QF80 check-in closes 18:20. Check in online 24 h before and pick a seat.'),
+    item('j6', '16:15', 'note', 'Narita T2: tax-free refund terminal FIRST, then check in and drop the bag', location='NRT T2, international departure lobby', notes='Order matters now. Japan changed the tax-free system on 1 November 2026: you pay the full price in the shop and claim the consumption tax back at a terminal in the departure lobby, BEFORE you check your bag, with your passport. Allow 20 to 30 minutes and be able to show what you bought if asked. Do that, then check in. Arrive between 15:30 and 16:30 depending on the trains; QF80 check-in closes 18:20. Check in online 24 h before and pick a seat.'),
     item('j7', '17:00', 'food', 'Dinner at Narita T2 food court', location='NRT T2, 4F', cost=1500, currency='JPY', notes='Tonkatsu or ramen; last Japanese meal.'),
     item('j8', '19:20', 'flight', 'QF80 Narita → Melbourne', location='NRT T2 → MEL T2', endTime='07:45', status='booked', notes='Confirmed. Overnight A330, 10h25, Economy Sale fare. Try adding Economy Plus in Manage Booking. Lands Melbourne 07:45 Wed.'),
   ]),
@@ -294,6 +294,115 @@ questions = [
   dict(id='q10', question='Give up Sunday’s skiing for Togakushi and Zenko-ji, or fly home Tuesday to keep three full ski days?', why='You asked for a rural day and said a ski day could go. Narai-juku is now built into Thursday’s travel day at no cost. Sunday is the worst ski day (long-weekend crowds), so it is the cheapest one to trade for Togakushi’s cedar avenue and Zenko-ji. That leaves Friday, Saturday and Monday morning on skis. Flying home Tuesday 16 instead would add a full quiet Monday on the slopes for about A$150 of lodging plus a day of leave.', options=['Sunday rural day, Monday morning ski, fly Mon 15 (planned)', 'Sunday rural day and fly Tue 16 so Monday is a full ski day', 'Keep skiing Sunday; rural Japan is just the Narai stop on Thursday'], recommendation='As planned, with the powder-day escape hatch: if Sunday dawns dumping, ski and skip Togakushi.', answer='Tue 16 is booked, so Monday is a full ski day and Sunday is the rural day, with the powder-day swap written into Sunday’s notes.', resolved=True),
   dict(id='q11', question='Which rural stop, if you want a different one?', why='Alternatives to Togakushi from Nozawa: Obuse (30 min from Nagano by Nagaden train, chestnut sweets, the Hokusai museum, sake brewery, old streets; easy and flat) or a dawn visit to Zenko-ji’s o-asaji morning service. Shirakawa-go’s farmhouses are the postcard but are 4+ hours each way from Nozawa and heavily touristed; not worth it on this trip. Matsumoto castle is a city.', options=['Togakushi + Zenko-ji (planned): mountain shrine, cedars, soba, snow walk', 'Obuse + Zenko-ji: gentler, indoor-heavy, good if the weather is foul', 'Nothing beyond Narai'], recommendation='Togakushi, with Obuse as the bad-weather substitute.', answer='Togakushi and Zenko-ji, with Obuse as the foul-weather substitute. Decide on the Saturday night.', resolved=True),
   dict(id='q9', question='Rough budget ceiling?', why='The plan currently totals roughly A$2,700-3,300 in cash on top of points, depending on Osaka hotel and the Express Pass. Knowing your ceiling decides whether to trade the ryokan half-board for a minshuku, and whether the Express Pass stays in.', options=['Under A$2,500: minshuku, skip Express Pass, Jetstar home', 'A$2,500-3,500: as planned', 'Over A$3,500: ryokan with dinner every night, Business home if available'], recommendation='As planned. The Express Pass is the one “splurge” that buys back a whole day.', answer='', resolved=False),
+]
+
+# =============================================================================
+# SOUVENIRS: what to carry home, and what Australia will let through.
+# `ml` is what drives the duty-free alcohol meter on the page. The limit is
+# 2.25 L for one adult, which is three ordinary bottles and nothing else.
+# =============================================================================
+souvenirs = [
+  # ---- Spirits and bar ------------------------------------------------------
+  dict(id='sv1', category='Spirits and bar', name='Yuzu liqueur (yuzushu)', ml=700, priceBand='¥¥', status='planned',
+       where='Depachika liquor floors at Hankyu or Daimaru in Umeda, any Don Quijote, or a neighbourhood liquor shop',
+       why='The best spritz base Japan makes and the one you cannot buy properly at home. Sharp and floral rather than sweet like limoncello, so it holds up over prosecco and soda instead of drowning in it. Look for Kimino, Tosa Buntan, or whatever regional one the shop pushes.',
+       notes='Around ¥1,500 to ¥3,000. Check the label for the alcohol strength: some yuzushu is 8% and closer to a wine, some is 20% and a proper liqueur. You want the stronger one for spritzes.'),
+  dict(id='sv2', category='Spirits and bar', name='Craft umeshu from a Takayama brewery', ml=720, priceBand='¥¥', status='planned', variant='culture',
+       where='Funasaka or Harada on Sanmachi-suji, during the sake tasting on Mon 15 Feb',
+       why='Choya sits in every Australian bottle shop, so it is a wasted kilo. A brewery\'s own umeshu, especially an aged one or a cloudy nigori, is a different drink: less syrup, more stone fruit and acid. Umeshu with soda and a slice of lemon is the house spritz, and it goes in a glass with sparkling wine just as happily.',
+       notes='They will let you taste before you buy, which is the whole point of being there.'),
+  dict(id='sv3', category='Spirits and bar', name='Sake: one bottle from Funasaka or Harada', ml=720, priceBand='¥¥', status='planned', variant='culture',
+       where='Sanmachi-suji, Takayama, at the Mon 15 Feb tasting',
+       why='Already in the plan and the one bottle with a story attached, since you will have stood in the brewery and tried it. A junmai or a sparkling sake travels better than a daiginjo, which wants refrigeration and does not forgive a warm cargo hold.',
+       notes='Ask them to wrap it. Sake does not keep forever once open, so this is a bottle to drink rather than to shelf.'),
+  dict(id='sv4', category='Spirits and bar', name='The Japanese Bitters: yuzu, shiso, umami', ml=90, priceBand='¥¥', status='planned',
+       where='Department store liquor floors, bar-supply shops, or the better Don Quijote branches',
+       why='The smartest thing on this page. Three 30 ml bottles barely touch the 2.25 L allowance, they are near-impossible to buy in Australia, and a couple of dashes turns an ordinary spritz into something nobody else at the table is drinking. Yuzu for brightness, shiso for the herbal edge, umami if you want to be strange about it.',
+       notes='About ¥2,000 a bottle. If the allowance gets tight, these are the last thing you should drop, because they are the highest flavour per millilitre you can carry.'),
+  dict(id='sv5', category='Spirits and bar', name='Ki No Bi Kyoto Dry Gin', ml=700, priceBand='¥¥¥', status='idea',
+       where='Department store liquor floors, good bottle shops, or Narita duty free on the way out',
+       why='The one Japanese gin genuinely worth the allowance: yuzu, hinoki, bamboo and sansho pepper, distilled in Kyoto. It lands in Australia at A$110 to A$130 when you can find it at all. Makes a gin spritz that tastes like nowhere else.',
+       notes='This is the bottle you trade something for. With the yuzushu, the umeshu and the sake already on the list you are at 2.23 L, so adding this means dropping one of them. Worth knowing: Roku and Nikka Coffey Gin are both on Australian shelves already, so do not spend the allowance on those.'),
+  dict(id='sv6', category='Spirits and bar', name='Shiso or sakura liqueur', ml=500, priceBand='¥¥', status='idea',
+       where='Depachika liquor floors',
+       why='The novelty pick that turns out to be good. Shiso is minty and grassy and makes a startlingly fresh spritz; sakura is floral and works better in spring than in February. Neither exists in Australia in any real way.'),
+  dict(id='sv7', category='Spirits and bar', name='A masu cup from the tasting', priceBand='¥', status='planned', variant='culture',
+       where='Funasaka or Harada, Takayama',
+       why='The little cedar box you drink sake out of. Costs a few hundred yen, weighs nothing, smells like the brewery for years, and is the cheapest good souvenir on this list.'),
+
+  # ---- Universal Studios ----------------------------------------------------
+  dict(id='sv8', category='Universal Studios', name='Power-Up Band', priceBand='¥¥', status='planned',
+       where='The cart in front of Super Star Plaza, or the 1-UP Factory shop inside Super Nintendo World',
+       why='Half a ticket and half a souvenir. You need one to do the Key Challenges and collect the digital coins in the area, so it earns its keep on the day, and afterwards it works as an amiibo on a Switch at home. Six to choose from: Mario, Luigi, Peach, Daisy, Toad and Yoshi.',
+       notes='About ¥4,900, up from ¥3,800 a couple of years ago. Buy it first thing rather than on the way out, because the whole point is using it in the area. The Universal Studios Store will engrave it.',
+       url='https://www.usj.co.jp/web/en/us/attractions/power-up-band-key-challenges'),
+  dict(id='sv9', category='Universal Studios', name='1-UP Factory: the park-exclusive Mario things', priceBand='¥¥', status='idea',
+       where='1-UP Factory, inside Super Nintendo World',
+       why='This is the shop whose stock you cannot get anywhere else, including at Nintendo Osaka. Question blocks, 1-UP mushroom tins, Bowser and Toad things, the area-branded apparel. If you want a Nintendo souvenir that says USJ rather than just Nintendo, it is here.',
+       notes='Tue 10 Feb. Use a ride locker rather than carrying bags onto Mario Kart, and remember the shops near the entrance stay open after the rides stop.'),
+  dict(id='sv10', category='Universal Studios', name='Nintendo Osaka is a different shop', priceBand='¥¥', status='idea',
+       where='Daimaru Umeda, 13th floor. Already on the plan for Mon 9 Feb at 16:00',
+       why='Worth knowing the two do not overlap much. Nintendo Osaka carries the general Nintendo range, plush, apparel, Zelda and Splatoon and Animal Crossing. USJ carries the Super Nintendo World park merchandise. If you want both, you need both stops, and they fall on consecutive days anyway.'),
+  dict(id='sv11', category='Universal Studios', name='A refillable popcorn bucket', priceBand='¥¥', status='idea',
+       where='Carts throughout the park',
+       why='The shoulder-strap buckets are a genuinely Japanese theme-park institution and the designs change constantly. Refills are cheap all day, which is most of the argument.',
+       notes='Bulky and awkward to pack. Only worth it if the suitcase has room, and it has to go in before the courier leaves on the 11th.'),
+
+  # ---- Kitchen and craft ----------------------------------------------------
+  dict(id='sv12', category='Kitchen and craft', name='A Japanese kitchen knife', priceBand='¥¥¥', status='planned',
+       where='Doguyasuji, the covered kitchenware arcade a few minutes from Dotonbori',
+       why='The single best thing most people bring back from Japan, and it happens to be a few minutes from where you already are on the Tuesday night. A Sakai-forged gyuto or santoku runs ¥8,000 to ¥25,000, they will sharpen it and often engrave your name in kanji while you wait, and it will outlive you.',
+       notes='MUST go in the checked bag. A knife in hand luggage gets confiscated at Kansai or Narita and nobody will post it on for you. Buy it in Osaka before the 11th so it rides in the suitcase with the courier. If you have never used a carbon-steel knife, buy stainless: carbon rusts if you leave it wet and most people do.'),
+  dict(id='sv13', category='Kitchen and craft', name='Sarubobo charm', priceBand='¥', status='planned', variant='culture',
+       where='Anywhere in Takayama, and every stall at the Miyagawa morning market',
+       why='The faceless red doll is Takayama\'s own. A few hundred yen, weighs nothing, and is the one souvenir that actually says where you were rather than just "Japan".'),
+  dict(id='sv14', category='Kitchen and craft', name='Ichii ittobori yew carving', priceBand='¥¥', status='idea', variant='culture',
+       where='Craft shops on Sanmachi-suji, Takayama',
+       why='Takayama\'s traditional woodcarving, unpainted yew that darkens with age. Small pieces are affordable and it is the local craft rather than a souvenir-shop import.',
+       notes='Tick the wooden-items box on the Australian incoming card. Finished, treated timber is almost always fine; declaring it costs you nothing and not declaring it is the expensive mistake.'),
+
+  # ---- Food and snacks ------------------------------------------------------
+  dict(id='sv15', category='Food and snacks', name='Regional KitKats and konbini sweets', priceBand='¥', status='planned',
+       where='Don Quijote, konbini, station gift shops, airport before the gate',
+       why='The easy crowd-pleaser and the flavours really are regional: matcha, sake, wasabi, hojicha, whatever is seasonal in February. Cheap enough to hand out.',
+       notes='Declare them. Commercially packaged, shelf-stable confectionery is almost always allowed straight through; it is the not-declaring that causes trouble.'),
+  dict(id='sv16', category='Food and snacks', name='Hoba miso (the miso, not the leaves)', priceBand='¥', status='idea', variant='culture',
+       where='Takayama, Miyagawa market and the shops on Sanmachi',
+       why='The magnolia-leaf miso you will have eaten for breakfast at Hirayu. The paste itself is a processed food and travels fine.',
+       notes='Buy the miso, skip the dried leaves. Dried plant material is exactly what biosecurity takes off you, and the leaves are the part you can improvise at home with baking paper.'),
+  dict(id='sv17', category='Food and snacks', name='Yuzu kosho, furikake, a good soy', priceBand='¥', status='idea',
+       where='Depachika food halls, or a supermarket for a fifth of the price',
+       why='The three things that actually get used at home rather than sitting in a cupboard. Yuzu kosho in particular is expensive and mediocre in Australia and cheap and excellent there.',
+       notes='Nothing containing meat, ever: no jerky, no meat-filled snacks, no instant ramen with a meat sachet. That is a prohibited import, not a declare-and-see.'),
+
+  # ---- Everyday things ------------------------------------------------------
+  dict(id='sv18', category='Everyday things', name='Drugstore haul', priceBand='¥', status='planned',
+       where='Matsumoto Kiyoshi or Don Quijote, anywhere, open late',
+       why='The genuinely better-and-cheaper category. Biore UV sunscreen is the best on earth and a third of the Australian price, Hada Labo lotion, Salonpas patches, Eve painkillers, sheet masks by the dozen.',
+       notes='Cheap enough that this is where the tax-free threshold gets crossed without noticing. Keep the receipts together.'),
+  dict(id='sv19', category='Everyday things', name='Stationery from Loft or Tokyu Hands', priceBand='¥', status='idea',
+       where='Umeda, on the Monday afternoon walk',
+       why='Uni Kuru Toga mechanical pencils, Pilot pens, Midori and Kokuyo notebooks. Small, light, cheap, and the quality gap over what you can buy at home is real.'),
+
+  # ---- For other people -----------------------------------------------------
+  dict(id='sv20', category='For other people', name='Work out who actually gets something', priceBand='¥', status='idea',
+       where='Decide before you go, buy at Don Quijote on the last night',
+       why='The trap is leaving this to the airport and paying three times for worse things. A list of names written down now turns into one 20-minute shop later. KitKats, a sarubobo each and a sheet mask covers most people.'),
+]
+
+SOUVENIR_GUIDE = [
+  dict(title='The 2.25 litre rule, which decides everything on this page',
+       body='Australia lets one adult bring in 2.25 litres of alcohol duty free. You are travelling alone, so there is nobody to pool with. That is three ordinary 700 or 720 ml bottles and not a drop more. Go over and duty is charged on the ENTIRE amount rather than just the excess, and Australian spirits duty is among the highest in the world, so a fourth bottle can cost more in duty than it did in the shop. Buying at Narita duty free changes nothing: the limit is on what you bring in, not on where you bought it. The meter at the top of this page counts anything marked on the list or bought, so keep it honest and it will tell you when to stop.'),
+  dict(title='A$900 of everything else',
+       body='Separate from the alcohol, an adult gets A$900 of general goods duty free: gifts, souvenirs, electronics, leather, watches, the lot. The same trap applies, in that exceeding it means duty on all of it rather than on the excess. A knife, a Power-Up Band, a drugstore haul and some stationery will not trouble A$900. A knife plus a camera lens might. Keep a rough tally if the shopping gets ambitious, and remember things you already owned and took with you do not count.'),
+  dict(title='Tax free changed on 1 November 2026, three months before you go',
+       body='The old system, where the shop took the 10% consumption tax off at the till and sealed your bag, is gone. From 1 November 2026 you pay the full price in the shop and claim the tax back on the way out. At Narita, before you check your bag, go to a tax-free terminal in the international departure lobby, scan your passport, and take the refund by card, bank transfer or cash depending on the provider. You have 90 days from purchase, so everything on this trip qualifies. Two practical consequences: the refund step now comes BEFORE bag drop rather than after, and the sealed-bag nonsense where you were not allowed to open your own snacks is finished. Allow 20 to 30 minutes at Narita and be able to show what you bought if they ask.'),
+  dict(title='Declare the food and the wood',
+       body='Australian biosecurity is the strictest border you will cross and the incoming passenger card is not a formality. Declare all food, plant and wooden items, without exception. Commercially packaged, shelf-stable things, so sweets, sealed sauces, miso, tea, are almost always waved through once declared. Anything containing meat is prohibited outright. Fresh produce, seeds and dried plant material, including those hoba leaves, will be taken off you. The cost of declaring something that turns out to be fine is thirty seconds in the red lane. The cost of not declaring something that is not fine starts at a A$2,000 infringement notice and can reach a fine many times that.'),
+  dict(title='Where to actually buy this stuff',
+       body='Don Quijote is the one-stop answer for snacks, drugstore items and cheap liquor. It is chaotic, open late, tax-free, and there is one near every station you will use. Depachika, the food and drink basements of department stores like Hankyu and Daimaru in Umeda, are where the good yuzushu, the bitters and the proper sake live, and the staff will talk you through it. Doguyasuji, three minutes off Dotonbori, is the knife street. In Takayama the sake breweries sell their own bottles at the tasting, and the Miyagawa morning market has the sarubobo and the miso. Airport shopping should be the last resort rather than the plan.'),
+  dict(title='Getting it home, given how this trip is packed',
+       body='The suitcase leaves Osaka by courier on the morning of Wednesday the 11th and you do not see it again until Takayama on the 12th. So everything bought in Osaka, which is the USJ merch, the knife, the drugstore haul and Nintendo Osaka, has to be bought on the 9th or the 10th and packed that night. After the 11th you are carrying what you buy, which is an argument for Takayama purchases being small: a bottle, a charm, a masu cup. Bottles go in the checked bag wrapped in clothing, in the middle, never against the shell. The knife must be checked. Leave a bit of space: you will buy more than you planned to.'),
 ]
 
 FOOD_GUIDE = [
@@ -537,7 +646,7 @@ trip = dict(
     lounges=flights['lounges'],
   ),
   variants=dict(active='culture', list=[dict(id='ski', name='Plan A: Ski trip (Nozawa)', short='A: Ski'), dict(id='culture', name='Plan B: No skiing, Takayama base, two nights out, free days', short='B: Culture')]),
-  foodGuide=FOOD_GUIDE, staysGuide=STAYS_GUIDE, points=points, stays=stays, food=food, budget=budget, checklist=checklist, places=places, questions=questions,
+  foodGuide=FOOD_GUIDE, staysGuide=STAYS_GUIDE, souvenirGuide=SOUVENIR_GUIDE, points=points, stays=stays, food=food, souvenirs=souvenirs, budget=budget, checklist=checklist, places=places, questions=questions,
 )
 # Anything ticked, answered or renamed in the app survives a rebuild.
 trip = carry_over(trip, 'data/trip.json')

@@ -85,7 +85,8 @@ src/main.js            router, navigation, sync pill, service worker registratio
 src/store.js           state, localStorage, GitHub sync, private vault
 src/github.js          GitHub Contents API client
 src/ui.js              sheet/modal, forms, toasts
-src/views/*.js         one module per page (go.js is the on-the-move card deck)
+src/views/*.js         one module per page (go.js is the on-the-move card deck,
+                       souvenirs.js only appears on a trip that has a list)
 data/trips.json        the list of trips and which one opens by default
 data/trip.json         the Japan plan
 data/bali.json         the Bali plan (shared with the group)

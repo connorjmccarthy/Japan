@@ -13,6 +13,7 @@ import * as map from './views/map.js';
 import * as vault from './views/vault.js';
 import * as settings from './views/settings.js';
 import * as decisions from './views/decisions.js';
+import * as souvenirs from './views/souvenirs.js';
 
 const VIEWS = {
   overview: { mod: overview, label: 'Overview', ico: '🏔️', tab: true },
@@ -24,6 +25,7 @@ const VIEWS = {
   budget: { mod: budget, label: 'Budget', ico: '💰', feature: 'budget', money: true },
   checklist: { mod: checklist, label: 'Checklists', ico: '✅', tab: true },
   map: { mod: map, label: 'Map', ico: '🗺️' },
+  souvenirs: { mod: souvenirs, label: 'Souvenirs', ico: '🎁', when: () => (store.trip?.souvenirs || []).length > 0 || store.trip?.meta?.features?.souvenirs === true },
   decisions: { mod: decisions, label: 'Decisions', ico: '🧭' },
   vault: { mod: vault, label: 'Private vault', ico: '🔒', sep: true },
   settings: { mod: settings, label: 'Settings & guide', ico: '⚙️' },
@@ -34,9 +36,9 @@ let current = { id: null, params: [] };
 
 export function navigate(path) { location.hash = `#/${path}`; }
 
-// A view exists when the trip asks for its feature and, for money, when this
-// device has asked to see it.
-const viewAllowed = (v) => (!v.feature || store.tripHas(v.feature)) && (!v.money || store.showMoney);
+// A view exists when the trip asks for its feature, when its own `when` test
+// passes, and, for money, when this device has asked to see it.
+const viewAllowed = (v) => (!v.feature || store.tripHas(v.feature)) && (!v.when || v.when()) && (!v.money || store.showMoney);
 
 function parseHash() {
   const h = location.hash.replace(/^#\/?/, '');
@@ -122,6 +124,9 @@ function render() {
   $('topbar-heading').textContent = view.label;
   document.title = `${view.label} · ${store.trip?.meta?.title || store.tripRecord?.name || 'Trip'}`;
   markActive(id);
+  // The hashchange listener is live before the store has finished loading, so a
+  // link followed during boot used to render a view against a null trip.
+  if (!store.trip) { main.append(el('p', { class: 'muted', style: { padding: '24px 0' } }, 'Loading…')); return; }
   try {
     view.mod.render(main, { store, params, navigate });
   } catch (e) {
@@ -172,7 +177,7 @@ async function boot() {
   let lastStatus = null;
   store.subscribe((trip, status) => {
     if (status !== lastStatus) { lastStatus = status; renderSync(status); if (status.state === 'conflict') toast('GitHub has a newer version of the plan.', { action: 'Resolve', onAction: () => navigate('settings'), ms: 10000 }); if (status.state === 'error') toast(status.message, { kind: 'error', ms: 6000 }); }
-    const chrome = `${store.settings.showBudget}|${store.showsPrivateTrips()}|${store.tripId}`;
+    const chrome = `${store.settings.showBudget}|${store.showsPrivateTrips()}|${store.tripId}|${(store.trip?.souvenirs || []).length > 0}`;
     if (chrome !== lastChrome) { lastChrome = chrome; buildNav(); renderTripSwitch(); markActive(current.id); }
     if (trip?.meta) {
       const name = trip.meta.title || store.tripRecord?.name || 'Trip';

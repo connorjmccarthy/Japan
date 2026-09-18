@@ -1,6 +1,6 @@
 import { test, expect } from '@playwright/test';
 
-const VIEWS = ['overview', 'itinerary', 'go', 'flights', 'stays', 'food', 'budget', 'checklist', 'map', 'decisions', 'vault', 'settings'];
+const VIEWS = ['overview', 'itinerary', 'go', 'flights', 'stays', 'food', 'budget', 'checklist', 'map', 'souvenirs', 'decisions', 'vault', 'settings'];
 // Storage is namespaced per trip now; these tests all run against the Japan trip.
 const TRIP_KEY = 't:japan:trip';
 
@@ -296,6 +296,45 @@ test.describe('vault encryption', () => {
     const uploaded = Buffer.from(puts[0].content, 'base64').toString('utf8');
     expect(uploaded).not.toContain('SECRET-PP-42');
     expect(JSON.parse(uploaded).cipher).toBe('AES-256-GCM');
+  });
+});
+
+test.describe('souvenirs', () => {
+  test('the page counts the duty-free alcohol allowance and warns when it is blown', async ({ page }) => {
+    const errors = await boot(page, '#/souvenirs');
+    await expect(page.locator('#topbar-heading')).toHaveText('Souvenirs');
+    // Seeded list sits just under the 2.25 L an adult may bring into Australia.
+    await expect(page.locator('.card', { hasText: 'Duty-free alcohol' })).toContainText('2.23 L of 2.25 L');
+    await expect(page.locator('.meter-fill.over')).toHaveCount(0);
+    // Putting the gin on the list tips it over, and the page says so.
+    await page.locator('.check-text', { hasText: 'Ki No Bi' }).click();
+    await page.getByLabel('Status').selectOption('planned');
+    await page.getByRole('button', { name: 'Save', exact: true }).click();
+    await expect(page.locator('.card', { hasText: 'Duty-free alcohol' })).toContainText('2.93 L of 2.25 L');
+    await expect(page.locator('.meter-fill.over')).toHaveCount(1);
+    await expect(page.locator('#main')).toContainText('Over the limit');
+    expect(errors).toEqual([]);
+  });
+
+  test('ticking something off marks it bought and stops it counting twice', async ({ page }) => {
+    await boot(page, '#/souvenirs');
+    const row = page.locator('.check', { hasText: 'Yuzu liqueur' }).first();
+    await expect(row).not.toHaveClass(/done/);
+    await row.locator('input[type=checkbox]').check();
+    await expect(row).toHaveClass(/done/);
+    // Bought still counts against the allowance: it is in your bag either way.
+    await expect(page.locator('.card', { hasText: 'Duty-free alcohol' })).toContainText('2.23 L');
+    const status = await page.evaluate((k) => JSON.parse(localStorage.getItem(k)).souvenirs.find((s) => s.id === 'sv1').status, TRIP_KEY);
+    expect(status).toBe('bought');
+  });
+
+  test('a trip with no souvenirs has no Souvenirs page', async ({ page, isMobile }) => {
+    await boot(page, '#/overview', { trip: 'bali' });
+    await expect(page.locator('#brand-title')).toHaveText('Bali 2026');
+    if (isMobile) await page.locator('#menu-btn').click();
+    await expect(page.locator('.nav-link', { hasText: 'Souvenirs' })).toHaveCount(0);
+    await page.goto('/#/souvenirs');
+    await expect(page.locator('#topbar-heading')).toHaveText('Overview');
   });
 });
 
