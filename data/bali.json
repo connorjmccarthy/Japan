@@ -7,7 +7,7 @@
     "rates": {
       "IDR": 10300
     },
-    "updatedAt": "2026-09-18T04:14:50.396Z",
+    "updatedAt": "2026-09-18T04:14:55.368Z",
     "version": 1,
     "mapRegion": "Bali, Indonesia",
     "travelMode": "driving",
@@ -1388,7 +1388,8 @@
       "id": "bk5",
       "group": "Paperwork",
       "text": "Everyone: check passports have 6+ months left beyond 15 Nov 2026 and two blank pages",
-      "due": "2026-09-30"
+      "due": "2026-09-30",
+      "done": true
     },
     {
       "id": "bk6",
