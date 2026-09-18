@@ -1,6 +1,15 @@
-# Japan 2027
+# Trips
 
-A personal trip planner for a February 2027 Japan ski trip. It works like a lightweight Wanderlog: a day‑by‑day plan, flights and Qantas Points maths, hotel shortlist, food list, live budget, checklists, a map and a place for decisions still to be made.
+A personal trip planner. It works like a lightweight Wanderlog: a day‑by‑day plan, flights, stays, food list, live budget, checklists, a map and a place for decisions still to be made.
+
+It currently holds two trips, and the **Trip** switcher at the top of the menu moves between them:
+
+| Trip | Dates | Who | Data file | Built by |
+|---|---|---|---|---|
+| **Bali 2026** | 4 to 15 Nov 2026 | five of you, Canggu then Ubud | `data/bali.json` | `scripts/build-bali.py` |
+| **Japan 2027** | 8 to 17 Feb 2027 | solo | `data/trip.json` | `scripts/build-seed.py` |
+
+Each trip keeps its own copy in your browser, its own file in this repo and its own encrypted vault, so editing one can never touch the other. Your GitHub token, theme and sync settings are shared across both. `data/trips.json` is the list of trips and which one a new device opens first.
 
 It is a plain static website (HTML, CSS, JavaScript, no build step), so it runs on GitHub Pages for free and works on a phone as an installable app.
 
@@ -13,15 +22,15 @@ It is a plain static website (HTML, CSS, JavaScript, no build step), so it runs 
 
 ## How the data works, in plain English
 
-There is one file that holds the entire plan: `data/trip.json`. The app reads it when it loads.
+Each trip is one file: `data/trip.json` for Japan, `data/bali.json` for Bali. The app reads the file for whichever trip is showing.
 
-When you edit something in the app, the change is saved instantly in your browser on that device. If you also paste a GitHub token into **Settings**, every change is written back to `data/trip.json` in this repo a second later, as a normal commit. Your other device picks it up next time the app opens. GitHub is the shared notebook between phone and laptop, and every save has a history you can look back at.
+When you edit something in the app, the change is saved instantly in your browser on that device. If you also paste a GitHub token into **Settings**, every change is written back to that trip's file in this repo a second later, as a normal commit. Your other device picks it up next time the app opens. GitHub is the shared notebook between phone and laptop, and every save has a history you can look back at.
 
 The technical version: the app is static files on GitHub Pages; the data layer is `localStorage` plus the GitHub Contents API, with a `sha` check so two devices can never silently overwrite each other. If both devices edited since the last sync, the app shows a conflict and lets you pick which version to keep.
 
 ### What is never written to the repo
 
-This repo is **public**. Booking references, ticket numbers, passport details and anything else sensitive live only in the **Private vault** page and in the "Private note" field on items, and those are never written to `data/trip.json`.
+This repo is **public**. Booking references, ticket numbers, passport details and anything else sensitive live only in the **Private vault** page and in the "Private note" field on items, and those are never written to the plan files.
 
 To have the vault on a second device, either use Export on the vault page and Import on the other device, or switch on **Private vault sync** in Settings: the vault is then encrypted on your device with a passphrase (AES-256-GCM, PBKDF2 key) and saved as `data/vault.enc`. That file is public but unreadable without the passphrase, which is stored only in each device's browser.
 
@@ -34,7 +43,14 @@ Without a token everything still works; edits just stay on whichever device you 
 
 ## Editing the plan outside the app
 
-`data/trip.json` is human-readable. You can edit it directly on GitHub and the app will pick up the new version on next load (as long as that device has no unsynced edits of its own).
+The plan files are human-readable JSON and you can edit them directly on GitHub; the app picks the new version up on next load, as long as that device has no unsynced edits of its own.
+
+For bigger rewrites the Python builders are the source of truth. Edit `scripts/build-seed.py` (Japan) or `scripts/build-bali.py` (Bali) and re-run it; each one regenerates its JSON file from scratch. Never hand-edit the JSON if you are going to run the builder again, because it will be overwritten.
+
+```
+python3 scripts/build-bali.py     # rewrites data/bali.json
+python3 scripts/build-seed.py     # rewrites data/trip.json
+```
 
 ## Development
 
@@ -55,7 +71,10 @@ src/store.js           state, localStorage, GitHub sync, private vault
 src/github.js          GitHub Contents API client
 src/ui.js              sheet/modal, forms, toasts
 src/views/*.js         one module per page (go.js is the on-the-move card deck)
-data/trip.json         the plan
+data/trips.json        the list of trips and which one opens by default
+data/trip.json         the Japan plan
+data/bali.json         the Bali plan
+scripts/build-*.py     the source of truth for each plan; re-run to regenerate the JSON
 sw.js                  offline cache
 vendor/leaflet         map library (BSD-2, vendored so it works offline)
 tests/                 Playwright tests

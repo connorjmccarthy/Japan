@@ -513,6 +513,9 @@ details.acc .acc-body { padding: 0 14px 14px; }
 
 /* Plan variant switcher */
 .variant-switch { padding: 4px 18px 6px; }
+.trip-switch { padding: 10px 18px 2px; }
+button.chip { cursor: pointer; font: inherit; font-size: 13px; font-weight: 500; }
+button.chip:hover { border-color: var(--accent); color: var(--accent); }
 .variant-label { font-size: 11px; text-transform: uppercase; letter-spacing: 0.08em; color: var(--text-3); font-weight: 700; margin-bottom: 6px; }
 .seg-block { display: flex; width: 100%; }
 .seg-block button { flex: 1; }
@@ -544,7 +547,7 @@ details.acc .acc-body { padding: 0 14px 14px; }
 .go-deck {
   display: flex; gap: 12px; overflow-x: auto; overflow-y: hidden; scroll-snap-type: x mandatory; scrollbar-width: none; -webkit-overflow-scrolling: touch;
   margin: 0 calc(var(--gutter) * -1); padding: 4px var(--gutter) 6px; outline: none;
-  height: calc(100dvh - var(--topbar-h) - var(--tabbar-h) - var(--safe-b) - 268px); min-height: 340px;
+  height: calc(100dvh - var(--topbar-h) - var(--tabbar-h) - var(--safe-b) - 250px); min-height: 390px;
 }
 .go-strip .day-chip .dc-base { display: none; }
 .go-strip .day-chip { padding-block: 6px; }
@@ -570,14 +573,14 @@ details.acc .acc-body { padding: 0 14px 14px; }
 .go-badges { display: flex; gap: 6px; flex-wrap: wrap; justify-content: flex-end; }
 .go-title { font-size: 21px; font-weight: 700; line-height: 1.2; overflow-wrap: anywhere; margin-top: 4px; }
 .go-where { font-size: 15px; color: var(--text-2); overflow-wrap: anywhere; }
-.go-notes { flex: 1; min-height: 0; overflow-y: auto; touch-action: pan-y; font-size: 15px; line-height: 1.45; color: var(--text); margin-top: 6px; padding-right: 2px; white-space: pre-wrap; overflow-wrap: anywhere; user-select: text; -webkit-user-select: text; }
+.go-notes { flex: 1 1 auto; min-height: 88px; overflow-y: auto; touch-action: pan-y; font-size: 15px; line-height: 1.45; color: var(--text); margin-top: 6px; padding-right: 2px; white-space: pre-wrap; overflow-wrap: anywhere; user-select: text; -webkit-user-select: text; }
 .go-secret { margin-top: 8px; padding: 6px 8px; border-radius: 8px; background: var(--bg-sunken); font-weight: 600; }
 .go-address { text-align: left; border: 1px dashed var(--border-strong); background: var(--bg-sunken); border-radius: var(--radius-sm); padding: 8px 10px; font-size: 15px; color: var(--text); overflow-wrap: anywhere; }
-.go-actions { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin-top: 10px; }
-.go-actions .btn { min-height: 48px; font-size: 15px; justify-content: center; }
+.go-actions { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin-top: 8px; }
+.go-actions .btn { min-height: 46px; font-size: 15px; justify-content: center; }
 .go-actions .go-done-btn { grid-column: 1 / -1; background: var(--ok); border-color: var(--ok); color: #fff; font-weight: 700; }
 .go-actions .go-done-btn:hover { background: color-mix(in srgb, var(--ok) 88%, black); }
-.go-nav { display: flex; align-items: center; gap: 8px; margin-top: 8px; }
+.go-nav { display: flex; align-items: center; gap: 8px; margin-top: 6px; }
 .go-nav .icon-btn { font-size: 26px; width: 44px; height: 44px; flex: none; }
 .go-nav-mid { flex: 1; min-width: 0; text-align: center; }
 .go-counter { font-size: 13px; font-weight: 600; color: var(--text-2); }

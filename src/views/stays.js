@@ -43,6 +43,7 @@ export function editStay(store, s) {
     ...(variantList(store.trip).length > 1 ? [{ name: 'variant', label: 'Applies to', type: 'select', options: variantOptions(store.trip), value: v0.variant || (isNew ? (activeVariant(store.trip) || '') : ''), half: true }] : []),
     { name: 'pricePerNightAud', label: 'Price per night (AUD)', type: 'number', value: v0.pricePerNightAud ?? '', half: true },
     { name: 'nights', label: 'Nights', type: 'number', value: v0.nights ?? '', half: true },
+    ...((store.trip.people || []).length > 1 ? [{ name: 'split', label: 'Split how many ways', type: 'number', value: v0.split ?? 1, half: true, hint: `1 means you pay it all. Put ${(store.trip.people || []).length} if the whole group shares it.` }] : []),
     { name: 'priceNote', label: 'Price note', value: v0.priceNote || '', placeholder: 'estimate from Booking.com, Sep 2026', half: true },
     { name: 'checkIn', label: 'Check in', type: 'date', value: v0.checkIn || '', half: true },
     { name: 'checkOut', label: 'Check out', type: 'date', value: v0.checkOut || '', half: true },
@@ -55,6 +56,6 @@ export function editStay(store, s) {
   ]);
   const actions = [];
   if (!isNew) actions.push({ label: 'Delete', class: 'btn-danger', keepOpen: true, onClick: async () => { if (await confirmDialog('Delete this stay?')) { store.update((t) => { t.stays = t.stays.filter((x) => x.id !== v0.id); }); store.setItemSecret(v0.id, ''); return true; } return false; } });
-  actions.push('spacer', { label: 'Cancel', class: 'btn-ghost' }, { label: 'Save', class: 'btn-primary', onClick: () => { const v = fm.values(); if (!v.name) { toast('Give it a name', { kind: 'error' }); return false; } const { secret, ...rest } = v; store.update((t) => { t.stays ||= []; const i = t.stays.findIndex((x) => x.id === v0.id); const next = { ...v0, ...rest }; if ('variant' in rest && !rest.variant) delete next.variant; if (i >= 0) t.stays[i] = next; else t.stays.push(next); }); store.setItemSecret(v0.id, secret); toast('Saved', { kind: 'ok' }); } });
+  actions.push('spacer', { label: 'Cancel', class: 'btn-ghost' }, { label: 'Save', class: 'btn-primary', onClick: () => { const v = fm.values(); if (!v.name) { toast('Give it a name', { kind: 'error' }); return false; } const { secret, ...rest } = v; store.update((t) => { t.stays ||= []; const i = t.stays.findIndex((x) => x.id === v0.id); const next = { ...v0, ...rest }; if ('variant' in rest && !rest.variant) delete next.variant; if ('split' in rest) { if (Number(rest.split) > 1) next.split = Math.round(Number(rest.split)); else delete next.split; } if (i >= 0) t.stays[i] = next; else t.stays.push(next); }); store.setItemSecret(v0.id, secret); toast('Saved', { kind: 'ok' }); } });
   sheet({ title: isNew ? 'Add stay' : 'Edit stay', body: fm.node, actions });
 }

@@ -1,12 +1,18 @@
 import { test, expect } from '@playwright/test';
 
 const VIEWS = ['overview', 'itinerary', 'go', 'flights', 'stays', 'food', 'budget', 'checklist', 'map', 'decisions', 'vault', 'settings'];
+// Storage is namespaced per trip now; these tests all run against the Japan trip.
+const TRIP_KEY = 't:japan:trip';
 
-async function boot(page, hash = '#/overview') {
+async function boot(page, hash = '#/overview', trip = 'japan') {
   const errors = [];
   page.on('pageerror', (e) => errors.push(e.message));
   page.on('console', (m) => { if (m.type() === 'error' && !/Failed to load resource/.test(m.text())) errors.push(m.text()); });
   await page.route(/fonts\.googleapis\.com|fonts\.gstatic\.com|tile\.openstreetmap\.org/, (r) => r.abort());
+  // Most tests are about the Japan trip, so pin it rather than depending on which
+  // trip data/trips.json currently calls active. Only sets it if nothing has
+  // chosen yet, so a test that switches trips in the UI still sticks.
+  await page.addInitScript((t) => { try { if (!localStorage.getItem('app:tripId')) localStorage.setItem('app:tripId', JSON.stringify(t)); } catch {} }, trip);
   await page.goto(`/${hash}`);
   await expect(page.locator('#topbar-heading')).not.toHaveText('');
   return errors;
@@ -77,7 +83,7 @@ test.describe('itinerary editing', () => {
     await page.getByLabel(/Private note/).fill('SECRETREF123');
     await page.getByRole('button', { name: 'Add', exact: true }).click();
     await expect(page.locator('.tl-foot', { hasText: 'SECRETREF123' })).toBeVisible();
-    const json = await page.evaluate(() => localStorage.getItem('jp27:trip'));
+    const json = await page.evaluate((k) => localStorage.getItem(k), TRIP_KEY);
     expect(json).toContain('Secret holder');
     expect(json).not.toContain('SECRETREF123');
     await page.goto('/#/vault');
@@ -158,9 +164,9 @@ test.describe('settings', () => {
 test.describe('calendar export', () => {
   test('produces a valid ics with one event per item', async ({ page }) => {
     await boot(page, '#/settings');
-    const ics = await page.evaluate(async () => { const m = await import('../src/ics.js'); const s = JSON.parse(localStorage.getItem('jp27:trip')); return m.buildIcs(s); });
+    const ics = await page.evaluate(async (k) => { const m = await import('../src/ics.js'); const s = JSON.parse(localStorage.getItem(k)); return m.buildIcs(s); }, TRIP_KEY);
     expect(ics.startsWith('BEGIN:VCALENDAR')).toBe(true);
-    const items = await page.evaluate(() => { const t = JSON.parse(localStorage.getItem('jp27:trip')); const v = t.variants?.active; return t.days.flatMap((d) => d.items.filter((i) => i.status !== 'skip' && (!v || !i.variant || i.variant === v))).length; });
+    const items = await page.evaluate((k) => { const t = JSON.parse(localStorage.getItem(k)); const v = t.variants?.active; return t.days.flatMap((d) => d.items.filter((i) => i.status !== 'skip' && (!v || !i.variant || i.variant === v))).length; }, TRIP_KEY);
     expect((ics.match(/BEGIN:VEVENT/g) || []).length).toBe(items);
     expect(ics).toContain('SUMMARY:QF481 Sydney → Melbourne');
     const [download] = await Promise.all([page.waitForEvent('download'), page.getByRole('button', { name: 'Download calendar (.ics)' }).click()]);
@@ -287,6 +293,98 @@ test.describe('vault encryption', () => {
   });
 });
 
+test.describe('two trips in one app', () => {
+  async function switchTo(page, label, isMobile) {
+    if (isMobile) await page.locator('#menu-btn').click();
+    await page.locator(`#trip-switch button:has-text("${label}")`).click();
+    await expect(page.locator('#brand-title')).toContainText(label);
+  }
+
+  test('the switcher swaps the whole plan, and each trip keeps its own copy', async ({ page, isMobile }) => {
+    const errors = await boot(page, '#/overview');
+    await expect(page.locator('#brand-title')).toHaveText('Japan 2027');
+    await switchTo(page, 'Bali', isMobile);
+    await expect(page.locator('#brand-dates')).toHaveText('Wed 4 Nov to Sun 15 Nov');
+    await expect(page.locator('#topbar-kicker')).toContainText('Bali 2026');
+    // The two trips are stored separately, so neither can clobber the other.
+    const keys = await page.evaluate(() => Object.keys(localStorage).filter((k) => k.endsWith(':trip')).sort());
+    expect(keys).toEqual(['t:bali:trip', 't:japan:trip']);
+    await switchTo(page, 'Japan', isMobile);
+    await expect(page.locator('#brand-dates')).toHaveText('Mon 8 Feb to Wed 17 Feb');
+    expect(errors).toEqual([]);
+  });
+
+  test('a brand new device opens whichever trip the registry calls active', async ({ page }) => {
+    const active = await (await fetch('http://localhost:8123/data/trips.json')).json().then((r) => r.active);
+    const expected = (await (await fetch('http://localhost:8123/data/trips.json')).json()).trips.find((t) => t.id === active).name;
+    page.on('pageerror', () => {});
+    await page.route(/fonts\.googleapis\.com|fonts\.gstatic\.com|tile\.openstreetmap\.org/, (r) => r.abort());
+    await page.goto('/#/overview');   // no boot(): nothing pins a trip
+    await expect(page.locator('#brand-title')).toHaveText(expected);
+  });
+
+  test('every Bali view renders without JS errors or horizontal overflow', async ({ page }) => {
+    const errors = await boot(page);
+    await page.evaluate(() => localStorage.setItem('app:tripId', JSON.stringify('bali')));
+    await page.reload();
+    await expect(page.locator('#brand-title')).toHaveText('Bali 2026');
+    for (const v of VIEWS) {
+      await page.goto(`/#/${v}`);
+      await page.waitForTimeout(150);
+      await expect(page.locator('#main')).not.toBeEmpty();
+      const [w, vw] = await page.evaluate(() => [document.documentElement.scrollWidth, document.documentElement.clientWidth]);
+      expect(w, `bali ${v} overflows horizontally`).toBeLessThanOrEqual(vw + 1);
+    }
+    expect(errors).toEqual([]);
+  });
+
+  test('a plan left alone by the old single-trip app is adopted as Japan', async ({ page }) => {
+    // Planted before any app code runs, so the migration is what the app sees on
+    // its very first load rather than something racing against it.
+    await page.addInitScript(() => {
+      if (localStorage.getItem('__seeded')) return;
+      localStorage.setItem('__seeded', '1');
+      localStorage.setItem('jp27:trip', JSON.stringify({ meta: { title: 'Legacy plan', start: '2027-02-08', end: '2027-02-17', updatedAt: '2099-01-01T00:00:00Z' }, days: [], flights: { confirmed: [], legs: [], lounges: [] }, stays: [], food: [], budget: [], checklist: [], places: [], questions: [] }));
+      localStorage.setItem('jp27:meta', JSON.stringify({ dirty: true }));
+      localStorage.setItem('jp27:settings', JSON.stringify({ owner: 'someone', repo: 'Japan', path: 'data/trip.json', theme: 'dark' }));
+    });
+    await boot(page, '#/overview');
+    await expect(page.locator('#brand-title')).toHaveText('Japan 2027');
+    // The old copy is still the one in use, under the new per-trip key.
+    const moved = await page.evaluate(() => JSON.parse(localStorage.getItem('t:japan:trip'))?.meta?.title);
+    expect(moved).toBe('Legacy plan');
+    const settings = await page.evaluate(() => JSON.parse(localStorage.getItem('app:settings')));
+    expect(settings.owner).toBe('someone');
+    expect(settings.theme).toBe('dark');
+    expect(settings.paths.japan.file).toBe('data/trip.json');
+  });
+});
+
+test.describe('group costs and currencies', () => {
+  test('Bali splits shared lines and converts rupiah', async ({ page }) => {
+    await boot(page);
+    await page.evaluate(() => localStorage.setItem('app:tripId', JSON.stringify('bali')));
+    await page.goto('/#/budget');
+    await page.reload();
+    await expect(page.locator('.stat-label').first()).toHaveText('Your share');
+    const stats = await page.locator('.grid-stats').innerText();
+    expect(stats).toContain('across the group');
+    // The Jetstar booking is A$2,655 across five, so your share of it is A$531.
+    const jetstar = page.locator('.row', { hasText: 'Jetstar' }).first();
+    await expect(jetstar).toContainText('÷5');
+    await expect(jetstar).toContainText('A$2,655 ÷ 5');
+    await expect(jetstar.locator('.big')).toHaveText('A$531');
+    // Rupiah amounts are converted, not shown raw.
+    await expect(page.locator('.row', { hasText: 'tourist levy' }).first().locator('.big')).toHaveText('A$15');
+  });
+
+  test('Japan still converts yen in the day list', async ({ page }) => {
+    await boot(page, '#/itinerary/2027-02-13');
+    // A ¥1,800 bus fare should carry its AUD equivalent beside it, not an empty bracket.
+    await expect(page.locator('.tl-foot .mono', { hasText: '¥1,800' }).first()).toHaveText(/¥1,800 \(~A\$\d+\)/);
+  });
+});
+
 test.describe('go mode', () => {
   test('shows one card per stop with directions, and Done clears a card for good', async ({ page }) => {
     const errors = await boot(page, '#/go/2027-02-13');
@@ -338,6 +436,26 @@ test.describe('go mode', () => {
     // The nights away are not in Takayama at all, so no hotel card should appear for them.
     await page.goto(page.url().replace('#/go/2027-02-15', '#/go/2027-02-14'));
     await expect(page.locator('.go-card.go-stay .go-title')).toContainText('Hirayu no Mori');
+  });
+
+  test('cards never print a literal null, and the notes stay readable on a phone', async ({ page, isMobile }) => {
+    // node.append(null) stringifies to the text "null"; optional lines used to leak it.
+    for (const [trip, date] of [['japan', '2027-02-13'], ['bali', '2026-11-11']]) {
+      await page.goto('/');
+      await page.evaluate((t) => localStorage.setItem('app:tripId', JSON.stringify(t)), trip);
+      await page.goto(`/#/go/${date}`);
+      await page.reload();
+      await expect(page.locator('.go-card').first()).toBeVisible();
+      const stray = await page.locator('#main').evaluate((n) => /<\/(?:div|button|span)>null</.test(n.innerHTML));
+      expect(stray, `${trip} renders a stray null`).toBe(false);
+      const notes = await page.locator('.go-card .go-notes').first().evaluate((n) => n.clientHeight);
+      expect(notes, `${trip} notes area collapsed`).toBeGreaterThan(60);
+      if (isMobile) {
+        // The primary action has to sit above the tab bar without scrolling.
+        const ok = await page.evaluate(() => document.querySelector('.go-done-btn').getBoundingClientRect().bottom <= document.querySelector('#tabbar').getBoundingClientRect().top + 1);
+        expect(ok, `${trip} Done button is hidden behind the tab bar`).toBe(true);
+      }
+    }
   });
 
   test('picks the stop happening now', async ({ page }) => {

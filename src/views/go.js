@@ -1,6 +1,6 @@
 // "Go" mode: one full-screen card per stop for using the plan on the move.
 // Swipe sideways to move through the day, swipe up (or tap Done) to clear a card.
-import { el, fmtDate, fmtDow, fmtDayNum, fmtTime, isoDate, TYPES, sortBy, linkify, activeVariant, dayView, forVariant } from '../util.js';
+import { el, mount, fmtDate, fmtDow, fmtDayNum, fmtTime, isoDate, TYPES, sortBy, linkify, activeVariant, dayView, forVariant } from '../util.js';
 import { toast } from '../ui.js';
 
 const deckIndex = {}; // remembered card position per day, so re-renders do not jump
@@ -35,9 +35,13 @@ export function nowIndex(items, hhmm) {
 
 const minutesUntil = (hhmm, now) => { const [h1, m1] = hhmm.split(':').map(Number); const [h2, m2] = now.split(':').map(Number); return h1 * 60 + m1 - (h2 * 60 + m2); };
 
-export function directionsUrl(it, place) {
-  if (place && typeof place.lat === 'number') return `https://www.google.com/maps/dir/?api=1&destination=${place.lat},${place.lng}&travelmode=transit`;
-  const q = [it.location || it.title, 'Japan'].filter(Boolean).join(', ');
+// `meta.mapRegion` keeps a text search honest ("Old Man's, Bali" beats "Old Man's")
+// and `meta.travelMode` picks the mode that actually exists there: Japan runs on
+// trains, Bali on scooters and cars.
+export function directionsUrl(it, place, trip) {
+  const mode = trip?.meta?.travelMode || 'transit';
+  if (place && typeof place.lat === 'number') return `https://www.google.com/maps/dir/?api=1&destination=${place.lat},${place.lng}&travelmode=${mode}`;
+  const q = [it.location || it.title, trip?.meta?.mapRegion || 'Japan'].filter(Boolean).join(', ');
   return `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(q)}`;
 }
 
@@ -99,13 +103,13 @@ export function render(root, { store, params, navigate }) {
 
   if (!total) deck.append(el('div', { class: 'go-card go-empty' }, el('div', { class: 'go-title' }, done.length ? 'All done for today' : 'Nothing planned'), el('div', { class: 'go-where' }, done.length ? 'Every card is swiped away. Enjoy the evening.' : 'Add stops on the Plan page.')));
   for (const it of cards) deck.append(itemCard(store, day, it, places, nowItem === it, () => { const k = cards.indexOf(it); markDone(store, day, it); if (k >= 0 && k < current) deckIndex[day.date] = Math.max(0, current - 1); }));
-  if (stay) deck.append(stayCard(stay));
+  if (stay) deck.append(stayCard(stay, trip));
   for (let i = 0; i < total; i++) dots.append(el('span'));
   root.append(deck);
 
   const nav = el('div', { class: 'go-nav' },
     el('button', { class: 'icon-btn', type: 'button', 'aria-label': 'Previous stop', onClick: () => goTo(current - 1) }, '‹'),
-    el('div', { class: 'go-nav-mid' }, counter, dots, el('div', { class: 'go-hint' }, 'Swipe sideways to move on · swipe up or tap Done to clear a card')),
+    el('div', { class: 'go-nav-mid' }, counter, dots, el('div', { class: 'go-hint' }, 'Swipe sideways · swipe up to clear')),
     el('button', { class: 'icon-btn', type: 'button', 'aria-label': 'Next stop', onClick: () => goTo(current + 1) }, '›'),
   );
   root.append(nav);
@@ -123,20 +127,22 @@ export function render(root, { store, params, navigate }) {
 }
 
 function itemCard(store, day, it, places, isNow, onDone) {
+  const trip = store.trip;
   const t = TYPES[it.type] || TYPES.note;
   const place = it.placeId && places.find((p) => p.id === it.placeId);
   const card = el('article', { class: `go-card ${isNow ? 'go-now' : ''}`, dataset: { type: it.type || 'note', id: it.id } });
   const doneBtn = el('button', { class: 'btn go-done-btn', type: 'button', onClick: () => leave(card, onDone) }, '✓ Done');
-  card.append(
+  mount(card,
     el('div', { class: 'go-top' },
       el('div', { class: 'go-time display' }, fmtTime(it.time) || '—', it.endTime ? el('span', { class: 'go-end' }, ` → ${fmtTime(it.endTime)}`) : null),
       el('div', { class: 'go-badges' }, isNow ? el('span', { class: 'pill pill-accent' }, 'Now') : null, it.status === 'idea' ? el('span', { class: 'pill pill-idea' }, 'Optional') : null, it.status === 'booked' ? el('span', { class: 'pill pill-booked' }, 'Booked') : null),
     ),
     el('div', { class: 'go-title' }, el('span', { class: 'go-ico', 'aria-hidden': 'true' }, t.ico), ' ', it.title || t.label),
     it.location ? el('div', { class: 'go-where' }, '📍 ', it.location) : null,
+    it.who ? el('div', { class: 'go-where' }, '👥 ', it.who) : null,
     el('div', { class: 'go-notes' }, it.notes ? el('div', { html: linkify(it.notes) }) : el('div', { class: 'muted' }, 'No notes.'), store.vault.itemSecrets?.[it.id] ? el('div', { class: 'go-secret' }, '🔒 ', store.vault.itemSecrets[it.id]) : null),
     el('div', { class: 'go-actions' },
-      el('a', { class: 'btn', href: directionsUrl(it, place), target: '_blank', rel: 'noopener' }, '🧭 Directions'),
+      el('a', { class: 'btn', href: directionsUrl(it, place, trip), target: '_blank', rel: 'noopener' }, '🧭 Directions'),
       it.url ? el('a', { class: 'btn', href: it.url, target: '_blank', rel: 'noopener' }, '🔗 Link') : el('button', { class: 'btn', type: 'button', onClick: () => copy(`${it.title}\n${it.location || ''}`) }, '📋 Copy'),
       doneBtn,
     ),
@@ -145,16 +151,17 @@ function itemCard(store, day, it, places, isNow, onDone) {
   return card;
 }
 
-function stayCard(s) {
+function stayCard(s, trip) {
   const q = s.address || `${s.name}, ${s.town || ''}`;
+  const mode = trip?.meta?.travelMode || 'transit';
   const card = el('article', { class: 'go-card go-stay', dataset: { type: 'stay' } });
-  card.append(
+  mount(card,
     el('div', { class: 'go-top' }, el('div', { class: 'go-time display' }, 'Tonight'), el('div', { class: 'go-badges' }, s.status === 'booked' ? el('span', { class: 'pill pill-booked' }, 'Booked') : el('span', { class: 'pill pill-planned' }, 'Planned'))),
     el('div', { class: 'go-title' }, '🏨 ', s.name),
     s.address ? el('button', { class: 'go-address', type: 'button', onClick: () => copy(s.address) }, s.address, el('span', { class: 'small muted' }, ' · tap to copy for a taxi')) : null,
     el('div', { class: 'go-notes' }, s.distance ? el('div', {}, '📍 ', s.distance) : null, s.notes ? el('div', { style: { marginTop: '8px' }, html: linkify(s.notes) }) : null),
     el('div', { class: 'go-actions' },
-      el('a', { class: 'btn', href: `https://www.google.com/maps/dir/?api=1&destination=${encodeURIComponent(q)}&travelmode=transit`, target: '_blank', rel: 'noopener' }, '🧭 Directions'),
+      el('a', { class: 'btn', href: `https://www.google.com/maps/dir/?api=1&destination=${encodeURIComponent(q)}&travelmode=${mode}`, target: '_blank', rel: 'noopener' }, '🧭 Directions'),
       s.url ? el('a', { class: 'btn', href: s.url, target: '_blank', rel: 'noopener' }, '🔗 Booking') : null,
     ),
   );

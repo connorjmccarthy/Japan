@@ -1,4 +1,4 @@
-import { el, fmtDate, fmtDow, fmtDayNum, fmtTime, fmtMoney, todayIso, TYPES, STATUSES, CATEGORIES, uid, sortBy, linkify, dateRange, activeVariant, variantList, variantOptions, dayView } from '../util.js';
+import { el, fmtDate, fmtDow, fmtDayNum, fmtTime, fmtMoney, todayIso, TYPES, STATUSES, uid, sortBy, linkify, dateRange, activeVariant, variantList, variantOptions, dayView, tripRates, tripCurrencies, toAud } from '../util.js';
 import { sheet, form, toast, confirmDialog, pill, empty } from '../ui.js';
 import { dayMap } from '../daymap.js';
 
@@ -37,7 +37,7 @@ export function render(root, { store, params, navigate }) {
   const dayHead = el('div', { class: 'day-header' },
     el('div', {},
       el('h3', { class: 'day-title' }, `${fmtDate(day.date)} · ${day.title || 'Untitled day'}`),
-      el('div', { class: 'day-meta' }, [day.base ? `Sleeping: ${day.base}` : 'No base set', items.length ? `${items.length} items` : 'Nothing planned yet', dayCost(items, trip.meta.jpyPerAud) ? `~${fmtMoney(dayCost(items, trip.meta.jpyPerAud))}` : ''].filter(Boolean).join(' · ')),
+      el('div', { class: 'day-meta' }, [day.base ? `Sleeping: ${day.base}` : 'No base set', items.length ? `${items.length} items` : 'Nothing planned yet', dayCost(items, tripRates(trip)) ? `~${fmtMoney(dayCost(items, tripRates(trip)))}` : ''].filter(Boolean).join(' · ')),
     ),
   );
   if (day.walk) dayHead.firstChild.append(el('div', { class: 'day-meta day-walk' }, `🚶 ${day.walk}`));
@@ -49,23 +49,25 @@ export function render(root, { store, params, navigate }) {
     root.append(empty('Nothing on this day yet', 'Use + Add to put a flight, train, ski day, meal or note here.'));
   } else {
     const list = el('ul', { class: 'timeline' });
-    for (const it of items) list.append(renderItem(store, day, it, trip.meta.jpyPerAud));
+    for (const it of items) list.append(renderItem(store, day, it, tripRates(trip)));
     root.append(list);
   }
   const secret = store.vault.itemSecrets || {};
   root.append(el('button', { class: 'fab', type: 'button', 'aria-label': 'Add item', onClick: () => editItem(store, day, null) }, '+'));
 }
 
-function dayCost(items, rate) {
-  return items.reduce((s, i) => s + (i.currency === 'JPY' ? (Number(i.cost) || 0) / (rate || 100) : (Number(i.cost) || 0)), 0);
+function dayCost(items, rates) {
+  return items.reduce((s, i) => s + toAud(i.cost, i.currency || 'AUD', rates), 0);
 }
 
-function renderItem(store, day, it, rate) {
+function renderItem(store, day, it, rates) {
   const t = TYPES[it.type] || TYPES.note;
   const cost = it.cost ? fmtMoney(it.cost, it.currency || 'AUD') : '';
   const secret = store.vault.itemSecrets?.[it.id];
   const foot = [];
-  if (cost) foot.push(el('span', { class: 'mono' }, cost + (it.currency === 'JPY' && rate ? ` (~${fmtMoney((Number(it.cost) || 0) / rate)})` : '')));
+  const inAud = it.currency && it.currency !== 'AUD' ? toAud(it.cost, it.currency, rates) : 0;
+  if (cost) foot.push(el('span', { class: 'mono' }, cost + (inAud ? ` (~${fmtMoney(inAud)})` : '')));
+  if (it.split > 1) foot.push(el('span', { class: 'variant-tag' }, `÷${it.split}`));
   if (it.status && it.status !== 'idea') foot.push(pill(it.status, STATUSES[it.status]));
   if (secret) foot.push(el('span', { class: 'pill' }, '🔒 ' + secret));
   if (it.url) foot.push(el('a', { href: it.url, target: '_blank', rel: 'noopener', onClick: (e) => e.stopPropagation() }, 'Link ↗'));
@@ -74,6 +76,7 @@ function renderItem(store, day, it, rate) {
   const body = el('div', { class: 'tl-body', role: 'button', tabindex: '0', onClick: () => editItem(store, day, it), onKeydown: (e) => { if (e.key === 'Enter') editItem(store, day, it); } },
     el('div', { class: 'tl-title' }, it.title || t.label, it.status === 'skip' ? pill('skip', 'Skipped') : null, it.variant ? el('span', { class: 'variant-tag' }, (variantList(store.trip).find((x) => x.id === it.variant)?.short) || it.variant) : null),
     it.location ? el('div', { class: 'tl-sub' }, '📍 ' + it.location) : null,
+    it.who ? el('div', { class: 'tl-sub' }, '👥 ' + it.who) : null,
     it.notes ? el('div', { class: 'tl-notes', html: linkify(it.notes) }) : null,
     foot.length ? el('div', { class: 'tl-foot' }, ...foot) : null,
   );
@@ -102,9 +105,11 @@ export function editItem(store, day, item) {
     { name: 'time', label: 'Start time', type: 'time', value: it.time || '', half: true },
     { name: 'endTime', label: 'End time', type: 'time', value: it.endTime || '', half: true },
     { name: 'location', label: 'Place (as text)', value: it.location || '', placeholder: 'e.g. Nagano Station, east exit' },
+    ...((store.trip.people || []).length > 1 ? [{ name: 'who', label: 'Who is this for', value: it.who || '', placeholder: 'Leave blank for everyone' }] : []),
     { name: 'placeId', label: 'Pin on the map', type: 'select', options: [['', 'No pin'], ...sortBy(store.trip.places || [], (p) => `${p.town || ''} ${p.name}`).map((p) => [p.id, `${p.town ? p.town + ' · ' : ''}${p.name}`])], value: it.placeId || '', hint: 'Pick a saved place; add new places on the Map page.' },
     { name: 'cost', label: 'Cost', type: 'number', value: it.cost ?? '', half: true, hint: 'Leave blank if the cost lives in Flights or Stays' },
-    { name: 'currency', label: 'Currency', type: 'select', options: ['AUD', 'JPY'], value: it.currency || 'AUD', half: true },
+    { name: 'currency', label: 'Currency', type: 'select', options: tripCurrencies(store.trip), value: it.currency || 'AUD', half: true },
+    ...((store.trip.people || []).length > 1 ? [{ name: 'split', label: 'Split how many ways', type: 'number', value: it.split ?? 1, half: true, hint: `1 means you pay it all. Put ${(store.trip.people || []).length} for a whole-group cost.` }] : []),
     { name: 'url', label: 'Link', value: it.url || '', placeholder: 'https://' },
     { name: 'notes', label: 'Notes', type: 'textarea', value: it.notes || '' },
     { name: 'secret', label: 'Private note (booking ref, seat, code)', value: store.vault.itemSecrets?.[it.id] || '', hint: 'Stays on this device only. Never written to GitHub.' },
@@ -118,6 +123,8 @@ export function editItem(store, day, item) {
       const v = f.values();
       if (!v.title) { toast('Give it a title', { kind: 'error' }); f.inputs.title.focus(); return false; }
       const next = { ...it, type, title: v.title, status: v.status, time: v.time, endTime: v.endTime, location: v.location, cost: v.cost, currency: v.currency, url: v.url, notes: v.notes, done: v.done, category: it.category || typeCategory[type] };
+      if ('who' in v) { if (v.who) next.who = v.who; else delete next.who; }
+      if ('split' in v) { if (Number(v.split) > 1) next.split = Math.round(Number(v.split)); else delete next.split; }
       if ('variant' in v) { if (v.variant) next.variant = v.variant; else delete next.variant; }
       if (v.placeId) next.placeId = v.placeId; else delete next.placeId;
       store.update((t) => {

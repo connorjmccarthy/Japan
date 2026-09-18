@@ -22,6 +22,13 @@ export const el = (tag, attrs = {}, ...children) => {
   return node;
 };
 
+// Native node.append() stringifies null into a literal "null" text node, which
+// is how a missing optional line ends up printed on screen. This drops them.
+export const mount = (node, ...children) => {
+  node.append(...children.flat(Infinity).filter((c) => c !== null && c !== undefined && c !== false));
+  return node;
+};
+
 export const esc = (s) => String(s ?? '').replace(/[&<>"']/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
 
 // ---- Dates -----------------------------------------------------------------
@@ -64,16 +71,29 @@ export const fmtMoney = (amount, currency = 'AUD', { compact = false } = {}) => 
   if (amount === null || amount === undefined || amount === '' || Number.isNaN(Number(amount))) return '';
   const n = Number(amount);
   if (currency === 'JPY') return `¥${Math.round(n).toLocaleString('en-AU')}`;
+  if (currency === 'IDR') return `Rp${Math.round(n).toLocaleString('en-AU')}`;
   if (currency === 'PTS') return `${Math.round(n).toLocaleString('en-AU')} pts`;
   const opts = compact ? { maximumFractionDigits: 0 } : { minimumFractionDigits: 0, maximumFractionDigits: 0 };
   return `A$${n.toLocaleString('en-AU', opts)}`;
 };
-export const toAud = (amount, currency, jpyPerAud) => {
+// `rates` maps a foreign currency to how many of it buy one Australian dollar,
+// e.g. { JPY: 108, IDR: 10300 }. A bare number is still read as yen per AUD so
+// older callers keep working.
+export const toAud = (amount, currency, rates) => {
   const n = Number(amount) || 0;
-  if (currency === 'JPY') return jpyPerAud ? n / jpyPerAud : 0;
+  if (!currency || currency === 'AUD') return n;
   if (currency === 'PTS') return 0;
-  return n;
+  const map = typeof rates === 'number' ? { JPY: rates } : (rates || {});
+  const per = Number(map[currency]);
+  return per > 0 ? n / per : 0;
 };
+// Every rate the trip knows about. `meta.jpyPerAud` predates `meta.rates`.
+export const tripRates = (t) => {
+  const r = { ...(t?.meta?.rates || {}) };
+  if (t?.meta?.jpyPerAud) r.JPY = t.meta.jpyPerAud;
+  return r;
+};
+export const tripCurrencies = (t) => ['AUD', ...Object.keys(tripRates(t))];
 
 // ---- Misc ------------------------------------------------------------------
 export const clone = (o) => JSON.parse(JSON.stringify(o));
@@ -90,6 +110,10 @@ export const TYPES = {
   transfer: { label: 'Transfer', ico: '🧭' },
   stay: { label: 'Stay', ico: '🏨' },
   ski: { label: 'Ski', ico: '⛷️' },
+  boat: { label: 'Boat', ico: '⛴️' },
+  scooter: { label: 'Scooter', ico: '🛵' },
+  beach: { label: 'Beach', ico: '🏖️' },
+  drinks: { label: 'Drinks', ico: '🍹' },
   food: { label: 'Food', ico: '🍜' },
   activity: { label: 'Activity', ico: '🎡' },
   note: { label: 'Note', ico: '📝' },
@@ -101,6 +125,8 @@ export const STATUSES = {
   skip: 'Skipped',
 };
 export const CATEGORIES = ['Flights', 'Transport', 'Accommodation', 'Ski', 'Food', 'Activities', 'Parking', 'Insurance', 'Connectivity', 'Other'];
+// A trip can name its own categories (a beach holiday has no use for 'Ski').
+export const tripCategories = (t) => (t?.meta?.categories?.length ? t.meta.categories : CATEGORIES);
 
 // ---- Plan variants ----------------------------------------------------------
 // A trip can hold alternative plans (e.g. "ski" vs "no skiing"). Items, stays,

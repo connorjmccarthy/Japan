@@ -1,0 +1,27 @@
+{
+  "active": "bali",
+  "trips": [
+    {
+      "id": "bali",
+      "name": "Bali 2026",
+      "short": "Bali",
+      "ico": "🌴",
+      "mark": "🌴",
+      "file": "data/bali.json",
+      "vault": "data/vault-bali.enc",
+      "start": "2026-11-04",
+      "end": "2026-11-15"
+    },
+    {
+      "id": "japan",
+      "name": "Japan 2027",
+      "short": "Japan",
+      "ico": "🗾",
+      "mark": "雪",
+      "file": "data/trip.json",
+      "vault": "data/vault.enc",
+      "start": "2027-02-08",
+      "end": "2027-02-17"
+    }
+  ]
+}

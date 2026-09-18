@@ -6,11 +6,12 @@ export function render(root, { store }) {
   const fl = t.flights || (t.flights = { confirmed: [], legs: [], lounges: [] });
   const pts = t.points || {};
 
-  root.append(el('div', { class: 'page-head' }, el('div', {}, el('h2', { class: 'page-title' }, 'Flights & points'), el('p', { class: 'page-sub' }, 'What is locked in, what still needs booking, and how the points stack up.'))));
-
-  // Points card
+  // Points only matter on a trip that uses them; a cash trip should not stare at three zeroes.
   const needed = neededPoints(t);
-  root.append(el('div', { class: 'card clickable', onClick: () => editPoints(store) },
+  const usesPoints = !!(pts.balance || needed || (fl.legs || []).length);
+  root.append(el('div', { class: 'page-head' }, el('div', {}, el('h2', { class: 'page-title' }, usesPoints ? 'Flights & points' : 'Flights'), el('p', { class: 'page-sub' }, usesPoints ? 'What is locked in, what still needs booking, and how the points stack up.' : 'What is locked in, and what still needs booking.'))));
+
+  if (usesPoints) root.append(el('div', { class: 'card clickable', onClick: () => editPoints(store) },
     el('div', { class: 'grid grid-stats' },
       el('div', {}, el('div', { class: 'stat-label' }, 'Qantas Points'), el('div', { class: 'stat-value' }, (pts.balance || 0).toLocaleString('en-AU')), el('div', { class: 'stat-sub' }, pts.availableFrom ? `available from ${fmtDate(pts.availableFrom)}` : 'balance')),
       el('div', {}, el('div', { class: 'stat-label' }, 'Planned to use'), el('div', { class: 'stat-value' }, needed.toLocaleString('en-AU')), el('div', { class: 'stat-sub' }, 'from chosen options below')),

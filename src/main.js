@@ -18,10 +18,10 @@ const VIEWS = {
   overview: { mod: overview, label: 'Overview', ico: '🏔️', tab: true },
   itinerary: { mod: itinerary, label: 'Plan', ico: '📅', tab: true },
   go: { mod: go, label: 'Go', ico: '🧳', tab: true },
-  flights: { mod: flights, label: 'Flights & points', ico: '✈️' },
+  flights: { mod: flights, label: 'Flights', ico: '✈️' },
   stays: { mod: stays, label: 'Stays', ico: '🏨' },
   food: { mod: food, label: 'Food', ico: '🍜' },
-  budget: { mod: budget, label: 'Budget', ico: '💴' },
+  budget: { mod: budget, label: 'Budget', ico: '💰' },
   checklist: { mod: checklist, label: 'Checklists', ico: '✅', tab: true },
   map: { mod: map, label: 'Map', ico: '🗺️' },
   decisions: { mod: decisions, label: 'Decisions', ico: '🧭' },
@@ -62,6 +62,29 @@ function buildNav() {
   tabs.append(el('button', { class: 'tab', type: 'button', dataset: { view: 'more' }, onClick: () => openSidebar() }, el('span', { class: 'tab-ico', 'aria-hidden': 'true' }, '☰'), el('span', {}, 'More')));
 }
 
+// The sidebar's trip picker. Hidden when only one trip is published.
+function renderTripSwitch() {
+  const host = $('trip-switch');
+  if (!host) return;
+  host.innerHTML = '';
+  if (!store.trips || store.trips.length < 2) { host.hidden = true; return; }
+  host.hidden = false;
+  const seg = el('div', { class: 'seg seg-block', role: 'group', 'aria-label': 'Trip' });
+  for (const t of store.trips) {
+    seg.append(el('button', {
+      type: 'button', class: t.id === store.tripId ? 'active' : '', dataset: { trip: t.id },
+      onClick: () => store.switchTrip(t.id),
+    }, `${t.ico ? t.ico + ' ' : ''}${t.short || t.name}`));
+  }
+  host.append(el('div', { class: 'variant-label' }, 'Trip'), seg);
+}
+
+function renderBrand() {
+  const rec = store.tripRecord || {};
+  const mark = $('brand-mark'); if (mark) mark.textContent = rec.mark || rec.ico || '•';
+  const title = $('brand-title'); if (title) title.textContent = rec.name || 'Trip';
+}
+
 function renderVariantSwitch(trip) {
   const host = $('variant-switch');
   if (!host) return;
@@ -90,7 +113,7 @@ function render() {
   current = { id, params };
   main.innerHTML = '';
   $('topbar-heading').textContent = view.label;
-  document.title = `${view.label} · ${store.trip?.meta?.title || 'Japan 2027'}`;
+  document.title = `${view.label} · ${store.trip?.meta?.title || store.tripRecord?.name || 'Trip'}`;
   markActive(id);
   try {
     view.mod.render(main, { store, params, navigate });
@@ -126,6 +149,8 @@ function registerSw() {
 async function boot() {
   applyTheme();
   buildNav();
+  renderTripSwitch();
+  renderBrand();
   $('menu-btn').addEventListener('click', () => ($('sidebar').classList.contains('open') ? closeSidebar() : openSidebar()));
   $('scrim').addEventListener('click', closeSidebar);
   $('sync-pill').addEventListener('click', () => navigate('settings'));
@@ -139,13 +164,16 @@ async function boot() {
   store.subscribe((trip, status) => {
     if (status !== lastStatus) { lastStatus = status; renderSync(status); if (status.state === 'conflict') toast('GitHub has a newer version of the plan.', { action: 'Resolve', onAction: () => navigate('settings'), ms: 10000 }); if (status.state === 'error') toast(status.message, { kind: 'error', ms: 6000 }); }
     if (trip?.meta) {
+      const name = trip.meta.title || store.tripRecord?.name || 'Trip';
       $('brand-dates').textContent = `${fmtDate(trip.meta.start)} to ${fmtDate(trip.meta.end)}`;
       const v = variantList(trip).find((x) => x.id === activeVariant(trip));
-      $('topbar-kicker').textContent = v ? `${trip.meta.title || 'Japan 2027'} · ${v.short || v.name}` : (trip.meta.title || 'Japan 2027');
+      $('topbar-kicker').textContent = v ? `${name} · ${v.short || v.name}` : name;
       renderVariantSwitch(trip);
     }
   });
   await store.init();
+  renderTripSwitch();
+  renderBrand();
   render();
   // Re-render the current view when data changes (e.g. after a sync pulls new data).
   let renderTimer = null;

@@ -1,5 +1,5 @@
-import { el, fmtDate, fmtMoney, todayIso, daysBetween, sortBy, plural, TYPES, fmtTime, activeVariant, variantList, dayView, forVariant } from '../util.js';
-import { section, pill, empty } from '../ui.js';
+import { el, fmtDate, fmtMoney, todayIso, daysBetween, sortBy, plural, uid, TYPES, fmtTime, activeVariant, variantList, dayView, forVariant } from '../util.js';
+import { section, pill, empty, sheet, form, toast, confirmDialog } from '../ui.js';
 import { budgetSummary } from './budget.js';
 import { neededPoints } from './flights.js';
 
@@ -26,17 +26,34 @@ export function render(root, { store, navigate }) {
   const soon = sortBy(openTodos.filter((c) => c.due), (c) => c.due).slice(0, 5);
 
   root.append(el('div', { class: 'card accent', style: { padding: '22px' } },
-    el('div', { class: 'stat-label' }, vName ? `${t.meta.title || 'Japan 2027'} · ${vName}` : (t.meta.title || 'Japan 2027')),
+    el('div', { class: 'stat-label' }, vName ? `${t.meta.title || 'Trip'} · ${vName}` : (t.meta.title || 'Trip')),
     el('div', { class: 'display', style: { fontSize: '44px', lineHeight: '1', margin: '6px 0 4px' } }, big),
     el('div', { class: 'muted' }, sub),
   ));
 
+  const people = t.people || [];
   root.append(el('div', { class: 'grid grid-stats', style: { marginTop: '12px' } },
-    stat('Ski days', skiDays, 'in the plan'),
+    skiDays ? stat('Ski days', skiDays, 'in the plan') : stat('Days away', days.length, 'including travel'),
     stat('Booked', booked, 'confirmed things'),
-    stat('Budget', fmtMoney(bs.total, 'AUD', { compact: true }), `${fmtMoney(bs.booked, 'AUD', { compact: true })} locked in`),
-    stat('Points plan', `${Math.round(neededPoints(t) / 1000)}k`, `of ${Math.round((t.points?.balance || 0) / 1000)}k available`),
+    bs.shared
+      ? stat('Your share', fmtMoney(bs.mine, 'AUD', { compact: true }), `of ${fmtMoney(bs.total, 'AUD', { compact: true })} across the group`)
+      : stat('Budget', fmtMoney(bs.total, 'AUD', { compact: true }), `${fmtMoney(bs.booked, 'AUD', { compact: true })} locked in`),
+    neededPoints(t)
+      ? stat('Points plan', `${Math.round(neededPoints(t) / 1000)}k`, `of ${Math.round((t.points?.balance || 0) / 1000)}k available`)
+      : stat('Going', people.length || 1, people.length > 1 ? 'of you' : 'just you'),
   ));
+
+  // Who's going (group trips only)
+  if (people.length > 1) {
+    const homes = {};
+    for (const p of people) (homes[p.home || 'Other'] ||= []).push(p);
+    root.append(section('Who is going',
+      el('div', { class: 'card' },
+        el('div', { class: 'chips' }, ...people.map((p) => el('button', { class: 'chip', type: 'button', onClick: () => editPerson(store, p) }, `${p.name}${p.home ? ` · ${p.home}` : ''}`))),
+        el('div', { class: 'small muted', style: { marginTop: '10px' } }, Object.entries(homes).map(([h, list]) => `${plural(list.length, 'person', 'people')} from ${h}`).join(' · ')),
+        el('div', { class: 'btn-row', style: { marginTop: '10px' } }, el('button', { class: 'btn btn-ghost btn-sm', type: 'button', onClick: () => editPerson(store, null) }, '+ Add person')),
+      )));
+  }
 
   // Route summary
   const bases = [];
@@ -64,6 +81,26 @@ export function render(root, { store, navigate }) {
         items.length ? el('ul', { class: 'row-list', style: { marginTop: '10px', gap: '6px' } }, ...items.slice(0, 6).map((i) => el('li', { style: { display: 'flex', gap: '10px', alignItems: 'center', fontSize: '14px' } }, el('span', { class: 'mono muted', style: { width: '58px', flex: 'none' } }, fmtTime(i.time) || '—'), el('span', {}, (TYPES[i.type]?.ico || '') + ' ' + i.title)))) : el('p', { class: 'muted', style: { marginTop: '6px' } }, 'Nothing planned yet.'),
       )));
   }
+}
+
+// Names and home airports drive the flight groupings and the cost splits.
+function editPerson(store, p) {
+  const isNew = !p;
+  const v0 = p || { id: uid(), name: '', home: '' };
+  const fm = form([
+    { name: 'name', label: 'Name', value: v0.name || '' },
+    { name: 'home', label: 'Flying from', value: v0.home || '', placeholder: 'e.g. Sunshine Coast', half: true },
+    { name: 'note', label: 'Note', value: v0.note || '', half: true },
+  ]);
+  const actions = [];
+  if (!isNew) actions.push({ label: 'Remove', class: 'btn-danger', keepOpen: true, onClick: async () => { if (await confirmDialog(`Remove ${v0.name || 'this person'} from the trip?`)) { store.update((t) => { t.people = (t.people || []).filter((x) => x.id !== v0.id); }); return true; } return false; } });
+  actions.push('spacer', { label: 'Cancel', class: 'btn-ghost' }, { label: 'Save', class: 'btn-primary', onClick: () => {
+    const v = fm.values();
+    if (!v.name) { toast('Give them a name', { kind: 'error' }); return false; }
+    store.update((t) => { t.people ||= []; const i = t.people.findIndex((x) => x.id === v0.id); const next = { ...v0, ...v }; if (i >= 0) t.people[i] = next; else t.people.push(next); });
+    toast('Saved', { kind: 'ok' });
+  } });
+  sheet({ title: isNew ? 'Add person' : 'Edit person', body: fm.node, actions });
 }
 
 const stat = (label, value, sub) => el('div', { class: 'card stat' }, el('div', { class: 'stat-label' }, label), el('div', { class: 'stat-value' }, String(value)), sub ? el('div', { class: 'stat-sub' }, sub) : null);

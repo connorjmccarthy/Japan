@@ -2,20 +2,54 @@ import { clone, debounce } from './util.js';
 import { getFile, putFile } from './github.js';
 import { encryptJson, decryptJson } from './crypto.js';
 
-const KEYS = { trip: 'jp27:trip', meta: 'jp27:meta', vault: 'jp27:vault', settings: 'jp27:settings' };
-const SEED_URL = new URL('../data/trip.json', import.meta.url).href;
+// The app holds more than one trip. Each trip owns its own seed file, its own
+// copy in this browser and its own encrypted vault; GitHub details (who you are,
+// which repo, your token, the theme) are shared across all of them.
+const APP = { tripId: 'app:tripId', trips: 'app:trips', settings: 'app:settings' };
+const keysFor = (id) => ({ trip: `t:${id}:trip`, meta: `t:${id}:meta`, vault: `t:${id}:vault` });
+const LEGACY = { trip: 'jp27:trip', meta: 'jp27:meta', vault: 'jp27:vault', settings: 'jp27:settings' };
+const REGISTRY_URL = new URL('../data/trips.json', import.meta.url).href;
+const fileUrl = (path) => new URL(`../${path}`, import.meta.url).href;
+
+const FALLBACK_TRIPS = [{ id: 'japan', name: 'Japan 2027', short: 'Japan', ico: '🗾', mark: '雪', file: 'data/trip.json', vault: 'data/vault.enc' }];
 
 const read = (k, fallback) => { try { const v = localStorage.getItem(k); return v ? JSON.parse(v) : fallback; } catch { return fallback; } };
 const write = (k, v) => { try { localStorage.setItem(k, JSON.stringify(v)); return true; } catch { return false; } };
 
-const DEFAULT_SETTINGS = { owner: 'connorjmccarthy', repo: 'Japan', branch: 'main', path: 'data/trip.json', token: '', theme: 'system', autoSync: true, vaultSync: false, vaultPass: '', vaultPath: 'data/vault.enc' };
+const DEFAULT_SETTINGS = { owner: 'connorjmccarthy', repo: 'Japan', branch: 'main', token: '', theme: 'system', autoSync: true, vaultSync: false, vaultPass: '', paths: {} };
+
+// One-time move from the single-trip layout to the per-trip one. Anything the
+// old app saved becomes the Japan trip, so nothing is lost on an existing phone.
+function migrateLegacy() {
+  try {
+    const k = keysFor('japan');
+    if (localStorage.getItem(LEGACY.trip) && !localStorage.getItem(k.trip)) {
+      localStorage.setItem(k.trip, localStorage.getItem(LEGACY.trip));
+      if (localStorage.getItem(LEGACY.meta)) localStorage.setItem(k.meta, localStorage.getItem(LEGACY.meta));
+      if (localStorage.getItem(LEGACY.vault)) localStorage.setItem(k.vault, localStorage.getItem(LEGACY.vault));
+    }
+    if (localStorage.getItem(LEGACY.settings) && !localStorage.getItem(APP.settings)) {
+      const old = JSON.parse(localStorage.getItem(LEGACY.settings)) || {};
+      const { path, vaultPath, ...rest } = old;
+      const next = { ...rest, paths: {} };
+      if (path || vaultPath) next.paths.japan = { file: path || 'data/trip.json', vault: vaultPath || 'data/vault.enc' };
+      localStorage.setItem(APP.settings, JSON.stringify(next));
+    }
+  } catch { /* private mode or blocked storage: carry on with defaults */ }
+}
 
 class Store {
   constructor() {
+    migrateLegacy();
+    this.trips = read(APP.trips, FALLBACK_TRIPS);
+    const chosen = read(APP.tripId, null);
+    this.pickedTrip = !!chosen;            // false until you have actually chosen one
+    this.tripId = chosen || this.trips[0]?.id || 'japan';
+    this.keys = keysFor(this.tripId);
     this.trip = null;
-    this.meta = read(KEYS.meta, { dirty: false, remoteSha: null, lastSyncAt: null, seedUpdatedAt: null, vaultSha: null, vaultDirty: false });
-    this.settings = { ...DEFAULT_SETTINGS, ...read(KEYS.settings, {}) };
-    this.vault = read(KEYS.vault, { fields: {}, itemSecrets: {} });
+    this.meta = read(this.keys.meta, { dirty: false, remoteSha: null, lastSyncAt: null, seedUpdatedAt: null, vaultSha: null, vaultDirty: false });
+    this.settings = { ...DEFAULT_SETTINGS, ...read(APP.settings, {}) };
+    this.vault = read(this.keys.vault, { fields: {}, itemSecrets: {} });
     this.status = { state: 'loading', message: 'Loading' };
     this.listeners = new Set();
     this.pushSoon = debounce(() => this.push().catch(() => {}), 1500);
@@ -24,12 +58,51 @@ class Store {
     this.storageOk = true;
   }
 
+  // ---- trips ---------------------------------------------------------------
+  get tripRecord() { return this.trips.find((x) => x.id === this.tripId) || this.trips[0] || FALLBACK_TRIPS[0]; }
+  filePath() { return this.settings.paths?.[this.tripId]?.file || this.tripRecord.file || 'data/trip.json'; }
+  vaultPath() { return this.settings.paths?.[this.tripId]?.vault || this.tripRecord.vault || 'data/vault.enc'; }
+  seedUrl() { return fileUrl(this.tripRecord.file || 'data/trip.json'); }
+
+  switchTrip(id) {
+    if (!this.trips.some((x) => x.id === id) || id === this.tripId) return;
+    write(APP.tripId, id);
+    this.pickedTrip = true;
+    // A full reload is the honest way to swap trips: every view, the vault and
+    // the sync state all reset together rather than half-updating.
+    location.reload();
+  }
+
+  async loadRegistry() {
+    try {
+      const res = await fetch(`${REGISTRY_URL}?t=${Date.now()}`, { cache: 'no-store' });
+      if (!res.ok) return;
+      const reg = await res.json();
+      if (!Array.isArray(reg.trips) || !reg.trips.length) return;
+      this.trips = reg.trips;
+      write(APP.trips, this.trips);
+      // A device that has never picked a trip follows whatever the registry calls active.
+      const unknown = !this.trips.some((x) => x.id === this.tripId);
+      if (unknown || !this.pickedTrip) {
+        const next = reg.active && this.trips.some((x) => x.id === reg.active) ? reg.active : this.trips[0].id;
+        if (next === this.tripId) return;
+        this.tripId = next;
+        this.keys = keysFor(this.tripId);
+        this.meta = read(this.keys.meta, { dirty: false, remoteSha: null, lastSyncAt: null, seedUpdatedAt: null, vaultSha: null, vaultDirty: false });
+        this.vault = read(this.keys.vault, { fields: {}, itemSecrets: {} });
+        write(APP.tripId, this.tripId);
+        this.pickedTrip = true;
+      }
+    } catch { /* offline: the cached registry is fine */ }
+  }
+
   // ---- lifecycle ----------------------------------------------------------
   async init() {
-    const local = read(KEYS.trip, null);
+    await this.loadRegistry();
+    const local = read(this.keys.trip, null);
     let seed = null;
     try {
-      const res = await fetch(`${SEED_URL}?t=${Date.now()}`, { cache: 'no-store' });
+      const res = await fetch(`${this.seedUrl()}?t=${Date.now()}`, { cache: 'no-store' });
       if (res.ok) seed = await res.json();
     } catch { /* offline, fine */ }
 
@@ -43,16 +116,16 @@ class Store {
       if (seed && !this.meta.dirty && seed.meta?.updatedAt && seed.meta.updatedAt > (local.meta?.updatedAt || '')) {
         this.trip = seed;
         this.meta.seedUpdatedAt = seed.meta.updatedAt;
-        write(KEYS.trip, this.trip);
-        write(KEYS.meta, this.meta);
+        write(this.keys.trip, this.trip);
+        write(this.keys.meta, this.meta);
       }
     } else if (seed) {
       this.trip = seed;
       this.meta.seedUpdatedAt = seed.meta?.updatedAt || null;
-      write(KEYS.trip, this.trip);
-      write(KEYS.meta, this.meta);
+      write(this.keys.trip, this.trip);
+      write(this.keys.meta, this.meta);
     } else {
-      this.trip = emptyTrip();
+      this.trip = emptyTrip(this.tripRecord);
     }
     this.setStatus(this.settings.token ? (this.meta.dirty ? 'pending' : 'synced') : 'local', this.settings.token ? (this.meta.dirty ? 'Changes waiting to sync' : 'Synced with GitHub') : 'Saved on this device');
     this.emit();
@@ -73,7 +146,7 @@ class Store {
     next.meta.updatedAt = new Date().toISOString();
     this.trip = next;
     this.meta.dirty = true;
-    const ok = write(KEYS.trip, this.trip) && write(KEYS.meta, this.meta);
+    const ok = write(this.keys.trip, this.trip) && write(this.keys.meta, this.meta);
     this.storageOk = ok;
     if (!silent) {
       if (this.settings.token && this.settings.autoSync) { this.setStatus('pending', 'Saving to GitHub'); this.pushSoon(); }
@@ -87,28 +160,35 @@ class Store {
     this.trip = trip;
     this.meta.dirty = !markClean;
     if (remoteSha !== undefined) this.meta.remoteSha = remoteSha;
-    write(KEYS.trip, this.trip); write(KEYS.meta, this.meta);
+    write(this.keys.trip, this.trip); write(this.keys.meta, this.meta);
     this.emit();
   }
 
   saveSettings(patch) {
     this.settings = { ...this.settings, ...patch };
-    write(KEYS.settings, this.settings);
+    write(APP.settings, this.settings);
     if (!this.settings.token) this.setStatus('local', 'Saved on this device');
     this.emit();
+  }
+
+  // Per-trip file locations live inside settings so one token can serve many trips.
+  savePaths(patch) {
+    const paths = { ...(this.settings.paths || {}) };
+    paths[this.tripId] = { ...(paths[this.tripId] || {}), ...patch };
+    this.saveSettings({ paths });
   }
 
   // ---- private vault (device-only unless encrypted sync is switched on) ----
   setVault(patch) {
     this.vault = { ...this.vault, ...patch, updatedAt: new Date().toISOString() };
-    write(KEYS.vault, this.vault);
-    this.meta.vaultDirty = true; write(KEYS.meta, this.meta);
+    write(this.keys.vault, this.vault);
+    this.meta.vaultDirty = true; write(this.keys.meta, this.meta);
     if (this.vaultSyncReady()) { this.setVaultStatus('pending', 'Encrypting and saving to GitHub'); this.pushVaultSoon(); }
     this.emit();
   }
   vaultSyncReady() { return !!(this.settings.token && this.settings.vaultSync && this.settings.vaultPass); }
   setVaultStatus(state, message) { this.vaultStatus = { state, message }; this.emit(); }
-  vaultCfg() { return { ...this.cfg(), path: this.settings.vaultPath || 'data/vault.enc' }; }
+  vaultCfg() { return { ...this.cfg(), path: this.vaultPath() }; }
 
   async pushVault() {
     if (!this.vaultSyncReady()) return;
@@ -119,11 +199,11 @@ class Store {
       if (remoteBlob && currentSha !== this.meta.vaultSha) {
         // Another device wrote first: take whichever copy is newer, then continue.
         const remote = await decryptJson(remoteBlob, this.settings.vaultPass);
-        if ((remote.updatedAt || '') > (this.vault.updatedAt || '')) { this.vault = remote; write(KEYS.vault, this.vault); }
+        if ((remote.updatedAt || '') > (this.vault.updatedAt || '')) { this.vault = remote; write(this.keys.vault, this.vault); }
       }
       const blob = await encryptJson(this.vault, this.settings.vaultPass);
       const res = await putFile({ ...this.vaultCfg(), sha: currentSha || undefined, text: JSON.stringify(blob, null, 2) + '\n', message: 'Update encrypted vault' });
-      this.meta.vaultSha = res.sha; this.meta.vaultDirty = false; write(KEYS.meta, this.meta);
+      this.meta.vaultSha = res.sha; this.meta.vaultDirty = false; write(this.keys.meta, this.meta);
       this.setVaultStatus('synced', 'Vault synced (encrypted)');
     } catch (e) { this.setVaultStatus('error', e.message || 'Vault sync failed'); throw e; }
   }
@@ -136,8 +216,8 @@ class Store {
     try {
       const remote = await decryptJson(r.data, this.settings.vaultPass);
       const remoteNewer = (remote.updatedAt || '') > (this.vault.updatedAt || '');
-      if (remoteNewer) { this.vault = remote; write(KEYS.vault, this.vault); this.meta.vaultDirty = false; }
-      this.meta.vaultSha = r.sha; write(KEYS.meta, this.meta);
+      if (remoteNewer) { this.vault = remote; write(this.keys.vault, this.vault); this.meta.vaultDirty = false; }
+      this.meta.vaultSha = r.sha; write(this.keys.meta, this.meta);
       if (!remoteNewer && this.meta.vaultDirty) { await this.pushVault(); return { pushed: true }; }
       this.setVaultStatus('synced', remoteNewer ? 'Vault updated from GitHub' : 'Vault synced (encrypted)');
       this.emit();
@@ -151,7 +231,7 @@ class Store {
   }
 
   // ---- GitHub sync ---------------------------------------------------------
-  cfg() { const { owner, repo, branch, path, token } = this.settings; return { owner, repo, branch, path, token }; }
+  cfg() { const { owner, repo, branch, token } = this.settings; return { owner, repo, branch, path: this.filePath(), token }; }
 
   async pull({ silent = false, force = false } = {}) {
     if (!this.settings.token) throw new Error('No GitHub token configured');
@@ -162,9 +242,9 @@ class Store {
       if (changedRemotely || force) {
         this.replace(remote.data, { markClean: true, remoteSha: remote.sha });
       } else {
-        this.meta.dirty = false; write(KEYS.meta, this.meta);
+        this.meta.dirty = false; write(this.keys.meta, this.meta);
       }
-      this.meta.lastSyncAt = new Date().toISOString(); write(KEYS.meta, this.meta);
+      this.meta.lastSyncAt = new Date().toISOString(); write(this.keys.meta, this.meta);
       this.setStatus('synced', 'Synced with GitHub');
       return { adopted: changedRemotely || force };
     }
@@ -209,9 +289,9 @@ class Store {
         }
       }
       const text = JSON.stringify(this.trip, null, 2) + '\n';
-      const res = await putFile({ ...this.cfg(), sha: currentSha || undefined, text, message: `Update trip plan (${new Date().toISOString().slice(0, 16).replace('T', ' ')})` });
+      const res = await putFile({ ...this.cfg(), sha: currentSha || undefined, text, message: `Update ${this.tripRecord.short || this.tripId} plan (${new Date().toISOString().slice(0, 16).replace('T', ' ')})` });
       this.meta.remoteSha = res.sha; this.meta.dirty = false; this.meta.lastSyncAt = new Date().toISOString();
-      write(KEYS.meta, this.meta);
+      write(this.keys.meta, this.meta);
       this.conflict = null;
       this.setStatus('synced', 'Synced with GitHub');
       return { ok: true };
@@ -235,14 +315,14 @@ class Store {
       this.conflict = null;
       this.setStatus('synced', 'Using the GitHub version');
     } else {
-      this.meta.remoteSha = this.conflict.remote.sha; write(KEYS.meta, this.meta);
+      this.meta.remoteSha = this.conflict.remote.sha; write(this.keys.meta, this.meta);
       this.conflict = null;
       return this.push();
     }
   }
 
   async resetToSeed() {
-    const res = await fetch(`${SEED_URL}?t=${Date.now()}`, { cache: 'no-store' });
+    const res = await fetch(`${this.seedUrl()}?t=${Date.now()}`, { cache: 'no-store' });
     const seed = await res.json();
     this.replace(seed, { markClean: !this.settings.token });
     this.setStatus(this.settings.token ? 'pending' : 'local', this.settings.token ? 'Changes waiting to sync' : 'Reset to published plan');
@@ -257,10 +337,10 @@ class Store {
   }
 }
 
-export function emptyTrip() {
+export function emptyTrip(record = {}) {
   return {
-    meta: { title: 'Japan 2027', start: '2027-02-08', end: '2027-02-16', homeCurrency: 'AUD', jpyPerAud: 100, updatedAt: new Date().toISOString() },
-    days: [], flights: { confirmed: [], options: [] }, points: {}, stays: [], food: [], budget: [], checklist: [], places: [], questions: [], notes: [],
+    meta: { title: record.name || 'New trip', start: record.start || '', end: record.end || '', homeCurrency: 'AUD', rates: {}, updatedAt: new Date().toISOString() },
+    days: [], flights: { confirmed: [], options: [] }, points: {}, people: [], stays: [], food: [], budget: [], checklist: [], places: [], questions: [], notes: [],
   };
 }
 
