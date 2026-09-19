@@ -5,7 +5,7 @@
     "end": "2027-02-17",
     "homeCurrency": "AUD",
     "jpyPerAud": 108,
-    "updatedAt": "2026-09-19T07:36:00.640Z",
+    "updatedAt": "2026-09-19T07:36:03.072Z",
     "version": 1,
     "about": "Solo trip, Plan B (no skiing): Osaka, Koyasan, Takayama, Shirakawa-go and Hirayu Onsen. Confirmed: JQ815 BNE→SYD and the Business Classic Reward SYD→MEL→NRT on 8 Feb. Home Tue 16 Feb on QF80 + QF1256 (booked). Everything else is planned from research done 13 Sep 2026; prices marked est. need checking when booking.",
     "seedIds": {
@@ -2254,7 +2254,7 @@
       {
         "id": "leg-feeder",
         "name": "Home to Sydney, Mon 8 Feb",
-        "chosenOptionId": "opt-qf-bne",
+        "chosenOptionId": "opt-jq815",
         "notes": "BOOKED: Jetstar JQ815 as a Classic Reward, landing 12:20 with six hours to spare. Being Jetstar it lands at T2 and the bag has to be collected and re-checked at T3, which the 6-hour buffer absorbs easily. Other options are kept below for the record.",
         "options": [
           {
