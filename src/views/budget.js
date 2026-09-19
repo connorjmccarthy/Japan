@@ -13,10 +13,14 @@ export function budgetLines(t) {
   const rates = tripRates(t);
   const av = activeVariant(t);
   const lines = [];
-  const add = (l, src) => { const split = splitOf(src); lines.push({ ...l, split, mine: l.aud / split }); };
+  const add = (l, src) => { const split = splitOf(src); const paid = !!src?.paid; lines.push({ ...l, status: paid ? 'booked' : l.status, paid, split, mine: l.aud / split }); };
   for (const leg of t.flights?.legs || []) {
     const o = (leg.options || []).find((x) => x.id === leg.chosenOptionId);
     if (!o) continue;
+    // Once a leg is ticketed it moves to flights.confirmed and is counted from
+    // there. `bookedAs` names that ticket, so the decision record does not get
+    // added a second time. Counting both had every booked flight in twice.
+    if (o.bookedAs && (t.flights?.confirmed || []).some((f) => f.id === o.bookedAs)) continue;
     const cash = o.points ? Number(o.pointsTaxAud) || 0 : Number(o.cashAud) || 0;
     add({ id: `leg-${leg.id}`, category: 'Flights', label: `${leg.name}: ${o.label}${o.points ? ' (points + taxes)' : ''}`, aud: cash, status: o.status === 'booked' ? 'booked' : 'estimate', source: 'flights' }, o);
   }
@@ -39,16 +43,20 @@ export function budgetSummary(t) {
   const booked = lines.filter((l) => l.status === 'booked').reduce((s, l) => s + l.aud, 0);
   const mine = lines.reduce((s, l) => s + l.mine, 0);
   const mineBooked = lines.filter((l) => l.status === 'booked').reduce((s, l) => s + l.mine, 0);
+  // Money that has actually been charged, which is a smaller number than
+  // "booked" whenever something is prepaid later or settled in cash on arrival.
+  const paid = lines.filter((l) => l.paid).reduce((s, l) => s + l.aud, 0);
+  const minePaid = lines.filter((l) => l.paid).reduce((s, l) => s + l.mine, 0);
   // Only a trip with shared lines needs the "your share" half of the page.
   const shared = lines.some((l) => l.split > 1);
-  return { total, booked, mine, mineBooked, shared, lines };
+  return { total, booked, paid, mine, mineBooked, minePaid, shared, lines };
 }
 
 export function render(root, { store, navigate }) {
   const t = store.trip;
   // Reachable only by a stale bookmark; the router sends you to Overview instead.
   if (!store.showMoney) { root.append(el('div', { class: 'callout' }, el('span', { class: 'ico' }, '💰'), el('div', {}, el('strong', {}, 'The budget is switched off. '), 'Turn it back on under Settings if this is your own device.'))); return; }
-  const { total, booked, mine, mineBooked, shared, lines } = budgetSummary(t);
+  const { total, booked, paid, mine, mineBooked, minePaid, shared, lines } = budgetSummary(t);
   const nights = Math.max(1, (t.days || []).length - 1);
   const groupSize = (t.people || []).length;
   root.append(el('div', { class: 'page-head' }, el('div', {}, el('h2', { class: 'page-title' }, 'Budget'), el('p', { class: 'page-sub' }, (variantList(t).find((x) => x.id === activeVariant(t))?.name ? `${variantList(t).find((x) => x.id === activeVariant(t)).name}. ` : '') + 'Pulled automatically from chosen flights, planned stays and itinerary costs, plus anything you add here.')), el('div', { class: 'page-actions' }, el('button', { class: 'btn btn-primary btn-sm', type: 'button', onClick: () => editLine(store, null) }, '+ Add line'))));
@@ -57,7 +65,9 @@ export function render(root, { store, navigate }) {
     shared
       ? stat('Your share', fmtMoney(mine, 'AUD', { compact: true }), `of ${fmtMoney(total, 'AUD', { compact: true })} across the group`)
       : stat('Total plan', fmtMoney(total, 'AUD', { compact: true }), 'AUD, excluding points'),
-    stat('Locked in', fmtMoney(shared ? mineBooked : booked, 'AUD', { compact: true }), shared ? 'your share of booked lines' : 'booked lines'),
+    lines.some((l) => l.paid)
+      ? stat('Paid so far', fmtMoney(shared ? minePaid : paid, 'AUD', { compact: true }), `of ${fmtMoney(shared ? mineBooked : booked, 'AUD', { compact: true })} committed`)
+      : stat('Locked in', fmtMoney(shared ? mineBooked : booked, 'AUD', { compact: true }), shared ? 'your share of booked lines' : 'booked lines'),
     stat('Per day', fmtMoney((shared ? mine : total) / nights, 'AUD', { compact: true }), `across ${nights} nights`),
     neededPoints(t)
       ? stat('Points', `${Math.round(neededPoints(t) / 1000)}k`, `${Math.round(((t.points?.balance || 0) - neededPoints(t)) / 1000)}k left after`)
@@ -96,7 +106,7 @@ export function render(root, { store, navigate }) {
 
   // All lines
   root.append(section('Every line', el('div', { class: 'row-list' }, ...sortBy(lines, (l) => -l.aud).map((l) => el('div', { class: 'row', style: l.manual ? {} : { cursor: 'pointer' }, onClick: () => { if (l.manual) editLine(store, l.manual); else navigate(l.source === 'itinerary' ? `itinerary/${l.date}` : l.source); } },
-    el('div', { class: 'row-main' }, el('div', { class: 'row-title' }, l.label, pill(l.status === 'booked' ? 'booked' : 'planned', l.status === 'booked' ? 'Booked' : 'Estimate'), l.split > 1 ? el('span', { class: 'variant-tag' }, `÷${l.split}`) : null), el('div', { class: 'row-sub' }, `${l.category} · from ${{ flights: 'Flights', stays: 'Stays', itinerary: 'Plan', manual: 'this page' }[l.source]}`)),
+    el('div', { class: 'row-main' }, el('div', { class: 'row-title' }, l.label, pill(l.status === 'booked' ? 'booked' : 'planned', l.paid ? 'Paid' : l.status === 'booked' ? 'Booked' : 'Estimate'), l.split > 1 ? el('span', { class: 'variant-tag' }, `÷${l.split}`) : null), el('div', { class: 'row-sub' }, `${l.category} · from ${{ flights: 'Flights', stays: 'Stays', itinerary: 'Plan', manual: 'this page' }[l.source]}`)),
     el('div', { class: 'row-side' }, el('div', { class: 'big' }, fmtMoney(l.split > 1 ? l.mine : l.aud)), l.split > 1 ? el('div', { class: 'sm' }, `${fmtMoney(l.aud)} ÷ ${l.split}`) : null),
   )))));
 }
@@ -109,7 +119,8 @@ function editLine(store, b) {
   const fm = form([
     { name: 'label', label: 'What', value: v0.label || '', placeholder: 'e.g. Travel insurance (snow cover)' },
     { name: 'category', label: 'Category', type: 'select', options: tripCategories(store.trip), value: v0.category || 'Other', half: true },
-    { name: 'status', label: 'Status', type: 'select', options: [['estimate', 'Estimate'], ['booked', 'Booked / paid']], value: v0.status || 'estimate', half: true },
+    { name: 'status', label: 'Status', type: 'select', options: [['estimate', 'Estimate'], ['booked', 'Booked']], value: v0.status || 'estimate', half: true },
+    { name: 'paid', label: 'Already charged to the card', type: 'checkbox', value: !!v0.paid },
     ...(variantList(store.trip).length > 1 ? [{ name: 'variant', label: 'Applies to', type: 'select', options: variantOptions(store.trip), value: v0.variant || (isNew ? (activeVariant(store.trip) || '') : ''), half: true }] : []),
     { name: 'amount', label: 'Amount', type: 'number', value: v0.amount ?? '', half: true },
     { name: 'currency', label: 'Currency', type: 'select', options: tripCurrencies(store.trip), value: v0.currency || 'AUD', half: true },
@@ -118,6 +129,6 @@ function editLine(store, b) {
   ]);
   const actions = [];
   if (!isNew) actions.push({ label: 'Delete', class: 'btn-danger', keepOpen: true, onClick: async () => { if (await confirmDialog('Delete this budget line?')) { store.update((t) => { t.budget = t.budget.filter((x) => x.id !== v0.id); }); return true; } return false; } });
-  actions.push('spacer', { label: 'Cancel', class: 'btn-ghost' }, { label: 'Save', class: 'btn-primary', onClick: () => { const v = fm.values(); if (!v.label) { toast('Describe the line', { kind: 'error' }); return false; } store.update((t) => { t.budget ||= []; const i = t.budget.findIndex((x) => x.id === v0.id); const next = { ...v0, ...v }; if ('variant' in v && !v.variant) delete next.variant; if (!(Number(next.split) > 1)) delete next.split; else next.split = Math.round(Number(next.split)); if (i >= 0) t.budget[i] = next; else t.budget.push(next); }); toast('Saved', { kind: 'ok' }); } });
+  actions.push('spacer', { label: 'Cancel', class: 'btn-ghost' }, { label: 'Save', class: 'btn-primary', onClick: () => { const v = fm.values(); if (!v.label) { toast('Describe the line', { kind: 'error' }); return false; } store.update((t) => { t.budget ||= []; const i = t.budget.findIndex((x) => x.id === v0.id); const next = { ...v0, ...v }; if (next.paid) next.status = 'booked'; else delete next.paid; if ('variant' in v && !v.variant) delete next.variant; if (!(Number(next.split) > 1)) delete next.split; else next.split = Math.round(Number(next.split)); if (i >= 0) t.budget[i] = next; else t.budget.push(next); }); toast('Saved', { kind: 'ok' }); } });
   sheet({ title: isNew ? 'Add budget line' : 'Edit budget line', body: fm.node, actions });
 }

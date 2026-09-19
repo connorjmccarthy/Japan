@@ -55,9 +55,10 @@ export function editStay(store, s) {
     { name: 'notes', label: 'Notes', type: 'textarea', value: v0.notes || '' },
     { name: 'secret', label: 'Private: confirmation number', value: store.vault.itemSecrets?.[v0.id] || '', hint: 'Kept on this device only.' },
     { name: 'privateRoom', label: 'Private room (not shared)', type: 'checkbox', value: v0.privateRoom !== false },
+    ...(store.showMoney ? [{ name: 'paid', label: 'Already charged to the card', type: 'checkbox', value: !!v0.paid }] : []),
   ]);
   const actions = [];
   if (!isNew) actions.push({ label: 'Delete', class: 'btn-danger', keepOpen: true, onClick: async () => { if (await confirmDialog('Delete this stay?')) { store.update((t) => { t.stays = t.stays.filter((x) => x.id !== v0.id); }); store.setItemSecret(v0.id, ''); return true; } return false; } });
-  actions.push('spacer', { label: 'Cancel', class: 'btn-ghost' }, { label: 'Save', class: 'btn-primary', onClick: () => { const v = fm.values(); if (!v.name) { toast('Give it a name', { kind: 'error' }); return false; } const { secret, ...rest } = v; store.update((t) => { t.stays ||= []; const i = t.stays.findIndex((x) => x.id === v0.id); const next = { ...v0, ...rest }; if ('variant' in rest && !rest.variant) delete next.variant; if ('split' in rest) { if (Number(rest.split) > 1) next.split = Math.round(Number(rest.split)); else delete next.split; } if (i >= 0) t.stays[i] = next; else t.stays.push(next); }); store.setItemSecret(v0.id, secret); toast('Saved', { kind: 'ok' }); } });
+  actions.push('spacer', { label: 'Cancel', class: 'btn-ghost' }, { label: 'Save', class: 'btn-primary', onClick: () => { const v = fm.values(); if (!v.name) { toast('Give it a name', { kind: 'error' }); return false; } const { secret, ...rest } = v; store.update((t) => { t.stays ||= []; const i = t.stays.findIndex((x) => x.id === v0.id); const next = { ...v0, ...rest }; if (!next.paid) delete next.paid; if ('variant' in rest && !rest.variant) delete next.variant; if ('split' in rest) { if (Number(rest.split) > 1) next.split = Math.round(Number(rest.split)); else delete next.split; } if (i >= 0) t.stays[i] = next; else t.stays.push(next); }); store.setItemSecret(v0.id, secret); toast('Saved', { kind: 'ok' }); } });
   sheet({ title: isNew ? 'Add stay' : 'Edit stay', body: fm.node, actions });
 }

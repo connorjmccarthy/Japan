@@ -635,6 +635,57 @@ test.describe('go mode', () => {
   });
 });
 
+test.describe('what has actually been paid', () => {
+  test('paid lines add up to the card statement, and a booked flight is counted once', async ({ page }) => {
+    await boot(page, '#/budget');
+    const r = await page.evaluate(async () => {
+      const m = await import('/src/views/budget.js');
+      const t = await (await fetch('/data/trip.json')).json();   // the shipped plan
+      const { total, booked, paid, lines } = m.budgetSummary(t);
+      const flights = lines.filter((l) => l.category === 'Flights');
+      const round = (n) => Math.round(n * 100) / 100;
+      return {
+        paid: round(paid),
+        flights: round(flights.reduce((s, l) => s + l.aud, 0)),
+        // a leg's chosen option and the ticket it became must not both appear
+        qf80: flights.filter((l) => /QF80/.test(l.label)).length,
+        paidNotBooked: lines.filter((l) => l.paid && l.status !== 'booked').length,
+        ordered: paid <= booked && booked <= total,
+      };
+    });
+    expect(r.paid).toBe(2054.57);      // matches the card statement, to the cent
+    expect(r.flights).toBe(1332.04);
+    expect(r.qf80).toBe(1);
+    expect(r.paidNotBooked).toBe(0);   // paying for something implies booking it
+    expect(r.ordered).toBe(true);
+  });
+
+  test('a plan with nothing paid reports zero, and counts a booked leg that has no ticket yet', async ({ page }) => {
+    await boot(page, '#/budget');
+    const r = await page.evaluate(async () => {
+      const m = await import('/src/views/budget.js');
+      const t = {
+        meta: { jpyPerAud: 110 },
+        stays: [{ id: 's', name: 'Somewhere', status: 'booked', pricePerNightAud: 100, nights: 2 }],
+        // booked, but bookedAs points at a ticket that does not exist, so it still counts
+        flights: { confirmed: [], legs: [{ id: 'l', name: 'Out', chosenOptionId: 'o', options: [{ id: 'o', label: 'X', cashAud: 300, status: 'booked', bookedAs: 'nope' }] }] },
+      };
+      const { total, booked, paid } = m.budgetSummary(t);
+      return { total, booked, paid };
+    });
+    expect(r).toEqual({ total: 500, booked: 500, paid: 0 });
+  });
+
+  test('the Budget page shows what is paid against what is committed', async ({ page }) => {
+    await boot(page, '#/budget');
+    const tile = page.locator('.stat', { hasText: 'Paid so far' });
+    await expect(tile).toBeVisible();
+    await expect(tile.locator('.stat-sub')).toContainText('committed');
+    // and a paid line says Paid rather than Booked
+    await expect(page.locator('.row-title', { hasText: 'QF80' }).locator('.pill', { hasText: 'Paid' })).toBeVisible();
+  });
+});
+
 test.describe('the Osaka hotel decision', () => {
   test('the Osaka hotel is picked once, and the arrival day names it', async ({ page }) => {
     // The hotel is chosen on Stays, but the arrival, the USJ morning and both
