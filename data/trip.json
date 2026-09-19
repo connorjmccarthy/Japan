@@ -5,7 +5,7 @@
     "end": "2027-02-17",
     "homeCurrency": "AUD",
     "jpyPerAud": 108,
-    "updatedAt": "2026-09-18T06:02:36Z",
+    "updatedAt": "2026-09-19T06:45:58.396Z",
     "version": 1,
     "about": "Solo trip, Plan B (no skiing): Osaka, Koyasan, Takayama, Shirakawa-go and Hirayu Onsen. Confirmed: JQ815 BNE→SYD and the Business Classic Reward SYD→MEL→NRT on 8 Feb. Home Tue 16 Feb on QF80 + QF1256 (booked). Everything else is planned from research done 13 Sep 2026; prices marked est. need checking when booking."
   },
@@ -2863,18 +2863,6 @@
       "where": "Depachika liquor floors at Hankyu or Daimaru in Umeda, any Don Quijote, or a neighbourhood liquor shop",
       "why": "The best spritz base Japan makes and the one you cannot buy properly at home. Sharp and floral rather than sweet like limoncello, so it holds up over prosecco and soda instead of drowning in it. Look for Kimino, Tosa Buntan, or whatever regional one the shop pushes.",
       "notes": "Around ¥1,500 to ¥3,000. Check the label for the alcohol strength: some yuzushu is 8% and closer to a wine, some is 20% and a proper liqueur. You want the stronger one for spritzes."
-    },
-    {
-      "id": "sv2",
-      "category": "Spirits and bar",
-      "name": "Craft umeshu from a Takayama brewery",
-      "ml": 720,
-      "priceBand": "¥¥",
-      "status": "planned",
-      "variant": "culture",
-      "where": "Funasaka or Harada on Sanmachi-suji, during the sake tasting on Mon 15 Feb",
-      "why": "Choya sits in every Australian bottle shop, so it is a wasted kilo. A brewery's own umeshu, especially an aged one or a cloudy nigori, is a different drink: less syrup, more stone fruit and acid. Umeshu with soda and a slice of lemon is the house spritz, and it goes in a glass with sparkling wine just as happily.",
-      "notes": "They will let you taste before you buy, which is the whole point of being there."
     },
     {
       "id": "sv3",
