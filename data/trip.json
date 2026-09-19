@@ -5,7 +5,7 @@
     "end": "2027-02-17",
     "homeCurrency": "AUD",
     "jpyPerAud": 108,
-    "updatedAt": "2026-09-19T07:27:50Z",
+    "updatedAt": "2026-09-19T07:36:28Z",
     "version": 1,
     "about": "Solo trip, Plan B (no skiing): Osaka, Koyasan, Takayama, Shirakawa-go and Hirayu Onsen. Confirmed: JQ815 BNE→SYD and the Business Classic Reward SYD→MEL→NRT on 8 Feb. Home Tue 16 Feb on QF80 + QF1256 (booked). Everything else is planned from research done 13 Sep 2026; prices marked est. need checking when booking.",
     "seedIds": {
@@ -41,6 +41,7 @@
         "ck6b",
         "ck6c",
         "ck7",
+        "ck8b",
         "ck8",
         "ck9",
         "ck10",
@@ -203,6 +204,7 @@
         "pb1",
         "pb2",
         "pb3",
+        "pb16",
         "pb13",
         "pb14",
         "pb15",
@@ -323,6 +325,7 @@
         "c15f",
         "c15g",
         "c15h",
+        "c15p",
         "c15i",
         "c15n",
         "c15j",
@@ -664,11 +667,11 @@
           "id": "c6b",
           "time": "16:35",
           "type": "activity",
-          "title": "Knife at Doguyasuji (only if you leave USJ at 16:00)",
+          "title": "Knife at Doguyasuji (FALLBACK ONLY: the knife is now planned for Takayama)",
           "status": "idea",
           "location": "Sennichimae Doguyasuji arcade; Sennichimae line one stop to Nipponbashi then 3 min, or 13 min on foot from the hotel",
           "endTime": "17:50",
-          "notes": "THE ONLY WINDOW ON THE TRIP. Doguyasuji is a 150 m kitchenware arcade three minutes off Dotonbori, about 50 shops, and they trade 10:00 to 18:00. Tuesday evening is Umeda, tonight you do not reach Minami until 20:45, and on Thursday you leave at nine with the suitcase already couriered. So it is this, or no knife. The cost: two hours at the tail end of USJ, which with an Express Pass is the part you will have already done. Universal City to Namba is about 30 min via Nishikujo, so a 16:00 exit puts you in the arcade by about 16:40 with well over an hour to choose. Drop it at the hotel on the way to Tsuruhashi. See Souvenirs for what to buy and why it must be checked luggage.",
+          "notes": "ONLY IF TAKAYAMA FALLS THROUGH, or if you are running Plan A and never get to Takayama at all. The knife is now planned for Mon 15 Feb at Konoha in the Takayama old town, which is a specialist shop in the prefecture that makes the things, with the suitcase waiting at the hotel the same afternoon. This stop costs you two hours of USJ and it is the only Osaka window, so it is worth knowing about rather than doing. Doguyasuji is a 150 m kitchenware arcade three minutes off Dotonbori, about 50 shops, and they trade 10:00 to 18:00. Tuesday evening is Umeda, tonight you do not reach Minami until 20:45, and on Thursday you leave at nine with the suitcase already couriered. So it is this, or no knife. The cost: two hours at the tail end of USJ, which with an Express Pass is the part you will have already done. Universal City to Namba is about 30 min via Nishikujo, so a 16:00 exit puts you in the arcade by about 16:40 with well over an hour to choose. Drop it at the hotel on the way to Tsuruhashi. See Souvenirs for what to buy and why it must be checked luggage.",
           "placeId": "p30"
         },
         {
@@ -1865,13 +1868,27 @@
           "placeId": "pb14"
         },
         {
+          "id": "c15p",
+          "time": "13:00",
+          "type": "activity",
+          "title": "Buy the kitchen knife at Konoha, the blade specialist on Shimo-Sannomachi",
+          "status": "planned",
+          "location": "是ノ刃 Konoha, 115 Shimo-Sannomachi, in the old town; 10:00-16:00, CLOSED TUESDAYS AND WEDNESDAYS",
+          "endTime": "13:50",
+          "cost": 15000,
+          "currency": "JPY",
+          "notes": "THE BETTER PLACE TO BUY IT, and the reason the Osaka stop is now only a fallback. Gifu is Seki, which has been forging blades for 800 years and is where most of Japan’s good stainless gyuto and santoku are made, so this is the knife’s home prefecture rather than a tourist arcade. Konoha is a specialist, not a souvenir shop: it stocks Seki, Sakai, Echizen, Tsubame-Sanjo, Banshu Miki and Tosa, it sharpens and re-handles, the couple who run it will talk you through the steel and the reviews say they are patient about it in English, and it is tax free. And the logistics are free: the suitcase comes back to you at the hotel this afternoon, so the knife goes straight into it tonight with no carrying and no giving up two hours of Universal. Monday 15 Feb is open; check their Instagram, @konoha.hidatakayama, in the week before, because winter hours in the old town move around. MUST be checked luggage, never hand luggage.",
+          "variant": "culture",
+          "placeId": "pb16"
+        },
+        {
           "id": "c15i",
-          "time": "13:30",
+          "time": "14:00",
           "type": "activity",
           "title": "Sake tasting in the old town: Funasaka (tastings 13:00-16:00) and Harada",
           "status": "planned",
           "location": "Sanmachi-suji; look for the cedar balls hanging over the doors",
-          "endTime": "15:00",
+          "endTime": "15:15",
           "cost": 1000,
           "currency": "JPY",
           "notes": "Funasaka has a tasting corner with masu cups and a courtyard; Harada is two doors along and older. A few hundred yen a pour. Buy one bottle to carry home in the suitcase.",
@@ -1880,12 +1897,12 @@
         },
         {
           "id": "c15n",
-          "time": "14:45",
+          "time": "15:15",
           "type": "stay",
           "title": "Check in again, this time the Sakura room, and get the suitcase back",
           "status": "planned",
           "location": "Temple Hotel Takayama Zenkoji",
-          "endTime": "15:15",
+          "endTime": "15:45",
           "cost": 0,
           "currency": "JPY",
           "notes": "Same building, different and smaller room (12 m²), because this is a separate booking. Collect the suitcase from their store room, put the sake bottle in it, and repack properly tonight rather than tomorrow: the Hida leaves at 9:40 and it is a travel day all the way to Narita.",
@@ -1894,7 +1911,7 @@
         },
         {
           "id": "c15j",
-          "time": "15:00",
+          "time": "15:45",
           "type": "activity",
           "title": "Afternoon, your call: rest at the hotel, the Higashiyama temple walk, Takayama Jinya or the Hida Folk Village",
           "status": "idea",
@@ -1944,7 +1961,7 @@
         "culture": {
           "title": "Beef day in Takayama (free-roam, all optional)",
           "base": "Takayama",
-          "notes": "A themed free day: morning market, beef sushi in the old street, a butcher’s lunch, sake tasting, and aged Hida beef yakiniku at night. Everything is within a 15-minute walk of the hotel and nothing starts before 9:30. If you would rather leave town, the Okuhida or Gero onsen options replace the daytime and the yakiniku still happens.",
+          "notes": "A themed free day: morning market, beef sushi in the old street, a butcher’s lunch, the knife shop, sake tasting, and aged Hida beef yakiniku at night. It is also the day the suitcase comes back to you, so this is where the trip’s bulky shopping belongs. Everything is within a 15-minute walk of the hotel and nothing starts before 9:30. If you would rather leave town, the Okuhida or Gero onsen options replace the daytime and the yakiniku still happens.",
           "walk": "8,000-11,000 steps (bus back, then market, old street and breweries on foot)"
         }
       }
@@ -2570,7 +2587,7 @@
     },
     {
       "title": "Getting it home, given how this trip is packed",
-      "body": "The suitcase leaves Osaka by courier on the morning of Wednesday the 11th and you do not see it again until Takayama on the 12th. So everything bought in Osaka, which is the USJ merch, the knife, the drugstore haul and Nintendo Osaka, has to be bought on the 9th or the 10th and packed that night. After the 11th you are carrying what you buy, which is an argument for Takayama purchases being small: a bottle, a charm, a masu cup. Bottles go in the checked bag wrapped in clothing, in the middle, never against the shell. The knife must be checked. Leave a bit of space: you will buy more than you planned to."
+      "body": "The suitcase leaves Osaka by courier on the morning of Wednesday the 11th and you do not see it again until Takayama on the 12th. So everything bought in Osaka, which is the USJ merch, the drugstore haul and Nintendo Osaka, has to be bought on the 9th or the 10th and packed that night. In Takayama the suitcase is in the hotel’s store room, which is better than it sounds: you have it on the night of the 12th and again from the Monday afternoon, so anything bought on those two days goes straight in. The only days you are genuinely carrying what you buy are the 13th and 14th, Shirakawa-go and Hirayu, which is why the knife is planned for the Monday and not the Saturday. Bottles go in the checked bag wrapped in clothing, in the middle, never against the shell. The knife must be checked. Leave a bit of space: you will buy more than you planned to."
     }
   ],
   "points": {
@@ -3373,9 +3390,9 @@
       "name": "A Japanese kitchen knife",
       "priceBand": "¥¥¥",
       "status": "planned",
-      "where": "Doguyasuji, the covered kitchenware arcade a few minutes from Dotonbori",
-      "why": "The single best thing most people bring back from Japan. Doguyasuji is three minutes off Dotonbori, which is where the Wednesday night ends. A Sakai-forged gyuto or santoku runs ¥8,000 to ¥25,000, they will sharpen it and often engrave your name in kanji while you wait, and it will outlive you.",
-      "notes": "TIMING IS THE PROBLEM, not the money. Doguyasuji shops shut at 18:00, and the plan only reaches Minami at 20:45 on the Wednesday. The slot is now in the itinerary as an optional item: leave USJ at 16:00 instead of 18:00 on Wed 10 Feb and you are in the arcade by 16:35 with 85 minutes, with the hotel on the way back to drop it. That is the only window, because Tuesday evening is Umeda and Thursday you leave at nine with the suitcase already gone. MUST go in the checked bag. A knife in hand luggage gets confiscated at Kansai or Narita and nobody will post it on for you. Buy it in Osaka before the 11th so it rides in the suitcase with the courier. If you have never used a carbon-steel knife, buy stainless: carbon rusts if you leave it wet and most people do."
+      "where": "Konoha (是ノ刃), 115 Shimo-Sannomachi in the Takayama old town. 10:00-16:00, closed Tue and Wed. Planned for Mon 15 Feb at 13:00",
+      "why": "The single best thing most people bring back from Japan, and Takayama turns out to be a better place to buy it than Osaka. Gifu is Seki, 800 years of blade forging and the source of most of Japan’s good stainless gyuto and santoku, so you are buying in the prefecture that makes them. Konoha is a specialist rather than a souvenir shop: Seki, Sakai, Echizen, Tsubame-Sanjo, Miki and Tosa on the shelves, sharpening and re-handling in the back, a couple who will talk you through the steel in English, and tax free. A gyuto or santoku runs ¥8,000 to ¥25,000 and will outlive you.",
+      "notes": "THE TIMING IS THE WHOLE ARGUMENT. In Osaka the only window was leaving Universal two hours early on the Wednesday, because Doguyasuji shuts at 18:00 and the suitcase is couriered away on the Thursday. In Takayama it costs nothing: the suitcase comes back to the hotel on the Monday afternoon, so you buy at 13:00 and pack it that evening. Two things to do first: check @konoha.hidatakayama on Instagram in the week before, because winter hours in the old town move around, and know that Monday 15 Feb is not one of their closed days (Tue and Wed are). If it is shut, the Osaka fallback is still in the plan for Wed 10 Feb. MUST go in the checked bag. A knife in hand luggage gets confiscated at Kansai or Narita and nobody will post it on for you. Buy it in Osaka before the 11th so it rides in the suitcase with the courier. If you have never used a carbon-steel knife, buy stainless: carbon rusts if you leave it wet and most people do."
     },
     {
       "id": "sv13",
@@ -3517,7 +3534,7 @@
     {
       "id": "bg6",
       "category": "Other",
-      "label": "Onsen towels, ski socks, souvenirs, contingency",
+      "label": "Onsen towels, ski socks, small souvenirs, contingency (the knife is its own line on the 15th)",
       "amount": 200,
       "currency": "AUD",
       "status": "estimate"
@@ -3620,6 +3637,13 @@
       "group": "Points and bookings",
       "text": "Book Brisbane AIRPARK online for 8-17 Feb",
       "due": "2026-11-30"
+    },
+    {
+      "id": "ck8b",
+      "group": "Before you go",
+      "text": "Check the Takayama knife shop is open on Mon 15 Feb",
+      "due": "2027-02-08",
+      "notes": "Konoha (是ノ刃), 115 Shimo-Sannomachi. Instagram @konoha.hidatakayama, or phone the shop. Normal hours are 10:00-16:00, closed Tuesdays and Wednesdays, so a Monday is fine in principle. The reason to check early rather than on the day: winter hours in the Takayama old town move around, and if they are shut your only other window is leaving Universal two hours early on Wed 10 Feb, which you have to decide before the Wednesday."
     },
     {
       "id": "ck8",
@@ -4212,6 +4236,16 @@
       "lat": 36.142,
       "lng": 137.259,
       "variant": "culture"
+    },
+    {
+      "id": "pb16",
+      "name": "Konoha (是ノ刃), blade specialist",
+      "kind": "other",
+      "town": "Takayama",
+      "lat": 36.1436,
+      "lng": 137.26,
+      "variant": "culture",
+      "notes": "115 Shimo-Sannomachi. 10:00-16:00, closed Tue and Wed. Knives from Seki, Sakai, Echizen, Tsubame-Sanjo, Miki and Tosa; sharpening and re-handling."
     },
     {
       "id": "pb13",

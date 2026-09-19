@@ -128,7 +128,7 @@ test.describe('money and lists', () => {
   test('checklist add and tick', async ({ page }) => {
     await boot(page, '#/checklist');
     await page.getByRole('button', { name: '+ Add', exact: true }).click();
-    await page.getByLabel('To do').fill('Test: buy eSIM');
+    await page.getByLabel('To do', { exact: true }).fill('Test: buy eSIM');
     await page.getByRole('button', { name: 'Save', exact: true }).click();
     const row = page.locator('.check', { hasText: 'Test: buy eSIM' });
     await expect(row).toBeVisible();
@@ -185,7 +185,7 @@ test.describe('sync safety', () => {
     await boot(page, '#/checklist');
     // make a local edit so the device copy is "dirty"
     await page.getByRole('button', { name: '+ Add', exact: true }).click();
-    await page.getByLabel('To do').fill('Local-only edit');
+    await page.getByLabel('To do', { exact: true }).fill('Local-only edit');
     await page.getByRole('button', { name: 'Save', exact: true }).click();
     // fake GitHub: the repo already holds a different plan
     const remote = { meta: { title: 'Remote plan', start: '2027-02-08', end: '2027-02-17', jpyPerAud: 108, updatedAt: '2030-01-01T00:00:00Z' }, days: [], flights: { confirmed: [], legs: [], lounges: [] }, points: {}, stays: [], food: [], budget: [], checklist: [], places: [], questions: [] };
