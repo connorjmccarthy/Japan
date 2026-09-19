@@ -302,15 +302,24 @@ test.describe('vault encryption', () => {
 test.describe('souvenirs', () => {
   test('the page counts the duty-free alcohol allowance and warns when it is blown', async ({ page }) => {
     const errors = await boot(page, '#/souvenirs');
+    const meter = page.locator('.card', { hasText: 'Duty-free alcohol' });
+    const plan = async (name) => {
+      await page.locator('.check-text', { hasText: name }).click();
+      await page.getByLabel('Status').selectOption('planned');
+      await page.getByRole('button', { name: 'Save', exact: true }).click();
+    };
     await expect(page.locator('#topbar-heading')).toHaveText('Souvenirs');
-    // Seeded list sits just under the 2.25 L an adult may bring into Australia.
-    await expect(page.locator('.card', { hasText: 'Duty-free alcohol' })).toContainText('2.23 L of 2.25 L');
-    await expect(page.locator('.meter-fill.over')).toHaveCount(0);
-    // Putting the gin on the list tips it over, and the page says so.
-    await page.locator('.check-text', { hasText: 'Ki No Bi' }).click();
-    await page.getByLabel('Status').selectOption('planned');
-    await page.getByRole('button', { name: 'Save', exact: true }).click();
-    await expect(page.locator('.card', { hasText: 'Duty-free alcohol' })).toContainText('2.93 L of 2.25 L');
+    // Seeded list leaves room: yuzushu, sake and the bitters come to 1.51 L.
+    await expect(meter).toContainText('1.51 L of 2.25 L');
+    await expect(page.locator('.meter-fill.near, .meter-fill.over')).toHaveCount(0);
+    // The gin fits, but uses the lot, so the page says nothing else will.
+    await plan('Ki No Bi');
+    await expect(meter).toContainText('2.21 L of 2.25 L');
+    await expect(page.locator('.meter-fill.near')).toHaveCount(1);
+    await expect(meter).toContainText('nothing else fits');
+    // One more bottle blows it, and the page says that too.
+    await plan('Shiso or sakura');
+    await expect(meter).toContainText('2.71 L of 2.25 L');
     await expect(page.locator('.meter-fill.over')).toHaveCount(1);
     await expect(page.locator('#main')).toContainText('Over the limit');
     expect(errors).toEqual([]);
@@ -323,7 +332,7 @@ test.describe('souvenirs', () => {
     await row.locator('input[type=checkbox]').check();
     await expect(row).toHaveClass(/done/);
     // Bought still counts against the allowance: it is in your bag either way.
-    await expect(page.locator('.card', { hasText: 'Duty-free alcohol' })).toContainText('2.23 L');
+    await expect(page.locator('.card', { hasText: 'Duty-free alcohol' })).toContainText('1.51 L');
     const status = await page.evaluate((k) => JSON.parse(localStorage.getItem(k)).souvenirs.find((s) => s.id === 'sv1').status, TRIP_KEY);
     expect(status).toBe('bought');
   });

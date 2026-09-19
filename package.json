@@ -7,7 +7,7 @@
   "scripts": {
     "start": "python3 -m http.server 8123",
     "test": "playwright test",
-    "check": "node scripts/check-syntax.mjs"
+    "check": "node scripts/check-syntax.mjs && python3 scripts/test-carry.py"
   },
   "devDependencies": {
     "@playwright/test": "1.56.1"

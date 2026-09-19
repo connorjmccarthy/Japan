@@ -19,7 +19,66 @@
       "Flights",
       "Other"
     ],
-    "about": "Your own four days in Ubud after the group flies home on the 11th. Private: it is marked unshared, so nobody holding the Bali link sees it. Two things are still missing, the hotel details and a flight home."
+    "about": "Your own four days in Ubud after the group flies home on the 11th. Private: it is marked unshared, so nobody holding the Bali link sees it. Two things are still missing, the hotel details and a flight home.",
+    "seedIds": {
+      "checklist": [
+        "uk1",
+        "uk2",
+        "uk3",
+        "uk4",
+        "uk5",
+        "uk6"
+      ],
+      "food": [
+        "uf1",
+        "uf2",
+        "uf3"
+      ],
+      "stays": [
+        "s-ubud"
+      ],
+      "questions": [
+        "uq1"
+      ],
+      "places": [
+        "r1",
+        "r2",
+        "r3",
+        "r4",
+        "r5",
+        "r6",
+        "r7",
+        "r8",
+        "r9"
+      ],
+      "items": [
+        "u1",
+        "u2",
+        "u3",
+        "u4",
+        "u5",
+        "u6",
+        "u7",
+        "u8",
+        "u9",
+        "u10",
+        "u11",
+        "u12",
+        "u13",
+        "u14",
+        "u15",
+        "u16",
+        "u17",
+        "u18",
+        "u19",
+        "u20",
+        "u21",
+        "u22",
+        "u23",
+        "u24",
+        "u25"
+      ]
+    }
   },
   "days": [
     {
