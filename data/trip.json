@@ -5,7 +5,7 @@
     "end": "2027-02-17",
     "homeCurrency": "AUD",
     "jpyPerAud": 108,
-    "updatedAt": "2026-09-18T06:02:36Z",
+    "updatedAt": "2026-09-19T06:58:23Z",
     "version": 1,
     "about": "Solo trip, Plan B (no skiing): Osaka, Koyasan, Takayama, Shirakawa-go and Hirayu Onsen. Confirmed: JQ815 BNE→SYD and the Business Classic Reward SYD→MEL→NRT on 8 Feb. Home Tue 16 Feb on QF80 + QF1256 (booked). Everything else is planned from research done 13 Sep 2026; prices marked est. need checking when booking."
   },
@@ -165,20 +165,21 @@
           "type": "transfer",
           "title": "Shin-Osaka → hotel",
           "status": "planned",
-          "location": "JR local to Osaka / Fukushima, or Yumesaki line to Universal City",
-          "endTime": "15:00",
+          "location": "Midosuji line south; Nakatsu is 2 stops and about 5 min",
+          "endTime": "14:40",
           "cost": 300,
           "currency": "JPY",
           "placeId": "p8"
         },
         {
           "id": "b6",
-          "time": "15:00",
+          "time": "14:40",
           "type": "stay",
-          "title": "Check in, Osaka (2 nights)",
+          "title": "Drop the bag at the hotel (check-in may not be until 16:00)",
           "status": "planned",
           "location": "See Stays for the shortlist",
-          "notes": "Solo, private room. Business hotels around Fukushima or Tenma are quiet, cheap and 15-25 min from USJ by train.",
+          "endTime": "15:00",
+          "notes": "WATCH THE CHECK-IN TIME. Toyoko Inn is 16:00 for ordinary guests and 15:00 only for Club Card members, and check-out is 10:00. If you have not bought the card, you cannot get into the room before the Nintendo store at 16:00, so plan on leaving the suitcase at reception, doing the paperwork and paying then, and coming back to the room in the evening. They will hold the bag on the day of check-in without any fuss. The card is ¥1,500 once and also buys 5% off and a longer booking window, which on this stay roughly pays for itself and then keeps paying if you ever use the chain again.",
           "placeId": "p27"
         },
         {
@@ -2249,22 +2250,37 @@
       "checkOut": "2027-02-11",
       "distance": "Kitahama: 20 min to Universal City by train; quiet business district by the river",
       "url": "https://www.booking.com/",
-      "notes": "Dormy Inns are the solo traveller’s friend: free late-night ramen, big bath, small clean rooms. Kitahama is calm and central."
+      "notes": "The obvious step up, and half-wasted on you. Dormy Inn sells itself on the big communal bath, and Dormy Inn bans visible tattoos in it, so the main reason to pay the extra A$40 a night is off the table before you arrive. What is left is a nicer room, the free late-night ramen, and a calm central location at Kitahama, which is pleasant but not A$80 over two nights better than Nakatsu. Worth it only if the tattoo policy at this specific branch turns out to be relaxed, which is worth one email to ask."
     },
     {
       "id": "s-os2",
       "name": "Toyoko Inn Osaka Umeda Nakatsu No.1",
       "town": "Osaka",
-      "type": "Budget business hotel",
+      "type": "Budget business hotel, 170 rooms",
       "status": "shortlist",
       "pricePerNightAud": 100,
       "nights": 2,
-      "priceNote": "est. Feb; verify",
+      "priceNote": "¥6,500-9,500 a night; est. Feb, verify",
       "checkIn": "2027-02-09",
       "checkOut": "2027-02-11",
-      "distance": "Nakatsu: 10 min walk to Nakazakicho, 20 min to USJ",
+      "distance": "1 min to Nakatsu (Midosuji line), 10 min walk to JR Osaka Station",
       "url": "https://www.toyoko-inn.com/eng/",
-      "notes": "Cheapest reliable option. Free breakfast (onigiri, miso soup). Book direct; the chain often has Feb availability when others are full."
+      "notes": "THE RECOMMENDATION, and it holds up against all three days. Shin-Osaka to Nakatsu is two Midosuji stops, about 5 minutes, so the jet-lagged arrival is as easy as it gets. Nakatsu to Namba for the Nankai on the 11th is one direct Midosuji ride, about 12 minutes, and the last trains back from Namba after the Ura-Namba bars run to around midnight. The 9 Feb evening, Nintendo Osaka at Daimaru Umeda, Grenier, Nakazakicho and Tenma, is all on the doorstep. The one weak spot is the USJ morning: you walk 10 minutes to JR Osaka Station, then it is 12 minutes and ¥200 direct to Universal City from platform 1, so leave about 06:45 for the 07:45 gates. Free breakfast (onigiri, miso soup, salad) from around 06:30, which is early enough to be useful that morning. Rooms are genuinely small, 11 to 13 m², which is tight with a big suitcase. Check-in 16:00, or 15:00 with the Club Card; check-out 10:00. The front desk handles Yamato takkyubin, which is what you need on the 11th."
+    },
+    {
+      "id": "s-os5",
+      "name": "APA Hotel Osaka Umeda, or Hotel Hokke Club Osaka",
+      "town": "Osaka",
+      "type": "Budget business hotel, closer to the station",
+      "status": "shortlist",
+      "pricePerNightAud": 110,
+      "nights": 2,
+      "priceNote": "¥8,000-11,000 a night; est.",
+      "checkIn": "2027-02-09",
+      "checkOut": "2027-02-11",
+      "distance": "Both within a few minutes of JR Osaka Station",
+      "url": "https://www.apahotel.com/en/",
+      "notes": "What you buy for about ¥1,000 more a night: the 10-minute walk to JR Osaka Station disappears, which is worth exactly one thing on this trip, a slightly softer alarm on USJ morning. Otherwise these are the same class of hotel as the Toyoko Inn and the rooms are, if anything, smaller at APA. Worth a look only if Nakatsu is full or the price gap closes. Hokke Club is the quieter, slightly more old-fashioned of the two and tends to have marginally bigger rooms."
     },
     {
       "id": "s-os3",
@@ -3171,9 +3187,9 @@
     {
       "id": "ck4",
       "group": "Points and bookings",
-      "text": "Book Osaka hotel for 9-11 Feb",
+      "text": "Book the Osaka hotel for 9-11 Feb, and decide on the Toyoko Inn Club Card",
       "due": "2026-10-31",
-      "notes": "Toyoko Inn / Dormy Inn open bookings ~3-6 months ahead. Free cancellation where possible."
+      "notes": "Toyoko Inn takes bookings 9 months ahead for anyone and 12 for Club Card members, so February 2027 is already open and there is no reason to wait. The card is ¥1,500 once, at the front desk or online, and gives 5% off plus 15:00 check-in instead of 16:00. On two nights the discount alone does not cover it, but the earlier check-in does, because the plan has you at the hotel before the Nintendo store at 16:00. Book direct with Toyoko Inn rather than through an agent: it is cheaper, cancellation is free until 16:00 on the day, and the card discount only applies on their own site."
     },
     {
       "id": "ck5",
