@@ -68,6 +68,30 @@ with tempfile.TemporaryDirectory() as tmp:
     check('deleted souvenir stays deleted', [s['id'] for s in out['souvenirs']], ['s1'])
     check('deleted day item stays deleted', [i['id'] for i in out['days'][0]['items']], ['i1'])
     check('stamp follows the deletions', out['meta']['seedIds']['souvenirs'], ['s1'])
+    check('the tombstone is remembered', out['meta']['deletedIds'], {'souvenirs': ['s2'], 'items': ['i2']})
+
+    # THE ONE THAT BIT. A deletion has to survive every rebuild after the first,
+    # not just the next one. seedIds alone forgets, because the build that acts
+    # on a deletion stamps a seed list that no longer mentions the id.
+    with open(path, 'w') as f:
+        json.dump(out, f)
+    again = carry_over(build(), path)
+    check('deletion survives a second rebuild', [s['id'] for s in again['souvenirs']], ['s1'])
+    check('deleted item survives a second rebuild', [i['id'] for i in again['days'][0]['items']], ['i1'])
+    with open(path, 'w') as f:
+        json.dump(again, f)
+    third = carry_over(build(), path)
+    check('deletion survives a third rebuild', [s['id'] for s in third['souvenirs']], ['s1'])
+
+    # Putting it back in the app clears the tombstone, so nothing is suppressed
+    # forever by a typo.
+    readded = json.loads(json.dumps(third))
+    readded['souvenirs'].append({'id': 's2', 'name': 'changed my mind', 'status': 'idea'})
+    with open(path, 'w') as f:
+        json.dump(readded, f)
+    back = carry_over(build(), path)
+    check('re-adding clears the tombstone', sorted(s['id'] for s in back['souvenirs']), ['s1', 's2'])
+    check('and the tombstone is gone', (back['meta'].get('deletedIds') or {}).get('souvenirs'), None)
 
     # A missing or corrupt file must never lose the fresh build.
     os.remove(path)
@@ -79,4 +103,4 @@ with tempfile.TemporaryDirectory() as tmp:
 if FAILS:
     print('carry-over FAILED:\n  ' + '\n  '.join(FAILS))
     sys.exit(1)
-print('carry-over ok, 11 checks')
+print('carry-over ok, 17 checks')

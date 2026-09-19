@@ -668,4 +668,4 @@ trip = carry_over(trip, 'data/trip.json')
 
 with open('data/trip.json', 'w') as f:
     json.dump(trip, f, ensure_ascii=False, indent=2); f.write('\n')
-print('wrote data/trip.json', sum(len(d['items']) for d in days), 'items,', len(stays), 'stays,', len(food), 'food,', len(checklist), 'todos,', len(questions), 'questions')
+print('wrote data/trip.json', sum(len(d['items']) for d in trip['days']), 'items,', len(trip['stays']), 'stays,', len(trip['food']), 'food,', len(trip['checklist']), 'todos,', len(trip['questions']), 'questions')

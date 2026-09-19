@@ -4,3 +4,5 @@ playwright-report/
 .playwright/
 *.log
 .DS_Store
+__pycache__/
+*.pyc

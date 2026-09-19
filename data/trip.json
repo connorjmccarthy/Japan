@@ -5,7 +5,7 @@
     "end": "2027-02-17",
     "homeCurrency": "AUD",
     "jpyPerAud": 108,
-    "updatedAt": "2026-09-19T07:36:28Z",
+    "updatedAt": "2026-09-19T07:40:16Z",
     "version": 1,
     "about": "Solo trip, Plan B (no skiing): Osaka, Koyasan, Takayama, Shirakawa-go and Hirayu Onsen. Confirmed: JQ815 BNE→SYD and the Business Classic Reward SYD→MEL→NRT on 8 Feb. Home Tue 16 Feb on QF80 + QF1256 (booked). Everything else is planned from research done 13 Sep 2026; prices marked est. need checking when booking.",
     "seedIds": {
@@ -126,7 +126,6 @@
         "s-os7",
         "s-os8",
         "s-os5",
-        "s-os3",
         "s-nz1",
         "s-nz2",
         "s-nz3",
@@ -348,6 +347,11 @@
         "k1",
         "k1b",
         "k2"
+      ]
+    },
+    "deletedIds": {
+      "stays": [
+        "s-os3"
       ]
     }
   },
@@ -2701,21 +2705,6 @@
       "distance": "Both within a few minutes of JR Osaka Station",
       "url": "https://www.apahotel.com/en/",
       "notes": "What you buy for about ¥1,000 more a night: the 10-minute walk to JR Osaka Station disappears, which is worth exactly one thing on this trip, a slightly softer alarm on USJ morning. Otherwise these are the same class of hotel as the Toyoko Inn and the rooms are, if anything, smaller at APA. Worth a look only if Nakatsu is full or the price gap closes. Hokke Club is the quieter, slightly more old-fashioned of the two and tends to have marginally bigger rooms."
-    },
-    {
-      "id": "s-os3",
-      "name": "Hotel Universal Port Vita",
-      "town": "Osaka",
-      "type": "Official partner hotel, 10 min walk to USJ",
-      "status": "idea",
-      "pricePerNightAud": 200,
-      "nights": 2,
-      "priceNote": "est. Feb; verify",
-      "checkIn": "2027-02-09",
-      "checkOut": "2027-02-11",
-      "distance": "Universal City: walk to the park gates, early-entry perks on some plans",
-      "url": "https://www.hoteluniversalportvita.com/",
-      "notes": "Pay for convenience on USJ day only if the price is close. The Universal City area is a theme-park precinct, not a neighbourhood."
     },
     {
       "id": "s-nz1",
