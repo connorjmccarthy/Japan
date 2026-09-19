@@ -5,7 +5,7 @@
     "end": "2027-02-17",
     "homeCurrency": "AUD",
     "jpyPerAud": 108,
-    "updatedAt": "2026-09-19T07:07:55Z",
+    "updatedAt": "2026-09-19T07:16:51Z",
     "version": 1,
     "about": "Solo trip, Plan B (no skiing): Osaka, Koyasan, Takayama, Shirakawa-go and Hirayu Onsen. Confirmed: JQ815 BNE→SYD and the Business Classic Reward SYD→MEL→NRT on 8 Feb. Home Tue 16 Feb on QF80 + QF1256 (booked). Everything else is planned from research done 13 Sep 2026; prices marked est. need checking when booking.",
     "seedIds": {
@@ -3335,7 +3335,7 @@
       "status": "idea",
       "where": "1-UP Factory, inside Super Nintendo World",
       "why": "This is the shop whose stock you cannot get anywhere else, including at Nintendo Osaka. Question blocks, 1-UP mushroom tins, Bowser and Toad things, the area-branded apparel. If you want a Nintendo souvenir that says USJ rather than just Nintendo, it is here.",
-      "notes": "Tue 10 Feb. Use a ride locker rather than carrying bags onto Mario Kart, and remember the shops near the entrance stay open after the rides stop."
+      "notes": "Wed 10 Feb. Use a ride locker rather than carrying bags onto Mario Kart, and remember the shops near the entrance stay open after the rides stop."
     },
     {
       "id": "sv10",
@@ -3343,7 +3343,7 @@
       "name": "Nintendo Osaka is a different shop",
       "priceBand": "¥¥",
       "status": "idea",
-      "where": "Daimaru Umeda, 13th floor. Already on the plan for Mon 9 Feb at 16:00",
+      "where": "Daimaru Umeda, 13th floor. Already on the plan for Tue 9 Feb at 16:00",
       "why": "Worth knowing the two do not overlap much. Nintendo Osaka carries the general Nintendo range, plush, apparel, Zelda and Splatoon and Animal Crossing. USJ carries the Super Nintendo World park merchandise. If you want both, you need both stops, and they fall on consecutive days anyway."
     },
     {
@@ -3353,8 +3353,8 @@
       "priceBand": "¥¥¥",
       "status": "planned",
       "where": "Doguyasuji, the covered kitchenware arcade a few minutes from Dotonbori",
-      "why": "The single best thing most people bring back from Japan, and it happens to be a few minutes from where you already are on the Tuesday night. A Sakai-forged gyuto or santoku runs ¥8,000 to ¥25,000, they will sharpen it and often engrave your name in kanji while you wait, and it will outlive you.",
-      "notes": "MUST go in the checked bag. A knife in hand luggage gets confiscated at Kansai or Narita and nobody will post it on for you. Buy it in Osaka before the 11th so it rides in the suitcase with the courier. If you have never used a carbon-steel knife, buy stainless: carbon rusts if you leave it wet and most people do."
+      "why": "The single best thing most people bring back from Japan. Doguyasuji is three minutes off Dotonbori, which is where the Wednesday night ends. A Sakai-forged gyuto or santoku runs ¥8,000 to ¥25,000, they will sharpen it and often engrave your name in kanji while you wait, and it will outlive you.",
+      "notes": "TIMING IS THE PROBLEM, not the money: Doguyasuji shops mostly shut at 18:00, and the plan only reaches Minami at 20:45 on the Wednesday, after USJ. So the knife needs a slot made for it. Either trade the Tuesday Nintendo Osaka hour for an afternoon in Namba and Doguyasuji, or leave USJ at 16:00 on the Wednesday instead of 18:00. If neither appeals, drop the knife: there is no third window before the suitcase leaves on the 11th. MUST go in the checked bag. A knife in hand luggage gets confiscated at Kansai or Narita and nobody will post it on for you. Buy it in Osaka before the 11th so it rides in the suitcase with the courier. If you have never used a carbon-steel knife, buy stainless: carbon rusts if you leave it wet and most people do."
     },
     {
       "id": "sv13",
@@ -3424,7 +3424,7 @@
       "name": "Stationery from Loft or Tokyu Hands",
       "priceBand": "¥",
       "status": "idea",
-      "where": "Umeda, on the Monday afternoon walk",
+      "where": "Umeda, on the Tuesday afternoon walk",
       "why": "Uni Kuru Toga mechanical pencils, Pilot pens, Midori and Kokuyo notebooks. Small, light, cheap, and the quality gap over what you can buy at home is real."
     },
     {
