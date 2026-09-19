@@ -5,7 +5,7 @@
     "end": "2027-02-17",
     "homeCurrency": "AUD",
     "jpyPerAud": 108,
-    "updatedAt": "2026-09-19T07:16:51Z",
+    "updatedAt": "2026-09-19T07:27:50Z",
     "version": 1,
     "about": "Solo trip, Plan B (no skiing): Osaka, Koyasan, Takayama, Shirakawa-go and Hirayu Onsen. Confirmed: JQ815 BNE→SYD and the Business Classic Reward SYD→MEL→NRT on 8 Feb. Home Tue 16 Feb on QF80 + QF1256 (booked). Everything else is planned from research done 13 Sep 2026; prices marked est. need checking when booking.",
     "seedIds": {
@@ -184,6 +184,7 @@
         "p25",
         "pb10",
         "p27",
+        "p30",
         "p19",
         "p28",
         "p29",
@@ -237,6 +238,7 @@
         "c4",
         "c5",
         "c6",
+        "c6b",
         "c7",
         "c7b",
         "c7c",
@@ -502,21 +504,22 @@
           "type": "transfer",
           "title": "Shin-Osaka → hotel",
           "status": "planned",
-          "location": "Midosuji line south; Nakatsu is 2 stops and about 5 min",
-          "endTime": "14:40",
-          "cost": 300,
+          "location": "Midosuji line south, Shin-Osaka → Namba, direct, about 13 min",
+          "endTime": "14:45",
+          "cost": 290,
           "currency": "JPY",
+          "notes": "No changes, which matters when you have been awake for a day and a half. Namba is an enormous station, about 700 m end to end, and the hotel is at the JR Namba / OCAT end, so follow signs for JR Namba, not Nankai. Allow ten minutes underground on top of the thirteen on the train.",
           "placeId": "p8"
         },
         {
           "id": "b6",
-          "time": "14:40",
+          "time": "14:45",
           "type": "stay",
-          "title": "Drop the bag at the hotel (check-in may not be until 16:00)",
+          "title": "Check in at Hotel Monterey Grasmere, then shower and change",
           "status": "planned",
-          "location": "See Stays for the shortlist",
-          "endTime": "15:00",
-          "notes": "WATCH THE CHECK-IN TIME. Toyoko Inn is 16:00 for ordinary guests and 15:00 only for Club Card members, and check-out is 10:00. If you have not bought the card, you cannot get into the room before the Nintendo store at 16:00, so plan on leaving the suitcase at reception, doing the paperwork and paying then, and coming back to the room in the evening. They will hold the bag on the day of check-in without any fuss. The card is ¥1,500 once and also buys 5% off and a longer booking window, which on this stay roughly pays for itself and then keeps paying if you ever use the chain again.",
+          "location": "Hotel Monterey Grasmere Osaka, Namba. See Stays",
+          "endTime": "15:40",
+          "notes": "Check-in is 15:00, so you arrive about fifteen minutes early; they will take the suitcase at the desk if the room is not ready. Then actually use the hour: shower, change, repack the daypack for tomorrow. It is the single best thing you can do for a body that has been on a plane for ten hours and has to be at Universal at 7am. Ask at the desk for a high floor if it was not locked in at booking, and confirm they will handle the Yamato courier on Thursday morning. Leave for Umeda by 15:40.",
           "placeId": "p27"
         },
         {
@@ -525,9 +528,9 @@
           "type": "activity",
           "title": "Nintendo OSAKA store (optional, 45 min)",
           "status": "idea",
-          "location": "Daimaru Umeda 13F, 5 min walk from JR Osaka Station",
+          "location": "Daimaru Umeda 13F; Midosuji line Namba → Umeda is 8 min, then 5 min underground",
           "endTime": "16:40",
-          "notes": "The official Nintendo store, exclusive merchandise, quieter than the USJ shops on Wednesday. Open 10:00-20:00. Borrowed from your friend’s Tokyo list (theirs was the Shibuya Parco store).",
+          "notes": "The official Nintendo store, exclusive merchandise, quieter than the USJ shops on Wednesday. Open 10:00-20:00, so there is slack if the trains run late. Borrowed from your friend’s Tokyo list (theirs was the Shibuya Parco store).",
           "placeId": "p25"
         },
         {
@@ -574,7 +577,7 @@
           "location": "Gyoza Club Rock Lee, 2-1-3 Ikedacho, Kita-ku (Tenma / Minamimorimachi), then under the tracks at Tenma",
           "cost": 3500,
           "currency": "JPY",
-          "notes": "Your pick. Small, loud gyoza bar a few minutes from Harukoma: crisp-bottomed gyoza, flaming mapo tofu, cheese and chilli-mayo variations; all-you-can-eat gyoza for ¥888 on weekdays with a reservation (Tuesday qualifies). Reserve on Tabelog or byFood a week or two out, or walk in early and expect a short wait. Afterwards a standing bar under the tracks for doteyaki (beef tendon simmered in miso). Early night; tomorrow starts at 7.",
+          "notes": "Your pick. Small, loud gyoza bar a few minutes from Harukoma: crisp-bottomed gyoza, flaming mapo tofu, cheese and chilli-mayo variations; all-you-can-eat gyoza for ¥888 on weekdays with a reservation (Tuesday qualifies). Reserve on Tabelog or byFood a week or two out, or walk in early and expect a short wait. Afterwards a standing bar under the tracks for doteyaki (beef tendon simmered in miso). Home is Sakaisuji line from Minamimorimachi to Nippombashi, about 8 min, then a short walk. Early night; tomorrow starts at 7.",
           "placeId": "p10"
         }
       ],
@@ -591,11 +594,13 @@
           "id": "c1",
           "time": "07:00",
           "type": "train",
-          "title": "Train to Universal City",
+          "title": "Walk to Osaka Namba, then train to Universal City",
           "status": "planned",
-          "location": "Osaka Station platform 1 → Universal City (JR Yumesaki line, ~12 min direct)",
-          "cost": 200,
+          "location": "Hotel → Osaka Namba (Hanshin Namba line, ~10 min through the station) → Nishikujo → JR Yumesaki line → Universal City",
+          "endTime": "07:40",
+          "cost": 390,
           "currency": "JPY",
+          "notes": "About 35 min door to gate: ten minutes walking the length of Namba station, nine on the Hanshin to Nishikujo, an easy cross-platform change, five on the JR to Universal City. Walk the station route once in daylight on the Tuesday so you are not reading signs at 7am. With the Express Pass you do not need this train: leave at 08:05 and be at the gate by 08:45.",
           "placeId": "p9"
         },
         {
@@ -652,8 +657,19 @@
           "status": "planned",
           "location": "USJ",
           "endTime": "18:00",
-          "notes": "Single Rider lines are the solo traveller’s cheat code and are free. February weekdays historically close around 7pm, but leave at six: Universal City to Tsuruhashi is 35-40 min and today is already a fourteen-hour day. Front-load Nintendo World in the morning and you will have done the park by then.",
+          "notes": "Single Rider lines are the solo traveller’s cheat code and are free. February weekdays historically close around 7pm, but leave at six: Universal City to Tsuruhashi is 35-40 min and today is already a fourteen-hour day. Front-load Nintendo World in the morning and you will have done the park by then. If you want the knife, leave at four instead and see the next item.",
           "placeId": "p9"
+        },
+        {
+          "id": "c6b",
+          "time": "16:35",
+          "type": "activity",
+          "title": "Knife at Doguyasuji (only if you leave USJ at 16:00)",
+          "status": "idea",
+          "location": "Sennichimae Doguyasuji arcade; Sennichimae line one stop to Nipponbashi then 3 min, or 13 min on foot from the hotel",
+          "endTime": "17:50",
+          "notes": "THE ONLY WINDOW ON THE TRIP. Doguyasuji is a 150 m kitchenware arcade three minutes off Dotonbori, about 50 shops, and they trade 10:00 to 18:00. Tuesday evening is Umeda, tonight you do not reach Minami until 20:45, and on Thursday you leave at nine with the suitcase already couriered. So it is this, or no knife. The cost: two hours at the tail end of USJ, which with an Express Pass is the part you will have already done. Universal City to Namba is about 30 min via Nishikujo, so a 16:00 exit puts you in the arcade by about 16:40 with well over an hour to choose. Drop it at the hotel on the way to Tsuruhashi. See Souvenirs for what to buy and why it must be checked luggage.",
+          "placeId": "p30"
         },
         {
           "id": "c7",
@@ -688,7 +704,7 @@
           "endTime": "23:00",
           "cost": 2500,
           "currency": "JPY",
-          "notes": "Osaka’s real nightlife: no seats, order at the counter, beer ¥350 and highballs ¥300 at the cheaper ones, a small plate with each drink. More locals than tourists, and the easiest format in Japan to walk into alone. Two bars is a good evening; the person next to you will tell you where the third is. Namba to the hotel by subway; tomorrow is a 9:15 check-out for the 10:00 Koyasan train, so home by 11.",
+          "notes": "Osaka’s real nightlife: no seats, order at the counter, beer ¥350 and highballs ¥300 at the cheaper ones, a small plate with each drink. More locals than tourists, and the easiest format in Japan to walk into alone. Two bars is a good evening; the person next to you will tell you where the third is. The hotel is a ten-minute walk from here, straight back through the station, which is the entire reason you are staying in Namba: no last train, no clock. Tomorrow is a 9:15 check-out for the 10:00 Koyasan train, so home by 11 anyway.",
           "placeId": "p29"
         }
       ],
@@ -697,7 +713,7 @@
         "culture": {
           "title": "Universal Studios Japan and Super Nintendo World",
           "base": "Osaka",
-          "notes": "The one early-ish start in this plan, and only if you want it: without an Express Pass the free Super Nintendo World timed-entry ticket is gone minutes after opening, so the 7:00 train matters. With an Express Pass that includes area entry (recommended, ~¥12,800) you can take the 8:30 train, be at the gate by 9:15 and lose nothing. Buy the pass when the date opens (~12 Dec) and sleep in."
+          "notes": "The one early-ish start in this plan, and only if you want it: without an Express Pass the free Super Nintendo World timed-entry ticket is gone minutes after opening, so the 07:00 start matters. With an Express Pass that includes area entry (recommended, ~¥12,800) you can leave at 08:05, be at the gate by 08:45 and lose nothing. Buy the pass when the date opens (~12 Dec) and sleep in."
         }
       }
     },
@@ -714,9 +730,11 @@
           "type": "transfer",
           "title": "Check out (daypack only), to Shin-Osaka",
           "status": "planned",
-          "location": "Shin-Osaka",
-          "cost": 300,
+          "location": "Namba → Shin-Osaka, Midosuji line, direct, about 13 min",
+          "endTime": "08:25",
+          "cost": 290,
           "currency": "JPY",
+          "notes": "Check-out is 11:00 at the Monterey, so there is no rush at the desk. Allow about 25 min all up: eight minutes underground to the Midosuji platforms at the far end of Namba, then thirteen on the train.",
           "variant": "ski",
           "placeId": "p8"
         },
@@ -873,11 +891,11 @@
           "type": "transfer",
           "title": "Send the suitcase ahead to Takayama by Yamato courier (takkyubin)",
           "status": "planned",
-          "location": "Osaka hotel front desk",
+          "location": "Hotel Monterey Grasmere front desk, Namba",
           "endTime": "09:15",
           "cost": 3000,
           "currency": "JPY",
-          "notes": "Do this at check-out, not earlier, or you spend two Osaka nights without your clothes. Hand it to the desk and ask for “takkyubin to this address”, showing the Takayama address in Japanese from the Stays page. Osaka to Gifu is next-day, so it lands at the hotel on the 12th, the day you check in. Ask for the earliest collection. Write your hotel reservation name on the delivery slip: the Takayama hotel has confirmed in writing that it will take the parcel in and hold it, and the name on the slip is how the desk matches it to you. Everything you need for Koyasan and the two nights after it goes in the daypack: two changes of clothes, toiletries, chargers, and something warm.",
+          "notes": "Do this at check-out, not earlier, or you spend two Osaka nights without your clothes. Confirm when you book that the desk takes Yamato takkyubin; full-service hotels almost always do, but this is the one morning it has to work. Hand it to the desk and ask for “takkyubin to this address”, showing the Takayama address in Japanese from the Stays page. Osaka to Gifu is next-day, so it lands at the hotel on the 12th, the day you check in. Ask for the earliest collection. Write your hotel reservation name on the delivery slip: the Takayama hotel has confirmed in writing that it will take the parcel in and hold it, and the name on the slip is how the desk matches it to you. Everything you need for Koyasan and the two nights after it goes in the daypack: two changes of clothes, toiletries, chargers, and something warm.",
           "variant": "culture",
           "placeId": "p27"
         },
@@ -885,11 +903,13 @@
           "id": "c11a",
           "time": "09:15",
           "type": "transfer",
-          "title": "Check out (daypack only), subway to Namba",
+          "title": "Check out (daypack only), walk to Nankai Namba",
           "status": "planned",
-          "location": "Osaka → Nankai Namba station",
-          "cost": 300,
+          "location": "Hotel → Nankai Namba station, 8-10 min on foot through the arcades",
+          "endTime": "09:35",
+          "cost": 0,
           "currency": "JPY",
+          "notes": "A walk rather than a train, because the hotel is in Namba. Namba is a warren, so allow the full ten minutes and follow signs for Nankai, not JR. Check-out is 11:00, so the only reason you are up is the 10:00 train.",
           "variant": "culture",
           "placeId": "pb6"
         },
@@ -2564,7 +2584,7 @@
       "name": "Anda no Mori Osaka Tennoji Tower (ex Hotel Bali Tower)",
       "town": "Osaka",
       "type": "All-inclusive urban resort hotel; the one from Instagram",
-      "status": "shortlist",
+      "status": "idea",
       "pricePerNightAud": 170,
       "nights": 2,
       "priceNote": "est. Feb, A$120-220; verify",
@@ -2579,7 +2599,7 @@
       "name": "Dormy Inn Premium Osaka Kitahama",
       "town": "Osaka",
       "type": "Business hotel with rooftop onsen bath",
-      "status": "shortlist",
+      "status": "idea",
       "pricePerNightAud": 140,
       "nights": 2,
       "priceNote": "est. Feb; verify",
@@ -2594,7 +2614,7 @@
       "name": "Toyoko Inn Osaka Umeda Nakatsu No.1",
       "town": "Osaka",
       "type": "Budget business hotel, 170 rooms",
-      "status": "shortlist",
+      "status": "idea",
       "pricePerNightAud": 100,
       "nights": 2,
       "priceNote": "¥6,500-9,500 a night; est. Feb, verify",
@@ -2602,22 +2622,23 @@
       "checkOut": "2027-02-11",
       "distance": "1 min to Nakatsu (Midosuji line), 10 min walk to JR Osaka Station",
       "url": "https://www.toyoko-inn.com/eng/",
-      "notes": "The cheap floor, and it holds up against all three days, but the rooms are 11 to 13 m² and that is the reason to look further up this page. Shin-Osaka to Nakatsu is two Midosuji stops, about 5 minutes, so the jet-lagged arrival is as easy as it gets. Nakatsu to Namba for the Nankai on the 11th is one direct Midosuji ride, about 12 minutes, and the last trains back from Namba after the Ura-Namba bars run to around midnight. The 9 Feb evening, Nintendo Osaka at Daimaru Umeda, Grenier, Nakazakicho and Tenma, is all on the doorstep. The one weak spot is the USJ morning: you walk 10 minutes to JR Osaka Station, then it is 12 minutes and ¥200 direct to Universal City from platform 1, so leave about 06:45 for the 07:45 gates. Free breakfast (onigiri, miso soup, salad) from around 06:30, which is early enough to be useful that morning. Rooms are genuinely small, 11 to 13 m², which is tight with a big suitcase. Check-in 16:00, or 15:00 with the Club Card; check-out 10:00. The front desk handles Yamato takkyubin, which is what you need on the 11th."
+      "notes": "RUNNER-UP, AND THE FALLBACK IF THE MONTEREY IS FULL OR THE PRICE JUMPS. The cheap floor, and it holds up against all three days, but the rooms are 11 to 13 m² and that is the reason the Monterey won. Shin-Osaka to Nakatsu is two Midosuji stops, about 5 minutes, so the jet-lagged arrival is as easy as it gets. Nakatsu to Namba for the Nankai on the 11th is one direct Midosuji ride, about 12 minutes, and the last trains back from Namba after the Ura-Namba bars run to around midnight. The 9 Feb evening, Nintendo Osaka at Daimaru Umeda, Grenier, Nakazakicho and Tenma, is all on the doorstep. The one weak spot is the USJ morning: you walk 10 minutes to JR Osaka Station, then it is 12 minutes and ¥200 direct to Universal City from platform 1, so leave about 06:45 for the 07:45 gates. Free breakfast (onigiri, miso soup, salad) from around 06:30, which is early enough to be useful that morning. Rooms are genuinely small, 11 to 13 m², which is tight with a big suitcase. Check-in 16:00, or 15:00 with the Club Card; check-out 10:00. The front desk handles Yamato takkyubin, which is what you need on the 11th."
     },
     {
       "id": "s-os6",
       "name": "Hotel Monterey Grasmere Osaka",
       "town": "Osaka",
+      "address": "1-2-3 Minatomachi, Naniwa-ku, Osaka 556-0017",
       "type": "31-storey hotel, high-floor rooms with city views",
-      "status": "shortlist",
+      "status": "planned",
       "pricePerNightAud": 180,
       "nights": 2,
-      "priceNote": "est. ¥18,000-28,000 a night; verify for Feb",
+      "priceNote": "Lead-in rooms from about ¥11,000; a high-floor view twin is more like ¥18,000-25,000. Budget A$180 a night and be pleased if it is less.",
       "checkIn": "2027-02-09",
       "checkOut": "2027-02-11",
-      "distance": "1 min to JR Namba and Osaka Namba (Hanshin/Kintetsu), 5 min to Midosuji Namba, 10 min walk to Nankai Namba",
+      "distance": "Directly connected to JR Namba; 2-3 min to Yotsubashi-line Namba, about 8 min underground to Midosuji Namba, about 10 min walk to Nankai Namba and Osaka Namba (Hanshin/Kintetsu). Dotonbori 600 m, 10 min",
       "url": "https://www.hotelmonterey.co.jp/en/grasmere_osaka/",
-      "notes": "THE RECOMMENDATION now that the Express Pass is on the list. ASK FOR FLOORS 24 TO 31 WHEN YOU BOOK: that is where the views are, about 100 m up, and the hotel makes a thing of the sunrise, sunset and night-view rooms. Sizes go 19 m² for an economy double, 33 m² for a corner twin, 38 m² for a deluxe twin with city view, so even the small one is double the Toyoko and the corner rooms are three times it. Why it suits these two nights specifically: you are in Namba, which is where the Tuesday night ends in the Ura-Namba bars, so you walk home instead of catching a last train. The Hanshin Namba line is a minute away, which is the USJ route via Nishikujo, about 33 minutes. And the Nankai for Koyasan is a 10 minute walk on the Wednesday, which is nothing with the suitcase already gone by courier. The one cost against Nakatsu is the 9 Feb evening in Umeda, which becomes an 8 minute Midosuji ride each way instead of a walk."
+      "notes": "THIS IS THE ONE. BOOK IT. Ask for a high floor: the hotel guarantees floor 26 or above on its night-view rates, and it is 31 storeys, so that is about 100 m up looking over Minami. Rooms to ask for, in order: deluxe twin with city view (38 m2), corner twin (33 m2), economy double (19 m2). Even the small one is nearly double the Toyoko and the deluxe is three times it. Check-in 15:00, check-out 11:00, an hour later than the Toyoko and useful on the 11th when the courier has to be dealt with before you leave. Why it wins on THIS trip rather than in general: (1) you are in Namba, and the Wednesday night ends in the Ura-Namba standing bars, so you walk home at 23:00 instead of watching the clock for a last train; (2) Doguyasuji, the knife street, is about 13 minutes on foot or one Sennichimae-line stop to Nipponbashi and three minutes, which is the only thing that makes the kitchen knife possible at all, because those shops shut at 18:00 and every other evening is spoken for; (3) the Nankai for Koyasan is an 8 to 10 minute walk on the Thursday, with the suitcase already gone by courier; (4) Osaka Namba (Hanshin) is at the far end of the Namba complex, about 10 minutes away, and that is the USJ route via Nishikujo, about 35 minutes door to gate. ONE HONEST CAVEAT: the hotel sits at the JR Namba end of a station that is 700 m long, so most of these are a walk across Namba rather than a step out the front door. Ten minutes at 23:00 with a drink in you still beats a last train. What it costs you: roughly A$160 more than the Toyoko across the two nights, and the Tuesday evening in Umeda becomes an 8 minute Midosuji ride each way instead of a walk out the front door. Both are worth paying. Book direct or on Rakuten Travel, take the free-cancellation rate, and confirm the desk handles Yamato takkyubin for the Thursday courier."
     },
     {
       "id": "s-os7",
@@ -2632,7 +2653,7 @@
       "checkOut": "2027-02-11",
       "distance": "The lobby is on the 6th floor of Nankai Namba station",
       "url": "https://www.swissotel.com/hotels/nankai-osaka/",
-      "notes": "The wake-up-on-top-of-your-train option. The lobby is inside Nankai Namba station, which is the exact station the Limited Express Koya leaves from at 10:00 on the 11th, so that morning is a lift ride. Rooms run 23 to 40 m², there are 36 floors, the higher ones look out over the whole of Minami, and the top-floor restaurant does a 360-degree view. Executive floors start at 24. It is the most convenient hotel in Osaka for this particular trip and it is also roughly three times the Toyoko, which over two nights is about A$480 more. Worth it if you want the trip to have one properly nice night in it; hard to justify on logistics alone when the Monterey is a 10 minute walk away for half the price."
+      "notes": "NOT CHOSEN, but the one to upgrade to if you decide the trip wants a splurge night in it. The wake-up-on-top-of-your-train option. The lobby is inside Nankai Namba station, which is the exact station the Limited Express Koya leaves from at 10:00 on the 11th, so that morning is a lift ride. Rooms run 23 to 40 m², there are 36 floors, the higher ones look out over the whole of Minami, and the top-floor restaurant does a 360-degree view. Executive floors start at 24. It is the most convenient hotel in Osaka for this particular trip and it is also roughly three times the Toyoko, which over two nights is about A$480 more. Worth it if you want the trip to have one properly nice night in it; hard to justify on logistics alone when the Monterey is a 10 minute walk away for half the price."
     },
     {
       "id": "s-os8",
@@ -2647,14 +2668,14 @@
       "checkOut": "2027-02-11",
       "distance": "Tennoji, 10 min from Namba on the Midosuji line",
       "url": "https://en.miyakohotels.ne.jp/osaka-m-miyako/",
-      "notes": "If the view is the whole point, this is the answer and nothing else is close. It occupies floors 38 to 57 of Abeno Harukas, the tallest building in Japan at 300 m, every single room is above the 38th floor, and the Deluxe City View rooms have floor-to-ceiling glass. Rooms from about 38 m². The catch is the address: Tennoji is off the axis this trip runs on. It is 10 minutes from Namba on the Midosuji line, which is fine, but it is a long way from USJ and it is not a neighbourhood you would otherwise spend an evening in. Choose it if you want to stand at a window on your first night in Japan and look at the whole city, and accept a bit more commuting for it."
+      "notes": "NOT CHOSEN. If the view were the only thing that mattered this would be the answer and nothing else is close. It occupies floors 38 to 57 of Abeno Harukas, the tallest building in Japan at 300 m, every single room is above the 38th floor, and the Deluxe City View rooms have floor-to-ceiling glass. Rooms from about 38 m². The catch is the address: Tennoji is off the axis this trip runs on. It is 10 minutes from Namba on the Midosuji line, which is fine, but it is a long way from USJ and it is not a neighbourhood you would otherwise spend an evening in. Choose it if you want to stand at a window on your first night in Japan and look at the whole city, and accept a bit more commuting for it."
     },
     {
       "id": "s-os5",
       "name": "APA Hotel Osaka Umeda, or Hotel Hokke Club Osaka",
       "town": "Osaka",
       "type": "Budget business hotel, closer to the station",
-      "status": "shortlist",
+      "status": "idea",
       "pricePerNightAud": 110,
       "nights": 2,
       "priceNote": "¥8,000-11,000 a night; est.",
@@ -3354,7 +3375,7 @@
       "status": "planned",
       "where": "Doguyasuji, the covered kitchenware arcade a few minutes from Dotonbori",
       "why": "The single best thing most people bring back from Japan. Doguyasuji is three minutes off Dotonbori, which is where the Wednesday night ends. A Sakai-forged gyuto or santoku runs ¥8,000 to ¥25,000, they will sharpen it and often engrave your name in kanji while you wait, and it will outlive you.",
-      "notes": "TIMING IS THE PROBLEM, not the money: Doguyasuji shops mostly shut at 18:00, and the plan only reaches Minami at 20:45 on the Wednesday, after USJ. So the knife needs a slot made for it. Either trade the Tuesday Nintendo Osaka hour for an afternoon in Namba and Doguyasuji, or leave USJ at 16:00 on the Wednesday instead of 18:00. If neither appeals, drop the knife: there is no third window before the suitcase leaves on the 11th. MUST go in the checked bag. A knife in hand luggage gets confiscated at Kansai or Narita and nobody will post it on for you. Buy it in Osaka before the 11th so it rides in the suitcase with the courier. If you have never used a carbon-steel knife, buy stainless: carbon rusts if you leave it wet and most people do."
+      "notes": "TIMING IS THE PROBLEM, not the money. Doguyasuji shops shut at 18:00, and the plan only reaches Minami at 20:45 on the Wednesday. The slot is now in the itinerary as an optional item: leave USJ at 16:00 instead of 18:00 on Wed 10 Feb and you are in the arcade by 16:35 with 85 minutes, with the hotel on the way back to drop it. That is the only window, because Tuesday evening is Umeda and Thursday you leave at nine with the suitcase already gone. MUST go in the checked bag. A knife in hand luggage gets confiscated at Kansai or Narita and nobody will post it on for you. Buy it in Osaka before the 11th so it rides in the suitcase with the courier. If you have never used a carbon-steel knife, buy stainless: carbon rusts if you leave it wet and most people do."
     },
     {
       "id": "sv13",
@@ -3547,9 +3568,9 @@
     {
       "id": "ck4",
       "group": "Points and bookings",
-      "text": "Book the Osaka hotel for 9-11 Feb, and decide on the Toyoko Inn Club Card",
+      "text": "Book Hotel Monterey Grasmere Osaka, 9-11 Feb, high floor with a city view",
       "due": "2026-10-31",
-      "notes": "Toyoko Inn takes bookings 9 months ahead for anyone and 12 for Club Card members, so February 2027 is already open and there is no reason to wait. The card is ¥1,500 once, at the front desk or online, and gives 5% off plus 15:00 check-in instead of 16:00. On two nights the discount alone does not cover it, but the earlier check-in does, because the plan has you at the hotel before the Nintendo store at 16:00. Book direct with Toyoko Inn rather than through an agent: it is cheaper, cancellation is free until 16:00 on the day, and the card discount only applies on their own site."
+      "notes": "DECIDED: the Monterey Grasmere in Namba. Two nights: check in Tue 9 Feb, check out Thu 11 Feb. Ask for the deluxe twin with city view (38 m2) or the corner twin (33 m2), and say you want a high floor: their night-view rates guarantee floor 26 or above out of 31. Budget about A$180 a night; the lead-in rooms are cheaper if the view matters less than you think. Book direct on hotelmonterey.co.jp or on Rakuten Travel and take the free-cancellation rate, because February is five months out and nothing is locked. Two things to confirm while you have them: that the room is on a high floor, and that the front desk handles Yamato takkyubin, which you need on the Thursday morning. Fallback if it is full or the price jumps: Toyoko Inn Umeda Nakatsu, which is A$80 a night cheaper and a much smaller room."
     },
     {
       "id": "ck5",
@@ -4005,12 +4026,21 @@
     },
     {
       "id": "p27",
-      "name": "Osaka hotel area (Kitahama / Nakatsu)",
+      "name": "Hotel Monterey Grasmere Osaka (Namba)",
       "kind": "hotel",
       "town": "Osaka",
-      "lat": 34.693,
-      "lng": 135.506,
-      "notes": "Wherever the Osaka hotel ends up; move this pin."
+      "lat": 34.6645,
+      "lng": 135.4952,
+      "notes": "1-2-3 Minatomachi, Naniwa-ku. At the JR Namba / OCAT end of Namba station. Pin is close but not surveyed; check it against the booking confirmation."
+    },
+    {
+      "id": "p30",
+      "name": "Sennichimae Doguyasuji (knife street)",
+      "kind": "other",
+      "town": "Osaka",
+      "lat": 34.6654,
+      "lng": 135.5052,
+      "notes": "150 m arcade, about 50 kitchenware shops, 10:00-18:00. Three minutes south of Dotonbori."
     },
     {
       "id": "p19",

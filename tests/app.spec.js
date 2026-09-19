@@ -634,3 +634,21 @@ test.describe('go mode', () => {
     expect(r).toEqual([0, 1, 2, 2, -1, 'Asia/Tokyo']);
   });
 });
+
+test.describe('the Osaka hotel decision', () => {
+  test('the Osaka hotel is picked once, and the arrival day names it', async ({ page }) => {
+    // The hotel is chosen on Stays, but the arrival, the USJ morning and both
+    // Thursday departures are written around it. Two picks, or a day that names
+    // a different hotel, means the plan and the booking have drifted apart.
+    // (build-seed.py carries the matching assertion for the itinerary text.)
+    await boot(page, '#/stays');
+    const osaka = page.locator('section.section', { has: page.getByRole('heading', { name: 'Osaka', exact: true }) });
+    const chosen = osaka.locator('.row', { has: page.locator('.pill', { hasText: /^(Planned|Booked)$/ }) });
+    await expect(chosen).toHaveCount(1);
+    const picked = (await chosen.locator('.row-title').first().innerText()).split('\n')[0].trim();
+    expect(picked.length).toBeGreaterThan(3);
+    await page.goto('/#/go/2027-02-09');
+    await expect(page.locator('.go-card').first()).toBeVisible();
+    await expect(page.locator('#main')).toContainText(picked.split(',')[0]);
+  });
+});
